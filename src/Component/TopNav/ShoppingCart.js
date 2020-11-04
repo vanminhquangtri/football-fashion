@@ -10,7 +10,7 @@ class ShoppingCart extends Component {
             <div className="col-auto shopping-cart">
                 <div className="wrap">
                     <NavLink
-                        to="/"
+                        to="/shopping-cart"
                         exact={true}
                     >
                         <FontAwesomeIcon icon={faShoppingCart} className="icon"/>
