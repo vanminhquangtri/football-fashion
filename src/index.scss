@@ -7,6 +7,7 @@ $color-red: rgb(211, 9, 9);
 $color-gray-border: rgb(235, 235, 235);
 /*--- top bar ---*/
 .top-bar {
+  z-index: 2000;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -54,7 +55,6 @@ $color-gray-border: rgb(235, 235, 235);
   }
 }
 /*--- end top bar ---*/
-
 /*--- top nav ---*/
 .top-nav {
   background: $color-red;
@@ -99,7 +99,7 @@ $color-gray-border: rgb(235, 235, 235);
           }
           ul.sub-menu {
             animation-duration: .3s;
-            z-index: 10000;
+            z-index: 2000;
             width: 100%;
             top: 100%;
             position: absolute;
@@ -170,6 +170,7 @@ margin-top: 10px;
               justify-content: space-between;
               button {
                 border: none;
+                outline: none;
                 background: transparent;
                 color: transparent;
                 width: 20px;
