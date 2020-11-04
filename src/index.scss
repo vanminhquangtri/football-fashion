@@ -104,8 +104,28 @@ $color-gray-border: rgb(235, 235, 235);
         }
       }
       /* col for shopping cart */
-      .col.shopping-cart {
+      .col-auto.shopping-cart {
         position: relative;
+        .wrap {
+          border: 1px solid blue;
+          a {
+            position: relative;
+            .shopping-cart-quantity {
+              position: absolute;
+              top: 2px;
+              right: 0;
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              font-size: 10px;
+              line-height: 12px;
+              text-align: center;
+              color: black;
+              font-weight: bold;
+              background: white;
+            }
+          }
+        }
       }
     }
   }

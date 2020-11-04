@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faHome, faBars, faTimes, faShoppingCart} from "@fortawesome/free-solid-svg-icons"
+import {faHome, faBars, faTimes} from "@fortawesome/free-solid-svg-icons"
+import ShoppingCart from './ShoppingCart';
 
 const TopNav = (props) => {
     const [state, setState] = useState({
@@ -22,6 +23,7 @@ const TopNav = (props) => {
                 <div className="row">
                     <div className="col nav">
                         <div className="wrap">
+                            {/* main menu */}
                             <ul className="main-nav">
                                 <li>
                                     <NavLink
@@ -108,17 +110,8 @@ const TopNav = (props) => {
                             )}
                         </div>
                     </div>
-                    <div className="col-auto shopping-cart">
-                        <div className="wrap">
-                            <NavLink
-                                to="/"
-                                exact={true}
-                            >
-                                <FontAwesomeIcon icon={faShoppingCart} className="icon"/>
-                                <span className="shopping-cart-quantity"></span>
-                            </NavLink>
-                        </div>
-                    </div>
+                    {/* shopping cart icon */}
+                    <ShoppingCart/>
                 </div>
             </div>
         </section>
