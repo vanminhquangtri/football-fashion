@@ -23,7 +23,7 @@ $color-gray-border: rgb(235, 235, 235);
           width: 100%;
         }
         img {
-          height: 25px;
+          height: 30px;
         }
       }
       .col-3.ball-icon {
@@ -32,7 +32,7 @@ $color-gray-border: rgb(235, 235, 235);
         justify-content: flex-start;
         padding-left: 5px;
         img {
-          width: 25px;
+          width: 30px;
         }
       }
       .col-6.leagues-icon {
@@ -46,6 +46,9 @@ $color-gray-border: rgb(235, 235, 235);
         align-items: center;
         justify-content: flex-end;
         padding-right: 5px;
+        img {
+          width: 100%;
+        }
       }
     }
   }
@@ -58,7 +61,8 @@ $color-gray-border: rgb(235, 235, 235);
   a {
     color: white;
     display: block;
-    padding: 5px;
+    padding: 10px 5px;
+    line-height: 1; /* keep all links middle vertical ^^ */
   }
   ul {
     list-style-type: none;
@@ -72,21 +76,21 @@ $color-gray-border: rgb(235, 235, 235);
         .wrap {
           width: 100%;
           position: relative;
-          display: flex;
-          align-items: center;
           ul.main-nav {
             display: flex;
             align-items: center;
             li {
-              margin-right: 20px;
+              margin-right: 10px;
               a {
-                display: flex;
-                align-items: center; /* make all links of main-nav middle of nav bar */
-                padding: 5px;
+                font-weight: bold;
+              }
+              &:last-child {
+                margin-right: 0;
               }
             }
           }
           ul.sub-menu {
+            z-index: 10000;
             width: 100%;
             top: 100%;
             position: absolute;
@@ -101,7 +105,7 @@ $color-gray-border: rgb(235, 235, 235);
       }
       /* col for shopping cart */
       .col.shopping-cart {
-
+        position: relative;
       }
     }
   }
