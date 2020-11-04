@@ -52,14 +52,7 @@ const TopNav = (props) => {
                                         </NavLink>
                                     </li>
                                 )}
-                                <li onClick={()=>{changeSubMenuStt()}}>
-                                    <NavLink
-                                        to="/"
-                                        exact={true}
-                                    >
-                                        MANAGE ORDER
-                                    </NavLink>
-                                </li>
+                                
                             </ul>
                             {/* only show sub menu if state of submenu is true */}
                             {sub_menu && (
@@ -108,7 +101,7 @@ const TopNav = (props) => {
                             )}
                         </div>
                     </div>
-                    <div className="col-auto shopping-cart">
+                    <div className="col shopping-cart">
                         <div className="wrap">
                             <NavLink
                                 to="/"
