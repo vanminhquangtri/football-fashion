@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/football-fashion/static/css/main.d8285089.chunk.css",
-    "main.js": "/football-fashion/static/js/main.e16be3b6.chunk.js",
-    "main.js.map": "/football-fashion/static/js/main.e16be3b6.chunk.js.map",
+    "main.css": "/football-fashion/static/css/main.e4587cdb.chunk.css",
+    "main.js": "/football-fashion/static/js/main.6b019432.chunk.js",
+    "main.js.map": "/football-fashion/static/js/main.6b019432.chunk.js.map",
     "runtime-main.js": "/football-fashion/static/js/runtime-main.85c35117.js",
     "runtime-main.js.map": "/football-fashion/static/js/runtime-main.85c35117.js.map",
     "static/css/2.494ee3e6.chunk.css": "/football-fashion/static/css/2.494ee3e6.chunk.css",
@@ -12,8 +12,9 @@
     "static/js/3.4e22bd13.chunk.js.map": "/football-fashion/static/js/3.4e22bd13.chunk.js.map",
     "index.html": "/football-fashion/index.html",
     "static/css/2.494ee3e6.chunk.css.map": "/football-fashion/static/css/2.494ee3e6.chunk.css.map",
-    "static/css/main.d8285089.chunk.css.map": "/football-fashion/static/css/main.d8285089.chunk.css.map",
+    "static/css/main.e4587cdb.chunk.css.map": "/football-fashion/static/css/main.e4587cdb.chunk.css.map",
     "static/js/2.cf797fec.chunk.js.LICENSE.txt": "/football-fashion/static/js/2.cf797fec.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/football-fashion/static/media/tot.6827f114.webp",
     "static/media/ball.d696f7f5.png": "/football-fashion/static/media/ball.d696f7f5.png",
     "static/media/hotdeal.1fac5f1f.png": "/football-fashion/static/media/hotdeal.1fac5f1f.png",
     "static/media/leagues.29a4597a.jpg": "/football-fashion/static/media/leagues.29a4597a.jpg"
@@ -22,7 +23,7 @@
     "static/js/runtime-main.85c35117.js",
     "static/css/2.494ee3e6.chunk.css",
     "static/js/2.cf797fec.chunk.js",
-    "static/css/main.d8285089.chunk.css",
-    "static/js/main.e16be3b6.chunk.js"
+    "static/css/main.e4587cdb.chunk.css",
+    "static/js/main.6b019432.chunk.js"
   ]
 }
