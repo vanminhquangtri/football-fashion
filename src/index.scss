@@ -16,12 +16,20 @@ $color-gray-border: rgb(235, 235, 235);
   background: white;
   .container-fluid {
     .row {
-      img {
-        height: 25px;
+      .wrap {
+        width: 100%;
+        a {
+          display: block;
+          width: 100%;
+        }
+        img {
+          height: 25px;
+        }
       }
       .col-3.ball-icon {
         display: flex;
         align-items: center;
+        justify-content: flex-start;
         padding-left: 5px;
         img {
           width: 25px;
@@ -36,6 +44,7 @@ $color-gray-border: rgb(235, 235, 235);
       .col-3.top-bar-hot-deals {
         display: flex;
         align-items: center;
+        justify-content: flex-end;
         padding-right: 5px;
       }
     }

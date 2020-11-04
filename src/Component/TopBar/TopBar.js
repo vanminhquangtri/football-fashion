@@ -10,6 +10,7 @@ const TopBar = () => {
         <section className="top-bar">
             <div className="container-fluid">
                 <div className="row">
+                    {/* ball icon */}
                     <div className="col-3 ball-icon">
                         <div className="wrap">
                             <NavLink
@@ -23,10 +24,11 @@ const TopBar = () => {
                             </NavLink>
                         </div>
                     </div>
+                    {/* icons of top-5 leagues */}
                     <div className="col-6 leagues-icon">
                         <div className="wrap">
                             <NavLink
-                                to="/"
+                                to="/most-concerned"
                                 exact={true}
                             >
                                 <img
@@ -36,10 +38,11 @@ const TopBar = () => {
                             </NavLink>
                         </div>
                     </div>
+                    {/* hot deals icon */}
                     <div className="col-3 top-bar-hot-deals">
                         <div className="wrap">
                             <NavLink
-                                to="/"
+                                to="/hot-deal"
                                 exact={true}
                             >
                                 <img
