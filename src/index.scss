@@ -60,7 +60,7 @@ $color-gray-border: rgb(235, 235, 235);
   background: $color-red;
   a {
     color: white;
-    display: block;
+    display: flex;
     padding: 10px 5px;
     line-height: 1; /* keep all links middle vertical ^^ */
   }
@@ -68,6 +68,10 @@ $color-gray-border: rgb(235, 235, 235);
     list-style-type: none;
     margin: 0;
     padding: 0;
+  }
+  .icon {
+    width: 18px;
+    height: 18px;
   }
   .container-fluid {
     .row {
@@ -80,9 +84,13 @@ $color-gray-border: rgb(235, 235, 235);
             display: flex;
             align-items: center;
             li {
-              margin-right: 10px;
+              margin-right: 20px;
               a {
                 font-weight: bold;
+                span.link-text {
+                  display: block;
+                  margin-bottom: -3px; /* keep all links middle vertical ^^ */
+                }
               }
               &:last-child {
                 margin-right: 0;
@@ -90,6 +98,7 @@ $color-gray-border: rgb(235, 235, 235);
             }
           }
           ul.sub-menu {
+            animation-duration: .3s;
             z-index: 10000;
             width: 100%;
             top: 100%;
@@ -100,6 +109,13 @@ $color-gray-border: rgb(235, 235, 235);
                 color: black
               }
             }
+          }
+          /* open and close sub menu */
+          .icon.animate__animated {
+            color: white;
+            display: inline-block;
+            margin-right: 15px; 
+            animation-duration: 1s;
           }
         }
       }
@@ -130,3 +146,106 @@ $color-gray-border: rgb(235, 235, 235);
   }
 }
 /*--- end top nav ---*/
+/*--- top slide ---*/
+.top-slide {
+margin-top: 10px;
+  .container-fluid {
+    .row {
+      .col {
+        padding: 0;
+        .wrap {
+          .tns-outer {
+            > button {
+              display: none;
+            }
+            position: relative;
+            /* next and back button of slide */
+            .tns-controls {
+              z-index: 100;
+              position: absolute;
+              top: 40%;
+              width: 100%;
+              padding: 0 5px;
+              display: flex;
+              justify-content: space-between;
+              button {
+                border: none;
+                background: transparent;
+                color: transparent;
+                width: 20px;
+                height: 20px;
+                background : {
+                  size: cover;
+                  position: center;
+                  repeat: no-repeat;
+                }
+              }
+              button[data-controls=prev] {
+                background-image: url("../src/Assets/images/section-top-slide/previous-3.png")
+              }
+              button[data-controls=next] {
+                background-image: url("../src/Assets/images/section-top-slide/next-3.png")
+              }
+            }
+            .tns-ovh {
+              .tns-inner {
+                .tns-slider {
+                  /* each item of slider is a div named slide-item */
+                  .slide-item {
+                    .background-image {
+                      height: 150px;
+                      background: {
+                        position: center 0;
+                        repeat: no-repeat;
+                        size: cover;
+                      }
+                    }
+                    .slide-caption {
+                      text-align: center;
+                      .title {
+                        font-weight: bold;
+                        font-size: 16px;
+                        margin-bottom: 0;
+                      }
+                      .link {
+                        color: white;
+                        background: $color-red;
+                        display: inline-block;
+                        padding: 2px 5px;
+                        border-radius: 3px;
+                        font-size: 14px;
+                        font-weight: bold;
+                      }
+                    }
+                  }
+                  .slide-item.item-1 {
+                    .background-image {
+                      background-image: url("../src/Assets/images/section-top-slide/tot.webp")
+                    }
+                  }
+                  .slide-item.item-2 {
+                    .background-image {
+                      background-image: url("../src/Assets/images/section-top-slide/arsenal.jpg")
+                    }
+                    .title {
+                      text-shadow: 1px 1px 3px $color-red;
+                    }
+                  }
+                  .slide-item.item-3 {
+                    .background-image {
+                      background-image: url("../src/Assets/images/section-top-slide/mc.jpg")
+                    }
+                    .title {
+                      text-shadow: 1px 1px 3px #5fa5e3;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*--- end top slide ---*/

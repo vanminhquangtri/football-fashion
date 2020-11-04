@@ -4,7 +4,8 @@ import {NavLink} from "react-router-dom";
 import TinySlider from "tiny-slider-react"
 const settings = {
     items: 1,
-    nav: false
+    nav: false,
+    autoplay: true
 }
 
 const TopSlide = () => {
@@ -21,17 +22,31 @@ const TopSlide = () => {
                                         <h5 className="title">Always update the latest</h5>
                                         <NavLink
                                             to="/best-sales"
+                                            className="link"
                                         >
                                             Discover Now
                                         </NavLink>
                                     </div>
                                 </div>
-                                <div className="slide-item item-1">
+                                <div className="slide-item item-2">
                                     <div className="background-image"></div>
                                     <div className="slide-caption">
-                                        <h5 className="title">Always update the latest</h5>
+                                        <h5 className="title">Bring you the champion's fashion</h5>
                                         <NavLink
-                                            to="/best-sales"
+                                            to="/champion"
+                                            className="link"
+                                        >
+                                            Discover Now
+                                        </NavLink>
+                                    </div>
+                                </div>
+                                <div className="slide-item item-3">
+                                    <div className="background-image"></div>
+                                    <div className="slide-caption">
+                                        <h5 className="title">Top-five leagues in the world</h5>
+                                        <NavLink
+                                            to="/all-fashion"
+                                            className="link"
                                         >
                                             Discover Now
                                         </NavLink>

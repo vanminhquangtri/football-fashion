@@ -33,33 +33,28 @@ const TopNav = (props) => {
                                         <FontAwesomeIcon icon={faHome} className="icon"/>
                                     </NavLink>
                                 </li>
+                                {/* only show close button if state of submenu is true */}
                                 {sub_menu === false && (
-                                    <li onClick={()=>{changeSubMenuStt()}}>
-                                        <NavLink
-                                        to="/"
-                                        exact={true}
-                                        >
-                                            <FontAwesomeIcon icon={faBars} className="icon animate__animated animate__zoomIn"/>
-                                        </NavLink>
-                                    </li>
+                                    <FontAwesomeIcon 
+                                        icon={faBars} 
+                                        className="icon animate__animated animate__zoomIn"
+                                        onClick={()=>{changeSubMenuStt()}}
+                                    />
                                 )}
                                 {/* only show close button if state of submenu is true */}
                                 {sub_menu && (
-                                    <li onClick={()=>{changeSubMenuStt()}}>
-                                        <NavLink
-                                        to="/"
-                                        exact={true}
-                                        >
-                                            <FontAwesomeIcon icon={faTimes} className="icon animate__animated animate__rotateIn"/>
-                                        </NavLink>
-                                    </li>
+                                    <FontAwesomeIcon 
+                                        icon={faTimes} 
+                                        className="icon animate__animated animate__rotateIn"
+                                        onClick={()=>{changeSubMenuStt()}}
+                                    />
                                 )}
                                 <li>
                                     <NavLink
-                                     to="/"
+                                     to="/manage-order"
                                      exact={true}
                                     >
-                                        MANAGER ORDER
+                                        <span className="link-text">MANAGE ORDER</span>
                                     </NavLink>
                                 </li>
                             </ul>
@@ -68,7 +63,7 @@ const TopNav = (props) => {
                                 <ul className="sub-menu animate__animated animate__fadeInLeft">
                                     <li>
                                         <NavLink
-                                        to="/"
+                                        to="/best-sales"
                                         exact={true}
                                         >
                                             Best Sales
@@ -76,7 +71,7 @@ const TopNav = (props) => {
                                     </li>
                                     <li>
                                         <NavLink
-                                        to="/"
+                                        to="/champion"
                                         exact={true}
                                         >
                                             Champions Fashion
@@ -84,7 +79,7 @@ const TopNav = (props) => {
                                     </li>
                                     <li>
                                         <NavLink
-                                        to="/"
+                                        to="/sale-off"
                                         exact={true}
                                         >
                                             Special Promotions
