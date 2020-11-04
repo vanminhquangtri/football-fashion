@@ -1,9 +1,14 @@
 import React from "react";
+import TopBar from "./Component/TopBar/TopBar";
+import {BrowserRouter as Router} from "react-router-dom";
+
 function App() {
   return (
-    <div className="App">
-      Hello Van Minh Lintin
-    </div>
+    <Router>
+      <div className="App">
+        <TopBar/>
+      </div>
+    </Router>
   );
 }
 
