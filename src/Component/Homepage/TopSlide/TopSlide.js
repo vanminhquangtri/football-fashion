@@ -25,36 +25,36 @@ const TopSlide = () => {
                                 <div className="slide-item item-1">
                                     <div className="background-image"></div>
                                     <div className="slide-caption">
-                                        <h5 className="title">Always update the latest</h5>
+                                        <h5 className="title">Sản phẩm mới nhất</h5>
                                         <NavLink
                                             to="/best-sales"
                                             className="link"
                                         >
-                                            Discover Now
+                                            Truy cập ngay
                                         </NavLink>
                                     </div>
                                 </div>
                                 <div className="slide-item item-2">
                                     <div className="background-image"></div>
                                     <div className="slide-caption">
-                                        <h5 className="title">Bring you the champion's fashion</h5>
+                                        <h5 className="title">Bạn là nhà vô địch</h5>
                                         <NavLink
                                             to="/champion"
                                             className="link"
                                         >
-                                            Discover Now
+                                            Truy cập ngay
                                         </NavLink>
                                     </div>
                                 </div>
                                 <div className="slide-item item-3">
                                     <div className="background-image"></div>
                                     <div className="slide-caption">
-                                        <h5 className="title">Top-five leagues in the world</h5>
+                                        <h5 className="title">Top 5 giải đấu hấp dẫn nhất</h5>
                                         <NavLink
                                             to="/all-fashion"
                                             className="link"
                                         >
-                                            Discover Now
+                                            Truy cập ngay
                                         </NavLink>
                                     </div>
                                 </div>

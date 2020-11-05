@@ -106,7 +106,8 @@ $color-gray-border: rgb(235, 235, 235);
             background: white;
             li {
               a {
-                color: black
+                color: black;
+                font-weight: bold;
               }
             }
           }
@@ -209,7 +210,6 @@ margin-top: 10px;
                         display: inline-block;
                         border-radius: 3px;
                         font-size: 14px;
-                        font-weight: bold;
                         height: 25px;
                         line-height: 25px;
                         margin-top: 5px;

@@ -54,7 +54,7 @@ const TopNav = (props) => {
                                      to="/manage-order"
                                      exact={true}
                                     >
-                                        <span className="link-text">MANAGE ORDER</span>
+                                        <span className="link-text">ĐƠN HÀNG</span>
                                     </NavLink>
                                 </li>
                             </ul>
@@ -66,7 +66,7 @@ const TopNav = (props) => {
                                         to="/best-sales"
                                         exact={true}
                                         >
-                                            Best Sales
+                                            Top Sales
                                         </NavLink>
                                     </li>
                                     <li>
@@ -74,7 +74,7 @@ const TopNav = (props) => {
                                         to="/champion"
                                         exact={true}
                                         >
-                                            Champions Fashion
+                                            Nhà vô địch
                                         </NavLink>
                                     </li>
                                     <li>
@@ -82,7 +82,7 @@ const TopNav = (props) => {
                                         to="/sale-off"
                                         exact={true}
                                         >
-                                            Special Promotions
+                                            Khuyễn mãi hấp dẫn
                                         </NavLink>
                                     </li>
                                     <li>
@@ -90,7 +90,7 @@ const TopNav = (props) => {
                                         to="/"
                                         exact={true}
                                         >
-                                            Full Kits
+                                            Trọn bộ
                                         </NavLink>
                                     </li>
                                     <li>
@@ -98,7 +98,7 @@ const TopNav = (props) => {
                                         to="/"
                                         exact={true}
                                         >
-                                            Contact
+                                            Liên hệ
                                         </NavLink>
                                     </li>
                                 </ul>
