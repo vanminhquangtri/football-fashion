@@ -152,7 +152,7 @@ margin-top: 10px;
   .container-fluid {
     .row {
       .col {
-        padding: 0;
+        // padding: 0;
         .wrap {
           .tns-outer {
             > button {
@@ -250,3 +250,16 @@ margin-top: 10px;
   }
 }
 /*--- end top slide ---*/
+/*--- most concerned ---*/
+.most-concerned {
+  .container-fluid {
+    .row {
+      .col {
+        padding: 0;
+      }
+    }
+  }
+}
+/*--- end most concerned ---*/
+
+
