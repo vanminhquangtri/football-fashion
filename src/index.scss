@@ -255,12 +255,31 @@ margin-top: 10px;
 }
 /*--- end top slide ---*/
 /*--- most concerned ---*/
-.most-concerned {
-  border: 1px solid red;
+.top-viewed {
   .container-fluid {
     .row {
+      /* each product is a col */
       .col {
-        padding: 0;
+        flex: 50% !important;
+        max-width: 50% !important;
+        padding-left: 2px;
+        padding-right: 2px;
+        .wrap {
+          margin-bottom: 3px;
+          /* hold main image of product */
+          .background-image {
+            height: 140px;
+            background: {
+              position: center;
+              repeat: no-repeat;
+              size: 100% 100%;
+            }
+          }
+          .info {
+            font-size: 12px;
+            text-align: center;
+          }
+        }
       }
     }
   }

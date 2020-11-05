@@ -3,7 +3,6 @@ import TopBar from "./Component/TopBar/TopBar";
 import {BrowserRouter as Router} from "react-router-dom";
 import TopNav from "./Component/TopNav/TopNav";
 import Homepage from "./Component/Homepage/Homepage";
-
 function App() {
   return (
     <Router>

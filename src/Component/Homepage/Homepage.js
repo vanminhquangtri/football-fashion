@@ -1,12 +1,12 @@
 import React from 'react';
-import MostConcerned from './MostConcerned/MostConcerned';
+import TopViewed from './TopViewed/TopViewed';
 import TopSlide from './TopSlide/TopSlide';
 
 const Homepage = () => {
     return (
         <>
             <TopSlide></TopSlide>
-            <MostConcerned/>
+            <TopViewed/>
         </>
     );
 };
