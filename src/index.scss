@@ -152,19 +152,17 @@ margin-top: 10px;
   .container-fluid {
     .row {
       .col {
-        // padding: 0;
+        padding: 0;
         .wrap {
           .tns-outer {
-            > button {
-              display: none;
-            }
             position: relative;
             /* next and back button of slide */
             .tns-controls {
               z-index: 100;
               position: absolute;
+              left: 10px; /* not set to 0 to avoid affectig top bar */
+              right: 10px; /* not set to 0 to avoid affectig top bar */
               top: 40%;
-              width: 100%;
               padding: 0 5px;
               display: flex;
               justify-content: space-between;
@@ -203,19 +201,25 @@ margin-top: 10px;
                     }
                     .slide-caption {
                       text-align: center;
-                      .title {
-                        font-weight: bold;
-                        font-size: 16px;
-                        margin-bottom: 0;
-                      }
-                      .link {
+                      display: flex;
+                      justify-content: center;
+                      .title, .link {
                         color: white;
                         background: $color-red;
                         display: inline-block;
-                        padding: 2px 5px;
                         border-radius: 3px;
                         font-size: 14px;
                         font-weight: bold;
+                        height: 25px;
+                        line-height: 25px;
+                        margin-top: 5px;
+                        padding: 0 5px;
+                      }
+                      .link {
+                        text-decoration: underline;
+                      }
+                      .title {
+                        margin-right: 5px;
                       }
                     }
                   }
@@ -223,13 +227,13 @@ margin-top: 10px;
                     .background-image {
                       background-image: url("../src/Assets/images/section-top-slide/tot.webp")
                     }
+                    .title {
+                      background: #131f53;
+                    }
                   }
                   .slide-item.item-2 {
                     .background-image {
                       background-image: url("../src/Assets/images/section-top-slide/arsenal.jpg")
-                    }
-                    .title {
-                      text-shadow: 1px 1px 3px $color-red;
                     }
                   }
                   .slide-item.item-3 {
@@ -237,7 +241,7 @@ margin-top: 10px;
                       background-image: url("../src/Assets/images/section-top-slide/mc.jpg")
                     }
                     .title {
-                      text-shadow: 1px 1px 3px #5fa5e3;
+                      background: #5fa5e3;
                     }
                   }
                 }
@@ -252,6 +256,7 @@ margin-top: 10px;
 /*--- end top slide ---*/
 /*--- most concerned ---*/
 .most-concerned {
+  border: 1px solid red;
   .container-fluid {
     .row {
       .col {

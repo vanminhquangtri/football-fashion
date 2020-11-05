@@ -1,5 +1,5 @@
 // direct child of Homepage
-import React from 'react';
+import React, {useEffect} from 'react';
 import {NavLink} from "react-router-dom";
 import TinySlider from "tiny-slider-react"
 const settings = {
@@ -7,8 +7,14 @@ const settings = {
     nav: false,
     autoplay: true
 }
-
 const TopSlide = () => {
+    useEffect(() => {
+        // remove the default data action button of Tiny Slider React
+        const dataActionBtn = document.querySelector(".tns-outer button[data-action]");
+        if (dataActionBtn) {
+            dataActionBtn.remove()
+        }
+    })
     return (
         <section className="top-slide">
             <div className="container-fluid">
