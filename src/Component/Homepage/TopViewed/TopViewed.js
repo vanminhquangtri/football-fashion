@@ -7,7 +7,7 @@ const TopViewed = () => {
             <div className="container-fluid">
                 <div className="row">
                     {ProductInfo.map((product) => {
-                        if (product.top_viewed) {
+                        if (product.top_viewed || product.top_viewed === false ) {
                             return (
                                 /* only render product having property top_viewed true, each product is a col */
                                 <div className="col product-col" key={product.id}>
