@@ -266,7 +266,7 @@ const ProductsInfo = [
     price: 600000,
     place: "away",
     type: "short",
-    main_image: require("../Assets/images/product/epl/liverpool/away/ad1.jpg"),
+    main_image: require("../Assets/images/product/epl/liverpool/away/ad2.jpg"),
     slide_image: [
         require("../Assets/images/product/epl/liverpool/away/ad1.jpg"),
         require("../Assets/images/product/epl/liverpool/away/ad2.jpg")
@@ -277,6 +277,267 @@ const ProductsInfo = [
     champion: true,
     promotion: "10%",
     point: 2,
+    des: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia nesciunt distinctio reprehenderit ad est mollitia ducimus neque consequuntur eos perferendis id pariatur, magnam quae esse facilis nihil accusantium deserunt totam."
+},
+/* manchester-city */
+{
+    id: "EPLMCTH2020SHIRT",
+    league: "Premier League",
+    club: "Manchester City",
+    name: "Áo đấu Manchester City sân nhà Etihad 2020/2021 - Niềm tự hào nửa xanh thành Manchester",
+    price: 1700000,
+    place: "home",
+    type: "shirt",
+    main_image: require("../Assets/images/product/epl/manchester-city/home/hu1.jpg"),
+    slide_image: [
+        require("../Assets/images/product/epl/manchester-city/home/hu1.jpg"),
+        require("../Assets/images/product/epl/manchester-city/home/hu2.jpg"),
+        require("../Assets/images/product/epl/manchester-city/home/hu3.jpg")
+    ],
+    size: ["S", "M", "L", "XL", "2XL"],
+    top_sales: true,
+    top_viewed: true,
+    champion: true,
+    promotion: "15%",
+    point: 5,
+    des: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia nesciunt distinctio reprehenderit ad est mollitia ducimus neque consequuntur eos perferendis id pariatur, magnam quae esse facilis nihil accusantium deserunt totam."
+},
+{
+    id: "EPLMCTH2020SHORT",
+    league: "Premier League",
+    club: "Manchester City",
+    name: "Quần Manchester City sân nhà Etihad 2020/2021",
+    price: 800000,
+    place: "home",
+    type: "short",
+    main_image: require("../Assets/images/product/epl/manchester-city/home/hd1.jpg"),
+    slide_image: [
+        require("../Assets/images/product/epl/manchester-city/home/hd1.jpg"),
+        require("../Assets/images/product/epl/manchester-city/home/hd2.jpg")
+    ],
+    size: ["S", "M", "L", "XL", "2XL"],
+    top_sales: true,
+    top_viewed: true,
+    champion: true,
+    promotion: "5%",
+    point: 2,
+    des: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia nesciunt distinctio reprehenderit ad est mollitia ducimus neque consequuntur eos perferendis id pariatur, magnam quae esse facilis nihil accusantium deserunt totam."
+},
+{
+    id: "EPLMCTA2020SHIRT",
+    league: "Premier League",
+    club: "Manchester City",
+    name: "Áo đấu Manchester City sân khách 2020/2021 - Pep khẳng định đẳng cấp",
+    price: 1500000,
+    place: "away",
+    type: "shirt",
+    main_image: require("../Assets/images/product/epl/manchester-city/away/au1.jpg"),
+    slide_image: [
+        require("../Assets/images/product/epl/manchester-city/away/au1.jpg"),
+        require("../Assets/images/product/epl/manchester-city/away/au2.jpg"),
+        require("../Assets/images/product/epl/manchester-city/away/au3.jpg")
+    ],
+    size: ["S", "M", "L", "XL", "2XL"],
+    top_sales: true,
+    top_viewed: true,
+    champion: true,
+    promotion: "15%",
+    point: 3,
+    des: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia nesciunt distinctio reprehenderit ad est mollitia ducimus neque consequuntur eos perferendis id pariatur, magnam quae esse facilis nihil accusantium deserunt totam."
+},
+{
+    id: "EPLMCTA2020SHORT",
+    league: "Premier League",
+    club: "Manchester City",
+    name: "Quần Manchester City sân khách 2020/2021",
+    price: 500000,
+    place: "away",
+    type: "short",
+    main_image: require("../Assets/images/product/epl/manchester-city/away/ad1.jpg"),
+    slide_image: [
+        require("../Assets/images/product/epl/manchester-city/away/ad1.jpg"),
+        require("../Assets/images/product/epl/manchester-city/away/ad2.jpg")
+    ],
+    size: ["S", "M", "L", "XL", "2XL"],
+    top_sales: true,
+    top_viewed: true,
+    champion: true,
+    promotion: "10%",
+    point: 2,
+    des: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia nesciunt distinctio reprehenderit ad est mollitia ducimus neque consequuntur eos perferendis id pariatur, magnam quae esse facilis nihil accusantium deserunt totam."
+},
+/* manchester-united */
+{
+    id: "EPLMANH2020SHIRT",
+    league: "Premier League",
+    club: "Manchester United",
+    name: "Áo đấu Manchester United sân nhà 2020/2021 - Nửa đỏ thành Manchester",
+    price: 1900000,
+    place: "home",
+    type: "shirt",
+    main_image: require("../Assets/images/product/epl/manchester-united/home/hu1.jpg"),
+    slide_image: [
+        require("../Assets/images/product/epl/manchester-united/home/hu1.jpg"),
+        require("../Assets/images/product/epl/manchester-united/home/hu2.jpg"),
+        require("../Assets/images/product/epl/manchester-united/home/hu3.jpg")
+    ],
+    size: ["S", "M", "L", "XL", "2XL"],
+    top_sales: true,
+    top_viewed: true,
+    champion: true,
+    promotion: "10%",
+    point: 3,
+    des: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia nesciunt distinctio reprehenderit ad est mollitia ducimus neque consequuntur eos perferendis id pariatur, magnam quae esse facilis nihil accusantium deserunt totam."
+},
+{
+    id: "EPLMANH2020SHORT",
+    league: "Premier League",
+    club: "Manchester United",
+    name: "Quần Manchester United sân nhà Old Trafford 2020/2021",
+    price: 700000,
+    place: "home",
+    type: "short",
+    main_image: require("../Assets/images/product/epl/manchester-united/home/hd1.jpg"),
+    slide_image: [
+        require("../Assets/images/product/epl/manchester-united/home/hd1.jpg"),
+        require("../Assets/images/product/epl/manchester-united/home/hd2.jpg")
+    ],
+    size: ["S", "M", "L", "XL", "2XL"],
+    top_sales: true,
+    top_viewed: true,
+    champion: true,
+    promotion: "10%",
+    point: 4,
+    des: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia nesciunt distinctio reprehenderit ad est mollitia ducimus neque consequuntur eos perferendis id pariatur, magnam quae esse facilis nihil accusantium deserunt totam."
+},
+{
+    id: "EPLMANA2020SHIRT",
+    league: "Premier League",
+    club: "Manchester United",
+    name: "Áo đấu Manchester United sân khách 2020/2021 - tràn trề năng lượng",
+    price: 1400000,
+    place: "away",
+    type: "shirt",
+    main_image: require("../Assets/images/product/epl/manchester-united/away/au1.jpg"),
+    slide_image: [
+        require("../Assets/images/product/epl/manchester-united/away/au1.jpg"),
+        require("../Assets/images/product/epl/manchester-united/away/au2.jpg"),
+        require("../Assets/images/product/epl/manchester-united/away/au3.jpg")
+    ],
+    size: ["S", "M", "L", "XL", "2XL"],
+    top_sales: true,
+    top_viewed: true,
+    champion: true,
+    promotion: "10%",
+    point: 2,
+    des: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia nesciunt distinctio reprehenderit ad est mollitia ducimus neque consequuntur eos perferendis id pariatur, magnam quae esse facilis nihil accusantium deserunt totam."
+},
+{
+    id: "EPLMANA2020SHORT",
+    league: "Premier League",
+    club: "Manchester United",
+    name: "Quần Manchester United sân khách 2020/2021",
+    price: 500000,
+    place: "away",
+    type: "short",
+    main_image: require("../Assets/images/product/epl/manchester-united/away/ad1.jpg"),
+    slide_image: [
+        require("../Assets/images/product/epl/manchester-united/away/ad1.jpg"),
+        require("../Assets/images/product/epl/manchester-united/away/ad2.jpg")
+    ],
+    size: ["S", "M", "L", "XL", "2XL"],
+    top_sales: true,
+    top_viewed: true,
+    champion: true,
+    promotion: "5%",
+    point: 3,
+    des: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia nesciunt distinctio reprehenderit ad est mollitia ducimus neque consequuntur eos perferendis id pariatur, magnam quae esse facilis nihil accusantium deserunt totam."
+},
+/* tottenham-hotspur */
+{
+    id: "EPLTOTH2020SHIRT",
+    league: "Premier League",
+    club: "Tottenham Hotspur",
+    name: "Áo đấu Tottenham Hotspur sân nhà 2020/2021 - gà trống gáy vang",
+    price: 1400000,
+    place: "home",
+    type: "shirt",
+    main_image: require("../Assets/images/product/epl/tottenham-hotspur/home/hu1.jpg"),
+    slide_image: [
+        require("../Assets/images/product/epl/tottenham-hotspur/home/hu1.jpg"),
+        require("../Assets/images/product/epl/tottenham-hotspur/home/hu2.jpg"),
+        require("../Assets/images/product/epl/tottenham-hotspur/home/hu3.jpg")
+    ],
+    size: ["S", "M", "L", "XL", "2XL"],
+    top_sales: true,
+    top_viewed: true,
+    champion: true,
+    promotion: "10%",
+    point: 3,
+    des: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia nesciunt distinctio reprehenderit ad est mollitia ducimus neque consequuntur eos perferendis id pariatur, magnam quae esse facilis nihil accusantium deserunt totam."
+},
+{
+    id: "EPLTOTH2020SHORT",
+    league: "Premier League",
+    club: "Tottenham Hotspur",
+    name: "Quần Tottenham Hotspur sân nhà 2020/2021",
+    price: 700000,
+    place: "home",
+    type: "short",
+    main_image: require("../Assets/images/product/epl/tottenham-hotspur/home/hd1.jpg"),
+    slide_image: [
+        require("../Assets/images/product/epl/tottenham-hotspur/home/hd1.jpg"),
+        require("../Assets/images/product/epl/tottenham-hotspur/home/hd2.jpg")
+    ],
+    size: ["S", "M", "L", "XL", "2XL"],
+    top_sales: true,
+    top_viewed: true,
+    champion: true,
+    promotion: "5%",
+    point: 3,
+    des: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia nesciunt distinctio reprehenderit ad est mollitia ducimus neque consequuntur eos perferendis id pariatur, magnam quae esse facilis nihil accusantium deserunt totam."
+},
+{
+    id: "EPLTOTA2020SHIRT",
+    league: "Premier League",
+    club: "Tottenham Hotspur",
+    name: "Áo đấu Tottenham Hotspur sân khách 2020/2021 - xưng bá ngoại hạng Anh",
+    price: 1500000,
+    place: "away",
+    type: "shirt",
+    main_image: require("../Assets/images/product/epl/tottenham-hotspur/away/au1.jpg"),
+    slide_image: [
+        require("../Assets/images/product/epl/tottenham-hotspur/away/au1.jpg"),
+        require("../Assets/images/product/epl/tottenham-hotspur/away/au2.jpg"),
+        require("../Assets/images/product/epl/tottenham-hotspur/away/au3.jpg")
+    ],
+    size: ["S", "M", "L", "XL", "2XL"],
+    top_sales: true,
+    top_viewed: true,
+    champion: true,
+    promotion: "20%",
+    point: 5,
+    des: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia nesciunt distinctio reprehenderit ad est mollitia ducimus neque consequuntur eos perferendis id pariatur, magnam quae esse facilis nihil accusantium deserunt totam."
+},
+{
+    id: "EPLTOTA2020SHORT",
+    league: "Premier League",
+    club: "Tottenham Hotspur",
+    name: "Quần Tottenham Hotspur sân khách 2020/2021",
+    price: 400000,
+    place: "away",
+    type: "short",
+    main_image: require("../Assets/images/product/epl/tottenham-hotspur/away/ad1.jpg"),
+    slide_image: [
+        require("../Assets/images/product/epl/tottenham-hotspur/away/ad1.jpg"),
+        require("../Assets/images/product/epl/tottenham-hotspur/away/ad2.jpg")
+    ],
+    size: ["S", "M", "L", "XL", "2XL"],
+    top_sales: true,
+    top_viewed: true,
+    champion: true,
+    promotion: "5%",
+    point: 3,
     des: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia nesciunt distinctio reprehenderit ad est mollitia ducimus neque consequuntur eos perferendis id pariatur, magnam quae esse facilis nihil accusantium deserunt totam."
 },
 ];
