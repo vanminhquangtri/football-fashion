@@ -149,7 +149,7 @@ $color-gray-border: rgb(235, 235, 235);
 /*--- end top nav ---*/
 /*--- top slide ---*/
 .top-slide {
-margin-top: 10px;
+margin-top: 5px;
   .container-fluid {
     .row {
       .col {
@@ -161,6 +161,37 @@ margin-top: 10px;
                 text-align: center;
                 img {
                   margin: auto;
+                }
+                .carousel-caption {
+                  font-size: 13px;
+                  position: relative;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  padding: 0;
+                  margin-top: 5px;
+                  .link, .title {
+                    background: $color-red;
+                    color: white;
+                    height: 20px;
+                    line-height: 20px;
+                    display: inline-block;
+                    padding: 0 5px;
+                  }
+                  .link {
+                    text-decoration: underline;
+                    margin-left: 5px;
+                  }
+                }
+              }
+              .carousel-item.mc {
+                .title {
+                  background: #3d88fb;
+                }
+              }
+              .carousel-item.tot {
+                .title {
+                  background: #243461;
                 }
               }
             }
