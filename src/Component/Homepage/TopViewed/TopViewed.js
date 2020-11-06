@@ -1,6 +1,5 @@
-/** @jsxRuntime classic */ // fix problem "pragma and pragmaFrag cannot be set when runtime is automatic"
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core';
+import React from "react";
+import {NavLink} from "react-router-dom";
 import ProductInfo from "../../../Data/ProductInfo";
 const TopViewed = () => {
     return (
@@ -11,16 +10,27 @@ const TopViewed = () => {
                         if (product.top_viewed) {
                             return (
                                 /* only render product having property top_viewed true, each product is a col */
-                                <div className="col" key={product.id}>
+                                <div className="col product-col" key={product.id}>
                                     <div className="wrap">
-                                        <div 
-                                            className="background-image"
-                                        >
-                                            <img alt="background" src={product.main_image.default}/>
-                                        </div>
-                                        <div className="info">
-                                            <span className="name">{product.name}</span>
-                                        </div>
+                                        <NavLink to="/" exact={true}>
+                                            <div 
+                                                className="background-image"
+                                            >
+                                                <img alt="background" src={product.main_image.default}/>
+                                            </div>
+                                            <div className="info">
+                                                <span className="name">{product.name}</span>
+                                                <span className="price">{product.price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')}</span>
+                                            </div>
+                                            {/* only render promotion box if promotion property of product is not empty */}
+                                            {(product.promotion !== "") && (
+                                                <div className="promotion">SALE<br/>{product.promotion}</div>
+                                            )}
+                                            <div className="member-point">
+                                                {/* <FontAwesomeIcon icon={faUser} className="icon"/>  */}
+                                                + {product.point} điểm
+                                            </div>
+                                        </NavLink>
                                     </div>                        
                                 </div>
                             )

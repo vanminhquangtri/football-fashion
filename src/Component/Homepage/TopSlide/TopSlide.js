@@ -1,12 +1,6 @@
 // direct child of Homepage
 import React, {useEffect} from 'react';
 import {NavLink} from "react-router-dom";
-import TinySlider from "tiny-slider-react"
-const settings = {
-    items: 1,
-    nav: false,
-    autoplay: true
-}
 const TopSlide = () => {
     useEffect(() => {
         // remove the default data action button of Tiny Slider React

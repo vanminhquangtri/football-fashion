@@ -2,9 +2,14 @@
   font-family: 'Catamaran', sans-serif;
   box-sizing: border-box;
 }
-
 $color-red: rgb(211, 9, 9);
 $color-gray-border: rgb(235, 235, 235);
+$color-gray-bg: rgb(248, 248, 248);
+$color-blue-mc: #3d88fb;
+body {
+  background: $color-gray-bg;
+}
+
 /*--- top bar ---*/
 .top-bar {
   z-index: 2000;
@@ -204,28 +209,85 @@ margin-top: 5px;
 /*--- end top slide ---*/
 /*--- most concerned ---*/
 .top-viewed {
+  margin-top: 10px;
   .container-fluid {
     .row {
       /* each product is a col */
-      .col {
+      .col.product-col {
         flex: 50% !important;
         max-width: 50% !important;
         padding-left: 2px;
         padding-right: 2px;
         .wrap {
+          background: white;
           margin-bottom: 3px;
-          /* hold main image of product */
-          .background-image {
-            display: flex;
-            img {
-              margin: auto;
-              width: 90px;
-              height: 90px;
+          border: 5px solid $color-red;
+          position: relative;
+          padding-top: 10px;
+          a {
+            text-decoration: none;
+            /* hold main image of product */
+            .background-image {
+              display: flex;
+              img {
+                margin: auto;
+                width: 90px;
+                height: 90px;
+              }
             }
-          }
-          .info {
-            font-size: 12px;
-            text-align: center;
+            /* information of product */
+            .info {
+              padding: 0 2px;
+              font-size: 12px;
+              text-align: center;
+              .name {
+                text-decoration: underline;
+                display: block;
+                overflow: hidden;
+                color: #243461;
+                height: 35px;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2; /* show name and lines only */
+                -webkit-box-orient: vertical;
+              }
+              .price {
+                font-weight: bold;
+                font-size: 13px;
+                color: $color-red;
+              }
+            }
+            /* promotion box (SALE ...%) */
+            .promotion {
+              position: absolute;
+              top: 2px;
+              left: 2px;
+              background: $color-red;
+              color: white;
+              height: 35px;
+              width: 35px;
+              border-radius: 50%;
+              font-size: 10px;
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            /* member point */
+            .member-point {
+              position: absolute;
+              top: 2px;
+              right: 2px;
+              background: $color-blue-mc;
+              color: white;
+              height: 14px;
+              width: 42px;
+              font-size: 10px;
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
           }
         }
       }
