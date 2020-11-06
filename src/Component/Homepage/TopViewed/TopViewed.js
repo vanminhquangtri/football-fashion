@@ -1,6 +1,8 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 import ProductInfo from "../../../Data/ProductInfo";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faStar} from "@fortawesome/free-solid-svg-icons";
 const TopViewed = () => {
     return (
         <section className="top-viewed">
@@ -25,6 +27,16 @@ const TopViewed = () => {
                                             {/* only render promotion box if promotion property of product is not empty */}
                                             {(product.promotion !== "") && (
                                                 <div className="promotion">SALE<br/>{product.promotion}</div>
+                                            )}
+                                            {/* replace promotion box by star if promotion property of product is empty */}
+                                            {(product.promotion === "") && (
+                                                <div className="star">
+                                                    <FontAwesomeIcon icon={faStar} className="icon"/>
+                                                    <FontAwesomeIcon icon={faStar} className="icon"/>
+                                                    <FontAwesomeIcon icon={faStar} className="icon"/>
+                                                    {/* <FontAwesomeIcon icon={faStar} className="icon"/>
+                                                    <FontAwesomeIcon icon={faStar} className="icon"/> */}
+                                                </div>
                                             )}
                                             <div className="member-point">
                                                 {/* <FontAwesomeIcon icon={faUser} className="icon"/>  */}

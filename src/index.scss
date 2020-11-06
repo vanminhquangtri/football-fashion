@@ -259,7 +259,7 @@ margin-top: 5px;
               }
             }
             /* promotion box (SALE ...%) */
-            .promotion {
+            .promotion, .star {
               position: absolute;
               top: 2px;
               left: 2px;
@@ -273,6 +273,11 @@ margin-top: 5px;
               display: flex;
               align-items: center;
               justify-content: center;
+            }
+            .star {
+              .icon {
+                font-size: 8px;
+              }
             }
             /* member point */
             .member-point {
