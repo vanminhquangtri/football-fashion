@@ -15,10 +15,9 @@ const TopViewed = () => {
                                     <div className="wrap">
                                         <div 
                                             className="background-image"
-                                            css={css`
-                                                background-image: url(${product.main_image.default})
-                                            `}
-                                        ></div>
+                                        >
+                                            <img alt="background" src={product.main_image.default}/>
+                                        </div>
                                         <div className="info">
                                             <span className="name">{product.name}</span>
                                         </div>

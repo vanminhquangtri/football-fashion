@@ -21,44 +21,39 @@ const TopSlide = () => {
                 <div className="row">
                     <div className="col">
                         <div className="wrap">
-                            <TinySlider settings={settings}>
-                                <div className="slide-item item-1">
-                                    <div className="background-image"></div>
-                                    <div className="slide-caption">
-                                        <h5 className="title">Sản phẩm mới nhất</h5>
-                                        <NavLink
-                                            to="/best-sales"
-                                            className="link"
-                                        >
-                                            Truy cập ngay
-                                        </NavLink>
+                            <div id="top-slide" className="carousel slide" data-ride="carousel">
+                                <div className="carousel-inner">
+                                    <div className="carousel-item active" data-interval="10000000">
+                                        <img src={require("../../../Assets/images/section-top-slide/tot.jpg").default} className="d-block w-100" alt="..." />
+                                        <div className="carousel-caption d-none d-md-block">
+                                            <h5>Sản phẩm mới nhất</h5>
+                                            <a href="/">Truy cập ngay</a>
+                                        </div>
+                                    </div>
+                                    <div className="carousel-item" data-interval="10000000">
+                                        <img src={require("../../../Assets/images/section-top-slide/ars.jpg").default} className="d-block w-100" alt="..." />
+                                        <div className="carousel-caption d-none d-md-block">
+                                            <h5>Kênh phân phối chính thức</h5>
+                                            <a href="/">Truy cập ngay</a>
+                                        </div>
+                                    </div>
+                                    <div className="carousel-item" data-interval="10000000">
+                                        <img src={require("../../../Assets/images/section-top-slide/mc.jpg").default} className="d-block w-100" alt="..." />
+                                        <div className="carousel-caption d-none d-md-block">
+                                            <h5>Top 5 giải đấu hàng đầu</h5>
+                                            <a href="/">Truy cập ngay</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="slide-item item-2">
-                                    <div className="background-image"></div>
-                                    <div className="slide-caption">
-                                        <h5 className="title">Bạn là nhà vô địch</h5>
-                                        <NavLink
-                                            to="/champion"
-                                            className="link"
-                                        >
-                                            Truy cập ngay
-                                        </NavLink>
-                                    </div>
-                                </div>
-                                <div className="slide-item item-3">
-                                    <div className="background-image"></div>
-                                    <div className="slide-caption">
-                                        <h5 className="title">Top 5 giải đấu hấp dẫn nhất</h5>
-                                        <NavLink
-                                            to="/all-fashion"
-                                            className="link"
-                                        >
-                                            Truy cập ngay
-                                        </NavLink>
-                                    </div>
-                                </div>
-                            </TinySlider>
+                                <a className="carousel-control-prev" href="#top-slide" role="button" data-slide="prev">
+                                    <span className="carousel-control-prev-icon" aria-hidden="true" />
+                                    <span className="sr-only">Previous</span>
+                                </a>
+                                <a className="carousel-control-next" href="#top-slide" role="button" data-slide="next">
+                                    <span className="carousel-control-next-icon" aria-hidden="true" />
+                                    <span className="sr-only">Next</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

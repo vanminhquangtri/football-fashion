@@ -155,95 +155,12 @@ margin-top: 10px;
       .col {
         padding: 0;
         .wrap {
-          .tns-outer {
-            position: relative;
-            /* next and back button of slide */
-            .tns-controls {
-              z-index: 100;
-              position: absolute;
-              left: 10px; /* not set to 0 to avoid affectig top bar */
-              right: 10px; /* not set to 0 to avoid affectig top bar */
-              top: 40%;
-              padding: 0 5px;
-              display: flex;
-              justify-content: space-between;
-              button {
-                border: none;
-                outline: none;
-                background: transparent;
-                color: transparent;
-                width: 20px;
-                height: 20px;
-                background : {
-                  size: cover;
-                  position: center;
-                  repeat: no-repeat;
-                }
-              }
-              button[data-controls=prev] {
-                background-image: url("../src/Assets/images/section-top-slide/previous-3.png")
-              }
-              button[data-controls=next] {
-                background-image: url("../src/Assets/images/section-top-slide/next-3.png")
-              }
-            }
-            .tns-ovh {
-              .tns-inner {
-                .tns-slider {
-                  /* each item of slider is a div named slide-item */
-                  .slide-item {
-                    .background-image {
-                      height: 150px;
-                      background: {
-                        position: center 0;
-                        repeat: no-repeat;
-                        size: cover;
-                      }
-                    }
-                    .slide-caption {
-                      text-align: center;
-                      display: flex;
-                      justify-content: center;
-                      .title, .link {
-                        color: white;
-                        background: $color-red;
-                        display: inline-block;
-                        border-radius: 3px;
-                        font-size: 14px;
-                        height: 25px;
-                        line-height: 25px;
-                        margin-top: 5px;
-                        padding: 0 5px;
-                      }
-                      .link {
-                        text-decoration: underline;
-                      }
-                      .title {
-                        margin-right: 5px;
-                      }
-                    }
-                  }
-                  .slide-item.item-1 {
-                    .background-image {
-                      background-image: url("../src/Assets/images/section-top-slide/tot.webp")
-                    }
-                    .title {
-                      background: #131f53;
-                    }
-                  }
-                  .slide-item.item-2 {
-                    .background-image {
-                      background-image: url("../src/Assets/images/section-top-slide/arsenal.jpg")
-                    }
-                  }
-                  .slide-item.item-3 {
-                    .background-image {
-                      background-image: url("../src/Assets/images/section-top-slide/mc.jpg")
-                    }
-                    .title {
-                      background: #5fa5e3;
-                    }
-                  }
+          #top-slide{
+            .carousel-inner {
+              .carousel-item {
+                text-align: center;
+                img {
+                  margin: auto;
                 }
               }
             }
@@ -268,11 +185,11 @@ margin-top: 10px;
           margin-bottom: 3px;
           /* hold main image of product */
           .background-image {
-            height: 140px;
-            background: {
-              position: center;
-              repeat: no-repeat;
-              size: 100% 100%;
+            display: flex;
+            img {
+              margin: auto;
+              width: 90px;
+              height: 90px;
             }
           }
           .info {
