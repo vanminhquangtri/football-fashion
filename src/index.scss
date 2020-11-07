@@ -248,10 +248,13 @@ margin-top: 40px;
         }
         .title-text {
           z-index: 2;
-          padding: 5px;
+          padding: 0 5px;
           font-size: 15px;
+          height: 30px;
           color: $color-red;
           font-weight: bold;
+          display: flex;
+          align-items: center;
           .icon {
             font-size: 15px;
             margin-right: 3px;
@@ -259,6 +262,17 @@ margin-top: 40px;
             border: 1px solid #235bf3;
             padding: 1px;
             border-radius: 50%;
+          }
+          .football-image {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            background: {
+              image: url("../src/Assets/images/title-bg/football-image1.png");
+              size: cover;
+              position: center;
+            };
           }
         }
       }
@@ -366,5 +380,13 @@ margin-top: 40px;
 }
 .display-homepage.top-sales {
   background: orange;
+}
+.display-homepage.champion {
+  background: $color-red;
+  .football-image {
+    width: 20px !important;
+    height: 20px !important;
+    background-image: url("../src/Assets/images/title-bg/trophy.png") !important
+  }
 }
 /*--- most concerned, special promtion, top sales ---*/

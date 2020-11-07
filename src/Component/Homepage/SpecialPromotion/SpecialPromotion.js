@@ -33,6 +33,7 @@ const SpecialPromotion = (props) => {
                         <span className="title-text">
                             <FontAwesomeIcon icon={faGift} className="icon"/>
                             KHUYẾN MÃI SIÊU HẤP DẪN
+                            <div className="football-image"></div>
                         </span>
                     </div>
                     {loadedProducts.map((product) => {

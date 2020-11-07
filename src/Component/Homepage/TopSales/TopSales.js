@@ -32,7 +32,8 @@ const TopSales = (props) => {
                         <div className="background-image"></div>
                         <span className="title-text">
                             <FontAwesomeIcon icon={faHeartbeat} className="icon"/>
-                            SẢN PHẨM BÁN CHẠY NHẤT
+                            SẢN PHẨM ĐANG BÁN CHẠY
+                            <div className="football-image"></div>
                         </span>
                     </div>
                     {loadedProducts.map((product) => {

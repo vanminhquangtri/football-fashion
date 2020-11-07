@@ -7,32 +7,32 @@ import LoadProducts from "../../GeneralModules/LoadProducts";
 import urlSlug from "url-slug";
 import {connect} from "react-redux";
 import formatNumber from "../../GeneralModules/FortmatMoney";
-const TopViewed = (props) => {
+const Champion = (props) => {
     const {Currency} = props.Store;
     const [state, setState] = useState({
         loaded_product_number: 8
     })
     const {loaded_product_number} = state;
     // find products with property top_viewed true
-    const topViewedProducts = ProductsInfo.filter((product) => {
-        return product.top_viewed === true;
+    const championProducts = ProductsInfo.filter((product) => {
+        return product.champion === true;
     });
     // return a number of top viewed product equal to loaded_product_number;
     let loadedProducts = [];
-    topViewedProducts.forEach((product) => {
+    championProducts.forEach((product) => {
         if (loadedProducts.length < loaded_product_number) {
             loadedProducts.push(product)
         }
     }) 
     return (
-        <section className="display-homepage top-viewed">
+        <section className="display-homepage champion">
             <div className="container-fluid">
                 <div className="row">
                     <div className="section-title">
                         <div className="background-image"></div>
                         <span className="title-text">
                             <FontAwesomeIcon icon={faHandPointRight} className="icon"/>
-                            ĐƯỢC QUAN TÂM NHIỀU NHẤT
+                            ĐẲNG CẤP NHÀ VÔ ĐỊCH
                             <div className="football-image"></div>
                         </span>
                     </div>
@@ -76,8 +76,8 @@ const TopViewed = (props) => {
                         )
                     })}
                     <div className="control-loaded-quantity">
-                        <button className="load-btn" onClick={(ev)=>{LoadProducts(ev, loaded_product_number, topViewedProducts.length, setState)}}>
-                            {loaded_product_number < topViewedProducts.length ? "Xem thêm" : "Ẩn bớt"}
+                        <button className="load-btn" onClick={(ev)=>{LoadProducts(ev, loaded_product_number, championProducts.length, setState)}}>
+                            {loaded_product_number < championProducts.length ? "Xem thêm" : "Ẩn bớt"}
                         </button>
                     </div>
                 </div>
@@ -90,4 +90,4 @@ const mapStateToProps = (state) => {
         Store: state
     }
 }
-export default connect(mapStateToProps)(TopViewed)
+export default connect(mapStateToProps)(Champion)

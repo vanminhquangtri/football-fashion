@@ -3,6 +3,7 @@ import TopViewed from './TopViewed/TopViewed';
 import TopSlide from './TopSlide/TopSlide';
 import SpecialPromotion from './SpecialPromotion/SpecialPromotion';
 import TopSales from './TopSales/TopSales';
+import Champion from './Champion/Champion';
 
 const Homepage = () => {
     return (
@@ -11,6 +12,7 @@ const Homepage = () => {
             <TopViewed/>
             <SpecialPromotion/>
             <TopSales/>
+            <Champion/>
         </section>
     );
 };
