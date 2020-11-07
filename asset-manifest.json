@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/football-fashion/static/css/main.4378b3e5.chunk.css",
-    "main.js": "/football-fashion/static/js/main.b8662bc3.chunk.js",
-    "main.js.map": "/football-fashion/static/js/main.b8662bc3.chunk.js.map",
+    "main.css": "/football-fashion/static/css/main.7ea70dce.chunk.css",
+    "main.js": "/football-fashion/static/js/main.5b4c73b4.chunk.js",
+    "main.js.map": "/football-fashion/static/js/main.5b4c73b4.chunk.js.map",
     "runtime-main.js": "/football-fashion/static/js/runtime-main.86a70de2.js",
     "runtime-main.js.map": "/football-fashion/static/js/runtime-main.86a70de2.js.map",
-    "static/js/2.4e10bc16.chunk.js": "/football-fashion/static/js/2.4e10bc16.chunk.js",
-    "static/js/2.4e10bc16.chunk.js.map": "/football-fashion/static/js/2.4e10bc16.chunk.js.map",
+    "static/js/2.07258373.chunk.js": "/football-fashion/static/js/2.07258373.chunk.js",
+    "static/js/2.07258373.chunk.js.map": "/football-fashion/static/js/2.07258373.chunk.js.map",
     "static/js/3.d1242833.chunk.js": "/football-fashion/static/js/3.d1242833.chunk.js",
     "static/js/3.d1242833.chunk.js.map": "/football-fashion/static/js/3.d1242833.chunk.js.map",
     "index.html": "/football-fashion/index.html",
-    "static/css/main.4378b3e5.chunk.css.map": "/football-fashion/static/css/main.4378b3e5.chunk.css.map",
-    "static/js/2.4e10bc16.chunk.js.LICENSE.txt": "/football-fashion/static/js/2.4e10bc16.chunk.js.LICENSE.txt",
+    "static/css/main.7ea70dce.chunk.css.map": "/football-fashion/static/css/main.7ea70dce.chunk.css.map",
+    "static/js/2.07258373.chunk.js.LICENSE.txt": "/football-fashion/static/js/2.07258373.chunk.js.LICENSE.txt",
     "static/media/ad1.jpg": "/football-fashion/static/media/ad1.f5d09a2e.jpg",
     "static/media/ad2.jpg": "/football-fashion/static/media/ad2.f1fb0e11.jpg",
     "static/media/ars.jpg": "/football-fashion/static/media/ars.48257f0e.jpg",
@@ -32,8 +32,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.86a70de2.js",
-    "static/js/2.4e10bc16.chunk.js",
-    "static/css/main.4378b3e5.chunk.css",
-    "static/js/main.b8662bc3.chunk.js"
+    "static/js/2.07258373.chunk.js",
+    "static/css/main.7ea70dce.chunk.css",
+    "static/js/main.5b4c73b4.chunk.js"
   ]
 }
