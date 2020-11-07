@@ -4,8 +4,10 @@ import {NavLink} from "react-router-dom";
 import Logo from "../../Assets/images/section-top-bar/ball.png";
 import Leagues from "../../Assets/images/section-top-bar/leagues.jpg";
 import HotDeal from "../../Assets/images/section-top-bar/hotdeal.png";
+import {connect} from "react-redux";
 
-const TopBar = () => {
+const TopBar = (props) => {
+    const {dispatch} = props;
     return (
         <section className="top-bar">
             <div className="container-fluid">
@@ -16,6 +18,7 @@ const TopBar = () => {
                             <NavLink
                                 to="/"
                                 exact={true}
+                                onClick = {()=>{dispatch({type: "USD"})}}
                             >
                                 <img
                                     src={Logo}
@@ -57,5 +60,9 @@ const TopBar = () => {
         </section>
     );
 };
-
-export default TopBar;
+const mapStateToProps = (state) => {
+    return {
+        Store: state
+    }
+}
+export default connect(mapStateToProps)(TopBar)

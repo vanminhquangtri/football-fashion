@@ -211,8 +211,49 @@ margin-top: 5px;
 .top-viewed {
   margin-top: 10px;
   margin-bottom: 50px;
+  background: $color-red;
+  border-radius: 10px 10px 0 0;
   .container-fluid {
     .row {
+      /* title of each section (ĐƯỢC QUAN TÂM NHIỀU NHẤT, ....) */
+      .section-title {
+        width: 100%;
+        border-radius: 10x 10px 0 0;
+        color: white;
+        display: flex;
+        align-items: center;
+        margin-bottom: 2px;
+        position: relative;
+        .background-image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 1;
+          border-radius: 10px 10px 0 0;
+          background: {
+            image: url("../src/Assets/images/title-bg/title-bg1.jpg");
+            position: center;
+            size: cover;
+          }
+        }
+        .title-text {
+          z-index: 2;
+          padding: 5px;
+          font-size: 13px;
+          color: $color-red;
+          font-weight: bold;
+          .icon {
+            font-size: 15px;
+            margin-right: 3px;
+            color:  #235bf3;
+            border: 1px solid #235bf3;
+            padding: 1px;
+            border-radius: 50%;
+          }
+        }
+      }
       /* each product is a col */
       .col.product-col {
         flex: 50% !important;
@@ -222,7 +263,6 @@ margin-top: 5px;
         .wrap {
           background: white;
           margin-bottom: 3px;
-          border: 5px solid $color-red;
           position: relative;
           padding-top: 10px;
           a {
@@ -304,8 +344,7 @@ margin-top: 5px;
         .load-btn {
           border: none;
           outline: none;
-          background: $color-red;
-          color: white;
+          background: $color-gray-bg;
           font-size: 13px;
           border-radius: 5px;
         }

@@ -1,11 +1,14 @@
 import React, {useState} from "react";
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faStar} from "@fortawesome/free-solid-svg-icons";
+import {faStar, faHandPointRight} from "@fortawesome/free-solid-svg-icons";
 import ProductsInfo from "../../../Data/ProductInfo";
 import LoadProducts from "../../GeneralModules/LoadProducts";
-const TopViewed = () => {
-    
+import urlSlug from "url-slug";
+import {connect} from "react-redux";
+import formatNumber from "../../GeneralModules/FortmatMoney";
+const TopViewed = (props) => {
+    const {Currency} = props.Store;
     const [state, setState] = useState({
         loaded_product_number: 8
     })
@@ -25,12 +28,22 @@ const TopViewed = () => {
         <section className="top-viewed">
             <div className="container-fluid">
                 <div className="row">
+                    <div className="section-title">
+                        <div className="background-image"></div>
+                        <span className="title-text">
+                            <FontAwesomeIcon icon={faHandPointRight} className="icon"/>
+                            ĐƯỢC QUAN TÂM NHIỀU NHẤT
+                        </span>
+                    </div>
                     {loadedProducts.map((product) => {
                         return (
                             /* only render product having property top_viewed true, each product is a col */
                             <div className="col product-col animate__animated animate__fadeInUp" key={product.id}>
                                 <div className="wrap">
-                                    <NavLink to="/" exact={true}>
+                                    <NavLink
+                                        to={`/${urlSlug(product.name)}`} 
+                                        exact={true}
+                                    >
                                         <div 
                                             className="background-image"
                                         >
@@ -38,7 +51,7 @@ const TopViewed = () => {
                                         </div>
                                         <div className="info">
                                             <span className="name">{product.name}</span>
-                                            <span className="price">{product.price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')}</span>
+                                            <span className="price">{formatNumber((product.price * Currency.rate).toFixed(0))}{Currency.currency}</span>
                                         </div>
                                         {/* only render promotion box if promotion property of product is not empty */}
                                         {(product.promotion !== "") && (
@@ -71,5 +84,9 @@ const TopViewed = () => {
         </section>
     );
 };
-
-export default TopViewed;
+const mapStateToProps = (state) => {
+    return {
+        Store: state
+    }
+}
+export default connect(mapStateToProps)(TopViewed)
