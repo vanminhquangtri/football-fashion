@@ -74,7 +74,7 @@ const TopNav = (props) => {
                                         to="/champion"
                                         exact={true}
                                         >
-                                            Nhà vô địch
+                                            Áo đấu chà vô địch
                                         </NavLink>
                                     </li>
                                     <li>

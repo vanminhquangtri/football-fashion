@@ -212,10 +212,13 @@ margin-top: 40px;
   }
 }
 /*--- end top slide ---*/
-/*--- most concerned ---*/
-.top-viewed {
-  margin-top: 10px;
+.homepage {
   margin-bottom: 50px;
+}
+/*--- most concerned, special promtion, top sales ---*/
+.display-homepage {
+  margin-top: 10px;
+  margin-bottom: 10px;
   background: $color-red;
   border-radius: 10px 10px 0 0;
   .container-fluid {
@@ -358,6 +361,7 @@ margin-top: 40px;
     }
   }
 }
-/*--- end most concerned ---*/
-
-
+.display-homepage.special-promotion {
+  background: $color-blue-mc;
+}
+/*--- most concerned, special promtion, top sales ---*/
