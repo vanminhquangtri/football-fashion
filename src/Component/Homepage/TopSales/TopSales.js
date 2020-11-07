@@ -1,38 +1,38 @@
 import React, {useState} from "react";
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faStar, faHandPointRight} from "@fortawesome/free-solid-svg-icons";
+import {faStar, faHeartbeat} from "@fortawesome/free-solid-svg-icons";
 import ProductsInfo from "../../../Data/ProductInfo";
 import LoadProducts from "../../GeneralModules/LoadProducts";
 import urlSlug from "url-slug";
 import {connect} from "react-redux";
 import formatNumber from "../../GeneralModules/FortmatMoney";
-const TopViewed = (props) => {
+const TopSales = (props) => {
     const {Currency} = props.Store;
     const [state, setState] = useState({
         loaded_product_number: 8
     })
     const {loaded_product_number} = state;
     // find products with property top_viewed true
-    const topViewedProducts = ProductsInfo.filter((product) => {
-        return product.top_viewed === true;
+    const topSalesProducts = ProductsInfo.filter((product) => {
+        return product.top_sales === true;
     });
     // return a number of top viewed product equal to loaded_product_number;
     let loadedProducts = [];
-    topViewedProducts.forEach((product) => {
+    topSalesProducts.forEach((product) => {
         if (loadedProducts.length < loaded_product_number) {
             loadedProducts.push(product)
         }
     }) 
     return (
-        <section className="display-homepage top-viewed">
+        <section className="display-homepage top-sales">
             <div className="container-fluid">
                 <div className="row">
                     <div className="section-title">
                         <div className="background-image"></div>
                         <span className="title-text">
-                            <FontAwesomeIcon icon={faHandPointRight} className="icon"/>
-                            ĐƯỢC QUAN TÂM NHIỀU NHẤT
+                            <FontAwesomeIcon icon={faHeartbeat} className="icon"/>
+                            SẢN PHẨM BÁN CHẠY NHẤT
                         </span>
                     </div>
                     {loadedProducts.map((product) => {
@@ -75,8 +75,8 @@ const TopViewed = (props) => {
                         )
                     })}
                     <div className="control-loaded-quantity">
-                        <button className="load-btn" onClick={(ev)=>{LoadProducts(ev, loaded_product_number, topViewedProducts.length, setState)}}>
-                            {loaded_product_number < topViewedProducts.length ? "Xem thêm" : "Ẩn bớt"}
+                        <button className="load-btn" onClick={(ev)=>{LoadProducts(ev, loaded_product_number, topSalesProducts.length, setState)}}>
+                            {loaded_product_number < topSalesProducts.length ? "Xem thêm" : "Ẩn bớt"}
                         </button>
                     </div>
                 </div>
@@ -89,4 +89,4 @@ const mapStateToProps = (state) => {
         Store: state
     }
 }
-export default connect(mapStateToProps)(TopViewed)
+export default connect(mapStateToProps)(TopSales)

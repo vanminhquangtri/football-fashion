@@ -32,7 +32,7 @@ const SpecialPromotion = (props) => {
                         <div className="background-image"></div>
                         <span className="title-text">
                             <FontAwesomeIcon icon={faGift} className="icon"/>
-                            KHUYẾN MÃI HẤP DẪN
+                            KHUYẾN MÃI SIÊU HẤP DẪN
                         </span>
                     </div>
                     {loadedProducts.map((product) => {
@@ -76,7 +76,7 @@ const SpecialPromotion = (props) => {
                     })}
                     <div className="control-loaded-quantity">
                         <button className="load-btn" onClick={(ev)=>{LoadProducts(ev, loaded_product_number, topPromotionProducts.length, setState)}}>
-                            {loaded_product_number < topPromotionProducts.length ? "Tải thêm" : "Ẩn bớt"}
+                            {loaded_product_number < topPromotionProducts.length ? "Xem thêm" : "Ẩn bớt"}
                         </button>
                     </div>
                 </div>
