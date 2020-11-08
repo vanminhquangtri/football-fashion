@@ -2,10 +2,10 @@ import React from "react";
 import TopBar from "./Component/TopBar/TopBar";
 import {BrowserRouter as Router} from "react-router-dom";
 import TopNav from "./Component/TopNav/TopNav";
-import Homepage from "./Component/Homepage/Homepage";
 import {Provider} from "react-redux";
 import Store from "./Store/Store";
 import Footer from "./Component/Footer/Footer";
+import RouterURL from "./Component/RouterURL/RouterURL";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <div className="App">
           <TopBar/>
           <TopNav/>
-          <Homepage/>
+          <RouterURL/>
           <Footer/>
         </div>
       </Router>

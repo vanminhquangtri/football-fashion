@@ -564,6 +564,85 @@ margin-top: 40px;
     }
   }
 }
-
 /*--- end footer ---*/
+/*--- product detail ---*/
+.product-detail {
+  margin: 50px 0 10px 0;
+  .container-fluid.slide-show {
+    .row {
+      .col {
+        .tns-outer {
+          position: relative;
+          display: flex;
+          flex-direction: column-reverse;
+          /* control arrrows next and previous */
+          .tns-controls {
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            z-index: 1;
+              top: 40%;
+            button {
+              border: none;
+              outline: none;
+              width: 30px;
+              height: 30px;
+              color: transparent;
+              background-color: transparent;
+              background: {
+                position: center;
+                size: cover;
+                repeat: no-repeat;
+              }
+            }
+            button[data-controls="prev"] {
+              background-image: url("../src/Assets/images/section-product-detail/left.svg")
+            }
+            button[data-controls="next"] {
+              background-image: url("../src/Assets/images/section-product-detail/right-arrow.svg")
+            }
+          }
+          /* nav buttons (small image background) */
+          .tns-nav {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            button {
+              width: 70px;
+              height: 70px;
+              border-radius: 50%;
+              background-color: transparent;
+              border: none;
+              outline: none;
+              opacity: 0.5;
+              background: {
+                position: center;
+                size: 80% 80%;
+                repeat: no-repeat;
+              }
+            }
+            button.tns-nav-active {
+              border: 1px solid $color-red;
+              opacity: 1;
+            }
+          }
+          /* each slide item */
+          .tns-ovh {
+            .tns-inner {
+              .tns-slider {
+                .tns-item {
+                  img {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*--- end product detail ---*/
 
