@@ -26,8 +26,22 @@ const Currency_reducer = (init = Currency, action) => {
             }
     }
 };
+// shopping cart
+const Cart = [];
+const Cart_reducer = (init = Cart, action) => {
+    switch (action.type) {
+        case "ADD_TO_CART":
+            for (let i = 0; i < action.quantity; i ++){
+                init.push(action.id)
+            }
+            return init;
+        default:
+            return init;
+    }
+}
 const All_reducer = redux.combineReducers({
-    Currency: Currency_reducer
+    Currency: Currency_reducer,
+    Cart: Cart_reducer
 });
 const Store = redux.createStore(All_reducer);
 export default Store;

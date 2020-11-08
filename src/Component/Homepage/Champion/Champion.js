@@ -9,6 +9,7 @@ import {connect} from "react-redux";
 import formatNumber from "../../GeneralModules/FortmatMoney";
 const Champion = (props) => {
     const {Currency} = props.Store;
+    const {dispatch} = props;
     const [state, setState] = useState({
         loaded_product_number: 8
     })
@@ -66,7 +67,7 @@ const Champion = (props) => {
                                                 <FontAwesomeIcon icon={faStar} className="icon"/>
                                             </div>
                                         )}
-                                        <div className="member-point">
+                                        <div className="member-point" onClick={()=>{dispatch({type: "ADD_TO_CART", id: product.id, quantity: 1})}}>
                                             {/* <FontAwesomeIcon icon={faUser} className="icon"/>  */}
                                             + {product.point} điểm
                                         </div>

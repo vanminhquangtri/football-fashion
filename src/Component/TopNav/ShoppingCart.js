@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faShoppingCart} from "@fortawesome/free-solid-svg-icons"
+import {connect} from "react-redux";
 
 class ShoppingCart extends Component {
     render() {
+        const {Cart} = this.props.Store;
         return (
             <div className="col-auto shopping-cart">
                 <div className="wrap">
@@ -14,12 +16,16 @@ class ShoppingCart extends Component {
                         exact={true}
                     >
                         <FontAwesomeIcon icon={faShoppingCart} className="icon"/>
-                        <span className="shopping-cart-quantity">12</span>
+                        <span className="shopping-cart-quantity">{Cart.length}</span>
                     </NavLink>
                 </div>
             </div>
         );
     }
 }
-
-export default ShoppingCart;
+const mapStateToProps = (state) => {
+    return {
+        Store: state
+    }
+}
+export default connect(mapStateToProps)(ShoppingCart)
