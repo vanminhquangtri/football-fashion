@@ -2,7 +2,7 @@
 import React, {useState} from "react";
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCheckCircle} from "@fortawesome/free-solid-svg-icons"
+import {faCheckCircle, faMinusCircle} from "@fortawesome/free-solid-svg-icons"
 import urlSlug from "url-slug";
 import {connect} from "react-redux";
 import formatNumber from "../../GeneralModules/FortmatMoney";
@@ -60,10 +60,16 @@ const ProductLayout = (props) => {
                         added_to_cart === false ? (
                             <span className="not-added" onClick={()=>{dispatch({type: "ADD_TO_CART", id: product.id, quantity: 1}); changeAddedToCartStt()}}>Thêm vào giỏ</span>
                         ) : (
-                            <span className="added animate__animated animate__fadeInDown" onClick={()=>{changeAddedToCartStt()}}>
+                            <>
+                            <span className="added animate__animated animate__fadeInDown">
                                 <FontAwesomeIcon icon={faCheckCircle} className="icon"/>
-                                <i>Đã thêm vào giỏ</i>
+                                <i>Đã thêm</i>
                             </span>
+                            <span style={{marginLeft: "2px"}} className="added animate__animated animate__fadeInDown" onClick={()=>{dispatch({type: "REMOVE_FROM_CART", id: product.id, quantity: 1}); changeAddedToCartStt()}}>
+                                <i>Xóa</i>
+                                <FontAwesomeIcon icon={faMinusCircle} className="icon"/>
+                            </span>
+                            </>
                         )
                     }
                 </div>

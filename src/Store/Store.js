@@ -35,6 +35,11 @@ const Cart_reducer = (init = Cart, action) => {
                 init.push(action.id)
             }
             return init;
+        case "REMOVE_FROM_CART":
+            for (let i = 0; i < action.quantity; i ++){
+                init.splice(init.indexOf(action.id, 1))
+            }
+            return init;
         default:
             return init;
     }
