@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/football-fashion/static/css/main.d48087c1.chunk.css",
-    "main.js": "/football-fashion/static/js/main.f6c22cf7.chunk.js",
-    "main.js.map": "/football-fashion/static/js/main.f6c22cf7.chunk.js.map",
+    "main.css": "/football-fashion/static/css/main.81ce16b9.chunk.css",
+    "main.js": "/football-fashion/static/js/main.1809b638.chunk.js",
+    "main.js.map": "/football-fashion/static/js/main.1809b638.chunk.js.map",
     "runtime-main.js": "/football-fashion/static/js/runtime-main.d06be18e.js",
     "runtime-main.js.map": "/football-fashion/static/js/runtime-main.d06be18e.js.map",
-    "static/js/2.bbb1ecd8.chunk.js": "/football-fashion/static/js/2.bbb1ecd8.chunk.js",
-    "static/js/2.bbb1ecd8.chunk.js.map": "/football-fashion/static/js/2.bbb1ecd8.chunk.js.map",
+    "static/js/2.20f21885.chunk.js": "/football-fashion/static/js/2.20f21885.chunk.js",
+    "static/js/2.20f21885.chunk.js.map": "/football-fashion/static/js/2.20f21885.chunk.js.map",
     "static/js/3.3331388a.chunk.js": "/football-fashion/static/js/3.3331388a.chunk.js",
     "static/js/3.3331388a.chunk.js.map": "/football-fashion/static/js/3.3331388a.chunk.js.map",
     "index.html": "/football-fashion/index.html",
-    "static/css/main.d48087c1.chunk.css.map": "/football-fashion/static/css/main.d48087c1.chunk.css.map",
-    "static/js/2.bbb1ecd8.chunk.js.LICENSE.txt": "/football-fashion/static/js/2.bbb1ecd8.chunk.js.LICENSE.txt",
+    "static/css/main.81ce16b9.chunk.css.map": "/football-fashion/static/css/main.81ce16b9.chunk.css.map",
+    "static/js/2.20f21885.chunk.js.LICENSE.txt": "/football-fashion/static/js/2.20f21885.chunk.js.LICENSE.txt",
     "static/media/136-1369563_dance-clipart-png.png": "/football-fashion/static/media/136-1369563_dance-clipart-png.387cf22a.png",
     "static/media/BEST Premier League Goals.mp4": "/football-fashion/static/media/BEST Premier League Goals.881517ec.mp4",
     "static/media/Internet+Entertainment.png": "/football-fashion/static/media/Internet+Entertainment.71d4788f.png",
@@ -36,8 +36,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d06be18e.js",
-    "static/js/2.bbb1ecd8.chunk.js",
-    "static/css/main.d48087c1.chunk.css",
-    "static/js/main.f6c22cf7.chunk.js"
+    "static/js/2.20f21885.chunk.js",
+    "static/css/main.81ce16b9.chunk.css",
+    "static/js/main.1809b638.chunk.js"
   ]
 }
