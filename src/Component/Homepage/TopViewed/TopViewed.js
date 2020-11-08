@@ -1,14 +1,11 @@
 import React, {useState} from "react";
-import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faStar, faHandPointRight} from "@fortawesome/free-solid-svg-icons";
+import {faHandPointRight} from "@fortawesome/free-solid-svg-icons";
 import ProductsInfo from "../../../Data/ProductInfo";
 import LoadProducts from "../../GeneralModules/LoadProducts";
-import urlSlug from "url-slug";
 import {connect} from "react-redux";
-import formatNumber from "../../GeneralModules/FortmatMoney";
+import ProductLayout from "../../Products/ProductLayout/ProductLayout";
 const TopViewed = (props) => {
-    const {Currency} = props.Store;
     const [state, setState] = useState({
         loaded_product_number: 8
     })
@@ -39,40 +36,7 @@ const TopViewed = (props) => {
                     {loadedProducts.map((product) => {
                         return (
                             /* only render product having property top_viewed true, each product is a col */
-                            <div className="col product-col animate__animated animate__fadeInUp" key={product.id}>
-                                <div className="wrap">
-                                    <NavLink
-                                        to={`/${urlSlug(product.name)}`} 
-                                        exact={true}
-                                    >
-                                        <div 
-                                            className="background-image"
-                                        >
-                                            <img alt="background" src={product.main_image.default}/>
-                                        </div>
-                                        <div className="info">
-                                            <span className="name">{product.name}</span>
-                                            <span className="price">{formatNumber((product.price * Currency.rate).toFixed(0))}{Currency.currency}</span>
-                                        </div>
-                                        {/* only render promotion box if promotion property of product is not empty */}
-                                        {(product.promotion !== "") && (
-                                            <div className="promotion">SALE<br/>{product.promotion}</div>
-                                        )}
-                                        {/* replace promotion box by star if promotion property of product is empty */}
-                                        {(product.promotion === "") && (
-                                            <div className="star">
-                                                <FontAwesomeIcon icon={faStar} className="icon"/>
-                                                <FontAwesomeIcon icon={faStar} className="icon"/>
-                                                <FontAwesomeIcon icon={faStar} className="icon"/>
-                                            </div>
-                                        )}
-                                        <div className="member-point">
-                                            {/* <FontAwesomeIcon icon={faUser} className="icon"/>  */}
-                                            + {product.point} điểm
-                                        </div>
-                                    </NavLink>
-                                </div>                        
-                            </div>
+                            <ProductLayout product={product} key={product.id}/>
                         )
                     })}
                     <div className="control-loaded-quantity">
