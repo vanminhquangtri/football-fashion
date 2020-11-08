@@ -1,0 +1,492 @@
+* {
+  font-family: 'Catamaran', sans-serif;
+  box-sizing: border-box;
+}
+$color-red: rgb(211, 9, 9);
+$color-gray-border: rgb(235, 235, 235);
+$color-gray-bg: rgb(248, 248, 248);
+$color-blue-mc: #3d88fb;
+body {
+  background: $color-gray-bg;
+}
+
+/*--- top bar ---*/
+.top-bar {
+  z-index: 2000;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  border-top: 1px solid rgb(235, 235, 235);
+  background: white;
+  .container-fluid {
+    .row {
+      .wrap {
+        width: 100%;
+        a {
+          display: block;
+          width: 100%;
+        }
+        img {
+          height: 30px;
+        }
+      }
+      .col-3.ball-icon {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 5px;
+        img {
+          width: 30px;
+        }
+      }
+      .col-6.leagues-icon {
+        text-align: center;
+        img {
+          height: 35px;
+        }
+      }
+      .col-3.top-bar-hot-deals {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 5px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+/*--- end top bar ---*/
+/*--- top nav ---*/
+.top-nav {
+  background: $color-red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  a {
+    color: white;
+    display: flex;
+    padding: 10px 5px;
+    line-height: 1; /* keep all links middle vertical ^^ */
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+  .container-fluid {
+    .row {
+      /* col of nav including main nav and sub menu */
+      .col.nav {
+        .wrap {
+          width: 100%;
+          position: relative;
+          ul.main-nav {
+            display: flex;
+            align-items: center;
+            li {
+              margin-right: 20px;
+              a {
+                font-weight: bold;
+                span.link-text {
+                  display: block;
+                  margin-bottom: -3px; /* keep all links middle vertical ^^ */
+                }
+              }
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+          }
+          ul.sub-menu {
+            animation-duration: .3s;
+            z-index: 2000;
+            width: 100%;
+            top: 100%;
+            position: absolute;
+            background: white;
+            li {
+              a {
+                color: black;
+                font-weight: bold;
+              }
+            }
+          }
+          /* open and close sub menu */
+          .icon.animate__animated {
+            color: white;
+            display: inline-block;
+            margin-right: 15px; 
+            animation-duration: 1s;
+          }
+        }
+      }
+      /* col for shopping cart */
+      .col-auto.shopping-cart {
+        position: relative;
+        .wrap {
+          a {
+            position: relative;
+            .shopping-cart-quantity {
+              position: absolute;
+              top: 2px;
+              right: 0;
+              width: 14px;
+              height: 14px;
+              border-radius: 50%;
+              font-size: 10px;
+              line-height: 14px;
+              text-align: center;
+              color: black;
+              font-weight: bold;
+              background: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*--- end top nav ---*/
+/*--- top slide ---*/
+.top-slide {
+margin-top: 40px;
+  .container-fluid {
+    .row {
+      .col {
+        padding: 0;
+        .wrap {
+          #top-slide{
+            .carousel-inner {
+              .carousel-item {
+                text-align: center;
+                img {
+                  margin: auto;
+                }
+                .carousel-caption {
+                  font-size: 13px;
+                  position: relative;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  padding: 0;
+                  margin-top: 5px;
+                  .link, .title {
+                    background: $color-red;
+                    color: white;
+                    height: 20px;
+                    line-height: 20px;
+                    display: inline-block;
+                    padding: 0 5px;
+                  }
+                  .link {
+                    text-decoration: underline;
+                    margin-left: 5px;
+                  }
+                }
+              }
+              .carousel-item.mc {
+                .title {
+                  background: #3d88fb;
+                }
+              }
+              .carousel-item.tot {
+                .title {
+                  background: #243461;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*--- end top slide ---*/
+.homepage {
+  margin-bottom: 10px;
+}
+/*--- most concerned, special promtion, top sales ---*/
+.display-homepage {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: $color-red;
+  border-radius: 10px 10px 0 0;
+  .container-fluid {
+    .row {
+      /* title of each section (ĐƯỢC QUAN TÂM NHIỀU NHẤT, ....) */
+      .section-title {
+        width: 100%;
+        border-radius: 10x 10px 0 0;
+        color: white;
+        display: flex;
+        align-items: center;
+        margin-bottom: 2px;
+        position: relative;
+        .background-image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 1;
+          border-radius: 10px 10px 0 0;
+          background: {
+            image: url("../src/Assets/images/title-bg/title-bg1.jpg");
+            position: center;
+            size: cover;
+          }
+        }
+        .title-text {
+          z-index: 2;
+          padding: 0 5px;
+          font-size: 15px;
+          height: 30px;
+          color: $color-red;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          .icon {
+            font-size: 15px;
+            margin-right: 3px;
+            color:  #235bf3;
+            border: 1px solid #235bf3;
+            padding: 1px;
+            border-radius: 50%;
+          }
+          .football-image {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            background: {
+              image: url("../src/Assets/images/title-bg/football-image1.png");
+              size: cover;
+              position: center;
+            };
+          }
+        }
+      }
+      /* each product is a col */
+      .col.product-col {
+        flex: 50% !important;
+        max-width: 50% !important;
+        padding-left: 2px;
+        padding-right: 2px;
+        .wrap {
+          background: white;
+          margin-bottom: 3px;
+          position: relative;
+          padding-top: 10px;
+          a {
+            text-decoration: none;
+            /* hold main image of product */
+            .background-image {
+              display: flex;
+              img {
+                margin: auto;
+                width: 90px;
+                height: 90px;
+              }
+            }
+            /* information of product */
+            .info {
+              padding: 0 2px;
+              font-size: 12px;
+              text-align: center;
+              .name {
+                text-decoration: underline;
+                display: block;
+                overflow: hidden;
+                color: #243461;
+                height: 35px;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2; /* show name and lines only */
+                -webkit-box-orient: vertical;
+              }
+              .price {
+                font-weight: bold;
+                font-size: 13px;
+                color: $color-red;
+              }
+            }
+            /* promotion box (SALE ...%) */
+            .promotion, .star {
+              position: absolute;
+              top: 2px;
+              left: 2px;
+              background: $color-red;
+              color: white;
+              height: 35px;
+              width: 35px;
+              border-radius: 50%;
+              font-size: 10px;
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .star {
+              .icon {
+                font-size: 8px;
+              }
+            }
+            /* member point */
+            .member-point {
+              position: absolute;
+              top: 2px;
+              right: 2px;
+              background: $color-blue-mc;
+              color: white;
+              height: 14px;
+              width: 42px;
+              font-size: 10px;
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+      }
+      /* load more and hide */
+      .control-loaded-quantity {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+        .load-btn {
+          border: none;
+          outline: none;
+          background: $color-gray-bg;
+          font-size: 11px;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+.display-homepage.special-promotion {
+  background: $color-blue-mc;
+}
+.display-homepage.top-sales {
+  background: orange;
+}
+.display-homepage.champion {
+  background: $color-red;
+  .football-image {
+    width: 20px !important;
+    height: 20px !important;
+    background-image: url("../src/Assets/images/title-bg/trophy.png") !important
+  }
+}
+/*--- end most concerned, special promtion, top sales ---*/
+/*--- goals-video (not use React) ---*/
+.goals-video {
+  margin-bottom: 10px;
+  .container-fluid {
+    /* title "QUẨY CÙNG BÓNG ĐÁ" */
+    .row.title {
+      .col {
+        padding: 0;
+        background: greenyellow;
+        .wrap {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          span {
+            color: white;
+            font-weight: bold;
+          }
+          img {
+            width: 50px;
+            &:last-child {
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+    }
+    /* video and tile */
+    .row.video {
+      .col {
+        flex: 100% !important;
+        max-width: 100% !important;
+        padding: 0;
+        margin-bottom: 10px;
+        border-bottom: 1px solid $color-blue-mc;
+        .wrap {
+          video {
+            width: 100%;
+          }
+          .des {
+            font-size: 13px;
+            margin: 0;
+            font-style: italic;
+            font-weight: bold;
+            color: $color-blue-mc
+          }
+        }
+      }
+    }
+  }
+}
+/*--- end goals-video ---*/
+/*--- footer ---*/
+.footer {
+  padding: 10px 0 50px 0;
+  background: $color-blue-mc;
+  border-radius: 10px 10px 0 0;
+  .container-fluid {
+    .row {
+      .col {
+        padding: 0 20px;
+        flex: 100% !important;
+        max-width: 100% !important;
+        font-size: 12px;
+        margin-bottom: 10px;
+        line-height: 25px;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #60a0ff;
+        color: #9cc1f8;
+        .title {
+          font-size: 18px;
+          margin: 0 0 5px -15px;
+          text-transform: uppercase;
+          color: #d3e4fd;
+        }
+        p {
+          margin: 0;
+        }
+        .icon {
+          margin-right: 5px;
+        }
+        a {
+          color: #9cc1f8;
+          text-decoration: underline;
+        }
+      }
+    }
+    .copy-right {
+      color: #d3e4fd;
+      .col {
+        border: none;
+        padding: 5px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+/*--- end footer ---*/
+
