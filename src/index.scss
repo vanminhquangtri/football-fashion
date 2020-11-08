@@ -496,6 +496,54 @@ margin-top: 40px;
           text-decoration: underline;
         }
       }
+      .col.social-media {
+        border-bottom: none;
+        padding: 10px;
+        .wrap {
+          border: 1px solid #60a0ff;
+          position: relative;
+          .title {
+            margin: 0;
+            background: $color-blue-mc;
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            top: -10px;
+            text-align: center;
+          }
+          .icon-link {
+            padding: 20px 20px 10px 20px;
+            display: flex;
+            justify-content: center;
+            a {
+              display: inline-block;
+              padding: 10px;
+              border-radius: 50%;
+              width: 40px;
+              height: 40px;
+              margin: 5px 10px;
+              color: transparent;
+              background: {
+                image: url("../src/Assets/images/section-footer/social-media.png");
+                size: 150px 150px;
+                repeat: no-repeat;
+              }
+            }
+            a.facebook {
+              background-position: -12px -6px;
+            }
+            a.youtube {
+              background-position: -100px -6px;
+            }
+            a.twitter {
+              background-position: -12px -56px;
+            }
+            a.instagram {
+              background-position: -100px -56px;
+            }
+          }
+        }
+      }
     }
     .copy-right {
       color: #d3e4fd;

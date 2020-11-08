@@ -18,6 +18,17 @@ const Footer = () => {
                         <NavLink to="/champion" exact={true}>Áo đấu nhà vô địch</NavLink>
                         <NavLink to="/concerned" exact={true}>Sản phẩm hot</NavLink>
                     </div>
+                    <div className="col social-media">
+                        <div className="wrap">
+                            <div className="title">Kết nối với chúng tôi</div>
+                            <div className="icon-link">
+                                <NavLink to="/promotion" exact={true} className="facebook" title="Facebook"></NavLink>
+                                <NavLink to="/champion" exact={true} className="youtube" title="Youtube"></NavLink>
+                                <NavLink to="/concerned" exact={true} className="twitter" title="Twitter"></NavLink>
+                                <NavLink to="/concerned" exact={true} className="instagram" title="Instagram"></NavLink>
+                            </div>
+                        </div>
+                    </div>
                     <div className="col contact">
                         <div className="title">Liên Hệ</div>
                         <div className="contact-field">
