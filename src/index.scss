@@ -373,10 +373,18 @@ margin-top: 40px;
         text-align: center;
         padding-top: 0;
         span {
-          font-size: 13px;
+          font-size: 12px;
           background: $color-red;
           color: white;
-          padding: 0 3px;
+          padding: 2px 3px;
+        }
+        span.added {
+          background: greenyellow;
+          border-radius: 5px;
+          color: black;
+          .icon {
+            margin-right: 3px;
+          }
         }
       }
       /* load more and hide */

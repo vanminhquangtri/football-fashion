@@ -1,14 +1,28 @@
 // display product home page
-import React from "react";
+import React, {useState} from "react";
 import {NavLink} from "react-router-dom";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCheckCircle} from "@fortawesome/free-solid-svg-icons"
 import urlSlug from "url-slug";
 import {connect} from "react-redux";
 import formatNumber from "../../GeneralModules/FortmatMoney";
 import freeShipImg from "../../../Assets/images/product-layout/free-ship2.png"
 
 const ProductLayout = (props) => {
+    const [state, setState] = useState({
+        added_to_cart: false
+    })
+    const {added_to_cart} = state;
     const {Currency} = props.Store;
     const {product, dispatch} = props;
+    const changeAddedToCartStt = () => {
+        setState((prevState) => {
+            return {
+                ...prevState,
+                added_to_cart: !prevState.added_to_cart
+            }
+        })
+    }
     return (
         <div className="col product-col animate__animated animate__fadeInUp" key={product.id}>
             <div className="wrap">
@@ -41,7 +55,17 @@ const ProductLayout = (props) => {
                     </div>
                 </NavLink>
                 <div className="add-to-cart-btn">
-                    <span onClick={()=>{dispatch({type: "ADD_TO_CART", id: product.id, quantity: 1})}}>Thêm vào giỏ</span>
+                    {/* only show this if state added_to_cart false, mean not added */}
+                    {
+                        added_to_cart === false ? (
+                            <span className="not-added" onClick={()=>{dispatch({type: "ADD_TO_CART", id: product.id, quantity: 1}); changeAddedToCartStt()}}>Thêm vào giỏ</span>
+                        ) : (
+                            <span className="added animate__animated animate__fadeInDown" onClick={()=>{changeAddedToCartStt()}}>
+                                <FontAwesomeIcon icon={faCheckCircle} className="icon"/>
+                                <i>Đã thêm vào giỏ</i>
+                            </span>
+                        )
+                    }
                 </div>
             </div>                        
         </div>
