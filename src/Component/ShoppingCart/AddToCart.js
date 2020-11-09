@@ -8,10 +8,11 @@ import formatNumber from '../GeneralModules/FortmatMoney';
 
 const AddToCart = (props) => {
     const {Currency} = props.Store;
-    const {product} = props;
+    const {product, dispatch} = props;
     const [state, setState] = useState({
+        product_id: product.id,
         added_quantity: 1,
-        size: "S"
+        size: "S",
     })
     const {added_quantity} = state;
     // change state added_quantity when click minus button when input value change
@@ -114,7 +115,7 @@ const AddToCart = (props) => {
                         </div>
                         {/* button add to cart and check-out */}
                         <div className="btn-add-to-cart">
-                            <button className="add-to-cart">Thêm vào giỏ hàng</button>
+                            <button className="add-to-cart" onClick={(ev)=>{ev.preventDefault(); dispatch({type: "ADD_TO_CART", id: product.id, size: state.size, quantity: state.added_quantity})}}>Thêm vào giỏ hàng</button>
                             <button className="check-out">
                                 <NavLink to="/check-out">Thanh toán</NavLink>
                             </button>

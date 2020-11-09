@@ -29,21 +29,29 @@ const Currency_reducer = (init = Currency, action) => {
 // shopping cart
 const Cart = [];
 const Cart_reducer = (init = Cart, action) => {
+    const newAddedRequest = {product_id: action.id, size: action.size, quantity: action.quantity};
     switch (action.type) {
         case "ADD_TO_CART":
-            for (let i = 0; i < action.quantity; i ++){
-                init.push(action.id)
-            }
+            init.push(newAddedRequest);
             return init;
         case "REMOVE_FROM_CART":
-            for (let i = 0; i < action.quantity; i ++){
-                init.splice(init.indexOf(action.id, 1))
-            }
+            const removedProducts = init.filter((product) => {
+                return product.product_id === action.id
+            });
+            removedProducts.forEach((product) => {
+                init.splice(init.indexOf(product), 1)
+            })
             return init;
         default:
             return init;
     }
 }
+/* 
+[
+    {product_id: "", size: "S", quantity: "2"},
+    {product_id: "", size: "M", quantity: "1"},
+] 
+*/
 const All_reducer = redux.combineReducers({
     Currency: Currency_reducer,
     Cart: Cart_reducer

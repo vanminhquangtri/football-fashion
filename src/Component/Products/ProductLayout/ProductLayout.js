@@ -58,7 +58,7 @@ const ProductLayout = (props) => {
                     {/* only show this if state added_to_cart false, mean not added */}
                     {
                         added_to_cart === false ? (
-                            <span className="not-added" onClick={()=>{dispatch({type: "ADD_TO_CART", id: product.id, quantity: 1}); changeAddedToCartStt()}}>Thêm vào giỏ</span>
+                            <span className="not-added" onClick={()=>{dispatch({type: "ADD_TO_CART", id: product.id, quantity: 1, size: "M"}); changeAddedToCartStt()}}>Thêm vào giỏ</span>
                         ) : (
                             <>
                             <span className="added animate__animated animate__fadeInDown">

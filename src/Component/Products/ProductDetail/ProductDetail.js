@@ -1,5 +1,5 @@
 // direct child of RouterURL
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import urlSlug from "url-slug";
 import {connect} from "react-redux";
 import ProductsInfo from '../../../Data/ProductInfo';
