@@ -13,6 +13,7 @@ const ProductButton = (props) => {
             <div className="row">
                 <div className="col">
                     <div className="wrap">
+                        {/* general infor of product: name, price, like, view, share */}
                         <div className="name">
                             {product.name}
                         </div>
@@ -24,7 +25,7 @@ const ProductButton = (props) => {
                                 <FontAwesomeIcon icon={faHeart} className="icon"/>
                                 1890
                             </div>
-                            <div className="see">
+                            <div className="view">
                                 <FontAwesomeIcon icon={faEye} className="icon"/>
                                 2190
                             </div>

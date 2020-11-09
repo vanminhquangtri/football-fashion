@@ -582,9 +582,11 @@ margin-top: 40px;
           /* control arrrows next and previous */
           .tns-controls {
             position: absolute;
+            left: 1%;
+            right: 1%;
             display: flex;
             justify-content: space-between;
-            width: 100%;
+            margin: auto;
             z-index: 1;
             top: 45%;
             outline: none;
@@ -648,7 +650,7 @@ margin-top: 40px;
       }
     }
   }
-  /* contain buttons add to cart, plus, minus, name, price, like times, view times, size */
+  /* contain name, price, like times, view times */
   .container-fluid.product-button {
     .row {
       .col {
@@ -668,7 +670,7 @@ margin-top: 40px;
             .icon {
               margin-right: 5px;
             }
-            .like, .see, .share {
+            .like, .view, .share {
               background: $color-blue-mc;
               color: white;
               padding: 1px 6px;
@@ -680,6 +682,113 @@ margin-top: 40px;
       }
     }
   }
+  /* contain buttons add to cart, plus, minus, size */
+  .container-fluid.product-add-to-cart {
+    margin-top: 10px;
+    .row {
+      .col {
+        padding: 0 5px;
+        .wrap {
+          /* display all size of product */
+          .size {
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            .title {
+              margin-right: 5px;
+              font-weight: bold;
+            }
+            .size-box {
+              width: 34px;
+              height: 34px;
+              border-radius: 50%;
+              margin: 2px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: $color-blue-mc;
+              color: white;
+            }
+            .S {
+              width: 30px;
+              height: 30px;
+            }
+            .M {
+              width: 31px;
+              height: 31px;
+            }
+            .L {
+              width: 32px;
+              height: 32px;
+            }
+            .XL {
+              width: 33px;
+              height: 33px;
+            }
+          }
+          /* button plus, minus, quantity */
+          .buttons {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            .title {
+              margin-right: 5px;
+              font-weight: bold;
+              font-size: 12px;
+            }
+            .minus, .quantity, .plus {
+              border: none;
+              outline: none;
+              width: 30px;
+            }
+            .quantity {
+              text-align: center;
+              font-weight: bold;
+              border-bottom: 1px solid $color-gray-border;
+              border-top: 1px solid $color-gray-border;
+            }
+            .minus, .plus {
+              height: 30px;
+              background: $color-red;
+              color: white;
+            }
+          }
+          /* show sub total */
+          .sub-total {
+            .title {
+              margin-right: 5px;
+              font-weight: bold;
+              font-size: 12px;
+            }
+            .amount {
+              font-size: 18px;
+              font-weight: bold;
+              color: $color-red;
+            }
+          }
+          /* button add to cart */
+          .btn-add-to-cart, .btn-check-out {
+            button {
+              height: 25px;
+              border: none;
+              outline: none;
+              background: $color-red;
+              color: white;
+              font-weight: bold;
+              border-radius: 15px;
+              font-size: 12px;
+            }
+            button.check-out {
+              background: $color-blue-mc;
+              margin-left: 5px;
+              a {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 /*--- end product detail ---*/
-
