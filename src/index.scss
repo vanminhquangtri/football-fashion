@@ -791,5 +791,44 @@ margin-top: 40px;
       }
     }
   }
+  /* contain other infos of products: description, shipping, payment, refund */
+  .container-fluid.product-other-info {
+    margin-top: 20px;
+    .row {
+      .col {
+        padding: 0 5px;
+        .wrap {
+          .info-type {
+            border: 1px solid $color-gray-border;
+            border-top: none;
+            margin-bottom: 10px;
+            .info-title {
+              background: $color-gray-border;
+              display: flex;
+              align-items: center;
+              .title {
+                width: 100%;
+                padding-left: 10px;
+              }
+              .accordion-btn {
+                float: right;
+                width: 45px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: black;
+                color: white;
+              }
+            }
+            .info-detail {
+              padding: 10px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 /*--- end product detail ---*/

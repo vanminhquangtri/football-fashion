@@ -1,4 +1,4 @@
-// direct child of ProductDetail, contain buttons add to cart, plus, minus, name, price, like times, view times, size
+// direct child of ProductDetail, show name, price, like times, view times
 import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHeart, faEye, faShareAlt} from "@fortawesome/free-solid-svg-icons";
