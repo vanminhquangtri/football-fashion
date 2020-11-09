@@ -27,7 +27,7 @@ const ProductLayout = (props) => {
         <div className="col product-col animate__animated animate__fadeInUp" key={product.id}>
             <div className="wrap">
                 <NavLink
-                    to={`/${urlSlug(product.name)}`} 
+                    to={`/product-detail/${urlSlug(product.name)}`} 
                     exact={true}
                 >
                     <div 

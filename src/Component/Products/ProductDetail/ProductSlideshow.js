@@ -16,7 +16,7 @@ const ProductSlideshow = (props) => {
             <div className="row">
                 <div className="col">
                     <TinySlider>
-                        {product.slide_image.map((image) => {
+                        {product !== undefined && product.slide_image.map((image) => {
                             return (
                                 <div className="slide-item" key={image.default}>
                                     <img alt="product-slide-show" src={image.default}/>

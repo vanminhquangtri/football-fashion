@@ -568,9 +568,13 @@ margin-top: 40px;
 /*--- product detail ---*/
 .product-detail {
   margin: 50px 0 10px 0;
+  background: white;
+  /* slide show of image at top */
   .container-fluid.slide-show {
+    margin-top: 10px;
     .row {
       .col {
+        padding: 0 5px;
         .tns-outer {
           position: relative;
           display: flex;
@@ -582,7 +586,8 @@ margin-top: 40px;
             justify-content: space-between;
             width: 100%;
             z-index: 1;
-              top: 40%;
+            top: 45%;
+            outline: none;
             button {
               border: none;
               outline: none;
@@ -637,6 +642,38 @@ margin-top: 40px;
                   }
                 }
               }
+            }
+          }
+        }
+      }
+    }
+  }
+  /* contain buttons add to cart, plus, minus, name, price, like times, view times, size */
+  .container-fluid.product-button {
+    .row {
+      .col {
+        padding: 0 5px;
+        .wrap {
+          .name {
+            font-weight: bold;
+          }
+          .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: $color-red;
+          }
+          .emotions {
+            display: flex;
+            font-size: 11px;
+            .icon {
+              margin-right: 5px;
+            }
+            .like, .see, .share {
+              background: $color-blue-mc;
+              color: white;
+              padding: 1px 6px;
+              margin-right: 5px;
+              border-radius: 5px;
             }
           }
         }
