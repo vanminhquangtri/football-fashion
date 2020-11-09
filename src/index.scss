@@ -740,15 +740,16 @@ margin-top: 40px;
               border: none;
               outline: none;
               width: 30px;
+              height: 30px;
             }
             .quantity {
               text-align: center;
               font-weight: bold;
               border-bottom: 1px solid $color-gray-border;
               border-top: 1px solid $color-gray-border;
+              font-size: 12px;
             }
             .minus, .plus {
-              height: 30px;
               background: $color-red;
               color: white;
             }
@@ -766,7 +767,7 @@ margin-top: 40px;
               color: $color-red;
             }
           }
-          /* button add to cart */
+          /* button add to cart and check-out */
           .btn-add-to-cart, .btn-check-out {
             button {
               height: 25px;
