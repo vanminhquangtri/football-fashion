@@ -801,51 +801,98 @@ margin-top: 40px;
       }
     }
   }
-}
-/*--- end product detail ---*/
-/*---  also-like product in product detail ---*/
-.display-homepage.product-detail-also-like {
-  background: $color-blue-mc;
-  .container-fluid {
+  /* section also like (component Product Detail) */
+  .container-fluid.also-like {
     .row {
-      .col.also-like-slide {
-        padding: 0 3px; 
-        .tns-outer {
-          position: relative;
-          .tns-controls {
-            padding: 0;
-            z-index: 1;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 40%;
-            display: flex;
-            justify-content: space-between;
-            button {
-              border: none;
-              outline: none;
-              color: transparent;
-              background: transparent;
-              margin-left: 0;
-              background: {
-                position: center;
-                size: 70% 70%;
-                repeat: no-repeat;
-              }
-            }
-            button[data-controls="prev"] {
-              background-image: url("../src/Assets/images/section-product-detail/left.svg");
-              background-position: left center;
-            }
-            button[data-controls="next"] {
-              background-image: url("../src/Assets/images/section-product-detail/right-arrow.svg");
-              background-position: right center;
-            }
-          }
-          .tns-ovh {
-            .tns-inner {
-              .tns-slider {
-                .col.product-col {
+      .col {
+        .wrap {
+          .also-like-product {
+            flex: 50% !important;
+            max-width: 50% !important;
+            padding-left: 2px;
+            padding-right: 2px;
+            .wrap {
+              background: white;
+              position: relative;
+              padding-top: 10px;
+              margin-bottom: 3px;
+              a {
+                text-decoration: none;
+                /* hold main image of product */
+                .background-image {
+                  display: flex;
+                  img {
+                    margin: auto;
+                    width: 90px;
+                    height: 90px;
+                  }
+                }
+                /* information of product */
+                .info {
+                  padding: 0 2px;
+                  font-size: 12px;
+                  text-align: center;
+                  .name {
+                    text-decoration: underline;
+                    display: block;
+                    overflow: hidden;
+                    color: #243461;
+                    height: 35px;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2; /* show name and lines only */
+                    -webkit-box-orient: vertical;
+                  }
+                  .price {
+                    font-weight: bold;
+                    font-size: 13px;
+                    color: $color-red;
+                  }
+                }
+                /* promotion box (SALE ...%) */
+                .promotion {
+                  position: absolute;
+                  top: 2px;
+                  left: 2px;
+                  background: $color-red;
+                  color: white;
+                  height: 35px;
+                  width: 35px;
+                  border-radius: 50%;
+                  font-size: 10px;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                }
+                .free-ship {
+                  position: absolute;
+                  top: -4px;
+                  left: 2px;
+                  height: 30px;
+                  width: 30px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  img {
+                    width: 100%;
+                    border: none;
+                  }
+                }
+                /* member point */
+                .member-point {
+                  position: absolute;
+                  top: 2px;
+                  right: 2px;
+                  background: $color-blue-mc;
+                  color: white;
+                  height: 14px;
+                  width: 42px;
+                  font-size: 10px;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
                 }
               }
             }
@@ -854,9 +901,9 @@ margin-top: 40px;
       }
     }
   }
+  /* end section also like (component Product Detail) */
 }
-/*--- end also-like product in product detail ---*/
-
+/*--- end product detail ---*/
 /* each product is a col */
 .col.product-col {
   flex: 50% !important;

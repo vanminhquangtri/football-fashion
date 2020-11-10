@@ -14,6 +14,7 @@ const ProductDetail = (props) => {
     const Product = ProductsInfo.find((product) => {
         return urlSlug(product.name) === nameSlug
     });
+    console.log(Product);
     useEffect(() => {
         // scroll to top on page load (only first render)
         window.scrollTo(0, 0)
@@ -24,7 +25,7 @@ const ProductDetail = (props) => {
             <ProductSlideshow product={Product}/>
             <AddToCart product={Product}/>
             <ProductOtherInfo product={Product}/>
-            {/* <AlsoLike product={Product}></AlsoLike> */}
+            <AlsoLike product={Product} key={Product.id}></AlsoLike>
         </section>
     );
 };
