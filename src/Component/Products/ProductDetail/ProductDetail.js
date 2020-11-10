@@ -16,8 +16,10 @@ const ProductDetail = (props) => {
     });
     useEffect(() => {
         // scroll to top on page load (only first render)
-        window.scrollTo(0, 0)
-    },[])
+        window.scrollTo(0, 0);
+        document.cookie = `${Product.id}`;
+        console.log(document.cookie);
+    })
     return (
         <section className="product-detail">
             <ProductButton product={Product}/>
