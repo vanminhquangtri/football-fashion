@@ -5,7 +5,6 @@ import {faPlus, faMinus} from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";
 
 const ProductOtherInfo = (props) => {
-    const {Currency} = props.Store;
     const {product} = props;
     const [state, setState] = useState({
         des: true,

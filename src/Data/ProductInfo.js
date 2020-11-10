@@ -55,7 +55,7 @@ const ProductsInfo = [
     id: "EPLARSA2020SHIRT",
     league: "Premier League",
     club: "Arsenal",
-    name: "Áo đấu Arsenal sân khách mùa giải 2020/2021 - điểm cộng cho pháp thủ",
+    name: "Áo đấu Arsenal sân khách mùa giải 2020/2021 - điểm cộng cho pháo thủ",
     price: 1500000,
     place: "away",
     type: "shirt",

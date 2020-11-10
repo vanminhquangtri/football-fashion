@@ -1,29 +1,53 @@
 // direct child of ProductDetail
-import React, {useEffect} from 'react';
-import TinySlider from "tiny-slider-react";
-
+/** @jsxRuntime classic */
+/**@jsx jsx */
+import {useEffect} from 'react';
+import {jsx, css} from "@emotion/core";
 const ProductSlideshow = (props) => {
     const {product} = props;
     useEffect(() => {
-        // use all images of product for nav button
-        const navBtns = document.querySelectorAll(".slide-show .tns-nav button");
-        navBtns.forEach((btn, index) => {
-            btn.style.backgroundImage = `url(${product.slide_image[index].default})`
-        })
+        const carouselItems = document.querySelector(".carousel-item");
+        carouselItems.className = "carousel-item active";
+        const carouselIndicators = document.querySelector(".carousel-indicators li");
+        carouselIndicators.className = carouselIndicators.className + " active";
     })
     return (
         <div className="container-fluid slide-show">
             <div className="row">
                 <div className="col">
-                    <TinySlider>
-                        {product !== undefined && product.slide_image.map((image) => {
-                            return (
-                                <div className="slide-item" key={image.default}>
-                                    <img alt="product-slide-show" src={image.default}/>
-                                </div>
-                            )
-                        })}
-                    </TinySlider>
+                    <div id="ProductDetailTopSlide" className="carousel slide" data-ride="carousel" data-interval={false}>
+                        <div className="carousel-inner">
+                            {product.slide_image.map((image, index) => {
+                                return (
+                                    <div className="carousel-item" key={image.default}>
+                                        <img src={image.default} className="d-block w-100" alt="top-slide"/>
+                                    </div>
+                                    )
+                            })}
+                        </div>
+                        <ol className="carousel-indicators">
+                            {product.slide_image.map((image, index) => {
+                                return (
+                                        <li 
+                                            data-target="#ProductDetailTopSlide" 
+                                            data-slide-to={index} 
+                                            key={image.default}
+                                            css={css`
+                                                background-image: url(${product.slide_image[index].default})
+                                            `}
+                                        />
+                                    )
+                            })}
+                        </ol>
+                        <a className="carousel-control-prev" href="#ProductDetailTopSlide" role="button" data-slide="prev">
+                            <span className="carousel-control-prev-icon" aria-hidden="true" />
+                            <span className="sr-only">Previous</span>
+                        </a>
+                        <a className="carousel-control-next" href="#ProductDetailTopSlide" role="button" data-slide="next">
+                            <span className="carousel-control-next-icon" aria-hidden="true" />
+                            <span className="sr-only">Next</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
