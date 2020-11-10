@@ -14,7 +14,6 @@ const ProductDetail = (props) => {
     const Product = ProductsInfo.find((product) => {
         return urlSlug(product.name) === nameSlug
     });
-    console.log(Product);
     useEffect(() => {
         // scroll to top on page load (only first render)
         window.scrollTo(0, 0)

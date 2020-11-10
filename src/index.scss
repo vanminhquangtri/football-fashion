@@ -801,98 +801,141 @@ margin-top: 40px;
       }
     }
   }
-  /* section also like (component Product Detail) */
+  /* also like products */
   .container-fluid.also-like {
+    margin-top: 10px;
+    background: white;
     .row {
       .col {
+        padding: 0 5px;
         .wrap {
-          .also-like-product {
-            flex: 50% !important;
-            max-width: 50% !important;
-            padding-left: 2px;
-            padding-right: 2px;
-            .wrap {
-              background: white;
-              position: relative;
-              padding-top: 10px;
-              margin-bottom: 3px;
-              a {
-                text-decoration: none;
-                /* hold main image of product */
-                .background-image {
-                  display: flex;
-                  img {
-                    margin: auto;
-                    width: 90px;
-                    height: 90px;
-                  }
+          .title {
+            font-weight: bold;
+          }
+          .tns-outer {
+            position: relative;
+            .tns-controls {
+              
+              position: absolute;
+              top: 35%;
+              left: 0%;
+              right: 0%;
+              display: flex;
+              justify-content: space-between;
+              outline: none;
+              button {
+                z-index: 1;
+                border: none;
+                outline: none;
+                color: transparent;
+                background : {
+                  color: transparent;
+                  position: center;
+                  repeat: no-repeat;
+                  size: 70% 70%;
                 }
-                /* information of product */
-                .info {
-                  padding: 0 2px;
-                  font-size: 12px;
-                  text-align: center;
-                  .name {
-                    text-decoration: underline;
-                    display: block;
-                    overflow: hidden;
-                    color: #243461;
-                    height: 35px;
-                    text-overflow: ellipsis;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 2; /* show name and lines only */
-                    -webkit-box-orient: vertical;
+              }
+              button[data-controls=prev] {
+                background-image: url("../src/Assets/images/section-product-detail/left.svg");
+                background-position: left;
+              }
+              button[data-controls=next] {
+                background-image: url("../src/Assets/images/section-product-detail/right-arrow.svg");
+                background-position: right;
+              }
+            }
+            .tns-ovh {
+              .tns-inner {
+                .tns-slider {
+                  .also-like-product {
+                    padding-left: 2px;
+                    padding-right: 2px;
+                    .wrap {
+                      border: 1px solid $color-blue-mc;
+                      position: relative;
+                      padding-top: 10px;
+                      margin-bottom: 3px;
+                      a {
+                        text-decoration: none;
+                        /* hold main image of product */
+                        .background-image {
+                          display: flex;
+                          img {
+                            margin: auto;
+                            width: 90px;
+                            height: 90px;
+                          }
+                        }
+                        /* information of product */
+                        .info {
+                          padding: 0 2px;
+                          font-size: 12px;
+                          text-align: center;
+                          .name {
+                            text-decoration: underline;
+                            display: block;
+                            overflow: hidden;
+                            color: #243461;
+                            height: 35px;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2; /* show name and lines only */
+                            -webkit-box-orient: vertical;
+                          }
+                          .price {
+                            font-weight: bold;
+                            font-size: 13px;
+                            color: $color-red;
+                          }
+                        }
+                        /* promotion box (SALE ...%) */
+                        .promotion {
+                          position: absolute;
+                          top: 2px;
+                          left: 2px;
+                          background: $color-red;
+                          color: white;
+                          height: 35px;
+                          width: 35px;
+                          border-radius: 50%;
+                          font-size: 10px;
+                          text-align: center;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                        }
+                        .free-ship {
+                          position: absolute;
+                          top: -4px;
+                          left: 2px;
+                          height: 30px;
+                          width: 30px;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          img {
+                            width: 100%;
+                            border: none;
+                          }
+                        }
+                        /* member point */
+                        .member-point {
+                          position: absolute;
+                          top: 2px;
+                          right: 2px;
+                          background: $color-blue-mc;
+                          color: white;
+                          height: 14px;
+                          width: 42px;
+                          font-size: 10px;
+                          text-align: center;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                        }
+                      }
+                    }
                   }
-                  .price {
-                    font-weight: bold;
-                    font-size: 13px;
-                    color: $color-red;
-                  }
-                }
-                /* promotion box (SALE ...%) */
-                .promotion {
-                  position: absolute;
-                  top: 2px;
-                  left: 2px;
-                  background: $color-red;
-                  color: white;
-                  height: 35px;
-                  width: 35px;
-                  border-radius: 50%;
-                  font-size: 10px;
-                  text-align: center;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                }
-                .free-ship {
-                  position: absolute;
-                  top: -4px;
-                  left: 2px;
-                  height: 30px;
-                  width: 30px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  img {
-                    width: 100%;
-                    border: none;
-                  }
-                }
-                /* member point */
-                .member-point {
-                  position: absolute;
-                  top: 2px;
-                  right: 2px;
-                  background: $color-blue-mc;
-                  color: white;
-                  height: 14px;
-                  width: 42px;
-                  font-size: 10px;
-                  text-align: center;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
                 }
               }
             }
@@ -901,10 +944,9 @@ margin-top: 40px;
       }
     }
   }
-  /* end section also like (component Product Detail) */
 }
 /*--- end product detail ---*/
-/* each product is a col */
+/* general layout of product, reuse for many component */
 .col.product-col {
   flex: 50% !important;
   max-width: 50% !important;
@@ -1016,3 +1058,4 @@ margin-top: 40px;
     }
   }
 }
+/* end general layout of product, reuse for many component */

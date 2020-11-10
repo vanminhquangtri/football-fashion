@@ -17,6 +17,7 @@ const AlsoLike = (props) => {
             <div className="row">
                 <div className="col">
                     <div className="wrap">
+                        <div className="title">Sản phẩm cùng giải đấu</div>
                         <TinySlider settings={settings}>
                             {alsoLikeProduct.map((product) => {
                                 return (
