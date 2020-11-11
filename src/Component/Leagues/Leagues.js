@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Laliga from './Laliga';
 import EPL from './EPL';
 import Bundesliga from './Bundesliga';
@@ -7,27 +7,50 @@ import Ligue1 from './Ligue1';
 
 const Leagues = (props) => {
     const [state, setState] = useState({
-        shown_league: "ligue-1"
+        shown_league: "all"
     });
     const {shown_league} = state;
+    const changeShownLeage = (ev, league) => {
+        ev.preventDefault();
+        setState((prevState) => {
+            return {
+                ...prevState,
+                shown_league: league
+            }
+        })
+    };
+    useEffect(() => {
+        // scroll to top of page
+        window.scrollTo(0, 0);
+        // add border of links if click;
+        const navLinks = document.querySelectorAll(".leagues-nav .wrap .links");
+        for (let i = 0; i < navLinks.length; i++){
+            navLinks[i].addEventListener("click", () => {
+                for (let k = 0; k < navLinks.length; k++) {
+                    navLinks[k].style.border = "none"; 
+                }
+                navLinks[i].style.borderBottom = "2px solid white";
+            })
+        }
+    }, [shown_league])
     return (
         <section className="leagues">
             {/* hold main menu on the left side */}
             <div className="leagues-nav">
                 <div className="wrap">
-                    <div className="links">
+                    <div className="links" onClick={(ev)=>changeShownLeage(ev, "epl")}>
                         <img src={require("../../Assets/images/product/epl/logo-white-3.png").default}alt="Premier League"/>
                     </div>
-                    <div className="links">
+                    <div className="links" onClick={(ev)=>changeShownLeage(ev, "la-liga")}>
                         <img src={require("../../Assets/images/product/laliga/logo-white-3.png").default}alt="La Liga"/>
                     </div>
-                    <div className="links">
+                    <div className="links" onClick={(ev)=>changeShownLeage(ev, "bundes-liga")}>
                         <img src={require("../../Assets/images/product/bundesliga/logo-white-3.png").default}alt="Bundes Liga"/>
                     </div>
-                    <div className="links">
+                    <div className="links" onClick={(ev)=>changeShownLeage(ev, "serie-a")}>
                         <img src={require("../../Assets/images/product/seriea/logo-white.png").default}alt="Serie A"/>
                     </div>
-                    <div className="links">
+                    <div className="links" onClick={(ev)=>changeShownLeage(ev, "ligue-1")}>
                         <img src={require("../../Assets/images/product/ligue1/logo-white-3.png").default}alt="Ligue 1"/>
                     </div>
                 </div>
@@ -35,19 +58,19 @@ const Leagues = (props) => {
             {/* show product on the right side */}
             <div className="leagues-products">
                 <div className="leagues-products-wrap">
-                    {shown_league === "epl" && (
+                    {(shown_league === "epl" || shown_league === "all") && (
                         <EPL/>
                     )}
-                    {shown_league === "la-liga" && (
+                    {(shown_league === "la-liga" || shown_league === "all") && (
                         <Laliga/>
                     )}
-                    {shown_league === "bundes-liga" && (
+                    {(shown_league === "bundes-liga" || shown_league === "all") && (
                         <Bundesliga/>
                     )}
-                    {shown_league === "serie-a" && (
+                    {(shown_league === "serie-a" || shown_league === "all") && (
                         <SerieA/>
                     )}
-                    {shown_league === "ligue-1" && (
+                    {(shown_league === "ligue-1" || shown_league === "all") && (
                         <Ligue1/>
                     )}
                 </div>

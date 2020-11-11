@@ -988,6 +988,7 @@ margin-top: 40px;
       justify-content: space-evenly;
       padding: 0 2px;
       .links {
+        padding-bottom: 5px;
         img {
           width: 11vw;
         }
@@ -1011,7 +1012,7 @@ margin-top: 40px;
         }
       }
       .epl {
-        background: rgb(194, 16, 194);
+        background: rgb(184, 0, 77);
         .each-league-title {
           background-image: url("../src/Assets/images/product/epl/logo-white-3.png");
         }
@@ -1029,14 +1030,13 @@ margin-top: 40px;
         }
       }
       .serie-a {
-        background: rgb(97, 2, 250);
+        background: rgb(68, 1, 175);
         .each-league-title {
-          background-image: url("../src/Assets/images/product/bundesliga/logo-white-3.png");
-          background-size: auto 50%;
+          background-image: url("../src/Assets/images/product/seriea/logo-white.png");
         }
       }
       .ligue-1 {
-        background: rgb(255, 29, 123);
+        background: rgb(0, 87, 109);
         .each-league-title {
           background-image: url("../src/Assets/images/product/ligue1/logo-white.png");
         }
