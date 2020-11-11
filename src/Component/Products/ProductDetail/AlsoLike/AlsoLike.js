@@ -1,5 +1,5 @@
 import React from "react";
-import ProductsInfo from "../../../Data/ProductInfo";
+import ProductsInfo from "../../../../Data/ProductInfo";
 import {connect} from "react-redux";
 import TinySlider from "tiny-slider-react";
 import AlsoLikeProduct from "./AlsoLikeProduct";
@@ -13,10 +13,10 @@ const AlsoLike = (props) => {
         return p.league === product.league && p.id !== product.id;
     })
     return (
-        <div className="container-fluid also-like">
+        <div className="container-fluid also-container also-like">
             <div className="row">
                 <div className="col">
-                    <div className="wrap">
+                    <div className="wrap outside">
                         <div className="title">Sản phẩm cùng giải đấu</div>
                         <TinySlider settings={settings}>
                             {alsoLikeProduct.map((product) => {

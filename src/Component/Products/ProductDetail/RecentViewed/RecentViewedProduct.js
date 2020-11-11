@@ -4,9 +4,9 @@ import {faCheckCircle, faMinusCircle} from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";
 import {NavLink} from "react-router-dom";
 import urlSlug from "url-slug";
-import formatNumber from "../../GeneralModules/FortmatMoney";
-import freeShipImg from "../../../Assets/images/product-layout/free-ship2.png"
-const AlsoLikeProduct = (props) => {
+import freeShipImg from "../../../../Assets/images/product-layout/free-ship2.png"
+import formatNumber from "../../../GeneralModules/FortmatMoney";
+const RecentViewedProduct = (props) => {
     const {Currency} = props.Store;
     const [state, setState] = useState({
         added_to_cart: false
@@ -22,8 +22,8 @@ const AlsoLikeProduct = (props) => {
         })
     }
     return (
-        <div className="also-like-product" key={product.id}>
-            <div className="wrap">
+        <div className="also-product recent-viewed" key={product.id}>
+            <div className="wrap inside">
                 <NavLink
                     to={`/product-detail/${urlSlug(product.name)}`} 
                     exact={true}
@@ -79,4 +79,4 @@ const mapStateToProps = (state) => {
         Store: state
     }
 }
-export default connect(mapStateToProps)(AlsoLikeProduct)
+export default connect(mapStateToProps)(RecentViewedProduct)
