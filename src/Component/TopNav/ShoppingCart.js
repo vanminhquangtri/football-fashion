@@ -8,6 +8,10 @@ import {connect} from "react-redux";
 class ShoppingCart extends Component {
     render() {
         const {Cart} = this.props.Store;
+        var cartTotalQuantity = 0;
+        Cart.forEach((item) => {
+            cartTotalQuantity += item.quantity 
+        })
         return (
             <div className="col-auto shopping-cart">
                 <div className="wrap">
@@ -16,7 +20,7 @@ class ShoppingCart extends Component {
                         exact={true}
                     >
                         <FontAwesomeIcon icon={faShoppingCart} className="icon"/>
-                        <span className="shopping-cart-quantity">{Cart.length}</span>
+                        <span className="shopping-cart-quantity">{cartTotalQuantity}</span>
                     </NavLink>
                 </div>
             </div>
