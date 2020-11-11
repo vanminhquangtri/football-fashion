@@ -724,6 +724,16 @@ margin-top: 40px;
               border-top: 1px solid $color-gray-border;
               font-size: 12px;
             }
+            /* remove default scroll of number input tag */
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            }
+            /* Firefox */
+            input[type=number] {
+                -moz-appearance: textfield;
+            }
             .minus, .plus {
               background: $color-red;
               color: white;
@@ -962,3 +972,34 @@ margin-top: 40px;
   /* end general product layout used for also like and recent viewed*/
 }
 /*--- end product detail ---*/
+/*--- leagues ---*/
+.leagues {
+  margin-top: 40px;
+  /* hold main menu on the left side */
+  .leagues-nav {
+    background: white;
+    border-right: 1px solid $color-gray-border;
+    position: fixed;
+    top: 38px;
+    left: 0;
+    bottom: 35px;
+    z-index: 1;
+    .wrap {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 0 2px;
+      .links {
+        img {
+          width: 11vw;
+        }
+      }
+    }
+  }
+  .leagues-products {
+    margin-left: 13.5vw;
+    background: white;
+  }
+}
+/*--- end leagues ---*/

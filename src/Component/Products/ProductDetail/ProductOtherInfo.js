@@ -28,7 +28,7 @@ const ProductOtherInfo = (props) => {
                         {/* description */}
                         <div className="info-type des">
                             <div className="info-title">
-                                <div className="title">Description</div>
+                                <div className="title">Mô tả sản phẩm</div>
                                 <div className="accordion-btn" onClick={()=>{changeAccordionStt("des")}}>
                                     {des && (<FontAwesomeIcon icon={faMinus} className="animate__animated animate__rotateIn"/>)}
                                     {des === false && (<FontAwesomeIcon icon={faPlus}  className="animate__animated animate__rotateIn"/>)}
@@ -42,7 +42,7 @@ const ProductOtherInfo = (props) => {
                         </div>
                         <div className="info-type shipping">
                             <div className="info-title">
-                                <div className="title">Shipping</div>
+                                <div className="title">Giao nhận</div>
                                 <div className="accordion-btn" onClick={()=>{changeAccordionStt("shipping")}}>
                                     {shipping && (<FontAwesomeIcon icon={faMinus} className="animate__animated animate__rotateIn"/>)}
                                     {shipping === false && (<FontAwesomeIcon icon={faPlus}  className="animate__animated animate__rotateIn"/>)}
@@ -56,7 +56,7 @@ const ProductOtherInfo = (props) => {
                         </div>
                         <div className="info-type payment">
                             <div className="info-title">
-                                <div className="title">Payment</div>
+                                <div className="title">Thanh toán</div>
                                 <div className="accordion-btn" onClick={()=>{changeAccordionStt("payment")}}>
                                     {payment && (<FontAwesomeIcon icon={faMinus} className="animate__animated animate__rotateIn"/>)}
                                     {payment === false && (<FontAwesomeIcon icon={faPlus}  className="animate__animated animate__rotateIn"/>)}
@@ -70,7 +70,7 @@ const ProductOtherInfo = (props) => {
                         </div>
                         <div className="info-type refund">
                             <div className="info-title">
-                                <div className="title">Refund</div>
+                                <div className="title">Hoàn tiền</div>
                                 <div className="accordion-btn" onClick={()=>{changeAccordionStt("refund")}}>
                                     {refund && (<FontAwesomeIcon icon={faMinus} className="animate__animated animate__rotateIn"/>)}
                                     {refund === false && (<FontAwesomeIcon icon={faPlus}  className="animate__animated animate__rotateIn"/>)}

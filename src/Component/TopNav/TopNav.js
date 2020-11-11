@@ -63,10 +63,10 @@ const TopNav = (props) => {
                                 <ul className="sub-menu animate__animated animate__fadeInLeft">
                                     <li>
                                         <NavLink
-                                        to="/top-sales"
+                                        to="/leagues"
                                         exact={true}
                                         >
-                                            Top Sales
+                                            Xem theo giải đấu
                                         </NavLink>
                                     </li>
                                     <li>
@@ -74,7 +74,7 @@ const TopNav = (props) => {
                                         to="/champion"
                                         exact={true}
                                         >
-                                            Áo đấu chà vô địch
+                                            Sở hữu hà vô địch
                                         </NavLink>
                                     </li>
                                     <li>
@@ -82,23 +82,23 @@ const TopNav = (props) => {
                                         to="/promotion"
                                         exact={true}
                                         >
-                                            Khuyễn mãi hấp dẫn
+                                            Sản phẩm đang khuyễn mãi
                                         </NavLink>
                                     </li>
                                     <li>
                                         <NavLink
-                                        to="/"
+                                        to="/full-kit"
                                         exact={true}
                                         >
-                                            Trọn bộ
+                                            Sản phẩm trọn gói
                                         </NavLink>
                                     </li>
                                     <li>
                                         <NavLink
-                                        to="/"
+                                        to="/contact"
                                         exact={true}
                                         >
-                                            Liên hệ
+                                            Liên hệ chúng tôi
                                         </NavLink>
                                     </li>
                                 </ul>
