@@ -276,19 +276,6 @@ margin-top: 40px;
           }
         }
       }
-      /* load more and hide */
-      .control-loaded-quantity {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 5px;
-        .load-btn {
-          border: none;
-          outline: none;
-          background: $color-gray-bg;
-          font-size: 11px;
-          border-radius: 5px;
-        }
-      }
     }
   }
 }
@@ -417,9 +404,18 @@ margin-top: 40px;
     }
   }
 }
-.col.product-col:nth-child(odd) {
-  padding-left: 1px;
-  padding-right: 2px;
+/* load more and hide */
+.control-loaded-quantity {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5px;
+  .load-btn {
+    border: none;
+    outline: none;
+    background: $color-gray-bg;
+    font-size: 11px;
+    border-radius: 5px;
+  }
 }
 /* end general layout of product, reuse for many components (most concerned, special promtion, top sales, champion) */
 /*--- end most concerned, special promtion, top sales, champion ---*/
@@ -974,10 +970,10 @@ margin-top: 40px;
 /*--- end product detail ---*/
 /*--- leagues ---*/
 .leagues {
-  margin-top: 40px;
+  margin-top: 38px;
   /* hold main menu on the left side */
   .leagues-nav {
-    background: white;
+    background: rgb(126, 211, 0);
     border-right: 1px solid $color-gray-border;
     position: fixed;
     top: 38px;
@@ -997,9 +993,46 @@ margin-top: 40px;
       }
     }
   }
+  /* show product of each league */
   .leagues-products {
-    margin-left: 13.5vw;
-    background: white;
+    margin-left: 13vw;
+    .leagues-products-wrap {
+      .each-league-title {
+        font-weight: bold;
+        color: white;
+        font-size: 14px;
+        padding: 10px 0;
+        margin: 4px;
+        background: {
+          size: auto 60%;
+          position: right;
+          repeat: no-repeat;
+        }
+      }
+      .epl {
+        background: rgb(194, 16, 194);
+        .each-league-title {
+          background-image: url("../src/Assets/images/section-leagues/logoepl.png");
+        }
+      }
+      .col.product-col:nth-child(odd) {
+        padding-left: 4px !important;
+        padding-right: 2px !important;
+      }
+      .col.product-col:nth-child(even) {
+        padding-left: 2px !important;
+        padding-right: 4px !important;
+      }
+    }
   }
 }
 /*--- end leagues ---*/
+
+.col.product-col:nth-child(odd) {
+  padding-left: 2px !important;
+  padding-right: 4px !important;
+}
+.col.product-col:nth-child(even) {
+  padding-left: 4px !important;
+  padding-right: 2px !important;
+}
