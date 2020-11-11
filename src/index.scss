@@ -978,8 +978,9 @@ margin-top: 40px;
     position: fixed;
     top: 38px;
     left: 0;
-    bottom: 35px;
+    bottom: 0;
     z-index: 1;
+    padding-bottom: 35px;
     .wrap {
       height: 100%;
       display: flex;
@@ -1012,7 +1013,32 @@ margin-top: 40px;
       .epl {
         background: rgb(194, 16, 194);
         .each-league-title {
-          background-image: url("../src/Assets/images/section-leagues/logoepl.png");
+          background-image: url("../src/Assets/images/product/epl/logo-white-3.png");
+        }
+      }
+      .la-liga {
+        background: rgb(126, 211, 0);
+        .each-league-title {
+          background-image: url("../src/Assets/images/product/laliga/logo-white-2.png");
+        }
+      }
+      .bundes-liga {
+        background: rgb(255, 149, 29);
+        .each-league-title {
+          background-image: url("../src/Assets/images/product/bundesliga/logo-white-3.png");
+        }
+      }
+      .serie-a {
+        background: rgb(97, 2, 250);
+        .each-league-title {
+          background-image: url("../src/Assets/images/product/bundesliga/logo-white-3.png");
+          background-size: auto 50%;
+        }
+      }
+      .ligue-1 {
+        background: rgb(255, 29, 123);
+        .each-league-title {
+          background-image: url("../src/Assets/images/product/ligue1/logo-white.png");
         }
       }
       .col.product-col:nth-child(odd) {

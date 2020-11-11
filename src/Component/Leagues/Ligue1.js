@@ -3,23 +3,23 @@ import ProductsInfo from "../../Data/ProductInfo";
 import LoadProducts from "../GeneralModules/LoadProducts";
 import ProductLayout from "../Products/ProductLayout/ProductLayout";
 
-const EPL = (props) => {
+const Ligue1 = (props) => {
     const [state, setState] = useState({
         loaded_product_number: 4
     });
     const {loaded_product_number} = state;
-    const eplProduct = ProductsInfo.filter((product) => {
-        return product.league === "Premier League";
+    const Ligue1Product = ProductsInfo.filter((product) => {
+        return product.league === "Ligue 1";
     });
     let loadedProducts = [];
-    eplProduct.forEach((product) => {
+    Ligue1Product.forEach((product) => {
         if (loadedProducts.length < loaded_product_number) {
             loadedProducts.push(product)
         }
     })
     return (
-        <div className="leage epl">
-            <div className="each-league-title">Ngoại Hạng Anh<br/>giải đấu hấp dẫn nhất hành tinh</div>
+        <div className="leage ligue-1">
+            <div className="each-league-title">Ligue 1<br/>nhảy múa cùng bóng đá</div>
             <div className="leagues-products-layout">
                 <div className="container-fluid">
                     <div className="row">
@@ -31,8 +31,8 @@ const EPL = (props) => {
                     </div>
                 </div>
                 <div className="control-loaded-quantity">
-                    <button className="load-btn" onClick={(ev)=>{LoadProducts(ev, loaded_product_number, eplProduct.length, setState)}}>
-                        {loaded_product_number < eplProduct.length ? "Xem thêm" : "Ẩn bớt"}
+                    <button className="load-btn" onClick={(ev)=>{LoadProducts(ev, loaded_product_number, Ligue1Product.length, setState)}}>
+                        {loaded_product_number < Ligue1Product.length ? "Xem thêm" : "Ẩn bớt"}
                     </button>
                 </div>
             </div>
@@ -40,4 +40,4 @@ const EPL = (props) => {
     );
 };
 
-export default EPL;
+export default Ligue1;

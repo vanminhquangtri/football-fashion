@@ -1,9 +1,13 @@
 import React, {useState} from 'react';
+import Laliga from './Laliga';
 import EPL from './EPL';
+import Bundesliga from './Bundesliga';
+import SerieA from './SerieA';
+import Ligue1 from './Ligue1';
 
 const Leagues = (props) => {
     const [state, setState] = useState({
-        shown_league: "all"
+        shown_league: "ligue-1"
     });
     const {shown_league} = state;
     return (
@@ -31,8 +35,20 @@ const Leagues = (props) => {
             {/* show product on the right side */}
             <div className="leagues-products">
                 <div className="leagues-products-wrap">
-                    {shown_league && (
-                        <EPL></EPL>
+                    {shown_league === "epl" && (
+                        <EPL/>
+                    )}
+                    {shown_league === "la-liga" && (
+                        <Laliga/>
+                    )}
+                    {shown_league === "bundes-liga" && (
+                        <Bundesliga/>
+                    )}
+                    {shown_league === "serie-a" && (
+                        <SerieA/>
+                    )}
+                    {shown_league === "ligue-1" && (
+                        <Ligue1/>
                     )}
                 </div>
             </div>
