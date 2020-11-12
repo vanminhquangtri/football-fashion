@@ -240,7 +240,7 @@ margin-top: 40px;
         color: white;
         display: flex;
         align-items: center;
-        margin-bottom: 2px;
+        margin-bottom: 4px;
         position: relative;
         .background-image {
           position: absolute;
@@ -822,15 +822,16 @@ margin-top: 40px;
       }
     }
   }
-  /* also like products */
+  /* also like and outstanding product wrapper */
   .container-fluid.also-container {
     margin-top: 10px;
     .row {
       .col {
-        padding: 0 5px;
-        .wrap {
+        padding: 0 5px 5px 5px;
+        .wrap.outside {
           .title {
             font-weight: bold;
+            color: $color-red;
           }
           .tns-outer {
             position: relative;
@@ -868,29 +869,16 @@ margin-top: 40px;
       }
     }
   }
-  /* recent viewed products */
-  .container-fluid.also-container.recent-viewed-container {
-    .row {
-      .col {
-        .title {
-          font-weight: bold;
-        }
-        .wrap.outside {
-          display: flex;
-          flex-wrap: wrap;
-        }
-      }
-    }
-  }
-  /* general product layout used for also like and recent viewed*/
+  /* general product layout used for also like and outstanding*/
   .also-product {
     padding-left: 2px;
     padding-right: 2px;
-    .wrap {
-      border: 1px solid $color-blue-mc;
+    .wrap.inside {
+      background: white;
       position: relative;
       padding-top: 10px;
       margin-bottom: 3px;
+      border: 1px solid $color-blue-mc;
       a {
         text-decoration: none;
         /* hold main image of product */
@@ -971,9 +959,6 @@ margin-top: 40px;
         }
       }
     }
-  }
-  .also-product.recent-viewed {
-    width: 50%;
   }
   /* end general product layout used for also like and recent viewed*/
 }
@@ -1063,7 +1048,6 @@ margin-top: 40px;
   }
 }
 /*--- end leagues ---*/
-
 .col.product-col:nth-child(odd) {
   padding-left: 2px !important;
   padding-right: 4px !important;

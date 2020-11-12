@@ -6,14 +6,12 @@ import {NavLink} from "react-router-dom";
 import urlSlug from "url-slug";
 import freeShipImg from "../../../../Assets/images/product-layout/free-ship2.png"
 import formatNumber from "../../../GeneralModules/FortmatMoney";
-const RecentViewedProduct = (props) => {
-    console.log("recent viewed product render");
+const OutstandingProduct = (props) => {
     const {Currency} = props.Store;
     const [state, setState] = useState({
         added_to_cart: false
     })
     const {product, dispatch} = props;
-    console.log("recent viewed product: " + product);
     const {added_to_cart} = state;
     const changeAddedToCartStt = () => {
         setState((prevState) => {
@@ -24,15 +22,13 @@ const RecentViewedProduct = (props) => {
         })
     }
     return (
-        <div className="also-product recent-viewed" key={product.id}>
+        <div className="also-product outstanding" key={product.id}>
             <div className="wrap inside">
                 <NavLink
                     to={`/product-detail/${urlSlug(product.name)}`} 
                     exact={true}
                 >
-                    <div 
-                        className="background-image"
-                    >
+                    <div className="background-image">
                         <img alt="background" src={product.main_image.default}/>
                     </div>
                     <div className="info">
@@ -43,7 +39,7 @@ const RecentViewedProduct = (props) => {
                     {(product.promotion !== "") && (
                         <div className="promotion">SALE<br/>{product.promotion}</div>
                     )}
-                    {/* replace promotion box by star if promotion property of product is empty */}
+                    {/* replace promotion box by free ship if promotion property of product is empty */}
                     {(product.promotion === "") && (
                         <div className="free-ship">
                             <img alt="shipping-free" src={freeShipImg}/>
@@ -81,4 +77,4 @@ const mapStateToProps = (state) => {
         Store: state
     }
 }
-export default connect(mapStateToProps)(RecentViewedProduct)
+export default connect(mapStateToProps)(OutstandingProduct)

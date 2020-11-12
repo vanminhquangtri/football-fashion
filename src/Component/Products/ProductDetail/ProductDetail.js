@@ -8,6 +8,7 @@ import ProductButton from './ProductButton';
 import AddToCart from '../../ShoppingCart/AddToCart';
 import ProductOtherInfo from './ProductOtherInfo';
 import AlsoLike from './AlsoLike/AlsoLike';
+import Outstanding from './Outstanding/Outstanding';
 const ProductDetail = (props) => {
     const nameSlug = props.match.params.slug;
     // find the product need to be shown base on name
@@ -24,7 +25,8 @@ const ProductDetail = (props) => {
             <ProductSlideshow product={Product}/>
             <AddToCart product={Product}/>
             <ProductOtherInfo product={Product}/>
-            <AlsoLike product={Product} key={Product.id}></AlsoLike>
+            <AlsoLike product={Product} key={`also-like${Product.id}`}/>
+            <Outstanding product={Product} key={`outstanding${Product.id}`}/>
         </section>
     );
 };

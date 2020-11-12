@@ -43,7 +43,7 @@ const ProductLayout = (props) => {
                     {(product.promotion !== "") && (
                         <div className="promotion">SALE<br/>{product.promotion}</div>
                     )}
-                    {/* replace promotion box by star if promotion property of product is empty */}
+                    {/* replace promotion box by free ship if promotion property of product is empty */}
                     {(product.promotion === "") && (
                         <div className="free-ship">
                             <img alt="shipping-free" src={freeShipImg}/>
