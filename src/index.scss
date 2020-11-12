@@ -758,15 +758,16 @@ margin-top: 40px;
           }
           /* button add to cart and check-out */
           .btn-add-to-cart, .btn-check-out {
+            margin-top: 10px;
             button {
-              height: 25px;
+              height: 35px;
               border: none;
               outline: none;
               background: $color-red;
               color: white;
               font-weight: bold;
-              border-radius: 15px;
-              font-size: 12px;
+              border-radius: 20px;
+              font-size: 14px;
             }
             button.check-out {
               background: $color-blue-mc;
@@ -1048,6 +1049,29 @@ margin-top: 40px;
   }
 }
 /*--- end leagues ---*/
+/*--- shopping cart detail ---*/
+.shopping-cart-detail {
+  margin: 40px 0 10px 0;
+  .container-fluid {
+    .row.title-wrapper {
+      .col {
+        padding: 10px;
+        background: rgb(136, 223, 6);
+        .content {
+          width: 80%;
+          margin: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          padding: 10px;
+          background: rgb(186, 240, 106);
+        }
+      }
+    }
+  }
+}
+/*--- end shopping cart detail ---*/
 .col.product-col:nth-child(odd) {
   padding-left: 3px !important;
   padding-right: 6px !important;
