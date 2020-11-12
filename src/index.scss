@@ -90,6 +90,7 @@ body {
         .wrap {
           width: 100%;
           position: relative;
+          /* main nav */
           ul.main-nav {
             display: flex;
             align-items: center;
@@ -107,20 +108,6 @@ body {
               }
             }
           }
-          ul.sub-menu {
-            animation-duration: .3s;
-            z-index: 2000;
-            width: 100%;
-            top: 100%;
-            position: absolute;
-            background: white;
-            li {
-              a {
-                color: black;
-                font-weight: bold;
-              }
-            }
-          }
           /* open and close sub menu */
           .icon.animate__animated {
             color: white;
@@ -128,6 +115,29 @@ body {
             margin-right: 15px; 
             animation-duration: 1s;
           }
+          /* sub menu */
+          ul.sub-menu {
+            animation-duration: .3s;
+            z-index: 2000;
+            width: 100%;
+            top: 100%;
+            position: absolute;
+            background-image: linear-gradient(to right, rgb(126, 211, 0), white);
+            li {
+              a {
+                color: black;
+                font-weight: bold;
+                font-size: 14px;
+              }
+            }
+            .icon {
+              color: black;
+              position: absolute;
+              top: 8px;
+              right: 0;
+            }
+          }
+          
         }
       }
       /* col for shopping cart */

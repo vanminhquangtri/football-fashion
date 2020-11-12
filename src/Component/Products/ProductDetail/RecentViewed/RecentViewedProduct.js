@@ -7,11 +7,13 @@ import urlSlug from "url-slug";
 import freeShipImg from "../../../../Assets/images/product-layout/free-ship2.png"
 import formatNumber from "../../../GeneralModules/FortmatMoney";
 const RecentViewedProduct = (props) => {
+    console.log("recent viewed product render");
     const {Currency} = props.Store;
     const [state, setState] = useState({
         added_to_cart: false
     })
     const {product, dispatch} = props;
+    console.log("recent viewed product: " + product);
     const {added_to_cart} = state;
     const changeAddedToCartStt = () => {
         setState((prevState) => {

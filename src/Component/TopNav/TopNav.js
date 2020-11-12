@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faHome, faBars, faTimes} from "@fortawesome/free-solid-svg-icons"
+import {faHome, faBars, faTimesCircle, faTimes} from "@fortawesome/free-solid-svg-icons"
 import ShoppingCart from './ShoppingCart';
 
 const TopNav = (props) => {
@@ -101,6 +101,11 @@ const TopNav = (props) => {
                                             Liên hệ chúng tôi
                                         </NavLink>
                                     </li>
+                                    <FontAwesomeIcon 
+                                        icon={faTimesCircle} 
+                                        className="icon animate__animated animate__rotateIn"
+                                        onClick={()=>{changeSubMenuStt()}}
+                                    />
                                 </ul>
                             )}
                         </div>
