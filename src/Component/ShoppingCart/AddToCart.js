@@ -117,7 +117,7 @@ const AddToCart = (props) => {
                         <div className="btn-add-to-cart">
                             <button className="add-to-cart" onClick={(ev)=>{ev.preventDefault(); dispatch({type: "ADD_TO_CART", id: product.id, size: state.size, quantity: state.added_quantity})}}>Thêm vào giỏ hàng</button>
                             <button className="check-out">
-                                <NavLink to="/check-out">Thanh toán</NavLink>
+                                <NavLink to="/check-out">Mua ngay</NavLink>
                             </button>
                         </div>
                     </div>

@@ -240,7 +240,7 @@ margin-top: 40px;
         color: white;
         display: flex;
         align-items: center;
-        margin-bottom: 4px;
+        margin-bottom: 6px;
         position: relative;
         .background-image {
           position: absolute;
@@ -307,13 +307,11 @@ margin-top: 40px;
 .col.product-col {
   flex: 50% !important;
   max-width: 50% !important;
-  padding-left: 2px;
-  padding-right: 1px;
   .wrap {
     background: white;
     position: relative;
     padding-top: 10px;
-    margin-bottom: 3px;
+    margin-bottom: 6px; /* distance between layout up and down */
     a {
       text-decoration: none;
       /* hold main image of product */
@@ -790,11 +788,12 @@ margin-top: 40px;
         padding: 0 5px;
         .wrap {
           .info-type {
-            border: 1px solid $color-gray-border;
+            // border: 1px solid $color-gray-border;
             border-top: none;
             margin-bottom: 10px;
             .info-title {
-              background: $color-gray-border;
+              background: rgb(200, 200, 250);
+              border-radius: 20px;
               display: flex;
               align-items: center;
               .title {
@@ -806,6 +805,7 @@ margin-top: 40px;
                 float: right;
                 width: 45px;
                 height: 40px;
+                border-radius:0 20px 20px 0;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -1025,7 +1025,7 @@ margin-top: 40px;
         }
       }
       .serie-a {
-        background: rgb(68, 1, 175);
+        background: rgb(59, 0, 155);
         .each-league-title {
           background-image: url("../src/Assets/images/product/seriea/logo-white.png");
         }
@@ -1037,22 +1037,22 @@ margin-top: 40px;
         }
       }
       .col.product-col:nth-child(odd) {
-        padding-left: 4px !important;
-        padding-right: 2px !important;
+        padding-left: 6px !important;
+        padding-right: 3px !important;
       }
       .col.product-col:nth-child(even) {
-        padding-left: 2px !important;
-        padding-right: 4px !important;
+        padding-left: 3px !important;
+        padding-right: 6px !important;
       }
     }
   }
 }
 /*--- end leagues ---*/
 .col.product-col:nth-child(odd) {
-  padding-left: 2px !important;
-  padding-right: 4px !important;
+  padding-left: 3px !important;
+  padding-right: 6px !important;
 }
 .col.product-col:nth-child(even) {
-  padding-left: 4px !important;
-  padding-right: 2px !important;
+  padding-left: 6px !important;
+  padding-right: 3px !important;
 }
