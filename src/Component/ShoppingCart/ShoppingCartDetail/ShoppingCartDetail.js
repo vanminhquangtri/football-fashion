@@ -4,6 +4,9 @@ import {connect} from "react-redux";
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faPlus, faMinus} from "@fortawesome/free-solid-svg-icons";
+import ShoppingCartDetailProduct from './ShoppingCartDetailProduct';
+import ProductsInfo from '../../../Data/ProductInfo';
+import Outstanding from '../../Products/ProductDetail/Outstanding/Outstanding';
 const ShoppingCartDetail = (props) => {
     const {Cart} = props.Store;
     // get current items already added to cart
@@ -58,108 +61,56 @@ const ShoppingCartDetail = (props) => {
             })
         })
         product.quantity = sizeQuanity
-    })
+    });
     return (
         <section className="shopping-cart-detail">
             <div className="container-fluid">
                 <div className="row title-wrapper">
                     <div className="col">
                         <div className="content">
-                            Your Shopping Cart
+                            Quản Lý Giỏ Hàng
                         </div>  
                     </div>
                 </div>
                 <div className="row product-detail-wrapper">
                     <div className="col">
                         <div className="content">
-                            <span className="title">Products</span>
                             {/* render every product in shopping, each product is is row */}
-                            <div className="shopping-cart-product-layout">
-                                {/* show image, name, price, club name */}
-                                <div className="image-info">
-                                    <div className="product-image">
-                                        <img alt="shopping-cart" src="https://i.pinimg.com/originals/21/49/41/214941e9ba2342fb8c4d9113052c8a2c.jpg"/>
+                            {
+                                (Cart.length === 0) && (
+                                    <div className="empty-cart-announcement">
+                                        <span>Bạn chưa có sản phẩm trong giỏ hàng, vui lòng thêm sản phẩm vào giỏ</span><br/>
+                                        <NavLink to="/leagues">Chọn sản phẩm</NavLink>
                                     </div>
-                                    <div className="product-info">
-                                        <NavLink to="/shopping-cart" className="info name">
-                                            Áo đấu Chelsea sân nhà mùa giải 2020/2021 - biểu tượng The Blues
-                                        </NavLink>
-                                        <span className="info price">1,900,000d</span>
-                                    </div>
+                                )
+                            }
+                            {
+                                Products.map((product) => {
+                                    return <ShoppingCartDetailProduct key={product.product_id} product={product}/>
+                                })
+                            }
+                        </div>
+                    </div>
+                </div>
+                {(Cart.length !== 0) && (
+                    <div className="row checkout-wrapper">
+                        <div className="col">
+                            <div className="content">
+                                <div className="total-amount">
+                                    Tổng cộng: <strong>20,000,000đ</strong>
                                 </div>
-                                {/* show size, quantity and buttons (plus, minus, update, delete) */}
-                                <div className="row-product-buttons">
-                                    <span className="title">Size</span>
-                                    <span className="size">2XL</span>
-                                    <button type="button" className="minus">
-                                        <FontAwesomeIcon icon={faMinus}/>
-                                    </button>
-                                    <input type="number" defaultValue={1} className="quantity"/>
-                                    <button type="button" className="plus">
-                                        <FontAwesomeIcon icon={faPlus}/>
-                                    </button>
-                                    <button type="button" className="update">Cập nhật</button>
-                                    <button type="button" className="delete">Xóa</button>
+                                <div className="checkout-link">
+                                    <NavLink to="/shopping-cart" >
+                                        Thanh toán
+                                    </NavLink>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="row product-detail-wrapper">
-                    <div className="col">
-                        <div className="content">
-                            <span className="title">Products</span>
-                            {/* render every product in shopping, each product is is row */}
-                            <div className="shopping-cart-product-layout">
-                                {/* show image, name, price, club name */}
-                                <div className="image-info">
-                                    <div className="product-image">
-                                        <img alt="shopping-cart" src="https://i.pinimg.com/originals/21/49/41/214941e9ba2342fb8c4d9113052c8a2c.jpg"/>
-                                    </div>
-                                    <div className="product-info">
-                                        <NavLink to="/shopping-cart" className="info name">
-                                            Áo đấu Chelsea sân nhà mùa giải 2020/2021 - biểu tượng The Blues
-                                        </NavLink>
-                                        <span className="info price">1,900,000d</span>
-                                    </div>
-                                </div>
-                                {/* show size, quantity and buttons (plus, minus, update, delete) */}
-                                <div className="row-product-buttons">
-                                    <span className="title">Size</span>
-                                    <span className="size">2XL</span>
-                                    <button type="button" className="minus">
-                                        <FontAwesomeIcon icon={faMinus}/>
-                                    </button>
-                                    <input type="number" defaultValue={1} className="quantity"/>
-                                    <button type="button" className="plus">
-                                        <FontAwesomeIcon icon={faPlus}/>
-                                    </button>
-                                    <button type="button" className="update">Cập nhật</button>
-                                    <button type="button" className="delete">Xóa</button>
-                                </div>
-                                <div className="row-product-buttons">
-                                    <span className="title">Size</span>
-                                    <span className="size">2XL</span>
-                                    <button type="button" className="minus">
-                                        <FontAwesomeIcon icon={faMinus}/>
-                                    </button>
-                                    <input type="number" defaultValue={1} className="quantity"/>
-                                    <button type="button" className="plus">
-                                        <FontAwesomeIcon icon={faPlus}/>
-                                    </button>
-                                    <button type="button" className="update">Cập nhật</button>
-                                    <button type="button" className="delete">Xóa</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="row checkout-wrapper">
-                    <div className="col">
-                        <div className="content"></div>
-                    </div>
-                </div>
+                )}
             </div>
+            <Outstanding product={ProductsInfo[1]} key={`outstanding${ProductsInfo[0].id}`}/>
+
         </section>
     );
 };
