@@ -1,6 +1,7 @@
 // direct child of RouterURL, display all product add to shopping cart
 import React from 'react';
 import {connect} from "react-redux";
+import {NavLink} from "react-router-dom";
 const ShoppingCartDetail = (props) => {
     const {Cart} = props.Store;
     // get current items already added to cart
@@ -69,7 +70,24 @@ const ShoppingCartDetail = (props) => {
                 <div className="row product-detail-wrapper">
                     <div className="col">
                         <div className="content">
+                            <span className="title">Products</span>
                             {/* render every product in shopping, each product is is row */}
+                            <div className="shopping-cart-product-layout">
+                                {/* show image, name, price, club name */}
+                                <div className="image-info">
+                                    <div className="product-image">
+                                        <img alt="shopping-cart" src="https://i.pinimg.com/originals/21/49/41/214941e9ba2342fb8c4d9113052c8a2c.jpg"/>
+                                    </div>
+                                    <div className="product-info">
+                                        <NavLink to="/shopping-cart" className="info name">
+                                            Áo đấu Chelsea sân nhà mùa giải 2020/2021 - biểu tượng The Blues
+                                        </NavLink>
+                                        <span className="info price">1,900,000d</span>
+                                    </div>
+                                </div>
+                                {/* show size, quantity and buttons (plus, minus, update, delete) */}
+                                <div className="row-product-buttons"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
