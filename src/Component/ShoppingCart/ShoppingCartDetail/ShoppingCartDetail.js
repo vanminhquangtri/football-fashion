@@ -2,7 +2,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 const ShoppingCartDetail = (props) => {
-    const {Currency, Cart} = props.Store;
+    const {Cart} = props.Store;
     // get current items already added to cart
     const currentCart = [...Cart];
     // get ID list from Cart
@@ -13,27 +13,49 @@ const ShoppingCartDetail = (props) => {
         }
     });
     // create number of object equal to length of ID list;
-    let items = []
+    let Products = []
     currentCartIdList.forEach((id) => {
         var newObj = {};
         newObj.product_id = id;
         newObj.quantity = [];
-        items.push(newObj);
+        Products.push(newObj);
     });
     // add quantity and size to each ID
-    items.forEach((item) => {
+    Products.forEach((product) => {
         currentCart.forEach((order) => {
-            if (order.product_id === item.product_id) {
+            if (order.product_id === product.product_id) {
                 var orderSizeAndQuantity = {
                     size: order.size,
                     quantity: order.quantity
                 };
-                item.quantity.push(orderSizeAndQuantity)
+                product.quantity.push(orderSizeAndQuantity)
             }
         })
     });
-    console.log(currentCart);
-    console.log(items);
+    // remove duplicate quantity objects the have same size
+    Products.forEach((product) => {
+        // create size list
+        var sizeList = [];
+        product.quantity.forEach((obj)=>{
+            if (sizeList.indexOf(obj.size) === -1){
+                sizeList.push(obj.size);
+            }
+        });
+        // create initial quanity of each size
+        var sizeQuanity = [];
+        sizeList.forEach((size) => {
+            sizeQuanity.push({size: size, quantity: 0})
+        })
+        // count quantity of each size in product.quantity
+        sizeQuanity.forEach((size) => {
+            product.quantity.forEach((quantityObj) => {
+                if (quantityObj.size === size.size) {
+                    size.quantity += quantityObj.quantity
+                }
+            })
+        })
+        product.quantity = sizeQuanity
+    })
     return (
         <section className="shopping-cart-detail">
             <div className="container-fluid">
