@@ -1083,6 +1083,7 @@ margin-top: 40px;
           .shopping-cart-product-layout {
             border-bottom: 1px dotted $color-gray-border;
             padding-bottom: 5px;
+            font-size: 14px;
             .image-info {
               display: flex;
               .product-image {
@@ -1096,7 +1097,7 @@ margin-top: 40px;
                 display: flex;
                 flex-direction: column;
                 .info {
-                  font-size: 14px;
+                  
                 }
                 .info.price {
                   font-weight: bold;
@@ -1104,6 +1105,65 @@ margin-top: 40px;
                 .info.name {
                   color: black;
                 }
+              }
+            }
+            .row-product-buttons {
+              margin-top: 5px;
+              display: flex;
+              align-items: center;
+              font-size: 12px;
+              /* remove default scroll of number input tag */
+              input::-webkit-outer-spin-button,
+              input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+              }
+              /* Firefox */
+              input[type=number] {
+                  -moz-appearance: textfield;
+              }
+              .title {
+                font-weight: normal;
+                margin-right: 5px;
+              }
+              .size {
+                margin-right: 20px;
+                font-size: 12px;
+                background: $color-blue-mc;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+              .minus, .plus, .quantity, .update, .delete {
+                background: rgb(187, 159, 0);
+                width: 25px;
+                height: 25px;
+                border: none;
+                outline: none;
+                color: white;
+              }
+              .minus, .plus, .quantity {
+                border-radius: 50%;
+              }
+              .quantity {
+                background: transparent;
+                text-align: center;
+                color: black;
+              }
+              .plus {
+                margin-right: 20px;
+              }
+              .update, .delete {
+                margin-right: 5px;
+                width: auto;
+                background: $color-blue-mc;
+              }
+              .delete {
+                margin-right: 0;
               }
             }
           }
