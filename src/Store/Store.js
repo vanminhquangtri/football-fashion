@@ -36,11 +36,25 @@ const Cart_reducer = (init = Cart, action) => {
             return init;
         case "REMOVE_FROM_CART":
             const removedProducts = init.filter((product) => {
-                return product.product_id === action.id
+                return product.product_id === action.id && product.size === action.size
             });
             removedProducts.forEach((product) => {
                 init.splice(init.indexOf(product), 1)
             })
+            return init;
+        case "UPDATE_CART":            
+            var sizeQuantity = 0;
+            init.forEach((product) => {
+                // calculate total quantity of size
+                if (product.product_id === action.id && product.size === action.size) {
+                    sizeQuantity += product.quantity;
+                }
+            });
+            if (sizeQuantity !== action.quantity) {
+                // create new product object with negative/ position quantity based on action. quantity
+                var newProduct = {product_id: action.id, size: action.size, quantity: (action.quantity - sizeQuantity)};
+                init.push(newProduct)
+            }
             return init;
         default:
             return init;

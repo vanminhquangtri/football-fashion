@@ -2,14 +2,13 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {NavLink} from "react-router-dom";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import {faPlus, faMinus} from "@fortawesome/free-solid-svg-icons";
 import ProductsInfo from '../../../Data/ProductInfo';
 import formatNumber from '../../GeneralModules/FortmatMoney';
 import urlSlug from "url-slug";
+import ShoppingCartDetailButtons from './ShoppingCartDetailButtons';
 const ShoppingCartDetailProduct = (props) => {
     const {Currency} = props.Store;
-    const {product, dispatch} = props;
+    const {product} = props;
     // get product information based on Id of product props;
     const targetProduct = ProductsInfo.find((p) => {
         return p.id === product.product_id;
@@ -31,19 +30,7 @@ const ShoppingCartDetailProduct = (props) => {
             {/* show size, quantity and buttons (plus, minus, update, delete) */}
             {product.quantity.map((quantity) => {
                 return (
-                    <div className="row-product-buttons" key={`${product.product_id}${quantity.size}`}>
-                        <span className="title">Size</span>
-                        <span className="size">{quantity.size}</span>
-                        <button type="button" className="minus">
-                            <FontAwesomeIcon icon={faMinus}/>
-                        </button>
-                        <input type="number" defaultValue={quantity.quantity} className="quantity"/>
-                        <button type="button" className="plus">
-                            <FontAwesomeIcon icon={faPlus}/>
-                        </button>
-                        <button type="button" className="update">Cập nhật</button>
-                        <button type="button" className="delete" onClick={()=>{dispatch({type: "REMOVE_FROM_CART", id: product.product_id})}}>Xóa</button>
-                    </div>
+                    <ShoppingCartDetailButtons key={`${product.product_id}-size${quantity.size}`} quantity={quantity} product={product}/>
                 )
             })}
         </div>);
