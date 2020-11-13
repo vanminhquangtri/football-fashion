@@ -9,6 +9,7 @@ class ShoppingCart extends Component {
     render() {
         // count total quantity of shopping cart
         const {Cart} = this.props.Store;
+        console.log(Cart);
         var cartTotalQuantity = 0;
         Cart.forEach((product) => {
             product.quantity.forEach((size_quantity) => {

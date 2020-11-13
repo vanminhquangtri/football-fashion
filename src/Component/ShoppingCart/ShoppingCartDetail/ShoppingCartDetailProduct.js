@@ -14,26 +14,29 @@ const ShoppingCartDetailProduct = (props) => {
         return p.id === product.product_id;
     })
     return (
-        <div className="shopping-cart-product-layout">
-            {/* show image, name, price, club name */}
-            <div className="image-info">
-                <div className="product-image">
-                    <img alt={targetProduct.name} src={targetProduct.main_image.default}/>
+        product.quantity.length !== 0 && (
+            <div className="shopping-cart-product-layout">
+                {/* show image, name, price, club name */}
+                <div className="image-info">
+                    <div className="product-image">
+                        <img alt={targetProduct.name} src={targetProduct.main_image.default}/>
+                    </div>
+                    <div className="product-info">
+                        <NavLink to={`/product-detail/${urlSlug(targetProduct.name)}`} className="info name">
+                            {targetProduct.name}
+                        </NavLink>
+                        <span className="info price">{formatNumber(targetProduct.price)}<sup>{Currency.currency}</sup></span>
+                    </div>
                 </div>
-                <div className="product-info">
-                    <NavLink to={`/product-detail/${urlSlug(targetProduct.name)}`} className="info name">
-                        {targetProduct.name}
-                    </NavLink>
-                    <span className="info price">{formatNumber(targetProduct.price)}<sup>{Currency.currency}</sup></span>
-                </div>
+                {/* show size, quantity and buttons (plus, minus, update, delete) */}
+                {product.quantity.map((quantity) => {
+                    return (
+                        <ShoppingCartDetailButtons key={`${product.product_id}-size${quantity.size}`} quantity={quantity} product={product}/>
+                    )
+                })}
             </div>
-            {/* show size, quantity and buttons (plus, minus, update, delete) */}
-            {product.quantity.map((quantity) => {
-                return (
-                    <ShoppingCartDetailButtons key={`${product.product_id}-size${quantity.size}`} quantity={quantity} product={product}/>
-                )
-            })}
-        </div>);
+        )
+    );
 };
 const mapStateToProps = (state) => {
     return {

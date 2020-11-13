@@ -75,14 +75,24 @@ const Cart_reducer = (init = Cart, action) => {
             }
             return currentCart;
         case "REMOVE_FROM_CART":
-            const removedProducts = currentCart.filter((product) => {
-                return product.product_id === action.id && product.size === action.size
+            // find the product need to be removed
+            const removedProducts = currentCart.find((product) => {
+                return product.product_id === action.id;
             });
-            removedProducts.forEach((product) => {
-                currentCart.splice(currentCart.indexOf(product), 1)
-            })
+            // find the size need to be removed
+            const removedSize = removedProducts.quantity.find((size_quantity) => {
+                return size_quantity.size === action.size;
+            });
+            // remove the size from current product
+            removedProducts.quantity.splice(removedProducts.quantity.indexOf(removedSize), 1);
+            // remove whole product from cart if there's no size
+            if (removedProducts.quantity.length === 0) {
+                currentCart.splice(currentCart.indexOf(removedProducts), 1);
+            }
             return currentCart;
-        case "UPDATE_CART":            
+        case "UPDATE_CART":     
+            // find the product same id and quantity same size
+                   
             var sizeQuantity = 0;
             currentCart.forEach((product) => {
                 // calculate total quantity of size
@@ -95,6 +105,18 @@ const Cart_reducer = (init = Cart, action) => {
                 var newProduct = {product_id: action.id, size: action.size, quantity: (action.quantity - sizeQuantity)};
                 currentCart.push(newProduct)
             }
+            // var sizeQuantity = 0;
+            // currentCart.forEach((product) => {
+            //     // calculate total quantity of size
+            //     if (product.product_id === action.id && product.size === action.size) {
+            //         sizeQuantity += product.quantity;
+            //     }
+            // });
+            // if (sizeQuantity !== action.quantity) {
+            //     // create new product object with negative/ position quantity based on action. quantity
+            //     var newProduct = {product_id: action.id, size: action.size, quantity: (action.quantity - sizeQuantity)};
+            //     currentCart.push(newProduct)
+            // }
             return currentCart;
         default:
             return currentCart;
