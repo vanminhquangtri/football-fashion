@@ -2,11 +2,10 @@
 import React, {useEffect, useState} from 'react';
 import {connect} from "react-redux";
 import ProductsInfo from '../../Data/ProductInfo';
+import formatNumber from '../GeneralModules/FortmatMoney';
 import CheckoutProduct from './CheckoutProduct/CheckoutProduct';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faChevronDown, faChevronUp} from "@fortawesome/free-solid-svg-icons"
 const Checkout = (props) => {
-    const {PaymentTarget} = props.Store;
+    const {PaymentTarget, Currency} = props.Store;
     const PaidTarget = PaymentTarget.target;
     const [state, setState] = useState({
         show_product_summary: false
@@ -38,7 +37,30 @@ const Checkout = (props) => {
         })
     });
     useEffect(() => {
-       window.scrollTo(0, 0); 
+        // scroll to top
+        window.scrollTo(0, 0); 
+        // toggle product summary
+        const toggleBtn = document.querySelector(".toggle-btn");
+        const productSummary = document.querySelector(".row.check-out-product-summary");
+        toggleBtn.addEventListener("click", () => {
+            if (productSummary.style.maxHeight){
+                toggleBtn.innerHTML = `
+                <button>
+                    Hiển thị chi tiết đơn hàng
+                    <svg class="toggle-product-summary-btn open" id="Capa_1" enable-background="new 0 0 515.556 515.556" height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m257.778 386.671-257.778-257.778h128.886l128.892 128.889 128.886-128.897 128.892.008z"/></svg>
+                </button>
+                `;
+                productSummary.style.maxHeight = null
+            } else {
+                toggleBtn.innerHTML = `
+                <button>
+                    Ẩn chi tiết đơn hàng
+                    <svg class="toggle-product-summary-btn close" id="Capa_1" enable-background="new 0 0 515.556 515.556" height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m257.778 128.885 257.778 257.778h-128.886l-128.892-128.889-128.886 128.897-128.892-.008z"/></svg>
+                </button>
+                `;
+                productSummary.style.maxHeight = productSummary.scrollHeight + "px";
+            }
+        })
     },[])
     return (
         <section className="check-out">
@@ -52,39 +74,30 @@ const Checkout = (props) => {
                 </div>
                 <div className="row toggle-product-summary">
                     <div className="col">
+                        <span className="title">Tổng cộng: <strong>{formatNumber(totalAmount)}<sup>{Currency.currency}</sup></strong></span>
                         <div className="content">
-                            {state.show_product_summary === false ? (
-                                <div className="open-toggle" onClick={(ev)=>{changeShow_product_summary(ev)}}>
-                                    Hiển thị thông tin đơn hàng
-                                    <FontAwesomeIcon icon={faChevronDown} className="icon"/>
-                                    <span className="title">{totalAmount}</span>
-                                </div>
-                                ) : (
-                                <div className="close-toggle" onClick={(ev)=>{changeShow_product_summary(ev)}}>
-                                    Ẩn thông tin đơn hàng
-                                    <FontAwesomeIcon icon={faChevronUp} className="icon"/>
-                                </div>
-                                )
+                            <div className="toggle-btn" onClick={(ev)=>{changeShow_product_summary(ev)}}>
+                                <button>
+                                    Hiển thị chi tiết đơn hàng
+                                    <svg id="Capa_1" enableBackground="new 0 0 515.556 515.556" height={512} viewBox="0 0 515.556 515.556" width={512} xmlns="http://www.w3.org/2000/svg"><path d="m257.778 386.671-257.778-257.778h128.886l128.892 128.889 128.886-128.897 128.892.008z" /></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="row check-out-product-summary">
+                    <div className="col">
+                        <div className="content">
+                            {
+                                PaidTarget.map((product) => {
+                                    return (
+                                        <CheckoutProduct product={product} key={product.product_id}/>
+                                    )
+                                })
                             }
                         </div>
                     </div>
                 </div>
-                {state.show_product_summary && (
-                    <div className="row check-out-product-summary">
-                        <div className="col">
-                            <div className="content">
-                                {
-                                    PaidTarget.map((product) => {
-                                        return (
-                                            <CheckoutProduct product={product} key={product.id}/>
-                                        )
-                                    })
-                                }
-                                <span className="title">Tổng cộng: {totalAmount}</span>
-                            </div>
-                        </div>
-                    </div>
-                )}
             </div>
         </section>
     );

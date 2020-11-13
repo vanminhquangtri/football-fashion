@@ -120,7 +120,7 @@ const AddToCart = (props) => {
                         {/* button add to cart and check-out */}
                         <div className="btn-add-to-cart">
                             <button className="add-to-cart" onClick={(ev)=>{ev.preventDefault(); dispatch({type: "ADD_TO_CART", id: product.id, size: state.size, quantity: state.added_quantity})}}>Thêm vào giỏ hàng</button>
-                            <button className="check-out">
+                            <button className="check-out-each-product">
                                 <NavLink to="/check-out" onClick={()=>{dispatch({type: "PAY_SEPARATE"})}}>Mua ngay</NavLink>
                             </button>
                         </div>

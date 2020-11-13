@@ -6,7 +6,7 @@ $color-red: rgb(211, 9, 9);
 $color-gray-border: rgb(235, 235, 235);
 $color-gray-bg: rgb(248, 248, 248);
 $color-blue-mc: #3d88fb;
-$color-gray-text: rgb(124, 124, 124);
+$color-gray-text: rgb(97, 96, 96);
 body {
   background: $color-gray-bg;
 }
@@ -765,12 +765,12 @@ margin-top: 40px;
               border: none;
               outline: none;
               background: $color-red;
-              color: white;
+              color: #ffffff;
               font-weight: bold;
               border-radius: 20px;
               font-size: 14px;
             }
-            button.check-out {
+            button.check-out-each-product {
               background: $color-blue-mc;
               margin-left: 5px;
               a {
@@ -1230,8 +1230,9 @@ margin-top: 40px;
 /*--- check out ---*/
 .check-out {
   background: white;
-  margin-top: 40px;
+  margin-top: 38px;
   .container-fluid {
+    /* title "Thanh toán" */
     .row.check-out-tile {
       .col {
         padding: 10px;
@@ -1251,7 +1252,44 @@ margin-top: 40px;
         }
       }
     }
+    /* toggle button */
+    .row.toggle-product-summary {
+      margin-top: 10px;
+      .col {
+        padding: 0 5px;
+        font-size: 14px;
+        color: $color-gray-text;
+        .content {
+          .toggle-btn {
+            display: flex;
+            button {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              flex: 1;
+              outline: none;
+              border: none;
+              color: $color-gray-text;
+              padding: 5px 10px;
+              border-radius: 20px;
+              svg {
+                width: 5vw;
+                height: 5vw;
+                fill: $color-gray-text;
+                animation: flipArrow .8s forwards;
+              }
+              @keyframes flipArrow {
+                from {transform: scaleY(-1)}
+                to {transform: scaleY(1)}
+              }
+            }
+          }
+        }
+      }
+    }
+    /* display each product */
     .row.check-out-product-summary {
+      margin-top: 10px;
       .col {
         padding: 0 5px;
         .content {
@@ -1300,7 +1338,10 @@ margin-top: 40px;
             }
           }
         }
-      }
+      };
+      transition: .5s;
+      max-height: 0;
+      overflow: hidden;
     }
   } 
 }
