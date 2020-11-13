@@ -5,7 +5,7 @@ import {NavLink} from "react-router-dom";
 import ShoppingCartDetailProduct from './ShoppingCartDetailProduct';
 import ProductsInfo from '../../../Data/ProductInfo';
 import Outstanding from '../../Products/ProductDetail/Outstanding/Outstanding';
-import formatNumber from '../../GeneralModules/FortmatMoney';
+import formatNumber from '../../GeneralModules/FortmatMoney'; 
 
 const ShoppingCartDetail = (props) => {
     const {Cart, Currency} = props.Store;
@@ -114,9 +114,10 @@ const ShoppingCartDetail = (props) => {
                                     Tổng cộng: <strong>{formatNumber(totalAmount)}<sup>{Currency.currency}</sup></strong>
                                 </div>
                                 <div className="checkout-link">
-                                    <NavLink to="/shopping-cart" >
+                                    <NavLink to="/check-out" >
                                         Thanh toán
-                                    </NavLink>
+                                    </NavLink> <br/>
+                                    <img alt="payment card" src={require("../../../Assets/images/section-shopping-cart-detail/payment-card.png").default}/>
                                 </div>
                             </div>
                         </div>

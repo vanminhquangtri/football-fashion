@@ -18,7 +18,7 @@ const Outstanding = (props) => {
             <div className="row">
                 <div className="col">
                     <div className="wrap outside">
-                        <div className="title">Sản phẩm nổi bật</div>
+                        <div className="title">Xem sản phẩm nổi bật</div>
                         <TinySlider settings={settings}>
                             {outstandingProduct.map((product) => {
                                 return (
