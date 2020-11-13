@@ -1,14 +1,14 @@
 // direct child of RouterURL, display all product add to shopping cart
-import React from 'react';
+import React, {useEffect} from 'react';
 import {connect} from "react-redux";
 import {NavLink} from "react-router-dom";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import {faPlus, faMinus} from "@fortawesome/free-solid-svg-icons";
 import ShoppingCartDetailProduct from './ShoppingCartDetailProduct';
 import ProductsInfo from '../../../Data/ProductInfo';
 import Outstanding from '../../Products/ProductDetail/Outstanding/Outstanding';
+import formatNumber from '../../GeneralModules/FortmatMoney';
+
 const ShoppingCartDetail = (props) => {
-    const {Cart} = props.Store;
+    const {Cart, Currency} = props.Store;
     // get current items already added to cart
     const currentCart = [...Cart];
     // get ID list from Cart
@@ -62,6 +62,19 @@ const ShoppingCartDetail = (props) => {
         })
         product.quantity = sizeQuanity
     });
+    // calculate total amount of shopping cart
+    let totalAmount = 0;
+    Cart.forEach((item) => {
+        ProductsInfo.forEach((product) => {
+            if (product.id === item.product_id) {
+                totalAmount += product.price * item.quantity;
+            }
+        })
+    });
+    useEffect(() => {
+        // scroll to top
+        window.scrollTo(0, 0)
+    },[])
     return (
         <section className="shopping-cart-detail">
             <div className="container-fluid">
@@ -86,18 +99,19 @@ const ShoppingCartDetail = (props) => {
                             }
                             {
                                 Products.map((product) => {
-                                    return <ShoppingCartDetailProduct key={product.product_id} product={product}/>
+                                    return <ShoppingCartDetailProduct key={`shopping-cart-product-${product.product_id}`} product={product}/>
                                 })
                             }
                         </div>
                     </div>
                 </div>
+                {/* show total amount and link to check out */}
                 {(Cart.length !== 0) && (
                     <div className="row checkout-wrapper">
                         <div className="col">
                             <div className="content">
                                 <div className="total-amount">
-                                    Tổng cộng: <strong>20,000,000đ</strong>
+                                    Tổng cộng: <strong>{formatNumber(totalAmount)}<sup>{Currency.currency}</sup></strong>
                                 </div>
                                 <div className="checkout-link">
                                     <NavLink to="/shopping-cart" >
@@ -109,8 +123,7 @@ const ShoppingCartDetail = (props) => {
                     </div>
                 )}
             </div>
-            <Outstanding product={ProductsInfo[1]} key={`outstanding${ProductsInfo[0].id}`}/>
-
+            <Outstanding product={ProductsInfo[39]} key={`shopping-cart-outstanding${ProductsInfo[39].id}`}/>
         </section>
     );
 };

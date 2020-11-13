@@ -5,6 +5,8 @@ import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faPlus, faMinus} from "@fortawesome/free-solid-svg-icons";
 import ProductsInfo from '../../../Data/ProductInfo';
+import formatNumber from '../../GeneralModules/FortmatMoney';
+import urlSlug from "url-slug";
 const ShoppingCartDetailProduct = (props) => {
     const {Currency} = props.Store;
     const {product} = props;
@@ -20,10 +22,10 @@ const ShoppingCartDetailProduct = (props) => {
                     <img alt={targetProduct.name} src={targetProduct.main_image.default}/>
                 </div>
                 <div className="product-info">
-                    <NavLink to="/shopping-cart" className="info name">
+                    <NavLink to={`/product-detail/${urlSlug(targetProduct.name)}`} className="info name">
                         {targetProduct.name}
                     </NavLink>
-                    <span className="info price">{targetProduct.price}{Currency.currency}</span>
+                    <span className="info price">{formatNumber(targetProduct.price)}<sup>{Currency.currency}</sup></span>
                 </div>
             </div>
             {/* show size, quantity and buttons (plus, minus, update, delete) */}

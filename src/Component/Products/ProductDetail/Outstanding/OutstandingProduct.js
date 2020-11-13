@@ -33,7 +33,7 @@ const OutstandingProduct = (props) => {
                     </div>
                     <div className="info">
                         <span className="name">{product.name}</span>
-                        <span className="price">{formatNumber((product.price * Currency.rate).toFixed(0))}{Currency.currency}</span>
+                        <span className="price">{formatNumber((product.price * Currency.rate).toFixed(0))}<sup>{Currency.currency}</sup></span>
                     </div>
                     {/* only render promotion box if promotion property of product is not empty */}
                     {(product.promotion !== "") && (
