@@ -79,8 +79,12 @@ const AddToCart = (props) => {
                 // change color of the click box
                 sizeBoxs[i].style.backgroundColor = "rgb(211, 9, 9)";
             })
-        }
+        };
     },[])
+    useEffect(() => {
+        // dispatch the current product to store for payment
+        dispatch({type: "ADD_TO_SEPARATE_PRODUCT", paidProduct: {product_id: product.id, quantity: [{size: state.size, quantity: state.added_quantity}]}})
+    },[product, state, dispatch])
     return (
         <div className="container-fluid product-add-to-cart">
             <div className="row">
@@ -110,14 +114,14 @@ const AddToCart = (props) => {
                         <div className="sub-total">
                             <span className="title">Tổng cộng:</span>
                             <span className="amount">
-                                {formatNumber(product.price)}{Currency.currency}
+                                {formatNumber(product.price * added_quantity)}{Currency.currency}
                             </span>
                         </div>
                         {/* button add to cart and check-out */}
                         <div className="btn-add-to-cart">
                             <button className="add-to-cart" onClick={(ev)=>{ev.preventDefault(); dispatch({type: "ADD_TO_CART", id: product.id, size: state.size, quantity: state.added_quantity})}}>Thêm vào giỏ hàng</button>
                             <button className="check-out">
-                                <NavLink to="/check-out">Mua ngay</NavLink>
+                                <NavLink to="/check-out" onClick={()=>{dispatch({type: "PAY_SEPARATE"})}}>Mua ngay</NavLink>
                             </button>
                         </div>
                     </div>

@@ -97,6 +97,20 @@ const Cart_reducer = (init = Cart, action) => {
             return currentCart;
     }
 }
+// separate product: in case user pay for the dislay product (component product detail) instead of add to cart
+const SeparateProduct = [];
+var currentSeparateProduct;
+const SeparateProduct_reducer = (init = SeparateProduct, action) => {
+    currentSeparateProduct = [...init];
+    switch (action.type) {
+        case "ADD_TO_SEPARATE_PRODUCT":
+            currentSeparateProduct = [];
+            currentSeparateProduct.push(action.paidProduct);
+            return currentSeparateProduct;
+        default:
+            return currentSeparateProduct;
+    }
+}
 // payment target (pay for product displayed in component DetailProduct or pay for whole Cart)
 const PaymentTarget = {
     target: ""
@@ -107,7 +121,12 @@ const PaymentTarget_reducer = (init = PaymentTarget, action) => {
             return {
                 ...init,
                 target: currentCart,
-            }    
+            }
+        case "PAY_SEPARATE":
+        return {
+            ...init,
+            target: currentSeparateProduct,
+        }   
         default:
             return init
     }
@@ -115,7 +134,8 @@ const PaymentTarget_reducer = (init = PaymentTarget, action) => {
 const All_reducer = redux.combineReducers({
     Currency: Currency_reducer,
     Cart: Cart_reducer,
-    PaymentTarget: PaymentTarget_reducer
+    PaymentTarget: PaymentTarget_reducer,
+    SeparateProduct: SeparateProduct_reducer
 });
 var Store = redux.createStore(All_reducer);
 export default Store;
