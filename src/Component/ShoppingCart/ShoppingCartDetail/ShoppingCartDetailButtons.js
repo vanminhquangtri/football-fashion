@@ -41,7 +41,7 @@ const ShoppingCartDetailButtons = (props) => {
                 <FontAwesomeIcon icon={faPlus}/>
             </button>
             <button type="button" className="update" onClick={()=>{dispatch({type: "UPDATE_CART", id: product.product_id, size: quantity.size, quantity: updated_quantity})}}>Cập nhật</button>
-            <button type="button" className="delete" onClick={()=>{dispatch({type: "REMOVE_FROM_CART", id: product.product_id, size: quantity.size})}}>Xóa</button>
+            <button type="button" className="delete" onClick={()=>{dispatch({type: "REMOVE_FROM_CART", id: product.product_id, size: quantity.size, quantity: updated_quantity})}}>Xóa</button>
         </div>
     )
 };

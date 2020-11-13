@@ -91,32 +91,17 @@ const Cart_reducer = (init = Cart, action) => {
             }
             return currentCart;
         case "UPDATE_CART":     
-            // find the product same id and quantity same size
-                   
-            var sizeQuantity = 0;
+            // find the product match id with action
             currentCart.forEach((product) => {
-                // calculate total quantity of size
-                if (product.product_id === action.id && product.size === action.size) {
-                    sizeQuantity += product.quantity;
+                if (product.product_id === action.id) {
+                    // find quantity object match size with action
+                    product.quantity.forEach((size_quantity) => {
+                        if (size_quantity.size === action.size) {
+                            size_quantity.quantity = action.quantity
+                        }
+                    })
                 }
             });
-            if (sizeQuantity !== action.quantity) {
-                // create new product object with negative/ position quantity based on action. quantity
-                var newProduct = {product_id: action.id, size: action.size, quantity: (action.quantity - sizeQuantity)};
-                currentCart.push(newProduct)
-            }
-            // var sizeQuantity = 0;
-            // currentCart.forEach((product) => {
-            //     // calculate total quantity of size
-            //     if (product.product_id === action.id && product.size === action.size) {
-            //         sizeQuantity += product.quantity;
-            //     }
-            // });
-            // if (sizeQuantity !== action.quantity) {
-            //     // create new product object with negative/ position quantity based on action. quantity
-            //     var newProduct = {product_id: action.id, size: action.size, quantity: (action.quantity - sizeQuantity)};
-            //     currentCart.push(newProduct)
-            // }
             return currentCart;
         default:
             return currentCart;
