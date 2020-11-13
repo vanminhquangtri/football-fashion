@@ -28,16 +28,6 @@ const Currency_reducer = (init = Currency, action) => {
 };
 // shopping cart
 const Cart = [];
-/* 
-Cart = [
-    {
-        product_id: "",
-        quantity: [
-            {size: "S", quantity: 1}
-        ] 
-    }
-]
-*/
 var currentCart;
 const Cart_reducer = (init = Cart, action) => {
     currentCart = [...init]

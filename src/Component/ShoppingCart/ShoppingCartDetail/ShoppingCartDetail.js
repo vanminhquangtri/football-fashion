@@ -10,6 +10,22 @@ import formatNumber from '../../GeneralModules/FortmatMoney';
 const ShoppingCartDetail = (props) => {
     const {Cart, Currency} = props.Store;
     const {dispatch} = props;
+    // calculate total amount of shopping cart
+    var totalAmount = 0;
+    // loop each product in cart
+    Cart.forEach((product) => {
+        // get price of product
+        var productPrice;
+        ProductsInfo.forEach((p) => {
+            if (p.id === product.product_id) {
+                productPrice = p.price;
+            }
+        });
+        // loop all quantity object of product, multiply product price with quantity and plus to totalAmount
+        product.quantity.forEach((size_quantity) => {
+            totalAmount += productPrice * size_quantity.quantity
+        })
+    });
     useEffect(() => {
         // scroll to top
         window.scrollTo(0, 0)
@@ -50,7 +66,7 @@ const ShoppingCartDetail = (props) => {
                         <div className="col">
                             <div className="content">
                                 <div className="total-amount">
-                                    Tổng cộng: <strong>{formatNumber(10000000)}<sup>{Currency.currency}</sup></strong>
+                                    Tổng cộng: <strong>{formatNumber(totalAmount)}<sup>{Currency.currency}</sup></strong>
                                 </div>
                                 <div className="checkout-link">
                                     <NavLink to="/check-out" onClick={()=>{dispatch({type: "PAY_WHOLE_CART"})}}>
