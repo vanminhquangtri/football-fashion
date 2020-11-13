@@ -46,23 +46,9 @@ const Cart_reducer = (init = Cart, action) => {
             return init;
     }
 }
-// viewed product
-const Viewed = [];
-const Viewed_reducer = (init = Viewed, action) => {
-    switch (action.type) {
-        case "ADD_TO_VIEWED":
-            if (init.indexOf(action.id) === -1) {
-                init.push(action.id)
-            }
-            return init;
-        default:
-            return init;
-    }
-}
 const All_reducer = redux.combineReducers({
     Currency: Currency_reducer,
     Cart: Cart_reducer,
-    Viewed: Viewed_reducer
 });
 const Store = redux.createStore(All_reducer);
 export default Store;

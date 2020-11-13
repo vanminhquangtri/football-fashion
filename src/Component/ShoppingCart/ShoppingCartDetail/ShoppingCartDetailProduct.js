@@ -9,7 +9,7 @@ import formatNumber from '../../GeneralModules/FortmatMoney';
 import urlSlug from "url-slug";
 const ShoppingCartDetailProduct = (props) => {
     const {Currency} = props.Store;
-    const {product} = props;
+    const {product, dispatch} = props;
     // get product information based on Id of product props;
     const targetProduct = ProductsInfo.find((p) => {
         return p.id === product.product_id;
@@ -42,7 +42,7 @@ const ShoppingCartDetailProduct = (props) => {
                             <FontAwesomeIcon icon={faPlus}/>
                         </button>
                         <button type="button" className="update">Cập nhật</button>
-                        <button type="button" className="delete">Xóa</button>
+                        <button type="button" className="delete" onClick={()=>{dispatch({type: "REMOVE_FROM_CART", id: product.product_id})}}>Xóa</button>
                     </div>
                 )
             })}
