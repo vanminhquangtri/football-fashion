@@ -65,7 +65,7 @@ const ProductLayout = (props) => {
                                 <FontAwesomeIcon icon={faCheckCircle} className="icon"/>
                                 <i>Đã thêm</i>
                             </span>
-                            <span style={{marginLeft: "2px"}} className="added animate__animated animate__fadeInDown" onClick={()=>{dispatch({type: "REMOVE_FROM_CART", id: product.id, quantity: 1}); changeAddedToCartStt()}}>
+                            <span style={{marginLeft: "2px"}} className="added animate__animated animate__fadeInDown" onClick={()=>{dispatch({type: "REMOVE_FROM_CART", id: product.id, quantity: 1, size: "M"}); changeAddedToCartStt()}}>
                                 <i>Xóa</i>
                                 <FontAwesomeIcon icon={faMinusCircle} className="icon"/>
                             </span>

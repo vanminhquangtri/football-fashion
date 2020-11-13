@@ -7,10 +7,13 @@ import {connect} from "react-redux";
 
 class ShoppingCart extends Component {
     render() {
+        // count total quantity of shopping cart
         const {Cart} = this.props.Store;
         var cartTotalQuantity = 0;
-        Cart.forEach((item) => {
-            cartTotalQuantity += item.quantity 
+        Cart.forEach((product) => {
+            product.quantity.forEach((size_quantity) => {
+                cartTotalQuantity += size_quantity.quantity 
+            })
         })
         return (
             <div className="col-auto shopping-cart">

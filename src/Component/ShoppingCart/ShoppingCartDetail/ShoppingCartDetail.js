@@ -9,6 +9,7 @@ import formatNumber from '../../GeneralModules/FortmatMoney';
 
 const ShoppingCartDetail = (props) => {
     const {Cart, Currency} = props.Store;
+    const {dispatch} = props;
     // get current items already added to cart
     const currentCart = [...Cart];
     // get ID list from Cart
@@ -114,7 +115,7 @@ const ShoppingCartDetail = (props) => {
                                     Tổng cộng: <strong>{formatNumber(totalAmount)}<sup>{Currency.currency}</sup></strong>
                                 </div>
                                 <div className="checkout-link">
-                                    <NavLink to="/check-out" >
+                                    <NavLink to="/check-out" onClick={()=>{dispatch({type: "PAY_WHOLE_CART"})}}>
                                         Thanh toán
                                     </NavLink> <br/>
                                     <img alt="payment card" src={require("../../../Assets/images/section-shopping-cart-detail/payment-card.png").default}/>
