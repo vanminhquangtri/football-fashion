@@ -6,7 +6,7 @@ const CheckoutForm = (props) => {
         form_type: "payment" // also: payment, success
     });
     const {form_type} = state;
-    const {updateOrderInfo} = props;
+    const {updateOrderInfo, orderInfo, updateOrderID} = props;
     const changeFormType = (ev, type) => {
         ev.preventDefault();
         setState((prevState) => {
@@ -28,12 +28,14 @@ const CheckoutForm = (props) => {
                         <CheckoutFormContactShipping 
                             changeFormType={changeFormType}
                             updateOrderInfo={updateOrderInfo}
+                            orderInfo={orderInfo}
                         />
                     )}
                     {form_type === "payment" && (
                         <CheckoutFormPayment 
                             changeFormType={changeFormType}
                             updateOrderInfo={updateOrderInfo}
+                            updateOrderID={updateOrderID}
                         />
                     )}
                 </div>

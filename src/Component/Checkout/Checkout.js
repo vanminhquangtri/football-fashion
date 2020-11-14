@@ -11,6 +11,7 @@ const Checkout = (props) => {
     const [state, setState] = useState({
         show_product_summary: false,
         // order information
+        order_id: "",
         last_name: "",
         first_name: "",
         email: "",
@@ -22,7 +23,7 @@ const Checkout = (props) => {
         house_no: "",
         payment_method: ""
     });
-    // update info when fill form
+    // update info when fill form (except id)
     const updateOrderInfo = (ev, info_name) => {
         const value = ev.target.value;
         ev.preventDefault();
@@ -30,6 +31,15 @@ const Checkout = (props) => {
         currentState[info_name] = value;
         setState(() => {
             return currentState;
+        })
+    }
+    // update order id (when submit payment form)
+    const updateOrderID = (value) => {
+        setState((prevState) => {
+            return {
+                ...prevState,
+                order_id: value
+            }
         })
     }
     // change status show_product_summary
@@ -126,7 +136,11 @@ const Checkout = (props) => {
                     </div>
                 </div>
                 {/* form */}
-                <CheckoutForm updateOrderInfo={updateOrderInfo} />
+                <CheckoutForm 
+                    updateOrderInfo={updateOrderInfo} 
+                    orderInfo={state}
+                    updateOrderID={updateOrderID}
+                />
             </div>
         </section>
     );

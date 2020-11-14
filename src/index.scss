@@ -1425,6 +1425,7 @@ margin-top: 40px;
               }
               label {
                 margin: 0;
+                line-height: 1;
               }
             }
           }
@@ -1475,4 +1476,15 @@ margin-top: 40px;
 .col.product-col:nth-child(even) {
   padding-left: 6px !important;
   padding-right: 3px !important;
+}
+
+/* remove default scroll of number input tag */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
 }

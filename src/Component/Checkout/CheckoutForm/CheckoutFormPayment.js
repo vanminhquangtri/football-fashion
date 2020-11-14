@@ -1,14 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
+// generate random ID for order (based on source from: github)
+var ID = function () {
+    return 'FOOTBALLFAS_' + (Math.random().toString(36).substr(2, 9)).toUpperCase();
+};
 const CheckoutFormPayment = (props) => {
-    const {changeFormType, updateOrderInfo} = props;
+    const {changeFormType, updateOrderInfo, updateOrderID} = props;
     const [state, setState] = useState({
         payment_method: ""
     });
     const {payment_method} = state;
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = (data, ev) => {
-        changeFormType(ev, "payment")
+        changeFormType(ev, "success");
     };
     // change payment_method 
     const changePaymentMethod = (ev) => {
@@ -39,7 +43,6 @@ const CheckoutFormPayment = (props) => {
         }
     })
     useEffect(() => {
-        console.log("scroll");
         // scroll to top
         window.scrollTo(0, 0)
     },[])
@@ -75,28 +78,30 @@ const CheckoutFormPayment = (props) => {
                         {/* card owner */}
                         <span className="field-wrapper">
                             <input
-                                ref={register({required: true})} 
+                                style={{textTransform: "uppercase"}}
+                                ref={register({required: true, pattern: /^[A-Za-z ]+$/})} 
                                 name="card_owner" className="field" type="text" placeholder="Tên chủ thẻ *" 
                             />
                             <span className="field-top-up">Tên chủ thẻ *</span>
                         </span>
                         <span className="error-message">
-                            {errors.card_owner && "Vui lòng nhập Họ"}
+                            {errors.card_owner && "Vui lòng nhập tiếng Việt không dấu"}
                         </span>
                         {/* card number */}
                         <span className="field-wrapper">
                             <input 
-                                ref={register({required: true})} 
+                                ref={register({required: true, maxLength: 16, minLength: 16})} 
                                 name="card_number" className="field" type="number" placeholder="Số thẻ *" 
                             />
-                            <span className="field-top-up">Số thẻ *</span>
+                            <span className="field-top-up">Số thẻ gồm 16 chữ số *</span>
                         </span>
                         <span className="error-message">
                             {errors.card_number && "Số thẻ bao gồm 16 chữ số"}
                         </span>
                         {/* expired_month */}
                         <span className="field-wrapper">
-                            <input 
+                            <input
+                                ref={register({required: true, maxLength: 2, minLength: 2})} 
                                 name="expired_month" className="field" type="number" placeholder="Tháng hết hạn *" 
                             />
                             <span className="field-top-up">Tháng hết hạn</span>
@@ -107,30 +112,36 @@ const CheckoutFormPayment = (props) => {
                         {/* expired_year */}
                         <span className="field-wrapper">
                             <input 
-                                ref={register({required: true})} 
+                                ref={register({required: true, maxLength: 4, minLength: 4})} 
                                 name="expired_year" className="field" type="number" placeholder="Năm hết hạn *" 
                             />
                             <span className="field-top-up">Năm hết hạn *</span>
                         </span>
                         <span className="error-message">
-                            {errors.expired_year && "Vui lòng nhập 2 chữ số"}
+                            {errors.expired_year && "Vui lòng nhập 4 chữ số"}
                         </span>
                         {/* cvv_code */}
                         <span className="field-wrapper">
                             <input 
-                                ref={register({required: true})} 
+                                ref={register({required: true, maxLength: 3, minLength: 3})} 
                                 name="cvv_code" className="field" type="password" placeholder="Mã CVV *" 
                             />
                             <span className="field-top-up">Mã CVV *</span>
                         </span>
                         <span className="error-message">
-                            {errors.expired_year && "Vui lòng nhập 2 chữ số"}
+                            {errors.expired_year && "Vui lòng nhập 3 chữ số in phía sau thẻ"}
                         </span>
                         {/* confirm agree conditions */}
                         <label className="condition-agreement">
-                            <input type="checkbox" name="condition_agreement" id="condition_agreement" value="agreed"/>
+                            <input 
+                                ref={register({required: true})}
+                                type="checkbox" name="condition_agreement" id="condition_agreement" value="agreed"
+                            />
                             <label htmlFor="condition_agreement">Bạn đồng ý với điều khoản của chúng tôi</label>
                         </label>
+                        <span className="error-message">
+                            {errors.condition_agreement && "Vui lòng nhập chọn ô này để tiếp tục"}
+                        </span>
                     </form>
                     {/* navigate button for payment online*/}
                     <div className="form-navigate navigate-pay-online">
@@ -143,7 +154,7 @@ const CheckoutFormPayment = (props) => {
             {payment_method === "payment_onspot" && (
                 <div className="form-navigate navigate-pay-onspot">
                     <button type="button" onClick={(ev)=>{changeFormType(ev, "contact_shipping")}}>Quay về trang thông tin</button>
-                    <button type="submit" form="form-payment">Xác nhận đơn hàng</button>
+                    <button type="button" onClick={(ev)=>{updateOrderID(ID()); changeFormType(ev, "success")}}>Xác nhận đơn hàng</button>
                 </div>
             )}
         </div>
