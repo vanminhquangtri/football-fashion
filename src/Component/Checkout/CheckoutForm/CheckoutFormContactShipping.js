@@ -1,16 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 const CheckoutFormContactShipping = (props) => {
-    const [state, setState] = useState({
-        form_type: "contact-shipping" // also: billing, payment, success
-    })
-    const { register, handleSubmit, watch, errors } = useForm();
-    const onSubmit = data => console.log(data);
+    const {changeFormType} = props;
+    const { register, handleSubmit, errors } = useForm();
+    const onSubmit = (data, ev) => {
+        console.log(data);
+        changeFormType(ev, "payment")
+    };
     useEffect(() => {
         const fields = document.querySelectorAll(".field-wrapper .field");
-        
         for (let i = 0; i < fields.length; i ++) {
-            const fieldTopUp = fields[i].parentNode.querySelector(".field-top-up");
             fields[i].addEventListener("keyup", (ev) => {
                 const fieldTopUp = fields[i].parentNode.querySelector(".field-top-up");
                 if (fieldTopUp !== undefined) {
@@ -27,24 +26,39 @@ const CheckoutFormContactShipping = (props) => {
     })
     return (
         <div className="form-contact-shipping-wrapper">
-            <form className="form form-contact-shipping">
+            <form 
+                className="form form-contact-shipping"
+                onSubmit={handleSubmit(onSubmit)}
+            >
                 {/* contact information: name, phone, email */}
                 <span className="title">Thông tin liên hệ</span>
                 <span className="field-wrapper">
-                    <input name="last_name" className="field" type="text" placeholder="Họ *"></input>
+                    <input ref={register({required: true})} name="last_name" className="field" type="text" placeholder="Họ *"></input>
                     <span className="field-top-up">Họ *</span>
                 </span>
+                <span className="error-message">
+                    {errors.last_name && "Vui lòng nhập tên"}
+                </span>
                 <span className="field-wrapper">
-                    <input name="first_name" className="field" type="text" placeholder="Tên đệm và tên *"/>
+                    <input ref={register({required: true})} name="first_name" className="field" type="text" placeholder="Tên đệm và tên *"/>
                     <span className="field-top-up">Tên đệm và tên *</span>
                 </span>
-                <span className="field-wrapper">
-                    <input name="email" className="field" type="email" placeholder="Email *"/>
-                    <span className="field-top-up">Email *</span>
+                <span className="error-message">
+                    {errors.first_name && "Vui lòng nhập Tên đệm và tên"}
                 </span>
                 <span className="field-wrapper">
-                    <input name="tel" className="field" type="tel" placeholder="Điện thoại *"/>
+                    <input ref={register({pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/})} name="email" className="field" type="email" placeholder="Email"/>
+                    <span className="field-top-up">Email</span>
+                </span>
+                <span className="error-message">
+                    {errors.email && "Vui lòng nhập đúng định dạng email"}
+                </span>
+                <span className="field-wrapper">
+                    <input ref={register({required: true})} name="tel" className="field" type="tel" placeholder="Điện thoại *"/>
                     <span className="field-top-up">Điện thoại *</span>
+                </span>
+                <span className="error-message">
+                    {errors.tel && "Vui lòng nhập số điện thoại"}
                 </span>
                 {/* shipping address */}
                 <span className="title">Địa chỉ nhận hàng</span>
