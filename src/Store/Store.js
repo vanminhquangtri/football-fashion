@@ -113,7 +113,7 @@ const SeparateProduct_reducer = (init = SeparateProduct, action) => {
 }
 // payment target (pay for product displayed in component DetailProduct or pay for whole Cart)
 const PaymentTarget = {
-    target: ""
+    target: []
 };
 const PaymentTarget_reducer = (init = PaymentTarget, action) => {
     switch (action.type) {
