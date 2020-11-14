@@ -1348,71 +1348,117 @@ margin-top: 40px;
       .col {
         padding: 0 5px;
         .content {
-          .form-contact-shipping-wrapper {
-            .form {
+          /* general format of form */
+          .form {
+            display: flex;
+            flex-direction: column;
+            color: $color-gray-text;
+            /* title "Thông tin liên hệ" */
+            .title {
+              font-size: 14px;
+              margin-top: 10px;
+              font-weight: bold;
+            }
+            /* container of input tag and placeholder top up */
+            .field-wrapper {
+              font-size: 12px;
+              height: 50px;
+              position: relative;
               display: flex;
               flex-direction: column;
-              color: $color-gray-text;
-              /* title "Thông tin liên hệ" */
-              .title {
-                font-size: 14px;
-                margin-top: 10px;
-                font-weight: bold;
-              }
-              /* container of input tag and placeholder top up */
-              .field-wrapper {
-                font-size: 12px;
-                height: 50px;
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;;
-                padding: 0 10px;
-                margin-top: 5px;
-                border: 1px solid $color-gray-border;
-                border-radius: 10px;
-                /* input tag */
-                .field {
-                  width: 100%;
-                  padding-left: 0;
-                  height: 100%;
-                  border: none;
-                  outline: none;
-                  font-size: 15px;
-                  color: rgb(31, 31, 31);
-                  &::placeholder {
-                    font-size: 14px;
-                  }
-                }
-                /* place holder move to top of input tag when filling form */
-                .field-top-up {
-                  position: absolute;
-                  left: 10px;
-                  top: 5px;
-                  font-size: 12px;
-                  display: none;
-                }
-              }
-              /* error */
-              .error-message {
-                padding-left: 10px;
-                font-size: 12px;
-                color: $color-blue-mc;
-                font-weight: bold;
-                display: block;
-              }
-              /* submit button */
-              input[type=submit] {
+              justify-content: flex-end;;
+              padding: 0 10px;
+              margin-top: 5px;
+              border: 1px solid $color-gray-border;
+              border-radius: 10px;
+              /* input tag */
+              .field {
+                width: 100%;
+                padding-left: 0;
+                height: 100%;
                 border: none;
                 outline: none;
-                font-weight: bold;
-                margin: 5px auto;
-                font-size: 14px;
-                background: $color-red;
-                color: white;
-                border-radius: 10px;
-                padding: 5px 10px;
+                font-size: 15px;
+                color: rgb(31, 31, 31);
+                &::placeholder {
+                  font-size: 14px;
+                }
               }
+              /* place holder move to top of input tag when filling form */
+              .field-top-up {
+                position: absolute;
+                left: 10px;
+                top: 5px;
+                font-size: 12px;
+                display: none;
+              }
+            }
+            /* error */
+            .error-message {
+              padding-left: 10px;
+              font-size: 12px;
+              color: $color-blue-mc;
+              font-weight: bold;
+              display: block;
+            }
+            /* submit button */
+            input[type=submit] {
+              border: none;
+              outline: none;
+              font-weight: bold;
+              margin: 5px auto;
+              font-size: 14px;
+              background: $color-red;
+              color: white;
+              border-radius: 10px;
+              padding: 5px 10px;
+            }
+            /* confirm agree conditions */
+            .condition-agreement {
+              font-size: 12px;
+              margin-top: 5px;
+              font-weight: bold;
+              display: flex;
+              align-items: center;
+              input[type="checkbox"] {
+                margin-right: 5px;
+              }
+              label {
+                margin: 0;
+              }
+            }
+          }
+          /* choose payment online or cash */
+          .form-payment-method {
+            display: flex;
+            flex-direction: column;
+            color: $color-gray-text;
+            .title {
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+            label {
+              margin: 0;
+              font-size: 14px;
+            }
+            input[type=radio] {
+              margin-right: 5px;
+            }
+          }
+          /* navigate button */
+          .form-navigate {
+            display: flex;
+            flex-direction: column;
+            button {
+              outline: none;
+              border: none;
+              color: white;
+              background: $color-red;
+              font-size: 14px;
+              width: 100%;
+              margin-bottom: 10px;
+              padding: 5px 0;
+              border-radius: 20px;
             }
           }
         }

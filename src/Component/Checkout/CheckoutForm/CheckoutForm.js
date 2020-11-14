@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import CheckoutFormContactShipping from './CheckoutFormContactShipping';
+import CheckoutFormPayment from './CheckoutFormPayment';
 const CheckoutForm = (props) => {
     const [state, setState] = useState({
-        form_type: "contact_shipping" // also: payment, success
+        form_type: "payment" // also: payment, success
     });
     const {form_type} = state;
     const {updateOrderInfo} = props;
@@ -25,6 +26,12 @@ const CheckoutForm = (props) => {
                 <div className="content">
                     {form_type === "contact_shipping" && (
                         <CheckoutFormContactShipping 
+                            changeFormType={changeFormType}
+                            updateOrderInfo={updateOrderInfo}
+                        />
+                    )}
+                    {form_type === "payment" && (
+                        <CheckoutFormPayment 
                             changeFormType={changeFormType}
                             updateOrderInfo={updateOrderInfo}
                         />
