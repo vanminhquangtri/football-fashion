@@ -37,7 +37,7 @@ const CheckoutFormContactShipping = (props) => {
                     <span className="field-top-up">Họ *</span>
                 </span>
                 <span className="error-message">
-                    {errors.last_name && "Vui lòng nhập tên"}
+                    {errors.last_name && "Vui lòng nhập Họ"}
                 </span>
                 <span className="field-wrapper">
                     <input ref={register({required: true})} name="first_name" className="field" type="text" placeholder="Tên đệm và tên *"/>
@@ -63,24 +63,39 @@ const CheckoutFormContactShipping = (props) => {
                 {/* shipping address */}
                 <span className="title">Địa chỉ nhận hàng</span>
                 <span className="field-wrapper">
-                    <input name="city" className="field" type="text" placeholder="Tỉnh / thành phố *"></input>
+                    <input ref={register({required: true})} name="city" className="field" type="text" placeholder="Tỉnh / thành phố *"></input>
                     <span className="field-top-up">Tỉnh / thành phố *</span>
                 </span>
+                <span className="error-message">
+                    {errors.city && "Vui lòng nhập Tỉnh / thành phố"}
+                </span>
                 <span className="field-wrapper">
-                    <input name="district" className="field" type="text" placeholder="Quận / huyện *"></input>
+                    <input ref={register({required: true})} name="district" className="field" type="text" placeholder="Quận / huyện *"></input>
                     <span className="field-top-up">Quận / huyện *</span>
                 </span>
+                <span className="error-message">
+                    {errors.district && "Vui lòng nhập Quận / huyện"}
+                </span>
                 <span className="field-wrapper">
-                    <input name="ward" className="field" type="text" placeholder="Xã / phường/ thị trấn *"/>
+                    <input ref={register({required: true})} name="ward" className="field" type="text" placeholder="Xã / phường/ thị trấn *"/>
                     <span className="field-top-up">Xã / phường/ thị trấn *</span>
                 </span>
-                <span className="field-wrapper">
-                    <input name="street" className="field" type="text" placeholder="Tên đường *"/>
-                    <span className="field-top-up">Tên đường *</span>
+                <span className="error-message">
+                    {errors.ward && "Vui lòng nhập Xã / phường/ thị trấn"}
                 </span>
                 <span className="field-wrapper">
-                    <input name="house_no" className="field" type="text" placeholder="Số nhà"/>
+                    <input ref={register({required: true})} name="street" className="field" type="text" placeholder="Tên đường *"/>
+                    <span className="field-top-up">Tên đường *</span>
+                </span>
+                <span className="error-message">
+                    {errors.street && "Vui lòng nhập Tên đường"}
+                </span>
+                <span className="field-wrapper">
+                    <input ref={register({required: true})} name="house_no" className="field" type="text" placeholder="Số nhà"/>
                     <span className="field-top-up">Số nhà</span>
+                </span>
+                <span className="error-message">
+                    {errors.house_no && "Vui lòng nhập Số nhà"}
                 </span>
                 <input type="submit" value="Thanh toán"/>
             </form>
