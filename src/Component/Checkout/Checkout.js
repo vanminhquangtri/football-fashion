@@ -19,7 +19,8 @@ const Checkout = (props) => {
         district: "",
         ward: "",
         street: "",
-        house_no: ""
+        house_no: "",
+        payment_method: ""
     });
     // update info when fill form
     const updateOrderInfo = (ev, info_name) => {
