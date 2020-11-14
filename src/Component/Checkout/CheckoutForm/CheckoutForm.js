@@ -5,6 +5,7 @@ const CheckoutForm = (props) => {
         form_type: "contact_shipping" // also: payment, success
     });
     const {form_type} = state;
+    const {updateOrderInfo} = props;
     const changeFormType = (ev, type) => {
         ev.preventDefault();
         setState((prevState) => {
@@ -17,13 +18,16 @@ const CheckoutForm = (props) => {
     useEffect(() => {
         // scroll to top
         window.scrollTo(0, 0)
-    })
+    },[state.form_type])
     return (
         <div className="row check-out-form">
             <div className="col">
                 <div className="content">
                     {form_type === "contact_shipping" && (
-                        <CheckoutFormContactShipping changeFormType={changeFormType}/>
+                        <CheckoutFormContactShipping 
+                            changeFormType={changeFormType}
+                            updateOrderInfo={updateOrderInfo}
+                        />
                     )}
                 </div>
             </div>

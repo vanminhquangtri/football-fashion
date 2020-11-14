@@ -9,8 +9,28 @@ const Checkout = (props) => {
     const {PaymentTarget, Currency} = props.Store;
     const PaidTarget = PaymentTarget.target;
     const [state, setState] = useState({
-        show_product_summary: false
-    })
+        show_product_summary: false,
+        // order information
+        last_name: "",
+        first_name: "",
+        email: "",
+        tel: "",
+        city: "",
+        district: "",
+        ward: "",
+        street: "",
+        house_no: ""
+    });
+    // update info when fill form
+    const updateOrderInfo = (ev, info_name) => {
+        const value = ev.target.value;
+        ev.preventDefault();
+        let currentState = {...state};
+        currentState[info_name] = value;
+        setState(() => {
+            return currentState;
+        })
+    }
     // change status show_product_summary
     const changeShow_product_summary = (ev) => {
         ev.preventDefault();
@@ -94,7 +114,10 @@ const Checkout = (props) => {
                             {
                                 PaidTarget.map((product) => {
                                     return (
-                                        <CheckoutProduct product={product} key={product.product_id}/>
+                                        <CheckoutProduct 
+                                            product={product} 
+                                            key={product.product_id}
+                                        />
                                     )
                                 })
                             }
@@ -102,7 +125,7 @@ const Checkout = (props) => {
                     </div>
                 </div>
                 {/* form */}
-                <CheckoutForm/>
+                <CheckoutForm updateOrderInfo={updateOrderInfo} />
             </div>
         </section>
     );
