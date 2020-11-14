@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/football-fashion/static/css/main.cea0d442.chunk.css",
-    "main.js": "/football-fashion/static/js/main.1048fc69.chunk.js",
-    "main.js.map": "/football-fashion/static/js/main.1048fc69.chunk.js.map",
+    "main.css": "/football-fashion/static/css/main.998b344d.chunk.css",
+    "main.js": "/football-fashion/static/js/main.20cec519.chunk.js",
+    "main.js.map": "/football-fashion/static/js/main.20cec519.chunk.js.map",
     "runtime-main.js": "/football-fashion/static/js/runtime-main.7abbda72.js",
     "runtime-main.js.map": "/football-fashion/static/js/runtime-main.7abbda72.js.map",
     "static/css/2.494ee3e6.chunk.css": "/football-fashion/static/css/2.494ee3e6.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.c4f00baf.chunk.js.map": "/football-fashion/static/js/3.c4f00baf.chunk.js.map",
     "index.html": "/football-fashion/index.html",
     "static/css/2.494ee3e6.chunk.css.map": "/football-fashion/static/css/2.494ee3e6.chunk.css.map",
-    "static/css/main.cea0d442.chunk.css.map": "/football-fashion/static/css/main.cea0d442.chunk.css.map",
+    "static/css/main.998b344d.chunk.css.map": "/football-fashion/static/css/main.998b344d.chunk.css.map",
     "static/js/2.13ce3d10.chunk.js.LICENSE.txt": "/football-fashion/static/js/2.13ce3d10.chunk.js.LICENSE.txt",
     "static/media/136-1369563_dance-clipart-png.png": "/football-fashion/static/media/136-1369563_dance-clipart-png.387cf22a.png",
     "static/media/BEST Premier League Goals.mp4": "/football-fashion/static/media/BEST Premier League Goals.881517ec.mp4",
@@ -42,7 +42,7 @@
     "static/js/runtime-main.7abbda72.js",
     "static/css/2.494ee3e6.chunk.css",
     "static/js/2.13ce3d10.chunk.js",
-    "static/css/main.cea0d442.chunk.css",
-    "static/js/main.1048fc69.chunk.js"
+    "static/css/main.998b344d.chunk.css",
+    "static/js/main.20cec519.chunk.js"
   ]
 }
