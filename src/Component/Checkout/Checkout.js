@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {connect} from "react-redux";
 import ProductsInfo from '../../Data/ProductInfo';
 import formatNumber from '../GeneralModules/FortmatMoney';
+import CheckoutForm from './CheckoutForm/CheckoutForm';
 import CheckoutProduct from './CheckoutProduct/CheckoutProduct';
 const Checkout = (props) => {
     const {PaymentTarget, Currency} = props.Store;
@@ -72,6 +73,7 @@ const Checkout = (props) => {
                         </div>
                     </div>
                 </div>
+                {/* toggle product summary */}
                 <div className="row toggle-product-summary">
                     <div className="col">
                         <span className="title">Tổng cộng: <strong>{formatNumber(totalAmount)}<sup>{Currency.currency}</sup></strong></span>
@@ -85,6 +87,7 @@ const Checkout = (props) => {
                         </div>
                     </div>
                 </div>
+                {/* product summary */}
                 <div className="row check-out-product-summary">
                     <div className="col">
                         <div className="content">
@@ -98,6 +101,8 @@ const Checkout = (props) => {
                         </div>
                     </div>
                 </div>
+                {/* form */}
+                <CheckoutForm/>
             </div>
         </section>
     );

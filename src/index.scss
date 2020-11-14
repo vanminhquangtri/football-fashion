@@ -1343,6 +1343,54 @@ margin-top: 40px;
       max-height: 0;
       overflow: hidden;
     }
+    /* show form */
+    .row.check-out-form {
+      .col {
+        padding: 0 5px;
+        .content {
+          .form-contact-shipping-wrapper {
+            .form.form-contact-shipping {
+              display: flex;
+              flex-direction: column;
+              .title {
+                
+              }
+              .field-wrapper {
+                font-size: 12px;
+                height: 50px;
+                position: relative;
+                border: 1px solid red;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;;
+                padding: 0 10px;
+                border: 1px solid $color-gray-border;
+                border-radius: 10px;
+                color: $color-gray-text;
+                .field {
+                  width: 100%;
+                  padding-left: 0;
+                  height: 100%;
+                  border: none;
+                  outline: none;
+                  color: rgb(31, 31, 31);
+                  &::placeholder {
+                    font-size: 14px;
+                  }
+                }
+                .field-top-up {
+                  position: absolute;
+                  left: 10px;
+                  top: 5px;
+                  font-size: 10px;
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   } 
 }
 /*--- end check out ---*/
