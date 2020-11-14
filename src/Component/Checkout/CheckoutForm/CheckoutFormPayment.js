@@ -38,6 +38,11 @@ const CheckoutFormPayment = (props) => {
             })
         }
     })
+    useEffect(() => {
+        console.log("scroll");
+        // scroll to top
+        window.scrollTo(0, 0)
+    },[])
     return (
         <div className="form-payment-wrapper">
             {/* choose pay online of pay on spot */}
@@ -129,7 +134,7 @@ const CheckoutFormPayment = (props) => {
                     </form>
                     {/* navigate button for payment online*/}
                     <div className="form-navigate navigate-pay-online">
-                        <button type="button">Quay về trang thông tin</button>
+                        <button type="button" onClick={(ev)=>{changeFormType(ev, "contact_shipping")}}>Quay về trang thông tin</button>
                         <button type="submit" form="form-payment">Xác nhận đơn hàng</button>
                     </div>
                 </>
@@ -137,7 +142,7 @@ const CheckoutFormPayment = (props) => {
             {/* navigate button for payment onspot*/}
             {payment_method === "payment_onspot" && (
                 <div className="form-navigate navigate-pay-onspot">
-                    <button type="button">Quay về trang thông tin</button>
+                    <button type="button" onClick={(ev)=>{changeFormType(ev, "contact_shipping")}}>Quay về trang thông tin</button>
                     <button type="submit" form="form-payment">Xác nhận đơn hàng</button>
                 </div>
             )}
