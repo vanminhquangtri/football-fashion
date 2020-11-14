@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import CheckoutFormContactShipping from './CheckoutFormContactShipping';
 import CheckoutFormPayment from './CheckoutFormPayment';
+import CheckoutSuccess from './CheckoutSuccess';
+
 const CheckoutForm = (props) => {
     const [state, setState] = useState({
         form_type: "payment" // also: payment, success
@@ -36,6 +38,11 @@ const CheckoutForm = (props) => {
                             changeFormType={changeFormType}
                             updateOrderInfo={updateOrderInfo}
                             updateOrderID={updateOrderID}
+                        />
+                    )}
+                    {form_type === "success" && (
+                        <CheckoutSuccess 
+                            orderInfo={orderInfo}
                         />
                     )}
                 </div>
