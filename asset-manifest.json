@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/football-fashion/static/css/main.9c189331.chunk.css",
-    "main.js": "/football-fashion/static/js/main.876ab2a5.chunk.js",
-    "main.js.map": "/football-fashion/static/js/main.876ab2a5.chunk.js.map",
+    "main.css": "/football-fashion/static/css/main.0322b5eb.chunk.css",
+    "main.js": "/football-fashion/static/js/main.a5a03a54.chunk.js",
+    "main.js.map": "/football-fashion/static/js/main.a5a03a54.chunk.js.map",
     "runtime-main.js": "/football-fashion/static/js/runtime-main.7abbda72.js",
     "runtime-main.js.map": "/football-fashion/static/js/runtime-main.7abbda72.js.map",
     "static/css/2.494ee3e6.chunk.css": "/football-fashion/static/css/2.494ee3e6.chunk.css",
-    "static/js/2.13ce3d10.chunk.js": "/football-fashion/static/js/2.13ce3d10.chunk.js",
-    "static/js/2.13ce3d10.chunk.js.map": "/football-fashion/static/js/2.13ce3d10.chunk.js.map",
+    "static/js/2.058ca89e.chunk.js": "/football-fashion/static/js/2.058ca89e.chunk.js",
+    "static/js/2.058ca89e.chunk.js.map": "/football-fashion/static/js/2.058ca89e.chunk.js.map",
     "static/js/3.c4f00baf.chunk.js": "/football-fashion/static/js/3.c4f00baf.chunk.js",
     "static/js/3.c4f00baf.chunk.js.map": "/football-fashion/static/js/3.c4f00baf.chunk.js.map",
     "index.html": "/football-fashion/index.html",
     "static/css/2.494ee3e6.chunk.css.map": "/football-fashion/static/css/2.494ee3e6.chunk.css.map",
-    "static/css/main.9c189331.chunk.css.map": "/football-fashion/static/css/main.9c189331.chunk.css.map",
-    "static/js/2.13ce3d10.chunk.js.LICENSE.txt": "/football-fashion/static/js/2.13ce3d10.chunk.js.LICENSE.txt",
+    "static/css/main.0322b5eb.chunk.css.map": "/football-fashion/static/css/main.0322b5eb.chunk.css.map",
+    "static/js/2.058ca89e.chunk.js.LICENSE.txt": "/football-fashion/static/js/2.058ca89e.chunk.js.LICENSE.txt",
     "static/media/136-1369563_dance-clipart-png.png": "/football-fashion/static/media/136-1369563_dance-clipart-png.387cf22a.png",
     "static/media/BEST Premier League Goals.mp4": "/football-fashion/static/media/BEST Premier League Goals.881517ec.mp4",
     "static/media/Internet+Entertainment.png": "/football-fashion/static/media/Internet+Entertainment.71d4788f.png",
@@ -25,6 +25,7 @@
     "static/media/au2.jpg": "/football-fashion/static/media/au2.f4a9cde9.jpg",
     "static/media/au3.jpg": "/football-fashion/static/media/au3.eba99eb4.jpg",
     "static/media/ball.d696f7f5.png": "/football-fashion/static/media/ball.d696f7f5.png",
+    "static/media/congra.a4ccc4a2.png": "/football-fashion/static/media/congra.a4ccc4a2.png",
     "static/media/index.scss": "/football-fashion/static/media/trophy.ba4d003a.png",
     "static/media/hd1.jpg": "/football-fashion/static/media/hd1.fc581ffb.jpg",
     "static/media/hd2.jpg": "/football-fashion/static/media/hd2.e6606ad4.jpg",
@@ -41,8 +42,8 @@
   "entrypoints": [
     "static/js/runtime-main.7abbda72.js",
     "static/css/2.494ee3e6.chunk.css",
-    "static/js/2.13ce3d10.chunk.js",
-    "static/css/main.9c189331.chunk.css",
-    "static/js/main.876ab2a5.chunk.js"
+    "static/js/2.058ca89e.chunk.js",
+    "static/css/main.0322b5eb.chunk.css",
+    "static/js/main.a5a03a54.chunk.js"
   ]
 }
