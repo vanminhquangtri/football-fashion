@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
+import paymentCard from "../../../Assets/images/section-shopping-cart-detail/payment-card.png";
 // generate random ID for order (based on source from: github)
 var ID = function () {
     return 'FOOTBALLFAS_' + (Math.random().toString(36).substr(2, 9)).toUpperCase();
@@ -7,7 +8,7 @@ var ID = function () {
 const CheckoutFormPayment = (props) => {
     const {changeFormType, updateOrderInfo, updateOrderID} = props;
     const [state, setState] = useState({
-        payment_method: ""
+        payment_method: "payment_online"
     });
     const {payment_method} = state;
     const { register, handleSubmit, errors } = useForm();
@@ -44,7 +45,17 @@ const CheckoutFormPayment = (props) => {
     })
     useEffect(() => {
         // scroll to top
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
+        // add slash to expired date
+        const expiredDate = document.querySelector(".expired_date");
+        expiredDate.addEventListener("keyup", (ev) => {
+            let value = expiredDate.value;
+            if (ev.key !== "Backspace"){
+                if (value.length === 2) {
+                    expiredDate.value = `${value} / `
+                }
+            }
+        })
     },[])
     return (
         <div className="form-payment-wrapper">
@@ -68,9 +79,10 @@ const CheckoutFormPayment = (props) => {
             </form>
             {payment_method === "payment_online" && (
                 <>
+                    <img alt="payment card" src={paymentCard} className="payment-card animate__animated animate__fadeInRight"/>
                     {/* form if pay online */}
                     <form 
-                        className="form form-payment"
+                        className="form form-payment animate__animated animate__fadeInRight"
                         onSubmit={handleSubmit(onSubmit)}
                         noValidate
                         id="form-payment"
@@ -98,27 +110,16 @@ const CheckoutFormPayment = (props) => {
                         <span className="error-message">
                             {errors.card_number && "Số thẻ bao gồm 16 chữ số"}
                         </span>
-                        {/* expired_month */}
+                        {/* expired_date */}
                         <span className="field-wrapper">
                             <input
-                                ref={register({required: true, maxLength: 2, minLength: 2})} 
-                                name="expired_month" className="field" type="number" placeholder="Tháng hết hạn *" 
+                                ref={register({required: true, pattern: /^[0-9/ ]+$/, maxLength: 7, minLength: 7})} 
+                                name="expired_date" className="field expired_date" type="text" placeholder="Ngày hết hạn (MM / YY) *" 
                             />
-                            <span className="field-top-up">Tháng hết hạn</span>
+                            <span className="field-top-up">Ngày hết hạn (MM / YY) *</span>
                         </span>
                         <span className="error-message">
-                            {errors.expired_month && "Vui lòng nhập 2 chữ số"}
-                        </span>
-                        {/* expired_year */}
-                        <span className="field-wrapper">
-                            <input 
-                                ref={register({required: true, maxLength: 4, minLength: 4})} 
-                                name="expired_year" className="field" type="number" placeholder="Năm hết hạn *" 
-                            />
-                            <span className="field-top-up">Năm hết hạn *</span>
-                        </span>
-                        <span className="error-message">
-                            {errors.expired_year && "Vui lòng nhập 4 chữ số"}
+                            {errors.expired_date && "Vui lòng nhập đúng 4 chữ số"}
                         </span>
                         {/* cvv_code */}
                         <span className="field-wrapper">
