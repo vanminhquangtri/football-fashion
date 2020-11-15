@@ -5,7 +5,7 @@ import CheckoutSuccess from './CheckoutSuccess';
 
 const CheckoutForm = (props) => {
     const [state, setState] = useState({
-        form_type: "payment" // also: payment, success
+        form_type: "contact_shipping" // also: payment, success
     });
     const {form_type} = state;
     const {updateOrderInfo, orderInfo, updateOrderID} = props;

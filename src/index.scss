@@ -890,7 +890,7 @@ margin-top: 40px;
         display: flex;
         img {
           margin: auto;
-          width: 30vw;
+          width: 30vw !important;
           height: 30vw;
         }
       }
@@ -1467,6 +1467,42 @@ margin-top: 40px;
           /* payment card */
           img {
             width: 100%;
+          }
+          /* success payment */
+          .form-payment-success {
+            font-size: 14px;
+            .congra-image {
+              img {
+                width: 40vw;
+                margin: auto;
+                display: block;
+              }
+            }
+            .success-title {
+              text-align: center;
+            }
+            .order-info {
+              text-align: center;
+              .order-id {
+                font-weight: bold;
+              }
+            }
+            .success-navigate {
+              margin-top: 10px;
+              display: flex;
+              justify-content: space-evenly;
+              a {
+                display: block;
+                padding: 10px;
+                color: white;
+                background: $color-red;
+                font-weight: bold;
+                border-radius: 20px;
+              }
+              a.order-retrieve {
+                background: $color-blue-mc;
+              }
+            }
           }
         }
       }

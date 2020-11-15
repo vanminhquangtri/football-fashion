@@ -8,12 +8,13 @@ var ID = function () {
 const CheckoutFormPayment = (props) => {
     const {changeFormType, updateOrderInfo, updateOrderID} = props;
     const [state, setState] = useState({
-        payment_method: "payment_online"
+        payment_method: ""
     });
     const {payment_method} = state;
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = (data, ev) => {
         changeFormType(ev, "success");
+        updateOrderID(ID())
     };
     // change payment_method 
     const changePaymentMethod = (ev) => {
@@ -46,17 +47,20 @@ const CheckoutFormPayment = (props) => {
     useEffect(() => {
         // scroll to top
         window.scrollTo(0, 0);
-        // add slash to expired date
-        const expiredDate = document.querySelector(".expired_date");
-        expiredDate.addEventListener("keyup", (ev) => {
-            let value = expiredDate.value;
-            if (ev.key !== "Backspace"){
-                if (value.length === 2) {
-                    expiredDate.value = `${value} / `
+        // add slash to expired date, only when payment_method is payment_online
+        if (state.payment_method === "payment_online"){
+            const expiredDate = document.querySelector(".expired_date");
+            expiredDate.addEventListener("keyup", (ev) => {
+                let value = expiredDate.value;
+                if (ev.key !== "Backspace"){
+                    if (value.length === 2) {
+                        expiredDate.value = `${value} / `
+                    }
                 }
-            }
-        })
-    },[])
+            })
+        }
+        
+    },[state])
     return (
         <div className="form-payment-wrapper">
             {/* choose pay online of pay on spot */}
@@ -130,7 +134,7 @@ const CheckoutFormPayment = (props) => {
                             <span className="field-top-up">Mã CVV *</span>
                         </span>
                         <span className="error-message">
-                            {errors.expired_year && "Vui lòng nhập 3 chữ số in phía sau thẻ"}
+                            {errors.cvv_code && "Vui lòng nhập 3 chữ số in phía sau thẻ"}
                         </span>
                         {/* confirm agree conditions */}
                         <label className="condition-agreement">
