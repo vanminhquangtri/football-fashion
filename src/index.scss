@@ -827,6 +827,7 @@ margin-top: 40px;
 }
 /* also like and outstanding product wrapper */
 .container-fluid.also-container {
+  background: $color-gray-bg;
   margin-top: 10px;
   .row {
     .col {
@@ -881,7 +882,8 @@ margin-top: 40px;
     position: relative;
     padding-top: 10px;
     margin-bottom: 3px;
-    border: 1px solid $color-blue-mc;
+    // border: 1px solid $color-blue-mc;
+    box-shadow: 1px 1px 2px 2px $color-gray-border;
     a {
       text-decoration: none;
       /* hold main image of product */
