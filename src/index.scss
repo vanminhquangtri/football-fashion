@@ -7,6 +7,7 @@ $color-gray-border: rgb(235, 235, 235);
 $color-gray-bg: rgb(248, 248, 248);
 $color-blue-mc: #3d88fb;
 $color-gray-text: rgb(97, 96, 96);
+$color-young-green: rgb(136, 223, 6);
 body {
   background: $color-gray-bg;
 }
@@ -482,7 +483,7 @@ margin-top: 40px;
 /*--- footer ---*/
 .footer {
   padding: 10px 0 50px 0;
-  background: $color-blue-mc;
+  background: $color-young-green;
   // border-radius: 10px 10px 0 0;
   .container-fluid {
     .row {
@@ -496,12 +497,12 @@ margin-top: 40px;
         display: flex;
         flex-direction: column;
         border-bottom: 1px solid #60a0ff;
-        color: #9cc1f8;
+        color: $color-gray-text;
         .title {
           font-size: 18px;
           margin: 0 0 5px -15px;
           text-transform: uppercase;
-          color: #d3e4fd;
+          color: $color-gray-text;
         }
         p {
           margin: 0;
@@ -510,19 +511,18 @@ margin-top: 40px;
           margin-right: 5px;
         }
         a {
-          color: #9cc1f8;
           text-decoration: underline;
         }
       }
       .col.social-media {
         border-bottom: none;
-        padding: 10px;
+        padding: 5px;
         .wrap {
-          border: 1px solid #60a0ff;
+          border: 1px solid $color-blue-mc;
           position: relative;
           .title {
             margin: 0;
-            background: $color-blue-mc;
+            background: $color-young-green;
             position: absolute;
             left: 30px;
             right: 30px;
@@ -530,7 +530,7 @@ margin-top: 40px;
             text-align: center;
           }
           .icon-link {
-            padding: 20px 20px 10px 20px;
+            padding: 20px 0 10px 0;
             display: flex;
             justify-content: center;
             a {
@@ -564,7 +564,6 @@ margin-top: 40px;
       }
     }
     .copy-right {
-      color: #d3e4fd;
       .col {
         border: none;
         padding: 5px;
@@ -1065,7 +1064,7 @@ margin-top: 40px;
     .row.title-wrapper {
       .col {
         padding: 10px;
-        background: rgb(136, 223, 6);
+        background: $color-young-green;
         .content {
           width: 80%;
           margin: auto;
@@ -1113,7 +1112,7 @@ margin-top: 40px;
           .total-amount {
             font-size: 14px;
             padding: 5px 15px;
-            background: rgb(136, 223, 6);
+            background: $color-young-green;
             color: rgb(124, 124, 124);
           }
           .checkout-link {
@@ -1236,7 +1235,7 @@ margin-top: 40px;
     .row.check-out-tile {
       .col {
         padding: 10px;
-        background: rgb(136, 223, 6);
+        background: $color-young-green;
         .content {
           width: 80%;
           margin: auto;
@@ -1519,7 +1518,7 @@ margin-top: 40px;
     .row.manage-order-tile {
       .col {
         padding: 10px;
-        background: rgb(136, 223, 6);
+        background: $color-young-green;
         .content {
           width: 80%;
           margin: auto;
@@ -1692,6 +1691,7 @@ margin-top: 40px;
             color: white;
             padding: 60px 10px;
             font-size: 14px;
+            /* contact form */
             .contact-form {
               .title {
                 font-weight: bold;
@@ -1713,9 +1713,17 @@ margin-top: 40px;
                 color: yellowgreen
               }
               input[type=submit] {
-                margin-top: 10px;
+                margin-top: 20px;
                 font-weight: bold;
               }
+            }
+            /* annoucement for successful submit */
+            .successful-submit-announcement {
+              margin-top: 20px;
+              padding: 10px;
+              text-align: center;
+              background: #88df06;
+              color: white;
             }
           }
         }

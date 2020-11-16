@@ -1,12 +1,24 @@
 // direct child of routerURL
-import React from 'react';
+import React, {useState} from 'react';
 import {Parallax} from 'react-parallax';
 import paraImg1 from "../../Assets/images/section-about/parra1.jpg"
 import {useForm} from "react-hook-form";
 const About = () => {
+    const [state, setState] = useState({
+        submit_status: "failed"
+    });
+    // change submit_status
+    const changeSubmitStatus = () => {
+        setState((prevState) => {
+            return {
+                ...prevState,
+                submit_status: "successful"
+            }
+        })
+    }
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = () => {
-        return "";
+        changeSubmitStatus()
     };
     return (
         <section className="about">
@@ -48,6 +60,11 @@ const About = () => {
                                         </span>
                                         <input className="field" type="submit" value="Gửi phản hồi"/>
                                     </form>
+                                    {state.submit_status === "successful" && (
+                                        <div className="successful-submit-announcement animate__animated animate__fadeInUp">
+                                            Cảm ơn Quý khách đã gửi phản hồi đến chúng tôi
+                                        </div>
+                                    )}
                                 </div>
                             </Parallax>
                         </div>
