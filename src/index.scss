@@ -1135,7 +1135,7 @@ margin-top: 40px;
     }
   }
 }
-/* layout each product in shopping cart, re-use for check out */
+/* layout each product in shopping cart, re-use for check out and order manage */
 .shopping-cart-product-layout {
   border-bottom: 1px solid $color-gray-border;
   padding-bottom: 10px;
@@ -1512,7 +1512,8 @@ margin-top: 40px;
 /*--- end check out ---*/
 /*--- manage order ---*/
 .manage-order {
-  margin-top: 38px;
+  margin: 38px 0 10px 0;
+  background: white;
   .container-fluid {
     /* title "Quản lý đơn hàng" */
     .row.manage-order-tile {
@@ -1539,7 +1540,7 @@ margin-top: 40px;
       font-size: 14px;
       color: $color-gray-text;
       .col {
-        padding: 10px;
+        padding: 0 5px;
         .content {
           .form-verify-order {
             display: flex;
@@ -1553,9 +1554,10 @@ margin-top: 40px;
             }
             .field {
               outline: none;
-              border: none;
+              border: 1px solid $color-gray-border;
               padding: 10px 5px;
               border-radius: 10px;
+              color: $color-gray-text;
             }
             button[type=submit] {
               outline: none;
@@ -1574,9 +1576,103 @@ margin-top: 40px;
             font-style: italic;
             font-size: 12px;
             font-weight: bold;
-            background: $color-blue-mc;
+            background: #88df06;
             padding: 5px;
             text-align: center;
+          }
+        }
+      }
+    }
+    /* show detail of order */
+    .row.manage-order-detail {
+      font-size: 14px;
+      color: $color-gray-text;
+      margin-top: 10px;
+      .col {
+        padding: 0 5px;
+        .content {
+          .order-detail-information {
+            .order-detail-title {
+              font-weight: bold;
+              margin-bottom: 10px;
+            }
+            /* each product */
+            .order-product-summary {
+              .shopping-cart-product-layout {
+                .image-info {
+                  .product-image {
+                    width: 20%;
+                    img {
+                      width: 16vw;
+                    }
+                  }
+                  .product-info {
+                    width: 80%;
+                  }
+                }
+                /* show size, quantity and total amount of each size */
+                .row-product-buttons {
+                  .product-quantity-title {
+                    font-style: italic;
+                    margin-right: 3px;
+                  }
+                  .value {
+                    margin-right: 8px;
+                    font-size: 10px;
+                    background: #3d88fb;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  }
+                  .value.totalEachSize {
+                    width: auto;
+                    border-radius: 0;
+                    font-size: 12px;
+                    padding: 0 4px;
+                    margin-right: 0;
+                  }
+                }
+              }
+            }
+            /* other info: contact, shipping, payment method */
+            .order-other-info {
+              padding-left: 10px;
+              .info-title {
+                font-weight: bold;
+                margin-left: -10px;
+              }
+              .shipping {
+                .address-field {
+                  display: inline-block;
+                  margin-right: 3px
+                }
+              }
+              .contact, .shipping, .payment {
+                margin-bottom: 10px;
+              }
+            }
+            /* navigate */
+            .order-navigate {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              a {
+                margin-bottom: 10px;
+                background: $color-red;
+                color: white;
+                padding: 10px;
+                display: block;
+                text-align: center;
+                font-weight: bold;
+              }
+              a.review {
+                background: $color-blue-mc;
+              }
+            }
           }
         }
       }
