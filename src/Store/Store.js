@@ -131,11 +131,23 @@ const PaymentTarget_reducer = (init = PaymentTarget, action) => {
             return init
     }
 }
+// order
+const Orders = [];
+const Orders_reducer = (init = Orders, action) => {
+    switch (action.type) {
+        case "ADD_TO_ORDER":
+            init.push(action.order)
+            return init
+        default:
+            return init
+    }
+}
 const All_reducer = redux.combineReducers({
     Currency: Currency_reducer,
     Cart: Cart_reducer,
     PaymentTarget: PaymentTarget_reducer,
-    SeparateProduct: SeparateProduct_reducer
+    SeparateProduct: SeparateProduct_reducer,
+    Orders: Orders_reducer,
 });
 var Store = redux.createStore(All_reducer);
 export default Store;

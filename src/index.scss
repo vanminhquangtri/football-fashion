@@ -1510,6 +1510,82 @@ margin-top: 40px;
   } 
 }
 /*--- end check out ---*/
+/*--- manage order ---*/
+.manage-order {
+  margin-top: 38px;
+  .container-fluid {
+    /* title "Quản lý đơn hàng" */
+    .row.manage-order-tile {
+      .col {
+        padding: 10px;
+        background: rgb(136, 223, 6);
+        .content {
+          width: 80%;
+          margin: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          padding: 10px;
+          background: rgb(186, 240, 106);
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    /* verify form */
+    .row.manage-order-verify {
+      font-size: 14px;
+      color: $color-gray-text;
+      .col {
+        padding: 10px;
+        .content {
+          .form-verify-order {
+            display: flex;
+            flex-direction: column;
+            .big-label {
+              font-weight: bold;
+              margin: 0;
+            }
+            .label {
+              margin: 10px 0 0 0;
+            }
+            .field {
+              outline: none;
+              border: none;
+              padding: 10px 5px;
+              border-radius: 10px;
+            }
+            button[type=submit] {
+              outline: none;
+              border: none;
+              margin-top: 10px;
+              padding: 10px 5px;
+              font-weight: bold;
+              color: white;
+              background: $color-red;
+            }
+          }
+          /* annoucement if verify failed */
+          .verify-announcement {
+            margin-top: 10px;
+            color: white;
+            font-style: italic;
+            font-size: 12px;
+            font-weight: bold;
+            background: $color-blue-mc;
+            padding: 5px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+/*--- end manage order ---*/
+
+/*--- justify center product layout ---*/
 .col.product-col:nth-child(odd) {
   padding-left: 3px !important;
   padding-right: 6px !important;
@@ -1525,7 +1601,6 @@ input::-webkit-inner-spin-button {
 -webkit-appearance: none;
 margin: 0;
 }
-/* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
 }

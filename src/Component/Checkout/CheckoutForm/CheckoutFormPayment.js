@@ -1,12 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
 import paymentCard from "../../../Assets/images/section-shopping-cart-detail/payment-card.png";
-// generate random ID for order (based on source from: github)
-var ID = function () {
-    return 'FOOTBALLFAS_' + (Math.random().toString(36).substr(2, 9)).toUpperCase();
-};
 const CheckoutFormPayment = (props) => {
-    const {changeFormType, updateOrderInfo, updateOrderID} = props;
+    const {changeFormType, updateOrderInfo, dispatchOrderDetail} = props;
     const [state, setState] = useState({
         payment_method: ""
     });
@@ -14,7 +10,7 @@ const CheckoutFormPayment = (props) => {
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = (data, ev) => {
         changeFormType(ev, "success");
-        updateOrderID(ID())
+        dispatchOrderDetail()
     };
     // change payment_method 
     const changePaymentMethod = (ev) => {
@@ -159,7 +155,7 @@ const CheckoutFormPayment = (props) => {
             {payment_method === "payment_onspot" && (
                 <div className="form-navigate navigate-pay-onspot">
                     <button type="button" onClick={(ev)=>{changeFormType(ev, "contact_shipping")}}>Quay về trang thông tin</button>
-                    <button type="button" onClick={(ev)=>{updateOrderID(ID()); changeFormType(ev, "success")}}>Xác nhận đơn hàng</button>
+                    <button type="button" onClick={(ev)=>{changeFormType(ev, "success"); dispatchOrderDetail()}}>Xác nhận đơn hàng</button>
                 </div>
             )}
         </div>

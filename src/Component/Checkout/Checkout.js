@@ -7,11 +7,13 @@ import CheckoutForm from './CheckoutForm/CheckoutForm';
 import CheckoutProduct from './CheckoutProduct/CheckoutProduct';
 const Checkout = (props) => {
     const {PaymentTarget, Currency} = props.Store;
+    const {dispatch} = props;
     const PaidTarget = PaymentTarget.target;
     const [state, setState] = useState({
         show_product_summary: false,
         // order information
         order_id: "",
+        order_product: PaymentTarget.target,
         last_name: "",
         first_name: "",
         email: "",
@@ -68,6 +70,23 @@ const Checkout = (props) => {
             totalAmount += productPrice * size_quantity.quantity
         })
     });
+    // dispatch order detail to Store when complete payment
+    const dispatchOrderDetail = () => {
+        dispatch({type: "ADD_TO_ORDER", order: {
+            order_id: state.order_id,
+            order_product: state.order_product,
+            last_name: state.last_name,
+            first_name: state.first_name,
+            email: state.email,
+            tel: state.tel,
+            city: state.city,
+            district: state.district,
+            ward: state.ward,
+            street: state.street,
+            house_no: state.house_no,
+            payment_method: state.payment_method
+        }})
+    }
     useEffect(() => {
         // scroll to top
         window.scrollTo(0, 0); 
@@ -140,6 +159,7 @@ const Checkout = (props) => {
                     updateOrderInfo={updateOrderInfo} 
                     orderInfo={state}
                     updateOrderID={updateOrderID}
+                    dispatchOrderDetail={dispatchOrderDetail}
                 />
             </div>
         </section>

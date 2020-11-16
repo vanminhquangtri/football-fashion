@@ -7,12 +7,12 @@ const Footer = () => {
         <section className="footer">
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col about-us">
+                    <div className="col about-us" style={{display: "none"}}> {/* only show for PC */}
                         <div className="title">Giới Thiệu</div>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic assumenda blanditiis tempora alias maiores temporibus placeat consectetur architecto natus cum sequi iusto.</p>
                         <NavLink to="/about" exact={true}>See More</NavLink>
                     </div>
-                    <div className="col service">
+                    <div className="col service" style={{display: "none"}}> {/* only show for PC */}
                         <div className="title">Dịch Vụ</div>
                         <NavLink to="/promotion" exact={true}>Khuyễn mãi hấp dẫn</NavLink>
                         <NavLink to="/champion" exact={true}>Áo đấu nhà vô địch</NavLink>
@@ -41,7 +41,7 @@ const Footer = () => {
                         </div>
                         <div className="contact-field">
                             <FontAwesomeIcon icon={faEnvelope} className="icon"/>
-                            <span>exampleemail@email.com</span>
+                            <span>example@email.com</span>
                         </div>
                     </div>
                 </div>

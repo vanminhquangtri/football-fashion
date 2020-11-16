@@ -1,10 +1,15 @@
 import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
+// generate random ID for order (based on source from: github)
+var ID = function () {
+    return 'FOOTBALLFAS_' + (Math.random().toString(36).substr(2, 9)).toUpperCase();
+};
 const CheckoutFormContactShipping = (props) => {
-    const {changeFormType, updateOrderInfo, orderInfo} = props;
+    const {changeFormType, updateOrderID, updateOrderInfo, orderInfo} = props;
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = (data, ev) => {
-        changeFormType(ev, "payment")
+        changeFormType(ev, "payment");
+        updateOrderID(ID());
     };
     useEffect(() => {
         // toggle to placeholder
