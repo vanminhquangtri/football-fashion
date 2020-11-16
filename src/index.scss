@@ -1539,6 +1539,7 @@ margin-top: 40px;
     .row.manage-order-verify {
       font-size: 14px;
       color: $color-gray-text;
+      margin-top: 10px;
       .col {
         padding: 0 5px;
         .content {
@@ -1680,6 +1681,49 @@ margin-top: 40px;
   }
 }
 /*--- end manage order ---*/
+/*--- about ---*/
+.about {
+  .container-fluid {
+    .row {
+      .col {
+        padding: 0;
+        .parrallax-container {
+          .parrallax-content {
+            color: white;
+            padding: 60px 10px;
+            font-size: 14px;
+            .contact-form {
+              .title {
+                font-weight: bold;
+              }
+              label {
+                margin: 15px 0 0 0;
+              }
+              display: flex;
+              flex-direction: column;
+              .field {
+                border: none;
+                outline: none;
+                padding: 10px;
+                border-radius: 15px;
+              }
+              .error-message {
+                font-weight: bold;
+                padding-left: 10px;
+                color: yellowgreen
+              }
+              input[type=submit] {
+                margin-top: 10px;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*--- end about ---*/
 
 /*--- justify center product layout ---*/
 .col.product-col:nth-child(odd) {

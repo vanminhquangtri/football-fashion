@@ -1,5 +1,6 @@
 import React from "react";
 import {Switch, Route} from "react-router-dom";
+import About from "../About/About";
 import Checkout from "../Checkout/Checkout";
 import Homepage from "../Homepage/Homepage";
 import Leagues from "../Leagues/Leagues";
@@ -15,6 +16,7 @@ const RouterURL = () => {
             <Route path="/shopping-cart" exact component={ShoppingCartDetail}></Route>
             <Route path="/check-out" exact component={Checkout}></Route>
             <Route path="/manage-order" exact component={ManageOrder}></Route>
+            <Route path="/contact" exact component={About}></Route>
             <Route component={Homepage}></Route>
         </Switch>
     );
