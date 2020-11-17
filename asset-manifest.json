@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/football-fashion/static/css/main.29f584a9.chunk.css",
-    "main.js": "/football-fashion/static/js/main.476a0072.chunk.js",
-    "main.js.map": "/football-fashion/static/js/main.476a0072.chunk.js.map",
+    "main.css": "/football-fashion/static/css/main.7834b4c4.chunk.css",
+    "main.js": "/football-fashion/static/js/main.17f2eede.chunk.js",
+    "main.js.map": "/football-fashion/static/js/main.17f2eede.chunk.js.map",
     "runtime-main.js": "/football-fashion/static/js/runtime-main.b35c6638.js",
     "runtime-main.js.map": "/football-fashion/static/js/runtime-main.b35c6638.js.map",
     "static/css/2.494ee3e6.chunk.css": "/football-fashion/static/css/2.494ee3e6.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.14040b53.chunk.js.map": "/football-fashion/static/js/3.14040b53.chunk.js.map",
     "index.html": "/football-fashion/index.html",
     "static/css/2.494ee3e6.chunk.css.map": "/football-fashion/static/css/2.494ee3e6.chunk.css.map",
-    "static/css/main.29f584a9.chunk.css.map": "/football-fashion/static/css/main.29f584a9.chunk.css.map",
+    "static/css/main.7834b4c4.chunk.css.map": "/football-fashion/static/css/main.7834b4c4.chunk.css.map",
     "static/js/2.08df4e28.chunk.js.LICENSE.txt": "/football-fashion/static/js/2.08df4e28.chunk.js.LICENSE.txt",
     "static/media/136-1369563_dance-clipart-png.png": "/football-fashion/static/media/136-1369563_dance-clipart-png.387cf22a.png",
     "static/media/BEST Premier League Goals.mp4": "/football-fashion/static/media/BEST Premier League Goals.881517ec.mp4",
@@ -36,6 +36,7 @@
     "static/media/leagues.29a4597a.jpg": "/football-fashion/static/media/leagues.29a4597a.jpg",
     "static/media/logo-white-3.png": "/football-fashion/static/media/logo-white-3.dc821463.png",
     "static/media/mc.jpg": "/football-fashion/static/media/mc.7910376e.jpg",
+    "static/media/news3.cd2b948b.gif": "/football-fashion/static/media/news3.cd2b948b.gif",
     "static/media/parra1.a17fc74a.jpg": "/football-fashion/static/media/parra1.a17fc74a.jpg",
     "static/media/payment-card.png": "/football-fashion/static/media/payment-card.55c320fa.png",
     "static/media/tot.jpg": "/football-fashion/static/media/tot.89907676.jpg"
@@ -44,7 +45,7 @@
     "static/js/runtime-main.b35c6638.js",
     "static/css/2.494ee3e6.chunk.css",
     "static/js/2.08df4e28.chunk.js",
-    "static/css/main.29f584a9.chunk.css",
-    "static/js/main.476a0072.chunk.js"
+    "static/css/main.7834b4c4.chunk.css",
+    "static/js/main.17f2eede.chunk.js"
   ]
 }
