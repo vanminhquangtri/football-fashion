@@ -21,6 +21,18 @@ const CheckoutProduct = (props) => {
                 <div className="product-info">
                     <span className="info name">{targetProduct.name}</span>
                     <span className="info price">Giá: {formatNumber(targetProduct.price)}<sup>{Currency.currency}</sup></span>
+                    <div className="product-btn-inside" style={{display: "none"}}>
+                        {product.quantity.map((quantity) => {
+                            return (
+                                <CheckoutProductStats 
+                                    key={`${product.product_id}-size${quantity.size}`} 
+                                    quantity={quantity} 
+                                    targetProduct={targetProduct} 
+                                    currency={Currency.currency}
+                                />
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
             {/* show size, quantity and total amount of each size */}

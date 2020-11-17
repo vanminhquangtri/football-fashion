@@ -111,7 +111,7 @@ const ManageOrder = (props) => {
                 
                 {/* order detail, show this if verify state is successful */}
                 {verify_status === "successful" && (
-                    <div className="row manage-order-detail animate__animated animate__fadeInRight">
+                    <div className="row manage-order-detail animate__animated animate__fadeInDown">
                         <div className="col">
                             <div className="content">
                                 {

@@ -31,7 +31,16 @@ body {
   }
 }
 @media screen and (min-width: 480px) {
-  /*--- footer ---*/
+  .top-news {
+    display: none;
+  }
+  .checkout-link {
+    overflow: hidden;
+    img {
+      width: 70vw !important;
+      margin-left: -23px;
+    }
+  }
   .footer {
     .container-fluid {
       .row {
@@ -60,6 +69,32 @@ body {
           }
         }
       }
+    }
+  }
+  .check-out {
+    .container-fluid {
+      .row.toggle-product-summary {
+        .col {
+          .content {
+            .toggle-btn {
+              button {
+                svg {
+                  width: 3vw;
+                  height: 3vw;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .add-to-cart-btn {
+    span {
+      padding: 2px 40px;
+    }
+    span.added {
+      padding: 2px 20px;
     }
   }
 }

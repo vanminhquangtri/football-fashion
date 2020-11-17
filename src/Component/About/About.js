@@ -51,7 +51,7 @@ const About = () => {
                                         </span>
                                         <label>Email </label>
                                         <input 
-                                            ref={register({pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, required: true})} 
+                                            ref={register({pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/})} 
                                             className="field" type="email" name="email"
                                         />
                                         <span className="error-message">

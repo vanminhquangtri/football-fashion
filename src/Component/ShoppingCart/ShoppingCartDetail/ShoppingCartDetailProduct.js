@@ -29,13 +29,15 @@ const ShoppingCartDetailProduct = (props) => {
                         <div className="product-btn-inside" style={{display: "none"}}>
                             {product.quantity.map((quantity) => {
                             return (
-                                    <ShoppingCartDetailButtons key={`${product.product_id}-size${quantity.size}`} quantity={quantity} product={product} style={{display: "none"}}/>
+                                    <ShoppingCartDetailButtons 
+                                        key={`${product.product_id}-size${quantity.size}`} 
+                                        quantity={quantity} product={product} 
+                                        style={{display: "none"}}
+                                    />
                                 )
                             })}
                         </div>
-                        
                     </div>
-                    
                 </div>
                 {/* show size, quantity and buttons (plus, minus, update, delete) */}
                 {product.quantity.map((quantity) => {
