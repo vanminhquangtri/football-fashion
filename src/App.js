@@ -11,10 +11,15 @@ import {faCheckCircle, faChevronCircleRight} from "@fortawesome/free-solid-svg-i
 function App(props) {
   const {dispatch} = props;
   useEffect(() => {
-    // show announcement when add to cart
+    // hide announcement add to cart when click on annoucement
     const AddToCartAnnounce = document.querySelector(".add-to-cart-annouce");
     AddToCartAnnounce.addEventListener("click", () => {
       AddToCartAnnounce.style.right = "-100%"; 
+    })
+    // hide announcement update when click on annoucement
+    const UpdateCartAnnounce = document.querySelector(".update-cart-annouce");
+    UpdateCartAnnounce.addEventListener("click", () => {
+      UpdateCartAnnounce.style.right = "-100%"; 
     })
   },[])
   return (
@@ -24,7 +29,8 @@ function App(props) {
           <TopNav/>
           <RouterURL/>
           <Footer/>
-          <div className="add-to-cart-annouce">
+          {/* announcement displayed after click add to cart button */}
+          <div className="add-to-cart-annouce top-up-annoucement">
             <div className="content">
               <div className="annouce">
                 <FontAwesomeIcon icon={faCheckCircle} className="icon"/>
@@ -33,6 +39,18 @@ function App(props) {
               <div className="navigate">
                 <NavLink to="/shopping-cart" className="view-cart">Xem giỏ hàng</NavLink>
                 <NavLink to="/check-out" className="pay-cart" onClick={()=>{dispatch({type: "PAY_WHOLE_CART"})}}>Thanh toán</NavLink>
+              </div>
+              <div className="hide-add-to-cart-top-up">
+                <FontAwesomeIcon icon={faChevronCircleRight} className="icon"/>
+              </div>
+            </div>
+          </div>
+          {/* announcement displayed after click update button of component shoppingCartDetail*/}
+          <div className="update-cart-annouce top-up-annoucement">
+            <div className="content">
+              <div className="annouce">
+                <FontAwesomeIcon icon={faCheckCircle} className="icon"/>
+                Đã cập nhật thành công
               </div>
               <div className="hide-add-to-cart-top-up">
                 <FontAwesomeIcon icon={faChevronCircleRight} className="icon"/>

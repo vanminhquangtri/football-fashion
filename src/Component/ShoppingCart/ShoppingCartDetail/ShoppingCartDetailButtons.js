@@ -1,5 +1,5 @@
 // direct child of ShoppingCartDetailProduct, display size and buttons of each product
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {connect} from "react-redux";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faPlus, faMinus} from "@fortawesome/free-solid-svg-icons";
@@ -29,6 +29,18 @@ const ShoppingCartDetailButtons = (props) => {
             }
         }
     };
+    useEffect(() => {
+        // show announcement when click update
+        const UpdateBtns = document.querySelectorAll(".row-product-buttons .update");
+        const UpdateCartAnnounce = document.querySelector(".update-cart-annouce");
+        if (UpdateBtns !== undefined) {
+            for (let i = 0; i < UpdateBtns.length; i++) {
+                UpdateBtns[i].addEventListener("click", () => {
+                    UpdateCartAnnounce.style.right = 0; 
+                })
+            }
+        }
+    })
     return (
         <div className="row-product-buttons">
             <span className="title">Size</span>
