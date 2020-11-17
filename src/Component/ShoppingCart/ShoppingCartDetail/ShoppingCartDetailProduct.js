@@ -26,7 +26,16 @@ const ShoppingCartDetailProduct = (props) => {
                             {targetProduct.name}
                         </NavLink>
                         <span className="info price">{formatNumber(targetProduct.price)}<sup>{Currency.currency}</sup></span>
+                        <div className="product-btn-inside" style={{display: "none"}}>
+                            {product.quantity.map((quantity) => {
+                            return (
+                                    <ShoppingCartDetailButtons key={`${product.product_id}-size${quantity.size}`} quantity={quantity} product={product} style={{display: "none"}}/>
+                                )
+                            })}
+                        </div>
+                        
                     </div>
+                    
                 </div>
                 {/* show size, quantity and buttons (plus, minus, update, delete) */}
                 {product.quantity.map((quantity) => {

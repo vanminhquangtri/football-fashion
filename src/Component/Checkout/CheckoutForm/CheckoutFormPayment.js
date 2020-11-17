@@ -79,10 +79,10 @@ const CheckoutFormPayment = (props) => {
             </form>
             {payment_method === "payment_online" && (
                 <>
-                    <img alt="payment card" src={paymentCard} className="payment-card animate__animated animate__fadeInRight"/>
+                    <img alt="payment card" src={paymentCard} className="payment-card animate__animated animate__fadeInUp"/>
                     {/* form if pay online */}
                     <form 
-                        className="form form-payment animate__animated animate__fadeInRight"
+                        className="form form-payment animate__animated animate__fadeInUp"
                         onSubmit={handleSubmit(onSubmit)}
                         noValidate
                         id="form-payment"

@@ -15,95 +15,51 @@ body {
 /*--- end general set up ---*/
 @media screen and (min-width: 375px) {
 /*--- footer ---*/
-.footer {
-  padding: 10px 0 50px 0;
-  background: $color-young-green;
-  // border-radius: 10px 10px 0 0;
-  .container-fluid {
-    .row {
-      .col {
-        padding: 0 20px;
-        flex: 100% !important;
-        max-width: 100% !important;
-        font-size: 12px;
-        margin-bottom: 10px;
-        line-height: 25px;
-        display: flex;
-        flex-direction: column;
-        border-bottom: 1px solid #60a0ff;
-        color: $color-gray-text;
-        .title {
-          font-size: 18px;
-          margin: 0 0 5px -15px;
-          text-transform: uppercase;
-          color: $color-gray-text;
-        }
-        p {
-          margin: 0;
-        }
-        .icon {
-          margin-right: 5px;
-        }
-        a {
-          text-decoration: underline;
-        }
-      }
-      .col.social-media {
-        border-bottom: none;
-        padding: 5px;
-        .wrap {
-          border: 1px solid $color-blue-mc;
-          position: relative;
-          .title {
-            margin: 0;
-            background: $color-young-green;
-            position: absolute;
-            left: 50px;
-            right: 50px;
-            top: -10px;
-            text-align: center;
-          }
-          .icon-link {
-            padding: 20px 0 10px 0;
-            display: flex;
-            justify-content: center;
-            a {
-              display: inline-block;
-              padding: 10px;
-              border-radius: 50%;
-              width: 40px;
-              height: 40px;
-              margin: 5px 10px;
-              color: transparent;
-              background: {
-                image: url("../src/Assets/images/section-footer/social-media.png");
-                size: 150px 150px;
-                repeat: no-repeat;
-              }
-            }
-            a.facebook {
-              background-position: -12px -6px;
-            }
-            a.youtube {
-              background-position: -100px -6px;
-            }
-            a.twitter {
-              background-position: -12px -56px;
-            }
-            a.instagram {
-              background-position: -100px -56px;
+  .footer {
+    .container-fluid {
+      .row {
+        .col.social-media {
+          .wrap {
+            .title {
+              left: 50px;
+              right: 50px;
             }
           }
         }
-      }
-    }
-    .copy-right {
-      .col {
-        border: none;
-        padding: 5px;
-        font-weight: bold;
       }
     }
   }
 }
+@media screen and (min-width: 480px) {
+  /*--- footer ---*/
+  .footer {
+    .container-fluid {
+      .row {
+        .col.social-media {
+          .wrap {
+            .title {
+              left: 100px;
+              right: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .shopping-cart-product-layout {
+    .row-product-buttons {
+      display: none;
+    }
+    .image-info {
+      .product-info {
+        .product-btn-inside {
+          display: block !important;
+          .row-product-buttons {
+            display: flex;
+            justify-content: flex-start;
+          }
+        }
+      }
+    }
+  }
 }

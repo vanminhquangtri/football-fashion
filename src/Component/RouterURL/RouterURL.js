@@ -10,8 +10,7 @@ import ProductDetail from "../Products/ProductDetail/ProductDetail";
 import Promotion from "../Promotion/Promotion";
 import ShoppingCartDetail from "../ShoppingCart/ShoppingCartDetail/ShoppingCartDetail";
 const RouterURL = (props) => {
-    const { match, location, history } = props;
-    console.log(location.pathname);
+    const { location } = props;
     useEffect(() => {
         const footer = document.querySelector("section.footer")
         if (location.pathname === "/leagues"){
@@ -19,7 +18,7 @@ const RouterURL = (props) => {
         } else {
             footer.style.display = "block";
         }
-    })
+    });
     return (
         <Switch>
             <Route path="/" exact component={Homepage}></Route>
