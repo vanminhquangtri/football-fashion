@@ -21,7 +21,7 @@ const AlsoLike = (props) => {
                         <TinySlider settings={settings}>
                             {alsoLikeProduct.map((product) => {
                                 return (
-                                    <AlsoLikeProduct product={product} key={product.id}/>
+                                    <AlsoLikeProduct product={product} key={`also-like-product-${product.id}`}/>
                                 )
                             })}
                         </TinySlider>

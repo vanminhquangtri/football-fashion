@@ -13,7 +13,7 @@ const AddToCart = (props) => {
         product_id: product.id,
         added_quantity: 1,
         size: "S",
-    })
+    });
     const {added_quantity} = state;
     // change state added_quantity when click minus button when input value change
     const changeAddedQuantity = (ev) => {

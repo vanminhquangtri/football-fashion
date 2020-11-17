@@ -1,5 +1,5 @@
 // direct child of routerURL
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Parallax} from 'react-parallax';
 import paraImg1 from "../../Assets/images/section-about/parra1.jpg"
 import {useForm} from "react-hook-form";
@@ -20,6 +20,10 @@ const About = () => {
     const onSubmit = () => {
         changeSubmitStatus()
     };
+    useEffect(() => {
+        // scroll to top
+        window.scrollTo(0, 0);
+    }, [])
     return (
         <section className="about">
             <div className="container-fluid">

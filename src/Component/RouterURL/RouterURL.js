@@ -6,6 +6,7 @@ import Homepage from "../Homepage/Homepage";
 import Leagues from "../Leagues/Leagues";
 import ManageOrder from "../ManageOrder/ManageOrder";
 import ProductDetail from "../Products/ProductDetail/ProductDetail";
+import Promotion from "../Promotion/Promotion";
 import ShoppingCartDetail from "../ShoppingCart/ShoppingCartDetail/ShoppingCartDetail";
 const RouterURL = () => {
     return (
@@ -13,6 +14,7 @@ const RouterURL = () => {
             <Route path="/" exact component={Homepage}></Route>
             <Route path="/product-detail/:slug" exact component={ProductDetail}></Route>
             <Route path="/leagues" exact component={Leagues}></Route>
+            <Route path="/promotion" exact component={Promotion}></Route>
             <Route path="/shopping-cart" exact component={ShoppingCartDetail}></Route>
             <Route path="/check-out" exact component={Checkout}></Route>
             <Route path="/manage-order" exact component={ManageOrder}></Route>

@@ -21,12 +21,12 @@ const ProductDetail = (props) => {
     },[Product]);
     return (
         <section className="product-detail">
-            <ProductButton product={Product}/>
-            <ProductSlideshow product={Product}/>
-            <AddToCart product={Product}/>
-            <ProductOtherInfo product={Product}/>
-            <AlsoLike product={Product} key={`also-like${Product.id}`}/>
-            <Outstanding product={Product} key={`outstanding${Product.id}`}/>
+            <ProductButton product={Product} key={`product-button-${Product.id}`}/>
+            <ProductSlideshow product={Product} key={`product-slideshow-${Product.id}`}/>
+            <AddToCart product={Product} key={`add-to-cart-${Product.id}`}/>
+            <ProductOtherInfo product={Product} key={`product-other-info-${Product.id}`}/>
+            <AlsoLike product={Product} key={`also-like-${Product.id}`}/>
+            <Outstanding product={Product} key={`outstanding-${Product.id}`}/>
         </section>
     );
 };

@@ -71,26 +71,10 @@ const TopNav = (props) => {
                                     </li>
                                     <li>
                                         <NavLink
-                                        to="/champion"
-                                        exact={true}
-                                        >
-                                            Sở hữu hà vô địch
-                                        </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink
                                         to="/promotion"
                                         exact={true}
                                         >
                                             Sản phẩm đang khuyễn mãi
-                                        </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink
-                                        to="/full-kit"
-                                        exact={true}
-                                        >
-                                            Sản phẩm trọn gói
                                         </NavLink>
                                     </li>
                                     <li>

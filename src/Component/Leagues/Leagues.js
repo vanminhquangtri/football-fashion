@@ -31,8 +31,8 @@ const Leagues = (props) => {
                 }
                 navLinks[i].style.borderBottom = "2px solid white";
             })
-        }
-    }, [shown_league])
+        };
+    }, [shown_league]);
     return (
         <section className="leagues">
             {/* hold main menu on the left side */}

@@ -22,7 +22,7 @@ const Outstanding = (props) => {
                         <TinySlider settings={settings}>
                             {outstandingProduct.map((product) => {
                                 return (
-                                    <OutstandingProduct product={product} key={product.id}/>
+                                    <OutstandingProduct product={product} key={`outstanding-product-${product.id}`}/>
                                 )
                             })}
                         </TinySlider>

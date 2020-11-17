@@ -251,7 +251,6 @@ margin-top: 40px;
           right: 0;
           bottom: 0;
           z-index: 1;
-          border-radius: 10px 10px 0 0;
           background: {
             image: url("../src/Assets/images/title-bg/title-bg1.jpg");
             position: center;
@@ -262,7 +261,7 @@ margin-top: 40px;
           z-index: 2;
           padding: 0 5px;
           font-size: 15px;
-          height: 30px;
+          height: 40px;
           color: $color-red;
           font-weight: bold;
           display: flex;
@@ -426,6 +425,9 @@ margin-top: 40px;
     font-size: 11px;
     border-radius: 5px;
   }
+}
+.promotion-container {
+  margin-top: 38px;
 }
 /* end general layout of product, reuse for many components (most concerned, special promtion, top sales, champion) */
 /*--- end most concerned, special promtion, top sales, champion ---*/
@@ -965,11 +967,6 @@ margin-top: 40px;
     }
   }
 }
-.container-fluid.also-container.outstanding {
-  .add-to-cart-btn {
-    display: none;
-  }
-}
 /* end general product layout used for also like and recent viewed*/
 /*--- end product detail ---*/
 /*--- leagues ---*/
@@ -1134,6 +1131,9 @@ margin-top: 40px;
         }
       }
     }
+  }
+  .add-to-cart-btn {
+    display: none;
   }
 }
 /* layout each product in shopping cart, re-use for check out and order manage */
