@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheckCircle, faMinusCircle} from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";

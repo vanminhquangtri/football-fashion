@@ -1,3 +1,4 @@
+/*--- general set up ---*/
 * {
   font-family: 'Catamaran', sans-serif;
   box-sizing: border-box;
@@ -11,6 +12,7 @@ $color-young-green: rgb(136, 223, 6);
 body {
   background: $color-gray-bg;
 }
+/*--- end general set up ---*/
 
 /*--- top bar ---*/
 .top-bar {
@@ -195,8 +197,7 @@ body {
   }
 }
 /*--- end home page ---*/
-
-/*--- top slide ---*/
+/*--- top slide (inside home page) ---*/
 .top-slide {
   .container-fluid {
     .row {
@@ -250,7 +251,7 @@ body {
   }
 }
 /*--- end top slide ---*/
-/*--- most concerned, special promtion, top sales, champion ---*/
+/*--- most concerned, special promtion, top sales, champion (inside home page) ---*/
 .display-homepage {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -327,7 +328,7 @@ body {
     background-image: url("../src/Assets/images/title-bg/trophy.png") !important
   }
 }
-/* general layout of product, reuse for many component */
+/* general layout of product, reuse for many component (most concerned, promotion, top sales, champion, leagues) */
 .col.product-col {
   flex: 50% !important;
   max-width: 50% !important;
@@ -359,7 +360,7 @@ body {
           height: 35px;
           text-overflow: ellipsis;
           display: -webkit-box;
-          -webkit-line-clamp: 2; /* show name and lines only */
+          -webkit-line-clamp: 2; /* show name 2 lines only */
           -webkit-box-orient: vertical;
         }
         .price {
@@ -416,7 +417,7 @@ body {
     }
   }
 }
-/* add-to-cart-btn */
+/* add to cart button in side general product layout*/
 .add-to-cart-btn {
   text-align: center;
   padding-top: 0;
@@ -436,7 +437,7 @@ body {
     }
   }
 }
-/* load more and hide */
+/* load more and hide after each section most concerned, top sales, promotion, champion, leagues */
 .control-loaded-quantity {
   width: 100%;
   text-align: center;
@@ -505,6 +506,7 @@ body {
   }
 }
 /*--- end goals-video ---*/
+/*--- end home page ---*/
 /*--- footer ---*/
 .footer {
   padding: 10px 0 50px 0;
@@ -602,7 +604,7 @@ body {
 .product-detail {
   margin: 50px 0 10px 0;
   background: white;
-  /* slide show of image at top */
+  /* slideshow of images at top */
   .container-fluid.slide-show {
     margin-top: 10px;
     .row {
@@ -768,7 +770,7 @@ body {
               color: white;
             }
           }
-          /* show sub total */
+          /* sub total */
           .sub-total {
             .title {
               margin-right: 5px;
@@ -990,7 +992,7 @@ body {
     }
   }
 }
-/* end general product layout used for also like and recent viewed*/
+/* end general product layout used for also like and outstanding */
 /*--- end product detail ---*/
 /*--- leagues ---*/
 .leagues {
@@ -1019,7 +1021,7 @@ body {
       }
     }
   }
-  /* show product of each league */
+  /* product of each league */
   .leagues-products {
     margin-left: 13vw;
     .leagues-products-wrap {
@@ -1099,7 +1101,7 @@ body {
         }
       }
     }
-    /* show all products */
+    /* products in shopping cart */
     .row.product-detail-wrapper {
       margin-top: 10px;
       .col {
@@ -1159,7 +1161,7 @@ body {
     display: none;
   }
 }
-/* layout each product in shopping cart, re-use for check out and order manage */
+/*--- layout each product in shopping cart, re-use for check out and order manage ---*/
 .shopping-cart-product-layout {
   border-bottom: 1px solid $color-gray-border;
   padding-bottom: 10px;
@@ -1334,7 +1336,7 @@ body {
                 width: 80%;
               }
             }
-            /* show size, quantity and total amount of each size */
+            /* size, quantity and total amount of each size */
             .row-product-buttons {
               .product-quantity-title {
                 font-style: italic;
@@ -1367,7 +1369,7 @@ body {
       max-height: 0;
       overflow: hidden;
     }
-    /* show form */
+    /* check out form */
     .row.check-out-form {
       .col {
         padding: 0 5px;
@@ -1559,7 +1561,7 @@ body {
         }
       }
     }
-    /* verify form */
+    /* verify form order id and email */
     .row.manage-order-verify {
       font-size: 14px;
       color: $color-gray-text;
@@ -1608,7 +1610,7 @@ body {
         }
       }
     }
-    /* show detail of order */
+    /* detail of order */
     .row.manage-order-detail {
       font-size: 14px;
       color: $color-gray-text;
@@ -1635,7 +1637,7 @@ body {
                     width: 80%;
                   }
                 }
-                /* show size, quantity and total amount of each size */
+                /* size, quantity and total amount of each size */
                 .row-product-buttons {
                   .product-quantity-title {
                     font-style: italic;
@@ -1680,7 +1682,7 @@ body {
                 margin-bottom: 10px;
               }
             }
-            /* navigate */
+            /* navigate button */
             .order-navigate {
               display: flex;
               flex-direction: column;
@@ -1757,7 +1759,6 @@ body {
   }
 }
 /*--- end about ---*/
-
 /*--- justify center product layout ---*/
 .col.product-col:nth-child(odd) {
   padding-left: 3px !important;
@@ -1767,8 +1768,7 @@ body {
   padding-left: 6px !important;
   padding-right: 3px !important;
 }
-
-/*--- remove default scroll of number input tag ---*/
+/*--- remove default scroll of input tag type number ---*/
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 -webkit-appearance: none;
@@ -1777,8 +1777,7 @@ margin: 0;
 input[type=number] {
     -moz-appearance: textfield;
 }
-
-/*--- top up success add to cart ---*/
+/*--- annoucement success add to cart and update cart ---*/
 .top-up-annoucement {
   position: fixed;
   top: 80px;
@@ -1825,3 +1824,4 @@ input[type=number] {
     }
   }
 }
+/*--- end annoucement success add to cart and update cart ---*/
