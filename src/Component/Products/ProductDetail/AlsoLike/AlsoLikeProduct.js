@@ -21,16 +21,10 @@ const AlsoLikeProduct = (props) => {
             }
         })
     };
-    // show announcement when add to cart
-    const AddToCartBtns = document.querySelectorAll(".not-added");
-    const AddToCartAnnounce = document.querySelector(".add-to-cart-annouce");
-    if (AddToCartBtns !== undefined) {
-        for (let i = 0; i < AddToCartBtns.length; i++) {
-            AddToCartBtns[i].addEventListener("click", () => {
-                AddToCartAnnounce.style.right = 0; 
-            })
-        }
-    }
+    // calculate the price before applying promotion
+    const promotionRate = product.promotion === "" ? 0 : parseFloat(product.promotion) * 0.01;
+    const originalPrice = product.price / (1 - promotionRate);
+    const originalPriceInt = (parseInt(originalPrice) / 1000).toFixed(0) * 1000;
     return (
         <div className="also-product also-like" key={product.id}>
             <div className="wrap inside">
@@ -43,6 +37,9 @@ const AlsoLikeProduct = (props) => {
                     </div>
                     <div className="info">
                         <span className="name">{product.name}</span>
+                        {product.promotion !== "" && (
+                            <span className="price origin">{formatNumber((originalPriceInt * Currency.rate).toFixed(0))}<sup>{Currency.currency}</sup></span>
+                        )}
                         <span className="price">{formatNumber((product.price * Currency.rate).toFixed(0))}<sup>{Currency.currency}</sup></span>
                     </div>
                     {/* only render promotion box if promotion property of product is not empty */}

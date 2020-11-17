@@ -20,7 +20,11 @@ const OutstandingProduct = (props) => {
                 added_to_cart: !prevState.added_to_cart
             }
         })
-    }
+    };
+    // calculate the price before applying promotion
+    const promotionRate = product.promotion === "" ? 0 : parseFloat(product.promotion) * 0.01;
+    const originalPrice = product.price / (1 - promotionRate);
+    const originalPriceInt = (parseInt(originalPrice) / 1000).toFixed(0) * 1000;
     return (
         <div className="also-product outstanding" key={product.id}>
             <div className="wrap inside">
@@ -33,6 +37,9 @@ const OutstandingProduct = (props) => {
                     </div>
                     <div className="info">
                         <span className="name">{product.name}</span>
+                        {product.promotion !== "" && (
+                            <span className="price origin">{formatNumber((originalPriceInt * Currency.rate).toFixed(0))}<sup>{Currency.currency}</sup></span>
+                        )}
                         <span className="price">{formatNumber((product.price * Currency.rate).toFixed(0))}<sup>{Currency.currency}</sup></span>
                     </div>
                     {/* only render promotion box if promotion property of product is not empty */}

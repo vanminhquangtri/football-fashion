@@ -368,6 +368,12 @@ body {
           font-size: 13px;
           color: $color-red;
         }
+        .price.origin {
+          text-decoration: line-through;
+          color: $color-blue-mc;
+          font-size: 12px;
+          margin-right: 3px;
+        }
       }
       /* promotion box (SALE ...%) */
       .promotion {
@@ -941,6 +947,12 @@ body {
           font-weight: bold;
           font-size: 13px;
           color: $color-red;
+        }
+        .price.origin {
+          text-decoration: line-through;
+          color: $color-blue-mc;
+          font-size: 12px;
+          margin-right: 3px;
         }
       }
       /* promotion box (SALE ...%) */

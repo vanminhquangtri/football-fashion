@@ -23,6 +23,10 @@ const ProductLayout = (props) => {
             }
         })
     };
+    // calculate the price before applying promotion
+    const promotionRate = product.promotion === "" ? 0 : parseFloat(product.promotion) * 0.01;
+    const originalPrice = product.price / (1 - promotionRate);
+    const originalPriceInt = (parseInt(originalPrice) / 1000).toFixed(0) * 1000;
     useEffect(() => {
         // show announcement when add to cart
         const AddToCartBtns = document.querySelectorAll(".not-added");
@@ -49,6 +53,9 @@ const ProductLayout = (props) => {
                     </div>
                     <div className="info">
                         <span className="name">{product.name}</span>
+                        {product.promotion !== "" && (
+                            <span className="price origin">{formatNumber((originalPriceInt * Currency.rate).toFixed(0))}<sup>{Currency.currency}</sup></span>
+                        )}
                         <span className="price">{formatNumber((product.price * Currency.rate).toFixed(0))}<sup>{Currency.currency}</sup></span>
                     </div>
                     {/* only render promotion box if promotion property of product is not empty */}
