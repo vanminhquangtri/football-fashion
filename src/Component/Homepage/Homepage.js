@@ -11,7 +11,7 @@ import NewsImage from "../../Assets/images/section-home-page/news3.gif";
 const Homepage = () => {
     useEffect(() => {
         window.scrollTo(0, 0)
-    })
+    },[])
     return (
         <section className="homepage">
             <div className="top-news">

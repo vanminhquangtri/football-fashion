@@ -1,5 +1,5 @@
 // display product home page
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheckCircle, faMinusCircle} from "@fortawesome/free-solid-svg-icons"
@@ -22,7 +22,19 @@ const ProductLayout = (props) => {
                 added_to_cart: !prevState.added_to_cart
             }
         })
-    }
+    };
+    useEffect(() => {
+        // show announcement when add to cart
+        const AddToCartBtns = document.querySelectorAll(".not-added");
+        const AddToCartAnnounce = document.querySelector(".add-to-cart-annouce");
+        if (AddToCartBtns !== undefined) {
+            for (let i = 0; i < AddToCartBtns.length; i++) {
+                AddToCartBtns[i].addEventListener("click", () => {
+                    AddToCartAnnounce.style.right = 0; 
+                })
+            }
+        }
+    },[])
     return (
         <div className="col product-col animate__animated animate__fadeInUp" key={product.id}>
             <div className="wrap">

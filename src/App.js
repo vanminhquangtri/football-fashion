@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import TopBar from "./Component/TopBar/TopBar";
 import {BrowserRouter as Router, NavLink} from "react-router-dom";
 import {connect} from "react-redux";
@@ -10,6 +10,13 @@ import {faCheckCircle, faChevronCircleRight} from "@fortawesome/free-solid-svg-i
 
 function App(props) {
   const {dispatch} = props;
+  useEffect(() => {
+    // show announcement when add to cart
+    const AddToCartAnnounce = document.querySelector(".add-to-cart-annouce");
+    AddToCartAnnounce.addEventListener("click", () => {
+      AddToCartAnnounce.style.right = "-100%"; 
+    })
+  },[])
   return (
       <Router>
         <div className="App">
@@ -17,7 +24,7 @@ function App(props) {
           <TopNav/>
           <RouterURL/>
           <Footer/>
-          <div className="complete-add-to-cart">
+          <div className="add-to-cart-annouce">
             <div className="content">
               <div className="annouce">
                 <FontAwesomeIcon icon={faCheckCircle} className="icon"/>
@@ -27,7 +34,7 @@ function App(props) {
                 <NavLink to="/shopping-cart" className="view-cart">Xem giỏ hàng</NavLink>
                 <NavLink to="/check-out" className="pay-cart" onClick={()=>{dispatch({type: "PAY_WHOLE_CART"})}}>Thanh toán</NavLink>
               </div>
-              <div className="hide-btn">
+              <div className="hide-add-to-cart-top-up">
                 <FontAwesomeIcon icon={faChevronCircleRight} className="icon"/>
               </div>
             </div>

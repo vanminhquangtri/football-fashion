@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheckCircle, faMinusCircle} from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";
@@ -10,7 +10,7 @@ const AlsoLikeProduct = (props) => {
     const {Currency} = props.Store;
     const [state, setState] = useState({
         added_to_cart: false
-    })
+    });
     const {product, dispatch} = props;
     const {added_to_cart} = state;
     const changeAddedToCartStt = () => {
@@ -20,6 +20,16 @@ const AlsoLikeProduct = (props) => {
                 added_to_cart: !prevState.added_to_cart
             }
         })
+    };
+    // show announcement when add to cart
+    const AddToCartBtns = document.querySelectorAll(".not-added");
+    const AddToCartAnnounce = document.querySelector(".add-to-cart-annouce");
+    if (AddToCartBtns !== undefined) {
+        for (let i = 0; i < AddToCartBtns.length; i++) {
+            AddToCartBtns[i].addEventListener("click", () => {
+                AddToCartAnnounce.style.right = 0; 
+            })
+        }
     }
     return (
         <div className="also-product also-like" key={product.id}>

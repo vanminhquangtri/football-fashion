@@ -29,7 +29,7 @@ const AlsoLike = (props) => {
                 </div>
             </div>
         </div>
-                    );
+    );
 };
 const mapStateToProps = (state) => {
     return {

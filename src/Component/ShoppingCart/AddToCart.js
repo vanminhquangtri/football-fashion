@@ -80,6 +80,16 @@ const AddToCart = (props) => {
                 sizeBoxs[i].style.backgroundColor = "rgb(211, 9, 9)";
             })
         };
+        // show announcement when add to cart, for button below slide show
+        const AddToCartBtns = document.querySelectorAll(".btn-add-to-cart .add-to-cart");
+        const AddToCartAnnounce = document.querySelector(".add-to-cart-annouce");
+        if (AddToCartBtns !== undefined) {
+            for (let i = 0; i < AddToCartBtns.length; i++) {
+                AddToCartBtns[i].addEventListener("click", () => {
+                    AddToCartAnnounce.style.right = 0; 
+                })
+            }
+        }
     },[])
     useEffect(() => {
         // dispatch the current product to store for payment

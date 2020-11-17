@@ -1779,15 +1779,16 @@ input[type=number] {
 }
 
 /*--- top up success add to cart ---*/
-.complete-add-to-cart {
+.add-to-cart-annouce {
   position: fixed;
   top: 80px;
-  right: 0;
+  right: -100%;
   background: white;
   padding: 20px 20px 5px 20px;
   font-size: 14px;
   box-shadow: 1px 1px 3px 3px rgb(214, 214, 214);
   z-index: 1000;
+  transition: .5s;
   .content {
     .annouce {
       .icon {
@@ -1813,7 +1814,7 @@ input[type=number] {
         background: $color-blue-mc;
       }
     }
-    .hide-btn {
+    .hide-add-to-cart-top-up {
       margin-top: 10px;
       text-align: center;
       .icon {
