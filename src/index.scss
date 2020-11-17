@@ -169,9 +169,35 @@ body {
   }
 }
 /*--- end top nav ---*/
+/*--- home page ---*/
+.homepage {
+  margin: 40px 0 10px 0;
+  .top-news {
+    background-image: linear-gradient(to bottom, white, yellow);
+    .content {
+      .news {
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        font-style: italic;
+        .link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $color-red;
+          .news-image {
+            width: 10vw;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+/*--- end home page ---*/
+
 /*--- top slide ---*/
 .top-slide {
-margin-top: 40px;
   .container-fluid {
     .row {
       .col {
@@ -224,9 +250,6 @@ margin-top: 40px;
   }
 }
 /*--- end top slide ---*/
-.homepage {
-  margin-bottom: 10px;
-}
 /*--- most concerned, special promtion, top sales, champion ---*/
 .display-homepage {
   margin-top: 10px;
