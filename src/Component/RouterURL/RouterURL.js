@@ -1,5 +1,6 @@
-import React from "react";
-import {Switch, Route} from "react-router-dom";
+import React, {useEffect} from "react";
+import {Switch, Route } from "react-router-dom";
+import { withRouter } from "react-router";
 import About from "../About/About";
 import Checkout from "../Checkout/Checkout";
 import Homepage from "../Homepage/Homepage";
@@ -8,7 +9,17 @@ import ManageOrder from "../ManageOrder/ManageOrder";
 import ProductDetail from "../Products/ProductDetail/ProductDetail";
 import Promotion from "../Promotion/Promotion";
 import ShoppingCartDetail from "../ShoppingCart/ShoppingCartDetail/ShoppingCartDetail";
-const RouterURL = () => {
+const RouterURL = (props) => {
+    const { match, location, history } = props;
+    console.log(location.pathname);
+    useEffect(() => {
+        const footer = document.querySelector("section.footer")
+        if (location.pathname === "/leagues"){
+            footer.style.display = "none";
+        } else {
+            footer.style.display = "block";
+        }
+    })
     return (
         <Switch>
             <Route path="/" exact component={Homepage}></Route>
@@ -24,4 +35,4 @@ const RouterURL = () => {
     );
 };
 
-export default RouterURL;
+export default withRouter(RouterURL);
