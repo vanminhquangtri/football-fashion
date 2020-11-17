@@ -57,6 +57,30 @@ const TopNav = (props) => {
                                         <span className="link-text">ĐƠN HÀNG</span>
                                     </NavLink>
                                 </li>
+                                <li style={{display: "none"}}>
+                                    <NavLink
+                                    to="/leagues"
+                                    exact={true}
+                                    >
+                                        GIẢI ĐẤU
+                                    </NavLink>
+                                </li>
+                                <li style={{display: "none"}}>
+                                    <NavLink
+                                    to="/promotion"
+                                    exact={true}
+                                    >
+                                        KHUYẾN MÃI
+                                    </NavLink>
+                                </li>
+                                <li style={{display: "none"}}>
+                                    <NavLink
+                                    to="/contact"
+                                    exact={true}
+                                    >
+                                        LIÊN HỆ
+                                    </NavLink>
+                                </li>
                             </ul>
                             {/* only show sub menu if state of submenu is true */}
                             {sub_menu && (

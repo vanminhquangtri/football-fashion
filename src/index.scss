@@ -1768,7 +1768,7 @@ body {
   padding-right: 3px !important;
 }
 
-/* remove default scroll of number input tag */
+/*--- remove default scroll of number input tag ---*/
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 -webkit-appearance: none;
@@ -1776,4 +1776,51 @@ margin: 0;
 }
 input[type=number] {
     -moz-appearance: textfield;
+}
+
+/*--- top up success add to cart ---*/
+.complete-add-to-cart {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  background: white;
+  padding: 20px 20px 5px 20px;
+  font-size: 14px;
+  box-shadow: 1px 1px 3px 3px rgb(214, 214, 214);
+  z-index: 1000;
+  .content {
+    .annouce {
+      .icon {
+        color: $color-young-green;
+        margin-right: 5px;
+        font-size: 16px;
+      }
+    }
+    .navigate {
+      display: flex;
+      flex-direction: column;
+      a {
+        display: block;
+        color: white;
+        font-weight: bold;
+        background: $color-red;
+        text-align: center;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 20px;
+      }
+      a.pay-cart {
+        background: $color-blue-mc;
+      }
+    }
+    .hide-btn {
+      margin-top: 10px;
+      text-align: center;
+      .icon {
+        font-size: 20px;
+        display: block;
+        margin: auto;
+      }
+    }
+  }
 }
