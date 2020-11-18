@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/football-fashion/static/css/main.04860726.chunk.css",
-    "main.js": "/football-fashion/static/js/main.b56ad892.chunk.js",
-    "main.js.map": "/football-fashion/static/js/main.b56ad892.chunk.js.map",
+    "main.js": "/football-fashion/static/js/main.da51d42a.chunk.js",
+    "main.js.map": "/football-fashion/static/js/main.da51d42a.chunk.js.map",
     "runtime-main.js": "/football-fashion/static/js/runtime-main.cd5efca7.js",
     "runtime-main.js.map": "/football-fashion/static/js/runtime-main.cd5efca7.js.map",
     "static/css/2.494ee3e6.chunk.css": "/football-fashion/static/css/2.494ee3e6.chunk.css",
@@ -46,6 +46,6 @@
     "static/css/2.494ee3e6.chunk.css",
     "static/js/2.1af1f09c.chunk.js",
     "static/css/main.04860726.chunk.css",
-    "static/js/main.b56ad892.chunk.js"
+    "static/js/main.da51d42a.chunk.js"
   ]
 }
