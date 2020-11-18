@@ -5,7 +5,7 @@ const Promotion = () => {
     useEffect(() => {
         // scroll to top
         window.scrollTo(0, 0);
-    })
+    }, [])
     return (
         <section className="promotion-container">
             <SpecialPromotion/>

@@ -81,7 +81,7 @@ const CheckoutFormContactShipping = (props) => {
                 {/* email */}
                 <span className="field-wrapper">
                     <input 
-                        ref={register({pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/})} 
+                        ref={register({pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, required: true})} 
                         name="email" className="field" type="email" placeholder="Email" 
                         onChange={(ev)=>updateOrderInfo(ev, "email")}
                         value={orderInfo.email}
