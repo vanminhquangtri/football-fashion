@@ -3,8 +3,18 @@ import ProductsInfo from "../../../../Data/ProductInfo";
 import {connect} from "react-redux";
 import TinySlider from "tiny-slider-react";
 import AlsoLikeProduct from "./AlsoLikeProduct";
+// defind number of slide base on view port
+const itemsNumber = () => {
+    var vw = window.innerWidth;
+    if (vw < 768) {
+        return 2;
+    }
+    if (vw >= 768) {
+        return 3;
+    }
+}
 const settings = {
-    items: 2,
+    items: itemsNumber(),
     nav: false
 }
 const AlsoLike = (props) => {

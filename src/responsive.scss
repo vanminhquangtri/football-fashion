@@ -318,3 +318,98 @@ body {
     margin-bottom: 5px;
   }
 }
+@media screen and (min-width: 768px) {
+  body {
+    background: #eee7db;
+  }
+  .top-nav .icon {
+    width: 25px;
+    height: 25px;
+  }
+  .display-homepage {
+    background: transparent !important;
+  }
+  .display-homepage .container-fluid {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .display-homepage .container-fluid .row .section-title {
+    margin-bottom: 12px;
+    padding: 0 5px;
+  }
+  .display-homepage .container-fluid .row .section-title .background-image {
+    left: 6px;
+    right: 6px;
+    bottom: 0;
+    z-index: 1;
+    background-position: center;
+    background-size: cover;
+  }
+  .col.product-col {
+    flex: 33.333333333333% !important;
+    max-width: 33.333333333333% !important;
+  }
+  .col.product-col:nth-child(odd) {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+  .col.product-col:nth-child(even) {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+  .col.product-col .wrap a .background-image img {
+    width: 20vw;
+    height: 20vw;
+  }
+  .col.product-col .wrap {
+    margin-bottom: 12px;
+  }
+  .col.product-col .wrap a .promotion {
+    height: 40px;
+    width: 40px;
+  }
+  .col.product-col .wrap a .free-ship {
+    height: 40px;
+    width: 40px;
+  } 
+  .add-to-cart-btn span {
+    height: 25px;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .footer .container-fluid .row .col {
+    flex: 50% !important;
+    max-width: 50% !important;
+  }
+  .footer .container-fluid .row .col.social-media .wrap .title {
+    position: relative;
+    left: unset;
+    right: unset;
+    top: unset;
+    padding-top: 10px;
+    background: transparent;
+  }
+  .footer .container-fluid .row .col {
+    border-bottom: none;
+  }
+  .footer .container-fluid .row .col.social-media .wrap {
+    border-radius: 0 20px;
+  }
+  .product-detail .container-fluid.slide-show {
+    width: 50%;
+    float: left;
+  }
+  .product-detail .container-fluid.product-add-to-cart {
+    width: 50%;
+    float: right;
+  }
+  .container-fluid.product-other-info {
+    clear: both;
+    padding-top: 20px;
+  }
+  .also-product .wrap.inside a .background-image img {
+    width: 25vw !important;
+    height: 25vw;
+  }
+}

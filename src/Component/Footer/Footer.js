@@ -6,18 +6,7 @@ const Footer = () => {
     return (
         <section className="footer">
             <div className="container-fluid">
-                <div className="row">
-                    <div className="col about-us" style={{display: "none"}}> {/* only show for PC */}
-                        <div className="title">Giới Thiệu</div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic assumenda blanditiis tempora alias maiores temporibus placeat consectetur architecto natus cum sequi iusto.</p>
-                        <NavLink to="/about" exact={true}>See More</NavLink>
-                    </div>
-                    <div className="col service" style={{display: "none"}}> {/* only show for PC */}
-                        <div className="title">Dịch Vụ</div>
-                        <NavLink to="/promotion" exact={true}>Khuyễn mãi hấp dẫn</NavLink>
-                        <NavLink to="/champion" exact={true}>Áo đấu nhà vô địch</NavLink>
-                        <NavLink to="/concerned" exact={true}>Sản phẩm hot</NavLink>
-                    </div>
+                <div className="row link-contact">
                     <div className="col social-media">
                         <div className="wrap">
                             <div className="title">Kết nối với chúng tôi</div>

@@ -5,7 +5,7 @@ import ProductLayout from "../Products/ProductLayout/ProductLayout";
 
 const Laliga = (props) => {
     const [state, setState] = useState({
-        loaded_product_number: 4
+        loaded_product_number: 6
     });
     const {loaded_product_number} = state;
     const laligaProduct = ProductsInfo.filter((product) => {

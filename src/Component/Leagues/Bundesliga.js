@@ -5,7 +5,7 @@ import ProductLayout from "../Products/ProductLayout/ProductLayout";
 
 const Bundesliga = (props) => {
     const [state, setState] = useState({
-        loaded_product_number: 4
+        loaded_product_number: 6
     });
     const {loaded_product_number} = state;
     const bundesligaProduct = ProductsInfo.filter((product) => {

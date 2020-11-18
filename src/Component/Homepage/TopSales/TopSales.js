@@ -8,7 +8,7 @@ import ProductLayout from "../../Products/ProductLayout/ProductLayout";
 
 const TopSales = (props) => {
     const [state, setState] = useState({
-        loaded_product_number: 8
+        loaded_product_number: 6
     })
     const {loaded_product_number} = state;
     // find products with property top_viewed true
