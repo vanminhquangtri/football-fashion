@@ -57,28 +57,28 @@ const TopNav = (props) => {
                                         <span className="link-text">ĐƠN HÀNG</span>
                                     </NavLink>
                                 </li>
-                                <li style={{display: "none"}}>
+                                <li style={{display: "none"}} className="show-from-576">
                                     <NavLink
                                     to="/leagues"
                                     exact={true}
                                     >
-                                        GIẢI ĐẤU
+                                        <span className="link-text">GIẢI ĐẤU</span>
                                     </NavLink>
                                 </li>
-                                <li style={{display: "none"}}>
+                                <li style={{display: "none"}} className="show-from-576">
                                     <NavLink
                                     to="/promotion"
                                     exact={true}
                                     >
-                                        KHUYẾN MÃI
+                                        <span className="link-text">KHUYẾN MÃI</span>
                                     </NavLink>
                                 </li>
-                                <li style={{display: "none"}}>
+                                <li style={{display: "none"}} className="show-from-576">
                                     <NavLink
                                     to="/contact"
                                     exact={true}
                                     >
-                                        LIÊN HỆ
+                                        <span className="link-text">LIÊN HỆ</span>
                                     </NavLink>
                                 </li>
                             </ul>

@@ -40,6 +40,9 @@ body {
       width: 70vw !important;
       margin-left: -23px;
     }
+    a {
+      padding: 5px 40px !important;
+    }
   }
   .footer {
     .container-fluid {
@@ -92,6 +95,147 @@ body {
   .add-to-cart-btn {
     span {
       padding: 2px 40px;
+    }
+    span.added {
+      padding: 2px 20px;
+    }
+  }
+}
+// Small devices (landscape phones, 576px and up)
+@media screen and (min-width: 576px) { 
+  .show-from-576 {
+    display: inline-block !important;
+  }
+  .top-nav {
+    .container-fluid {
+      .row {
+        .col.nav {
+          .wrap {
+            .icon.animate__animated {
+              display: none !important;
+            }
+            ul.sub-menu {
+              display: none !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  .top-slide {
+    .container-fluid {
+      .row {
+        .col {
+          .wrap {
+            #top-slide{
+              .carousel-inner {
+                .carousel-item {
+                  .carousel-caption {
+                    font-size: 16px !important; 
+                    .link, .title {
+                      height: 30px;
+                      line-height: 30px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .display-homepage {
+    .container-fluid {
+      .row {
+        /* title of each section (ĐƯỢC QUAN TÂM NHIỀU NHẤT, ....) */
+        .section-title {
+          .title-text {
+            font-size: 18px; ////
+            .icon {
+              font-size: 17px;
+              color:  white;
+              border: none;
+              padding: 0;
+            }
+            .football-image {
+              width: 35px;
+              height: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    padding: 20px 0;
+    .container-fluid {
+      .row {
+        .col.social-media {
+          .wrap {
+            .title {
+              left: 140px;
+              right: 140px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .top-bar {
+    display: none;
+  }
+  .col.product-col {
+    .wrap {
+      a {
+        /* hold main image of product */
+        .background-image {
+          img {
+            width: 40vw;
+            height: 40vw;
+          }
+        }
+        /* information of product */
+        .info {
+          padding: 0 10px;
+          font-size: 14px;
+          .name {
+            color: $color-gray-text;
+            height: 42px;
+          }
+          .price {
+            font-weight: bold;
+            font-size: 15px;
+          }
+          .price.origin {
+            color: black;
+            font-size: 14px;
+          }
+        }
+        /* promotion box (SALE ...%) */
+        .promotion {
+          height: 45px;
+          width: 45px;
+          font-size: 11px;
+        }
+        .free-ship {
+          height: 45px;
+          width: 45px;
+        }
+        /* member point */
+        .member-point {
+          height: 20px;
+          width: auto;
+          padding: 0 2px;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+  .add-to-cart-btn {
+    span {
+      padding: 2px 40px;
+      border-radius: 10px;
     }
     span.added {
       padding: 2px 20px;
