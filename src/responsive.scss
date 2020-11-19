@@ -412,4 +412,76 @@ body {
     width: 25vw !important;
     height: 25vw;
   }
+  .shopping-cart-detail {
+    margin: 45px 0 10px 0;
+    padding-top: 15px;
+  }
+  .shopping-cart-detail .container-fluid {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .shopping-cart-detail .container-fluid .row.title-wrapper .col {
+    padding: 0 5px;
+  }
+  .shopping-cart-detail .container-fluid .row.title-wrapper .col .content {
+    width: 100%;
+    justify-content: flex-start;
+    background: transparent;
+    padding: 5px 10px;
+    color: $color-gray-text;
+  }
+  .shopping-cart-detail .container-fluid .row.checkout-wrapper .col .content .checkout-link img {
+    width: 50vw !important;
+  }
+  .container-fluid.also-container.outstanding {
+    padding-top: 20px;
+  }
+  .also-product .wrap.inside a .promotion {
+    height: 40px;
+    width: 40px;
+  }
+  .also-product .wrap.inside a .free-ship {
+    height: 40px;
+    width: 40px;
+  }
+  .check-out .container-fluid .row.toggle-product-summary .col .content .toggle-btn button svg {
+    width: 2vw;
+    height: 2vw;
+  }
+  .check-out {
+    background: white;
+    margin: 45px 0 20px 0;
+    padding-top: 15px;
+  }
+  .check-out .container-fluid {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .check-out .container-fluid .row.check-out-tile .col {
+    padding: 0 5px;
+  }
+  .check-out .container-fluid .row.check-out-tile .col .content {
+    width: 100%;
+    justify-content: flex-start;
+    background: transparent;
+    padding: 5px 10px;
+    color: $color-gray-text;
+  }
+  .check-out .container-fluid .row.check-out-form .col .content .form .field-wrapper.hide-768 {
+    display: none;
+  }
+  .check-out .container-fluid .row.check-out-form .col .content .form .error-message.hide-768 {
+    display: none;
+  }
+  .check-out .container-fluid .row.check-out-form .col .content .form .name-show-768 {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+  .check-out .container-fluid .row.check-out-form .col .content .form .name-show-768 .field-wrapper-container {
+    margin-right: 5px;
+    width: 100%;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }

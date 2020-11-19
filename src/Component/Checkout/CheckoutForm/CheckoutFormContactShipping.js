@@ -52,8 +52,40 @@ const CheckoutFormContactShipping = (props) => {
             >
                 {/* contact information: name, phone, email, tel */}
                 <span className="title">Thông tin liên hệ</span>
+                <div className="name-show-768" style={{display: "none"}}>
+                    {/* last name */}
+                    <div className="field-wrapper-container">
+                        <span className="field-wrapper">
+                            <input 
+                                ref={register({required: true})} 
+                                name="last_name" className="field" type="text" placeholder="Họ *" 
+                                value={orderInfo.last_name}
+                                onChange={(ev)=>updateOrderInfo(ev, "last_name")}
+                            />
+                            <span className="field-top-up">Họ *</span>
+                        </span>
+                        <span className="error-message">
+                            {errors.last_name && "Vui lòng nhập Họ"}
+                        </span>
+                    </div>
+                    {/* first name */}
+                    <div className="field-wrapper-container">
+                        <span className="field-wrapper">
+                            <input 
+                                ref={register({required: true})} 
+                                name="first_name" className="field" type="text" placeholder="Tên đệm và tên *" 
+                                onChange={(ev)=>updateOrderInfo(ev, "first_name")}
+                                value={orderInfo.first_name}
+                            />
+                            <span className="field-top-up">Tên đệm và tên *</span>
+                        </span>
+                        <span className="error-message">
+                            {errors.first_name && "Vui lòng nhập Tên đệm và tên"}
+                        </span>
+                    </div>
+                </div>
                 {/* last name */}
-                <span className="field-wrapper">
+                <span className="field-wrapper hide-768">
                     <input 
                         ref={register({required: true})} 
                         name="last_name" className="field" type="text" placeholder="Họ *" 
@@ -62,11 +94,11 @@ const CheckoutFormContactShipping = (props) => {
                     />
                     <span className="field-top-up">Họ *</span>
                 </span>
-                <span className="error-message">
+                <span className="error-message hide-768">
                     {errors.last_name && "Vui lòng nhập Họ"}
                 </span>
                 {/* first name */}
-                <span className="field-wrapper">
+                <span className="field-wrapper hide-768">
                     <input 
                         ref={register({required: true})} 
                         name="first_name" className="field" type="text" placeholder="Tên đệm và tên *" 
@@ -75,11 +107,43 @@ const CheckoutFormContactShipping = (props) => {
                     />
                     <span className="field-top-up">Tên đệm và tên *</span>
                 </span>
-                <span className="error-message">
+                <span className="error-message hide-768">
                     {errors.first_name && "Vui lòng nhập Tên đệm và tên"}
                 </span>
+                <div className="name-show-768" style={{display: "none"}}>
+                    {/* email */}
+                    <div className="field-wrapper-container">
+                        <span className="field-wrapper">
+                            <input 
+                                ref={register({pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, required: true})} 
+                                name="email" className="field" type="email" placeholder="Email" 
+                                onChange={(ev)=>updateOrderInfo(ev, "email")}
+                                value={orderInfo.email}
+                            />
+                            <span className="field-top-up">Email</span>
+                        </span>
+                        <span className="error-message">
+                            {errors.email && "Vui lòng nhập đúng định dạng email"}
+                        </span>
+                    </div>
+                    {/* phone */}
+                    <div className="field-wrapper-container">
+                        <span className="field-wrapper">
+                            <input 
+                                ref={register({required: true})} 
+                                name="tel" className="field" type="tel" placeholder="Điện thoại *" 
+                                onChange={(ev)=>updateOrderInfo(ev, "tel")}
+                                value={orderInfo.tel}
+                            />
+                            <span className="field-top-up">Điện thoại *</span>
+                        </span>
+                        <span className="error-message">
+                            {errors.tel && "Vui lòng nhập số điện thoại"}
+                        </span>
+                    </div>
+                </div>
                 {/* email */}
-                <span className="field-wrapper">
+                <span className="field-wrapper hide-768">
                     <input 
                         ref={register({pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, required: true})} 
                         name="email" className="field" type="email" placeholder="Email" 
@@ -88,11 +152,11 @@ const CheckoutFormContactShipping = (props) => {
                     />
                     <span className="field-top-up">Email</span>
                 </span>
-                <span className="error-message">
+                <span className="error-message hide-768">
                     {errors.email && "Vui lòng nhập đúng định dạng email"}
                 </span>
                 {/* phone */}
-                <span className="field-wrapper">
+                <span className="field-wrapper hide-768">
                     <input 
                         ref={register({required: true})} 
                         name="tel" className="field" type="tel" placeholder="Điện thoại *" 
@@ -101,7 +165,7 @@ const CheckoutFormContactShipping = (props) => {
                     />
                     <span className="field-top-up">Điện thoại *</span>
                 </span>
-                <span className="error-message">
+                <span className="error-message hide-768">
                     {errors.tel && "Vui lòng nhập số điện thoại"}
                 </span>
                 {/* shipping address */}
