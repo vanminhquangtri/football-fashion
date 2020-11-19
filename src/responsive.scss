@@ -706,3 +706,139 @@ body {
     font-size: 15px !important;
   }
 }
+@media screen and (min-width: 1024px) {
+  .top-nav {
+    padding: 0 120px;
+  }
+  .homepage {
+    padding: 0 120px;
+  }
+  .top-slide .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .top-slide .container-fluid .row .col {
+    padding: 0 6px;
+  }
+  .display-homepage .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .goals-video .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .col.product-col .wrap a .info .name {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  .col.product-col .wrap a .info .price {
+    font-size: 17px;
+  }
+  .product-detail {
+    margin: 55px 120px 10px 120px;
+  }
+  .product-detail .container-fluid.product-add-to-cart .row .col .wrap .size {
+    font-size: 15px;
+  }
+  .product-detail .container-fluid.product-add-to-cart .row .col .wrap .buttons .title {
+    font-size: 15px;
+  }
+  .product-detail .container-fluid.product-add-to-cart .row .col .wrap .buttons .quantity {
+    font-size: 15px;
+  }
+  .product-detail .container-fluid.product-add-to-cart .row .col .wrap .sub-total .title {
+    font-size: 15px;
+  }
+  .product-detail .container-fluid.product-add-to-cart .row .col .wrap .btn-add-to-cart button.check-out-each-product, .product-detail .container-fluid.product-add-to-cart .row .col .wrap .btn-check-out button.check-out-each-product {
+    padding: 0 40px;
+  }
+  .product-detail .container-fluid.product-add-to-cart .row .col .wrap .btn-add-to-cart button, .product-detail .container-fluid.product-add-to-cart .row .col .wrap .btn-check-out button {
+    padding: 0 40px;
+  }
+  .container-fluid.product-other-info {
+    clear: right;
+  }
+  .container-fluid.also-container {
+    clear: both;
+    padding-top: 20px;
+  }
+  .product-detail .container-fluid.product-add-to-cart .row .col .wrap .size .size-box {
+    cursor: pointer;
+    &:hover {
+      background: $color-young-green;
+    }
+  }
+  .top-up-annoucement .content .hide-add-to-cart-top-up {
+    cursor: pointer;
+  }
+  .also-product .wrap.inside a .background-image img {
+    width: 22vw !important;
+    height: 22vw;
+  }
+  .shopping-cart-detail {
+    margin: 55px 105px 10px 105px;
+    background: transparent;
+  }
+  .check-out {
+    background: white;
+    margin: 55px 125px 20px 125px;
+    padding: 15px 0;
+  }
+  .check-out .container-fluid .row.toggle-product-summary .col .content .toggle-btn button svg {
+    width: 1vw;
+    height: 1vw;
+  }
+  .check-out .container-fluid .row.check-out-form .col .content img {
+    width: 40%;
+  }
+  .check-out .container-fluid .row.check-out-form .col .content .form-payment-success .congra-image img {
+    width: 20vw;
+  }
+  .add-to-cart-btn span {
+    cursor: pointer;
+  }
+  .manage-order {
+    margin: 55px 125px 10px 125px;
+    padding: 15px 0;
+  }
+  .leagues {
+    margin: 55px 85px 10px 85px;
+  }
+  .leagues .leagues-products .leagues-products-wrap .each-league-title {
+    padding: 10px;
+    margin: 10px 40px;
+    background-position: 94% center;
+  }
+  .leagues .leagues-nav .wrap .links {
+    cursor: pointer;
+    box-sizing: border-box;
+    &:hover {
+      border-bottom: 1px solid white;
+    }
+  }
+  .leagues .leagues-nav .wrap .links img {
+    width: 3vw;
+  }
+  .leagues .leagues-nav .wrap .links img.laliga {
+    width: 4vw;
+  }
+  .leagues .leagues-nav .wrap .links img.bundesliga {
+    width: 4vw;
+  }
+  .leagues .leagues-nav .wrap .links img.seriea {
+    width: 2vw;
+  }
+  .leagues .leagues-nav .wrap .links img.ligue1 {
+    width: 3vw;
+  }
+  .leagues .leagues-nav .wrap .links img.all {
+    width: 2vw;
+  }
+  .promotion-container {
+    margin: 55px 120px 0 120px;
+  }
+  .about .container-fluid .row .col .parrallax-container .parrallax-content {
+    padding: 60px 120px;
+  }
+}

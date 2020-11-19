@@ -58,7 +58,7 @@ const About = () => {
                                             <span className="error-message">
                                                 {errors.email && "Vui lòng nhập đúng định dạng email"}
                                             </span>
-                                            <label>Vui lòng nhập nội dung chi tiết </label>
+                                            <label>Nội dung </label>
                                             <textarea ref={register({required: true})} className="field" name="comment" row={10}></textarea>
                                             <span className="error-message">
                                                 {errors.comment && "Vui lòng nhập nội dung chi tiết"}
