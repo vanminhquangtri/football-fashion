@@ -15,7 +15,7 @@ const TopSlide = () => {
                 <div className="row">
                     <div className="col">
                         <div className="wrap">
-                            <div id="top-slide" className="carousel slide" data-ride="carousel">
+                            <div id="top-slide" className="carousel slide" data-ride="carousel" data-interval="10000000">
                                 <div className="carousel-inner">
                                     <div className="carousel-item active mc" data-interval="4000">
                                         <img src={require("../../../Assets/images/section-top-slide/mc.jpg").default} className="d-block w-100" alt="..." />

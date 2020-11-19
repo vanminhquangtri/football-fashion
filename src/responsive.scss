@@ -323,7 +323,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   body {
-    background: #eee7db;
+    background: #f3ece1;
   }
   .top-nav .icon {
     width: 25px;
@@ -587,7 +587,7 @@ body {
   .leagues .leagues-products .leagues-products-wrap .ligue-1 .each-league-title {
     background-color: #00576d;
   }
-  .display-homepage.special-promotion {
+  .promotion-container {
     margin-top: 55px;
   }
   .about .container-fluid .row .col .parrallax-container .parrallax-content {
@@ -620,5 +620,89 @@ body {
   .add-to-cart-btn {
     display: flex;
     justify-content: center;
+  }
+  .goals-video .container-fluid {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .goals-video .container-fluid .row.video {
+    flex-direction: row;
+  }
+  .goals-video .container-fluid .row.video .col {
+    border-bottom: none;
+    padding: 0 5px;
+    flex: 50% !important;
+    max-width: 50% !important;
+  }
+  .goals-video .container-fluid .row.title {
+    margin-right: -10px;
+    margin-left: -10px;
+    margin-bottom: 10px;
+  }
+  .goals-video .container-fluid .row.title .col {
+    padding: 0 5px;
+    background: greenyellow;
+  }
+  .goals-video .container-fluid .row.video .col .wrap .des {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .homepage {
+    margin: 55px 0 10px 0;
+  }
+  .top-slide .container-fluid {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .top-slide .container-fluid .row .col {
+    padding: 0 5px;
+  }
+  .top-slide .container-fluid .row .col .wrap #top-slide .carousel-inner .carousel-item.active {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .top-slide .container-fluid .row .col .wrap #top-slide .carousel-inner .carousel-item-next {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .top-slide .container-fluid .row .col .wrap #top-slide .carousel-inner .carousel-item .carousel-caption {
+    margin-bottom: 10px;
+  }
+  .top-slide .container-fluid .row .col .wrap #top-slide .carousel-inner .carousel-item .carousel-caption .title {
+    padding: 0 100px;
+  }
+  .product-detail {
+    margin: 55px 40px 10px 40px;
+    padding-top: 10px;
+    background: transparent;
+  }
+  .container-fluid.also-container {
+    background: transparent;
+    margin-top: 10px;
+  }
+  .container-fluid.also-container .row .col {
+    padding: 0;
+  }
+  .shopping-cart-detail {
+    margin: 55px 0 10px 0;
+    background: transparent;
+  }
+  .shopping-cart-detail .container-fluid .row.product-detail-wrapper {
+    background: white;
+    padding-top: 10px;
+    margin-bottom: 15px;
+  }
+  .shopping-cart-detail .container-fluid .row.checkout-wrapper .col {
+    padding: 0px;
+  }
+  .shopping-cart-detail .container-fluid .row.checkout-wrapper .col .content .checkout-link img {
+    margin-left: -33px;
+  }
+  .shopping-cart-product-layout:last-child {
+    border-bottom: none;
+  }
+  .shopping-cart-product-layout .image-info .product-info .info.name {
+    font-size: 15px !important;
   }
 }
