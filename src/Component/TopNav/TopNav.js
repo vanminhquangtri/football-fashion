@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHome, faBars, faTimesCircle, faTimes} from "@fortawesome/free-solid-svg-icons"
 import ShoppingCart from './ShoppingCart';
 
-const TopNav = (props) => {
+const TopNav = () => {
     const [state, setState] = useState({
         sub_menu: false
     })

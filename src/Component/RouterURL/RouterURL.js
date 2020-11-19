@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
-import {Switch, Route } from "react-router-dom";
-import { withRouter } from "react-router";
+import {Switch, Route} from "react-router-dom";
+import {withRouter} from "react-router";
 import About from "../About/About";
 import Checkout from "../Checkout/Checkout";
 import Homepage from "../Homepage/Homepage";
@@ -12,6 +12,7 @@ import ShoppingCartDetail from "../ShoppingCart/ShoppingCartDetail/ShoppingCartD
 const RouterURL = (props) => {
     const { location } = props;
     useEffect(() => {
+        // hide footer if current page is "/leagues"
         const footer = document.querySelector("section.footer")
         if (location.pathname === "/leagues"){
             footer.style.display = "none";

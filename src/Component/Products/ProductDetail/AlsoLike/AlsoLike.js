@@ -1,6 +1,5 @@
 import React from "react";
 import ProductsInfo from "../../../../Data/ProductInfo";
-import {connect} from "react-redux";
 import TinySlider from "tiny-slider-react";
 import AlsoLikeProduct from "./AlsoLikeProduct";
 const settings = {
@@ -36,9 +35,4 @@ const AlsoLike = (props) => {
         </div>
     );
 };
-const mapStateToProps = (state) => {
-    return {
-        Store: state
-    }
-}
-export default connect(mapStateToProps)(AlsoLike)
+export default AlsoLike

@@ -3,9 +3,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHeartbeat} from "@fortawesome/free-solid-svg-icons";
 import ProductsInfo from "../../../Data/ProductInfo";
 import LoadProducts from "../../GeneralModules/LoadProducts";
-import {connect} from "react-redux";
 import ProductLayout from "../../Products/ProductLayout/ProductLayout";
-
 const TopSales = (props) => {
     const [state, setState] = useState({
         loaded_product_number: 6
@@ -50,9 +48,4 @@ const TopSales = (props) => {
         </section>
     );
 };
-const mapStateToProps = (state) => {
-    return {
-        Store: state
-    }
-}
-export default connect(mapStateToProps)(TopSales)
+export default TopSales

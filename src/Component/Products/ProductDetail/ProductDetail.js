@@ -1,7 +1,6 @@
 // direct child of RouterURL
 import React, {useEffect} from 'react';
 import urlSlug from "url-slug";
-import {connect} from "react-redux";
 import ProductsInfo from '../../../Data/ProductInfo';
 import ProductSlideshow from './ProductSlideshow';
 import ProductButton from './ProductButton';
@@ -30,9 +29,4 @@ const ProductDetail = (props) => {
         </section>
     );
 };
-const mapStateToProps = (state) => {
-    return {
-        Store: state
-    }
-}
-export default connect(mapStateToProps)(ProductDetail)
+export default ProductDetail

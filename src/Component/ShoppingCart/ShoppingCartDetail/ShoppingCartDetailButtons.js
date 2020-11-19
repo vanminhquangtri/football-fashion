@@ -1,6 +1,5 @@
 // direct child of ShoppingCartDetailProduct, display size and buttons of each product
 import React, {useState, useEffect} from 'react';
-import {connect} from "react-redux";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faPlus, faMinus} from "@fortawesome/free-solid-svg-icons";
 const ShoppingCartDetailButtons = (props) => {
@@ -57,9 +56,4 @@ const ShoppingCartDetailButtons = (props) => {
         </div>
     )
 };
-const mapStateToProps = (state) => {
-    return {
-        Store: state
-    }
-}
-export default connect(mapStateToProps)(ShoppingCartDetailButtons)
+export default ShoppingCartDetailButtons

@@ -1,7 +1,6 @@
 // direct child of Product Detail, containing product of other leagues
 import React from "react";
 import ProductsInfo from "../../../../Data/ProductInfo";
-import {connect} from "react-redux";
 import TinySlider from "tiny-slider-react";
 import OutstandingProduct from "./OutstandingProduct";
 const settings = {
@@ -35,11 +34,6 @@ const Outstanding = (props) => {
                 </div>
             </div>
         </div>
-                    );
+    );
 };
-const mapStateToProps = (state) => {
-    return {
-        Store: state
-    }
-}
-export default connect(mapStateToProps)(Outstanding)
+export default Outstanding

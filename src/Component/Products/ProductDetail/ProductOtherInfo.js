@@ -2,7 +2,6 @@
 import React, {useState} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlus, faMinus} from "@fortawesome/free-solid-svg-icons";
-import {connect} from "react-redux";
 
 const ProductOtherInfo = (props) => {
     const {product} = props;
@@ -88,9 +87,4 @@ const ProductOtherInfo = (props) => {
         </div>
     );
 };
-const mapStateToProps = (state) => {
-    return {
-        Store: state
-    }
-}
-export default connect(mapStateToProps)(ProductOtherInfo)
+export default ProductOtherInfo

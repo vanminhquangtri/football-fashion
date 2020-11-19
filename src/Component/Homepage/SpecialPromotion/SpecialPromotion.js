@@ -3,7 +3,6 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGift} from "@fortawesome/free-solid-svg-icons";
 import ProductsInfo from "../../../Data/ProductInfo";
 import LoadProducts from "../../GeneralModules/LoadProducts";
-import {connect} from "react-redux";
 import ProductLayout from "../../Products/ProductLayout/ProductLayout";
 const SpecialPromotion = (props) => {
     const [state, setState] = useState({
@@ -49,9 +48,4 @@ const SpecialPromotion = (props) => {
         </section>
     );
 };
-const mapStateToProps = (state) => {
-    return {
-        Store: state
-    }
-}
-export default connect(mapStateToProps)(SpecialPromotion)
+export default SpecialPromotion
