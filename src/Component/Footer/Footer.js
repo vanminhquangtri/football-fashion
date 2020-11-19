@@ -12,9 +12,9 @@ const Footer = () => {
                             <div className="title">Kết nối với chúng tôi</div>
                             <div className="icon-link">
                                 <NavLink to="/promotion" exact={true} className="facebook" title="Facebook"></NavLink>
-                                <NavLink to="/champion" exact={true} className="youtube" title="Youtube"></NavLink>
-                                <NavLink to="/concerned" exact={true} className="twitter" title="Twitter"></NavLink>
-                                <NavLink to="/concerned" exact={true} className="instagram" title="Instagram"></NavLink>
+                                <NavLink to="/leagues" exact={true} className="youtube" title="Youtube"></NavLink>
+                                <NavLink to="/leagues" exact={true} className="twitter" title="Twitter"></NavLink>
+                                <NavLink to="/leagues" exact={true} className="instagram" title="Instagram"></NavLink>
                             </div>
                         </div>
                     </div>

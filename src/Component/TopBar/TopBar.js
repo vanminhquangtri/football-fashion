@@ -31,7 +31,7 @@ const TopBar = (props) => {
                     <div className="col-6 leagues-icon">
                         <div className="wrap">
                             <NavLink
-                                to="/concerned"
+                                to="/leagues"
                                 exact={true}
                             >
                                 <img
