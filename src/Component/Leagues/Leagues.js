@@ -4,6 +4,7 @@ import EPL from './EPL';
 import Bundesliga from './Bundesliga';
 import SerieA from './SerieA';
 import Ligue1 from './Ligue1';
+import All from '../../Assets/images/section-top-bar/ball.png';
 
 const Leagues = (props) => {
     const [state, setState] = useState({
@@ -39,19 +40,22 @@ const Leagues = (props) => {
             <div className="leagues-nav">
                 <div className="wrap">
                     <div className="links" onClick={(ev)=>changeShownLeage(ev, "epl")}>
-                        <img src={require("../../Assets/images/product/epl/logo-white-3.png").default}alt="Premier League"/>
+                        <img src={require("../../Assets/images/product/epl/logo-white-3.png").default} alt="Premier League" className="epl"/>
                     </div>
                     <div className="links" onClick={(ev)=>changeShownLeage(ev, "la-liga")}>
-                        <img src={require("../../Assets/images/product/laliga/logo-white-3.png").default}alt="La Liga"/>
+                        <img src={require("../../Assets/images/product/laliga/logo-white-3.png").default} alt="La Liga" className="laliga"/>
                     </div>
                     <div className="links" onClick={(ev)=>changeShownLeage(ev, "bundes-liga")}>
-                        <img src={require("../../Assets/images/product/bundesliga/logo-white-3.png").default}alt="Bundes Liga"/>
+                        <img src={require("../../Assets/images/product/bundesliga/logo-white-3.png").default} alt="Bundes Liga" className="bundesliga"/>
                     </div>
                     <div className="links" onClick={(ev)=>changeShownLeage(ev, "serie-a")}>
-                        <img src={require("../../Assets/images/product/seriea/logo-white.png").default}alt="Serie A"/>
+                        <img src={require("../../Assets/images/product/seriea/logo-white.png").default} alt="Serie A" className="seriea"/>
                     </div>
                     <div className="links" onClick={(ev)=>changeShownLeage(ev, "ligue-1")}>
-                        <img src={require("../../Assets/images/product/ligue1/logo-white-3.png").default}alt="Ligue 1"/>
+                        <img src={require("../../Assets/images/product/ligue1/logo-white-3.png").default} alt="Ligue 1" className="ligue1"/>
+                    </div>
+                    <div className="links" onClick={(ev)=>changeShownLeage(ev, "all")}>
+                        <img src={All} alt="Ligue 1" className="all"/>
                     </div>
                 </div>
             </div>
