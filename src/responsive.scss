@@ -1,7 +1,15 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /*--- general set up ---*/
 * {
-  font-family: 'Catamaran', sans-serif;
-  box-sizing: border-box;
+  font-family: sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 $color-red: rgb(211, 9, 9);
 $color-gray-border: rgb(235, 235, 235);
@@ -47,8 +55,12 @@ body {
         .product-btn-inside {
           display: block !important;
           .row-product-buttons {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: flex-start;
+            -webkit-box-pack: start;
+                -ms-flex-pack: start;
+                    justify-content: flex-start;
           }
         }
       }
@@ -91,7 +103,7 @@ body {
         /* title of each section (ĐƯỢC QUAN TÂM NHIỀU NHẤT, ....) */
         .section-title {
           .title-text {
-            font-size: 18px; ////
+            font-size: 18px;
             .icon {
               font-size: 17px;
               color:  white;
@@ -289,11 +301,16 @@ body {
     font-size: 14px;
     margin-top: 10px;
     font-weight: normal !important;
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     padding-left: 10px;
   }
   .check-out .container-fluid .row.check-out-form .col .content .form-navigate {
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   .check-out .container-fluid .row.check-out-form .col .content .form-navigate button {
     margin: 3px;
@@ -349,7 +366,9 @@ body {
     background-size: cover;
   }
   .col.product-col {
-    flex: 33.333333333333% !important;
+    -webkit-box-flex: 33.333333333333% !important;
+        -ms-flex: 33.333333333333% !important;
+            flex: 33.333333333333% !important;
     max-width: 33.333333333333% !important;
   }
   .col.product-col:nth-child(odd) {
@@ -377,12 +396,18 @@ body {
   } 
   .add-to-cart-btn span {
     height: 25px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-bottom: 10px;
   }
   .footer .container-fluid .row .col {
-    flex: 50% !important;
+    -webkit-box-flex: 50% !important;
+        -ms-flex: 50% !important;
+            flex: 50% !important;
     max-width: 50% !important;
   }
   .footer .container-fluid .row .col.social-media .wrap .title {
@@ -428,7 +453,9 @@ body {
   }
   .shopping-cart-detail .container-fluid .row.title-wrapper .col .content {
     width: 100%;
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     background: transparent;
     padding: 5px 10px;
     color: $color-gray-text;
@@ -465,7 +492,9 @@ body {
   }
   .check-out .container-fluid .row.check-out-tile .col .content {
     width: 100%;
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     background: transparent;
     padding: 5px 10px;
     color: $color-gray-text;
@@ -477,8 +506,13 @@ body {
     display: none;
   }
   .check-out .container-fluid .row.check-out-form .col .content .form .name-show-768 {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
     display: flex !important;
-    flex-direction: row !important;
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
   }
   .check-out .container-fluid .row.check-out-form .col .content .form .name-show-768 .field-wrapper-container {
     margin-right: 5px;
@@ -500,7 +534,9 @@ body {
   }
   .manage-order .container-fluid .row.manage-order-tile .col .content {
     width: 100%;
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     background: transparent;
     padding: 5px 10px;
     color: $color-gray-text;
@@ -521,10 +557,18 @@ body {
   }
   .leagues .leagues-nav .wrap {
     height: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 3px;
   }
   .leagues .leagues-nav .wrap .links img {
@@ -591,6 +635,8 @@ body {
     margin-top: 55px;
   }
   .about .container-fluid .row .col .parrallax-container .parrallax-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
   .about .container-fluid .row .col .parrallax-container .parrallax-content .contact-info {
@@ -618,20 +664,29 @@ body {
     }
   }
   .add-to-cart-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .goals-video .container-fluid {
     padding-right: 40px;
     padding-left: 40px;
   }
   .goals-video .container-fluid .row.video {
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   .goals-video .container-fluid .row.video .col {
     border-bottom: none;
     padding: 0 5px;
-    flex: 50% !important;
+    -webkit-box-flex: 50% !important;
+        -ms-flex: 50% !important;
+            flex: 50% !important;
     max-width: 50% !important;
   }
   .goals-video .container-fluid .row.title {
@@ -659,12 +714,22 @@ body {
     padding: 0 5px;
   }
   .top-slide .container-fluid .row .col .wrap #top-slide .carousel-inner .carousel-item.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column-reverse;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
   .top-slide .container-fluid .row .col .wrap #top-slide .carousel-inner .carousel-item-next {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column-reverse;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
   .top-slide .container-fluid .row .col .wrap #top-slide .carousel-inner .carousel-item .carousel-caption {
     margin-bottom: 10px;
@@ -812,7 +877,8 @@ body {
   }
   .leagues .leagues-nav .wrap .links {
     cursor: pointer;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     &:hover {
       border-bottom: 1px solid white;
     }
@@ -842,3 +908,4 @@ body {
     padding: 60px 120px;
   }
 }
+/* end responsive */

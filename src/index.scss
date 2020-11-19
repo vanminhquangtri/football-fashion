@@ -1,7 +1,8 @@
 /*--- general set up ---*/
 * {
-  font-family: 'Catamaran', sans-serif;
-  box-sizing: border-box;
+  font-family: sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 $color-red: rgb(211, 9, 9);
 $color-gray-border: rgb(235, 235, 235);
@@ -37,9 +38,15 @@ body {
         }
       }
       .col-3.ball-icon {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: flex-start;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
         padding-left: 5px;
         img {
           width: 30px;
@@ -52,9 +59,15 @@ body {
         }
       }
       .col-3.top-bar-hot-deals {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: flex-end;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
         padding-right: 5px;
         img {
           width: 100%;
@@ -74,6 +87,8 @@ body {
   z-index: 100;
   a {
     color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 10px 5px;
     line-height: 1; /* keep all links middle vertical ^^ */
@@ -96,8 +111,12 @@ body {
           position: relative;
           /* main nav */
           ul.main-nav {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             li {
               margin-right: 20px;
               a {
@@ -117,15 +136,19 @@ body {
             color: white;
             display: inline-block;
             margin-right: 15px; 
-            animation-duration: 1s;
+            -webkit-animation-duration: 1s; 
+                    animation-duration: 1s;
           }
           /* sub menu */
           ul.sub-menu {
-            animation-duration: .3s;
+            -webkit-animation-duration: .3s;
+                    animation-duration: .3s;
             z-index: 2000;
             width: 100%;
             top: 100%;
             position: absolute;
+            background-image: -webkit-gradient(linear, left top, right top, from(rgb(126, 211, 0)), to(white));
+            background-image: -o-linear-gradient(left, rgb(126, 211, 0), white);
             background-image: linear-gradient(to right, rgb(126, 211, 0), white);
             li {
               a {
@@ -175,17 +198,30 @@ body {
 .homepage {
   margin: 40px 0 10px 0;
   .top-news {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(yellow));
+    background-image: -o-linear-gradient(top, white, yellow);
     background-image: linear-gradient(to bottom, white, yellow);
     .content {
       .news {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         font-size: 12px;
         font-style: italic;
         .link {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          align-items: center;
-          justify-content: center;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
           color: $color-red;
           .news-image {
             width: 10vw;
@@ -264,8 +300,12 @@ body {
         width: 100%;
         border-radius: 10x 10px 0 0;
         color: white;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         margin-bottom: 6px;
         position: relative;
         .background-image {
@@ -288,8 +328,12 @@ body {
           height: 40px;
           color: $color-red;
           font-weight: bold;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          align-items: center;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
           .icon {
             font-size: 15px;
             margin-right: 3px;
@@ -330,7 +374,9 @@ body {
 }
 /* general layout of product, reuse for many component (most concerned, promotion, top sales, champion, leagues) */
 .col.product-col {
-  flex: 50% !important;
+  -webkit-box-flex: 50% !important;
+      -ms-flex: 50% !important;
+          flex: 50% !important;
   max-width: 50% !important;
   .wrap {
     background: white;
@@ -341,6 +387,8 @@ body {
       text-decoration: none;
       /* hold main image of product */
       .background-image {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         img {
           margin: auto;
@@ -358,7 +406,8 @@ body {
           overflow: hidden;
           color: #243461;
           height: 35px;
-          text-overflow: ellipsis;
+          -o-text-overflow: ellipsis;
+             text-overflow: ellipsis;
           display: -webkit-box;
           -webkit-line-clamp: 2; /* show name 2 lines only */
           -webkit-box-orient: vertical;
@@ -387,9 +436,15 @@ body {
         border-radius: 50%;
         font-size: 10px;
         text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
       }
       .free-ship {
         position: absolute;
@@ -397,9 +452,15 @@ body {
         left: 2px;
         height: 30px;
         width: 30px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         img {
           width: 100%;
           border: none;
@@ -416,9 +477,15 @@ body {
         width: 42px;
         font-size: 10px;
         text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
       }
     }
   }
@@ -471,9 +538,15 @@ body {
         padding: 0;
         background: greenyellow;
         .wrap {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          align-items: center;
-          justify-content: center;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
           span {
             color: white;
             font-weight: bold;
@@ -490,7 +563,9 @@ body {
     /* video and tile */
     .row.video {
       .col {
-        flex: 100% !important;
+        -webkit-box-flex: 100% !important;
+            -ms-flex: 100% !important;
+                flex: 100% !important;
         max-width: 100% !important;
         padding: 0;
         margin-bottom: 10px;
@@ -521,13 +596,20 @@ body {
     .row {
       .col {
         padding: 0 20px;
-        flex: 100% !important;
+        -webkit-box-flex: 100% !important;
+            -ms-flex: 100% !important;
+                flex: 100% !important;
         max-width: 100% !important;
         font-size: 12px;
         margin-bottom: 10px;
         line-height: 25px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         border-bottom: 1px solid #60a0ff;
         color: $color-gray-text;
         .title {
@@ -563,8 +645,12 @@ body {
           }
           .icon-link {
             padding: 20px 0 10px 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
             a {
               display: inline-block;
               padding: 10px;
@@ -618,7 +704,9 @@ body {
         #ProductDetailTopSlide {
           .carousel-indicators {
             position: relative;
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             margin: 0;
             padding: 0;
             li {
@@ -676,6 +764,8 @@ body {
             color: $color-red;
           }
           .emotions {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             font-size: 11px;
             .icon {
@@ -703,8 +793,12 @@ body {
           /* display all size of product */
           .size {
             font-size: 12px;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             .title {
               margin-right: 5px;
               font-weight: bold;
@@ -714,9 +808,15 @@ body {
               height: 34px;
               border-radius: 50%;
               margin: 2px;
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
-              align-items: center;
-              justify-content: center;
+              -webkit-box-align: center;
+                  -ms-flex-align: center;
+                      align-items: center;
+              -webkit-box-pack: center;
+                  -ms-flex-pack: center;
+                      justify-content: center;
               background: $color-blue-mc;
               color: white;
             }
@@ -740,8 +840,12 @@ body {
           /* button plus, minus, quantity */
           .buttons {
             margin: 10px 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             .title {
               margin-right: 5px;
               font-weight: bold;
@@ -823,14 +927,17 @@ body {
       padding: 0 5px;
       .wrap {
         .info-type {
-          // border: 1px solid $color-gray-border;
           border-top: none;
           margin-bottom: 10px;
           .info-title {
             background: rgb(200, 200, 250);
             border-radius: 20px;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             .title {
               width: 100%;
               padding-left: 10px;
@@ -841,9 +948,15 @@ body {
               width: 45px;
               height: 40px;
               border-radius:0 20px 20px 0;
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
-              align-items: center;
-              justify-content: center;
+              -webkit-box-align: center;
+                  -ms-flex-align: center;
+                      align-items: center;
+              -webkit-box-pack: center;
+                  -ms-flex-pack: center;
+                      justify-content: center;
               background: black;
               color: white;
             }
@@ -876,8 +989,12 @@ body {
             top: 35%;
             left: 0%;
             right: 0%;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-between;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
             outline: none;
             button {
               z-index: 1;
@@ -914,12 +1031,14 @@ body {
     position: relative;
     padding-top: 10px;
     margin-bottom: 3px;
-    // border: 1px solid $color-blue-mc;
-    box-shadow: 1px 1px 2px 2px $color-gray-border;
+    -webkit-box-shadow: 1px 1px 2px 2px $color-gray-border;
+            box-shadow: 1px 1px 2px 2px $color-gray-border;
     a {
       text-decoration: none;
       /* hold main image of product */
       .background-image {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         img {
           margin: auto;
@@ -937,7 +1056,8 @@ body {
           overflow: hidden;
           color: #243461;
           height: 35px;
-          text-overflow: ellipsis;
+          -o-text-overflow: ellipsis;
+             text-overflow: ellipsis;
           display: -webkit-box;
           -webkit-line-clamp: 2; /* show name and 2 lines only */
           -webkit-box-orient: vertical;
@@ -966,9 +1086,15 @@ body {
         border-radius: 50%;
         font-size: 10px;
         text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
       }
       /* free ship car icon */
       .free-ship {
@@ -977,9 +1103,15 @@ body {
         left: 2px;
         height: 30px;
         width: 30px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         img {
           width: 100%;
           border: none;
@@ -996,9 +1128,15 @@ body {
         width: 42px;
         font-size: 10px;
         text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
       }
     }
   }
@@ -1020,9 +1158,16 @@ body {
     padding-bottom: 35px;
     .wrap {
       height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: space-evenly;
+          -ms-flex-pack: space-evenly;
+              justify-content: space-evenly;
       padding: 0 2px;
       .links {
         padding-bottom: 5px;
@@ -1103,9 +1248,15 @@ body {
         .content {
           width: 80%;
           margin: auto;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          align-items: center;
-          justify-content: center;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
           font-weight: bold;
           padding: 10px;
           background: rgb(186, 240, 106);
@@ -1181,6 +1332,8 @@ body {
   color: $color-gray-text;
   /* image, name, and price */
   .image-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     .product-image {
       width: 35%;
@@ -1190,8 +1343,13 @@ body {
     }
     .product-info {
       width: 65%;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
       .info.price {
         font-weight: bold;
       }
@@ -1204,9 +1362,15 @@ body {
   /* size, quantity and buttons (plus, minus, update, delete) */
   .row-product-buttons {
     margin-top: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     font-size: 12px;
     /* remove default scroll of number input tag */
     input::-webkit-outer-spin-button,
@@ -1230,9 +1394,15 @@ body {
       height: 25px;
       border-radius: 50%;
       color: white;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
     }
     .minus, .plus, .quantity, .update, .delete {
       background: rgb(187, 159, 0);
@@ -1277,9 +1447,15 @@ body {
         .content {
           width: 80%;
           margin: auto;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          align-items: center;
-          justify-content: center;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
           font-weight: bold;
           padding: 10px;
           background: rgb(186, 240, 106);
@@ -1298,12 +1474,22 @@ body {
         color: $color-gray-text;
         .content {
           .toggle-btn {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             button {
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
-              align-items: center;
-              justify-content: space-between;
-              flex: 1;
+              -webkit-box-align: center;
+                  -ms-flex-align: center;
+                      align-items: center;
+              -webkit-box-pack: justify;
+                  -ms-flex-pack: justify;
+                      justify-content: space-between;
+              -webkit-box-flex: 1;
+                  -ms-flex: 1;
+                      flex: 1;
               outline: none;
               border: none;
               color: $color-gray-text;
@@ -1313,11 +1499,16 @@ body {
                 width: 5vw;
                 height: 5vw;
                 fill: $color-gray-text;
-                animation: flipArrow .8s forwards;
+                -webkit-animation: flipArrow .8s forwards;
+                        animation: flipArrow .8s forwards;
+              }
+              @-webkit-keyframes flipArrow {
+                from {-webkit-transform: scaleY(-1);transform: scaleY(-1)}
+                to {-webkit-transform: scaleY(1);transform: scaleY(1)}
               }
               @keyframes flipArrow {
-                from {transform: scaleY(-1)}
-                to {transform: scaleY(1)}
+                from {-webkit-transform: scaleY(-1);transform: scaleY(-1)}
+                to {-webkit-transform: scaleY(1);transform: scaleY(1)}
               }
             }
           }
@@ -1361,9 +1552,15 @@ body {
                 height: 25px;
                 border-radius: 50%;
                 color: white;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                align-items: center;
-                justify-content: center;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
               }
               .value.totalEachSize {
                 width: auto;
@@ -1376,6 +1573,8 @@ body {
           }
         }
       };
+      -webkit-transition: .5s;
+      -o-transition: .5s;
       transition: .5s;
       max-height: 0;
       overflow: hidden;
@@ -1387,8 +1586,13 @@ body {
         .content {
           /* general format of form */
           .form {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
             color: $color-gray-text;
             /* title "Thông tin liên hệ" */
             .title {
@@ -1401,9 +1605,16 @@ body {
               font-size: 12px;
               height: 50px;
               position: relative;
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
-              flex-direction: column;
-              justify-content: flex-end;;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+                  -ms-flex-direction: column;
+                      flex-direction: column;
+              -webkit-box-pack: end;
+                  -ms-flex-pack: end;
+                      justify-content: flex-end;;
               padding: 0 10px;
               margin-top: 5px;
               border: 1px solid $color-gray-border;
@@ -1417,6 +1628,18 @@ body {
                 outline: none;
                 font-size: 15px;
                 color: rgb(31, 31, 31);
+                &::-webkit-input-placeholder {
+                  font-size: 14px;
+                }
+                &::-moz-placeholder {
+                  font-size: 14px;
+                }
+                &:-ms-input-placeholder {
+                  font-size: 14px;
+                }
+                &::-ms-input-placeholder {
+                  font-size: 14px;
+                }
                 &::placeholder {
                   font-size: 14px;
                 }
@@ -1455,9 +1678,15 @@ body {
               font-size: 12px;
               margin-top: 5px;
               font-weight: bold;
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
-              align-items: center;
-              justify-content: center;
+              -webkit-box-align: center;
+                  -ms-flex-align: center;
+                      align-items: center;
+              -webkit-box-pack: center;
+                  -ms-flex-pack: center;
+                      justify-content: center;
               input[type="checkbox"] {
                 margin-right: 5px;
               }
@@ -1469,8 +1698,13 @@ body {
           }
           /* choose payment online or cash */
           .form-payment-method {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
             color: $color-gray-text;
             .title {
               font-weight: bold;
@@ -1487,8 +1721,13 @@ body {
           /* navigate button */
           .form-navigate {
             margin-top: 15px;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
             button {
               outline: none;
               border: none;
@@ -1526,8 +1765,12 @@ body {
             }
             .success-navigate {
               margin-top: 10px;
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
-              justify-content: space-evenly;
+              -webkit-box-pack: space-evenly;
+                  -ms-flex-pack: space-evenly;
+                      justify-content: space-evenly;
               a {
                 display: block;
                 padding: 10px;
@@ -1560,9 +1803,15 @@ body {
         .content {
           width: 80%;
           margin: auto;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          align-items: center;
-          justify-content: center;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
           font-weight: bold;
           padding: 10px;
           background: rgb(186, 240, 106);
@@ -1581,8 +1830,13 @@ body {
         padding: 0 5px;
         .content {
           .form-verify-order {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
             .big-label {
               font-weight: bold;
               margin: 0;
@@ -1662,9 +1916,15 @@ body {
                     height: 25px;
                     border-radius: 50%;
                     color: white;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
+                    -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                            justify-content: center;
                   }
                   .value.totalEachSize {
                     width: auto;
@@ -1695,9 +1955,16 @@ body {
             }
             /* navigate button */
             .order-navigate {
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
-              flex-direction: column;
-              justify-content: center;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+                  -ms-flex-direction: column;
+                      flex-direction: column;
+              -webkit-box-pack: center;
+                  -ms-flex-pack: center;
+                      justify-content: center;
               a {
                 margin-bottom: 10px;
                 background: $color-red;
@@ -1737,8 +2004,13 @@ body {
               label {
                 margin: 15px 0 0 0;
               }
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
-              flex-direction: column;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+                  -ms-flex-direction: column;
+                      flex-direction: column;
               .field {
                 border: none;
                 outline: none;
@@ -1796,8 +2068,11 @@ input[type=number] {
   background: white;
   padding: 20px 20px 5px 20px;
   font-size: 14px;
-  box-shadow: 1px 1px 3px 3px rgb(214, 214, 214);
+  -webkit-box-shadow: 1px 1px 3px 3px rgb(214, 214, 214);
+          box-shadow: 1px 1px 3px 3px rgb(214, 214, 214);
   z-index: 1000;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
   transition: .5s;
   .content {
     .annouce {
@@ -1808,8 +2083,13 @@ input[type=number] {
       }
     }
     .navigate {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
       a {
         display: block;
         color: white;
