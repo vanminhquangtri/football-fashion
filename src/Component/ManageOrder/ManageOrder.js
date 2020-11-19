@@ -63,6 +63,7 @@ const ManageOrder = (props) => {
     useEffect(() => {
         // scroll to top
         window.scrollTo(0, 0);
+        document.title = "Quản lý đơn hàng"
     })
     return (
         <section className="manage-order">

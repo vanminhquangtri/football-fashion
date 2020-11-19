@@ -23,6 +23,7 @@ const About = () => {
     useEffect(() => {
         // scroll to top
         window.scrollTo(0, 0);
+        document.title = "Liên hệ"
     }, [])
     return (
         <section className="about">

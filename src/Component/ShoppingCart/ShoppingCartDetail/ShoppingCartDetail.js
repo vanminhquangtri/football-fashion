@@ -28,7 +28,8 @@ const ShoppingCartDetail = (props) => {
     });
     useEffect(() => {
         // scroll to top
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
+        document.title = "Giỏ hàng";
     },[])
     return (
         <section className="shopping-cart-detail">

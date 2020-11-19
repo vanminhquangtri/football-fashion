@@ -33,6 +33,7 @@ const Leagues = (props) => {
                 navLinks[i].style.borderBottom = "2px solid white";
             })
         };
+        document.title = "Top 5 giải hàng đầu Châu Âu"
     }, [shown_league]);
     return (
         <section className="leagues">

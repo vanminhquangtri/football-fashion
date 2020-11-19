@@ -10,7 +10,8 @@ import NewsImage from "../../Assets/images/section-home-page/news3.gif";
 
 const Homepage = () => {
     useEffect(() => {
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
+        document.title = "Football Fashion"
     },[])
     return (
         <section className="homepage">
