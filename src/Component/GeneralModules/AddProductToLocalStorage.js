@@ -1,7 +1,7 @@
 const AddProductToLocalStorage = (id, size, quantity) => {
     var oldItems = JSON.parse(localStorage.getItem('productID')) || [];
     var newItem = {
-        prroduct_id: id,
+        product_id: id,
         size: size,
         quantity: quantity
     };

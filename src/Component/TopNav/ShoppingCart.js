@@ -18,14 +18,6 @@ const ShoppingCart = (props) => {
             storageProductLength += product.quantity;
         })
     };
-    console.log(storageProductId);
-    // const {Cart} = props.Store;
-    // var cartTotalQuantity = 0;
-    // Cart.forEach((product) => {
-    //     product.quantity.forEach((size_quantity) => {
-    //         cartTotalQuantity += size_quantity.quantity 
-    //     })
-    // })
     return (
         <div className="col-auto shopping-cart">
             <div className="wrap">

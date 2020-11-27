@@ -14,7 +14,7 @@ const ShoppingCartDetailProduct = (props) => {
         return p.id === product.product_id;
     })
     return (
-        product.quantity.length !== 0 && (
+        product.size_quantity.length !== 0 && (
             <div className="shopping-cart-product-layout">
                 {/* show image, name, price, club name */}
                 <div className="image-info">
@@ -27,10 +27,10 @@ const ShoppingCartDetailProduct = (props) => {
                         </NavLink>
                         <span className="info price">{formatNumber(targetProduct.price)}<sup>{Currency.currency}</sup></span>
                         <div className="product-btn-inside" style={{display: "none"}}>
-                            {product.quantity.map((quantity) => {
+                            {product.size_quantity.map((quantity) => {
                             return (
                                     <ShoppingCartDetailButtons 
-                                        key={`${product.product_id}-size${quantity.size}`} 
+                                        key={`${product.product_id}-size${product.size_quantity.size}`} 
                                         quantity={quantity} product={product} 
                                         style={{display: "none"}}
                                     />
@@ -40,9 +40,9 @@ const ShoppingCartDetailProduct = (props) => {
                     </div>
                 </div>
                 {/* show size, quantity and buttons (plus, minus, update, delete) */}
-                {product.quantity.map((quantity) => {
+                {product.size_quantity.map((size_quantity) => {
                     return (
-                        <ShoppingCartDetailButtons key={`${product.product_id}-size${quantity.size}`} quantity={quantity} product={product}/>
+                        <ShoppingCartDetailButtons key={`${product.product_id}-size${size_quantity.size}`} quantity={size_quantity} product={product}/>
                     )
                 })}
             </div>

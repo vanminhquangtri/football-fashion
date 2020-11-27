@@ -9,7 +9,62 @@ import formatNumber from '../../GeneralModules/FortmatMoney';
 
 const ShoppingCartDetail = (props) => {
     // get the list of product ID from local storage
-    const storageProductId = JSON.parse(window.localStorage.productID);
+    var storageProductId = [];
+    if (window.localStorage.productID !== undefined) {
+        storageProductId = JSON.parse(window.localStorage.productID);
+    };
+    // 1, get all ID from the LC
+    var summarizedProductList = [];
+    var LCIdList = [];
+    storageProductId.forEach((item) => {
+            if (LCIdList.indexOf(item.product_id) === -1) {
+                LCIdList.push(item.product_id);
+            }
+        }
+    );
+    // 2, for each ID create an object with product_id property: [{product_id: id, size_quantity: []}]
+    LCIdList.forEach((id) => {
+            var obj = {
+                product_id: id,
+                size_quantity: []
+            };
+            summarizedProductList.push(obj)
+        }
+    );
+    // 3, loop all item new array summarizedProductList, inside it loop each item in storageProductId 
+    /*
+        if match ID =>
+        if size already exist, plus quantity to quantity
+        else create new obj {size: size, quantity: quantity} and push to current item of summarizedProductList
+    */
+    summarizedProductList.forEach((item) => {
+            storageProductId.forEach((product) => {
+                if (item.product_id === product.product_id) {
+                        const checkSizeExist = item.size_quantity.some((sq) => {
+                            return sq.size === product.size  
+                            }
+                        );
+                        if (checkSizeExist === false) {
+                            var newSizeQuantity = {
+                                size: product.size,
+                                quantity: product.quantity
+                            };
+                            item.size_quantity.push(newSizeQuantity);
+                        } 
+                        else {
+                            item.size_quantity.forEach((sq) => {
+                                    if (sq.size === product.size) {
+                                        sq.quantity += product.quantity;
+                                    }
+                                }
+                            )
+                        }
+                    }
+                }
+            )
+        }
+    );
+    console.log(summarizedProductList);  
     const {Cart, Currency} = props.Store;
     const {dispatch} = props;
     // calculate total amount of shopping cart
@@ -48,7 +103,7 @@ const ShoppingCartDetail = (props) => {
                         <div className="content">
                             {/* render every product in shopping, each product is is row */}
                             {
-                                (Cart.length === 0) && (
+                                (summarizedProductList.length === 0) && (
                                     <div className="empty-cart-announcement">
                                         <span>Bạn chưa có sản phẩm trong giỏ hàng, vui lòng thêm sản phẩm vào giỏ</span><br/>
                                         <NavLink to="/leagues">Chọn sản phẩm</NavLink>
@@ -56,7 +111,7 @@ const ShoppingCartDetail = (props) => {
                                 )
                             }
                             {
-                                Cart.map((product) => {
+                                summarizedProductList.map((product) => {
                                     return <ShoppingCartDetailProduct key={`shopping-cart-product-${product.product_id}`} product={product}/>
                                 })
                             }
