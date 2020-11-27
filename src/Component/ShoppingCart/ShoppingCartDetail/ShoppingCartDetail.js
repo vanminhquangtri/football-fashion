@@ -64,13 +64,31 @@ const ShoppingCartDetail = (props) => {
             )
         }
     );
-    console.log(summarizedProductList);  
-    const {Cart, Currency} = props.Store;
+    // update local storagee when press Update button  
+    const updateLCProducts = (id, size, quantity) => {
+        const currentLCProducts = JSON.parse(window.localStorage.productID);
+        // calculate current quantity if passed size:
+        var currentQuantity = 0;
+        currentLCProducts.forEach((product) => {
+                if (product.product_id === id && product.size === size) {
+                    currentQuantity += product.quantity
+                }
+            }
+        );
+        var updatedObj = {
+            product_id: id,
+            size: size,
+            quantity: quantity - currentQuantity
+        };
+        currentLCProducts.push(updatedObj);
+        localStorage.setItem('productID', JSON.stringify(currentLCProducts)); 
+    };
+    const {Currency} = props.Store;
     const {dispatch} = props;
     // calculate total amount of shopping cart
     var totalAmount = 0;
     // loop each product in cart
-    Cart.forEach((product) => {
+    storageProductId.forEach((product) => {
         // get price of product
         var productPrice;
         ProductsInfo.forEach((p) => {
@@ -79,9 +97,7 @@ const ShoppingCartDetail = (props) => {
             }
         });
         // loop all quantity object of product, multiply product price with quantity and plus to totalAmount
-        product.quantity.forEach((size_quantity) => {
-            totalAmount += productPrice * size_quantity.quantity
-        })
+        totalAmount += productPrice * product.quantity
     });
     useEffect(() => {
         // scroll to top
@@ -112,14 +128,19 @@ const ShoppingCartDetail = (props) => {
                             }
                             {
                                 summarizedProductList.map((product) => {
-                                    return <ShoppingCartDetailProduct key={`shopping-cart-product-${product.product_id}`} product={product}/>
+                                    return <ShoppingCartDetailProduct 
+                                            key={`shopping-cart-product-${product.product_id}`} 
+                                            product={product}
+                                            LCProducts={summarizedProductList}
+                                            updateLCProducts={updateLCProducts}
+                                        />
                                 })
                             }
                         </div>
                     </div>
                 </div>
                 {/* show total amount and link to check out */}
-                {(Cart.length !== 0) && (
+                {(storageProductId.length !== 0) && (
                     <div className="row checkout-wrapper">
                         <div className="col">
                             <div className="content">

@@ -8,7 +8,7 @@ import urlSlug from "url-slug";
 import ShoppingCartDetailButtons from './ShoppingCartDetailButtons';
 const ShoppingCartDetailProduct = (props) => {
     const {Currency} = props.Store;
-    const {product} = props;
+    const {product, LCProducts, updateLCProducts} = props;
     // get product information based on Id of product props;
     const targetProduct = ProductsInfo.find((p) => {
         return p.id === product.product_id;
@@ -27,12 +27,14 @@ const ShoppingCartDetailProduct = (props) => {
                         </NavLink>
                         <span className="info price">{formatNumber(targetProduct.price)}<sup>{Currency.currency}</sup></span>
                         <div className="product-btn-inside" style={{display: "none"}}>
-                            {product.size_quantity.map((quantity) => {
+                            {product.size_quantity.map((size_quantity) => {
                             return (
                                     <ShoppingCartDetailButtons 
-                                        key={`${product.product_id}-size${product.size_quantity.size}`} 
-                                        quantity={quantity} product={product} 
+                                        key={`${product.product_id}-size${size_quantity.size}`} 
+                                        quantity={size_quantity} product={product} 
                                         style={{display: "none"}}
+                                        LCProducts={LCProducts}
+                                        updateLCProducts={updateLCProducts}
                                     />
                                 )
                             })}

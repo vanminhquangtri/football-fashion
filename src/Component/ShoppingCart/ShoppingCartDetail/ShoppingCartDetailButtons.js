@@ -3,10 +3,20 @@ import React, {useState, useEffect} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faPlus, faMinus} from "@fortawesome/free-solid-svg-icons";
 const ShoppingCartDetailButtons = (props) => {
-    const {product, quantity, dispatch} = props;
+    const {product, quantity, dispatch, updateLCProducts} = props;
     const [state, setState] = useState({
-        updated_quantity: quantity.quantity
+        updated_quantity: quantity.quantity,
+        update_LC: true
     });
+    const changeUpdateLC = () => {
+        setState((prev) => {
+                return {
+                    ...prev,
+                    update_LC: !prev.update_LC
+                }
+            }
+        )
+    };
     const {updated_quantity} = state;
     const changeUpdatedQuantityButtons = (ev, operator) => {
         ev.preventDefault();
@@ -51,7 +61,16 @@ const ShoppingCartDetailButtons = (props) => {
             <button type="button" className="plus" onClick={(ev)=>{changeUpdatedQuantityButtons(ev, "plus")}}>
                 <FontAwesomeIcon icon={faPlus}/>
             </button>
-            <button type="button" className="update" onClick={()=>{dispatch({type: "UPDATE_CART", id: product.product_id, size: quantity.size, quantity: updated_quantity})}}>Cập nhật</button>
+            <button 
+                type="button" className="update" 
+                onClick={()=>{
+                    // dispatch({type: "UPDATE_CART", id: product.product_id, size: quantity.size, quantity: updated_quantity});
+                    updateLCProducts(product.product_id, quantity.size, updated_quantity);
+                    changeUpdateLC();
+                }}
+            >
+            Cập nhật
+            </button>
             <button type="button" className="delete" onClick={()=>{dispatch({type: "REMOVE_FROM_CART", id: product.product_id, size: quantity.size, quantity: updated_quantity})}}>Xóa</button>
         </div>
     )
