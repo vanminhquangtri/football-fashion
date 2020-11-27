@@ -6,6 +6,7 @@ import {NavLink} from "react-router-dom";
 import urlSlug from "url-slug";
 import freeShipImg from "../../../../Assets/images/product-layout/free-ship2.png"
 import formatNumber from "../../../GeneralModules/FortmatMoney";
+import AddProductToLocalStorage from "../../../GeneralModules/AddProductToLocalStorage";
 const AlsoLikeProduct = (props) => {
     const {Currency} = props.Store;
     const [state, setState] = useState({
@@ -60,7 +61,16 @@ const AlsoLikeProduct = (props) => {
                     {/* only show this if state added_to_cart false, mean not added */}
                     {
                         added_to_cart === false ? (
-                            <span className="not-added" onClick={()=>{dispatch({type: "ADD_TO_CART", id: product.id, quantity: 1, size: "M"}); changeAddedToCartStt()}}>Thêm vào giỏ</span>
+                            <span 
+                                className="not-added" 
+                                onClick={()=>{
+                                    dispatch({type: "ADD_TO_CART", id: product.id, quantity: 1, size: "M"}); 
+                                    changeAddedToCartStt();
+                                    AddProductToLocalStorage(product.id, "M", 1);
+                                }}
+                            >
+                                Thêm vào giỏ
+                            </span>
                         ) : (
                             <>
                             <span className="added animate__animated animate__fadeInDown">

@@ -8,6 +8,8 @@ import Outstanding from '../../Products/ProductDetail/Outstanding/Outstanding';
 import formatNumber from '../../GeneralModules/FortmatMoney'; 
 
 const ShoppingCartDetail = (props) => {
+    // get the list of product ID from local storage
+    const storageProductId = JSON.parse(window.localStorage.productID);
     const {Cart, Currency} = props.Store;
     const {dispatch} = props;
     // calculate total amount of shopping cart

@@ -7,7 +7,7 @@ import urlSlug from "url-slug";
 import {connect} from "react-redux";
 import formatNumber from "../../GeneralModules/FortmatMoney";
 import freeShipImg from "../../../Assets/images/product-layout/free-ship2.png"
-
+import AddProductToLocalStorage from "../../GeneralModules/AddProductToLocalStorage";
 const ProductLayout = (props) => {
     const [state, setState] = useState({
         added_to_cart: false
@@ -38,7 +38,7 @@ const ProductLayout = (props) => {
                 })
             }
         }
-    },[])
+    },[]);
     return (
         <div className="col product-col animate__animated animate__fadeInUp" key={product.id}>
             <div className="wrap">
@@ -77,7 +77,12 @@ const ProductLayout = (props) => {
                     {/* only show this if state added_to_cart false, mean not added */}
                     {
                         added_to_cart === false ? (
-                            <span className="not-added" onClick={()=>{dispatch({type: "ADD_TO_CART", id: product.id, quantity: 1, size: "M"}); changeAddedToCartStt()}}>Thêm vào giỏ</span>
+                            <span 
+                                className="not-added" 
+                                onClick={()=>{dispatch({type: "ADD_TO_CART", id: product.id, quantity: 1, size: "M"}); changeAddedToCartStt(); AddProductToLocalStorage(product.id, "M", 1)}}
+                            >
+                            Thêm vào giỏ
+                            </span>
                         ) : (
                             <>
                             <span className="added animate__animated animate__fadeInDown">

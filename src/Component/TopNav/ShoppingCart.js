@@ -6,14 +6,26 @@ import {faShoppingCart} from "@fortawesome/free-solid-svg-icons"
 import {connect} from "react-redux";
 
 const ShoppingCart = (props) => {
-    const {Cart} = props.Store;
-    // count total quantity of shopping cart
-    var cartTotalQuantity = 0;
-    Cart.forEach((product) => {
-        product.quantity.forEach((size_quantity) => {
-            cartTotalQuantity += size_quantity.quantity 
+    // get the list of product ID from local storage
+    var storageProductId;
+    if (window.localStorage.productID !== undefined) {
+        storageProductId = JSON.parse(window.localStorage.productID);
+    }
+    var storageProductLength = 0;
+    if (window.localStorage.productID !== undefined) {
+        storageProductId = JSON.parse(window.localStorage.productID);
+        storageProductId.forEach((product) => {
+            storageProductLength += product.quantity;
         })
-    })
+    };
+    console.log(storageProductId);
+    // const {Cart} = props.Store;
+    // var cartTotalQuantity = 0;
+    // Cart.forEach((product) => {
+    //     product.quantity.forEach((size_quantity) => {
+    //         cartTotalQuantity += size_quantity.quantity 
+    //     })
+    // })
     return (
         <div className="col-auto shopping-cart">
             <div className="wrap">
@@ -22,7 +34,7 @@ const ShoppingCart = (props) => {
                     exact={true}
                 >
                     <FontAwesomeIcon icon={faShoppingCart} className="icon"/>
-                    <span className="shopping-cart-quantity">{cartTotalQuantity}</span>
+                    <span className="shopping-cart-quantity">{storageProductLength}</span>
                 </NavLink>
             </div>
         </div>

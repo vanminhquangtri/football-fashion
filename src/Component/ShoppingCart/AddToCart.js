@@ -5,6 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMinusCircle, faPlusCircle} from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";
 import formatNumber from '../GeneralModules/FortmatMoney';
+import AddProductToLocalStorage from '../GeneralModules/AddProductToLocalStorage';
 
 const AddToCart = (props) => {
     const {Currency} = props.Store;
@@ -13,6 +14,7 @@ const AddToCart = (props) => {
         product_id: product.id,
         added_quantity: 1,
         size: "S",
+        added_to_cart: false
     });
     const {added_quantity} = state;
     // change state added_quantity when click minus button when input value change
@@ -63,6 +65,15 @@ const AddToCart = (props) => {
             return {
                 ...prevState,
                 size: s
+            }
+        })
+    }
+    // change state added to cart
+    const changeAddedToCart = () => {
+        setState((prevState) => {
+            return {
+                ...prevState,
+                added_to_cart: !prevState.added_to_cart
             }
         })
     }
@@ -129,7 +140,17 @@ const AddToCart = (props) => {
                         </div>
                         {/* button add to cart and check-out */}
                         <div className="btn-add-to-cart">
-                            <button className="add-to-cart" onClick={(ev)=>{ev.preventDefault(); dispatch({type: "ADD_TO_CART", id: product.id, size: state.size, quantity: state.added_quantity})}}>Thêm vào giỏ hàng</button>
+                            <button 
+                                className="add-to-cart" 
+                                onClick={(ev)=>{
+                                    ev.preventDefault(); 
+                                    // dispatch({type: "ADD_TO_CART", id: product.id, size: state.size, quantity: state.added_quantity});
+                                    AddProductToLocalStorage(product.id, state.size, state.added_quantity);
+                                    changeAddedToCart()
+                                }}
+                            >
+                                Thêm vào giỏ hàng
+                            </button>
                             <button className="check-out-each-product">
                                 <NavLink to="/check-out" onClick={()=>{dispatch({type: "PAY_SEPARATE"})}}>Mua ngay</NavLink>
                             </button>
