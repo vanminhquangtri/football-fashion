@@ -83,6 +83,16 @@ const ShoppingCartDetail = (props) => {
         currentLCProducts.push(updatedObj);
         localStorage.setItem('productID', JSON.stringify(currentLCProducts)); 
     };
+    // delete a product in local storage when press Delete button  
+    const deleteLCProducts = (id, size) => {
+        const currentLCProducts = JSON.parse(window.localStorage.productID);
+        currentLCProducts.forEach((product) => {
+            if (product.product_id === id && product.size === size) {
+                currentLCProducts.splice(currentLCProducts.indexOf(product), 1)
+            }
+        });
+        localStorage.setItem('productID', JSON.stringify(currentLCProducts)); 
+    };
     const {Currency} = props.Store;
     const {dispatch} = props;
     // calculate total amount of shopping cart
@@ -133,6 +143,7 @@ const ShoppingCartDetail = (props) => {
                                             product={product}
                                             LCProducts={summarizedProductList}
                                             updateLCProducts={updateLCProducts}
+                                            deleteLCProducts={deleteLCProducts}
                                         />
                                 })
                             }

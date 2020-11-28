@@ -8,7 +8,7 @@ import urlSlug from "url-slug";
 import ShoppingCartDetailButtons from './ShoppingCartDetailButtons';
 const ShoppingCartDetailProduct = (props) => {
     const {Currency} = props.Store;
-    const {product, LCProducts, updateLCProducts} = props;
+    const {product, LCProducts, updateLCProducts, deleteLCProducts} = props;
     // get product information based on Id of product props;
     const targetProduct = ProductsInfo.find((p) => {
         return p.id === product.product_id;
@@ -35,6 +35,7 @@ const ShoppingCartDetailProduct = (props) => {
                                         product={product} 
                                         LCProducts={LCProducts}
                                         updateLCProducts={updateLCProducts}
+                                        deleteLCProducts={deleteLCProducts}
                                     />
                                 )
                             })}

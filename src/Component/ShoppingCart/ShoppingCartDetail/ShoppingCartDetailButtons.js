@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faPlus, faMinus} from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";
 const ShoppingCartDetailButtons = (props) => {
-    const {product, quantity, dispatch, updateLCProducts} = props;
+    const {product, quantity, dispatch, updateLCProducts, deleteLCProducts} = props;
     const [state, setState] = useState({
         updated_quantity: quantity.quantity,
         update_LC: true
@@ -63,7 +63,16 @@ const ShoppingCartDetailButtons = (props) => {
             >
             Cập nhật
             </button>
-            <button type="button" className="delete" onClick={()=>{dispatch({type: "REMOVE_FROM_CART", id: product.product_id, size: quantity.size, quantity: updated_quantity})}}>Xóa</button>
+            <button 
+                type="button" className="delete" 
+                onClick={()=>{
+                    // dispatch({type: "REMOVE_FROM_CART", id: product.product_id, size: quantity.size, quantity: updated_quantity})
+                    deleteLCProducts(product.product_id, quantity.size);
+                    dispatch({type: "RE_RENDER"});
+                }}
+            >
+                Xóa
+            </button>
         </div>
     )
 };
