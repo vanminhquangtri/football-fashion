@@ -64,7 +64,7 @@ const ShoppingCartDetail = (props) => {
             )
         }
     );
-    // update local storagee when press Update button  
+    // update local storage when press Update button  
     const updateLCProducts = (id, size, quantity) => {
         const currentLCProducts = JSON.parse(window.localStorage.productID);
         // calculate current quantity if passed size:

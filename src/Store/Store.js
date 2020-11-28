@@ -142,12 +142,25 @@ const Orders_reducer = (init = Orders, action) => {
             return init
     }
 }
+// force to re-render the shopping cart (such as when click add to cart)
+const Rerender = true;
+const Rerender_reducer = (init = Rerender, action) => {
+    var currentState = init;
+    switch (action.type) {
+        case "RE_RENDER":
+            currentState = !init;
+            return currentState;
+        default:
+           return init;
+    }
+}
 const All_reducer = redux.combineReducers({
     Currency: Currency_reducer,
     Cart: Cart_reducer,
     PaymentTarget: PaymentTarget_reducer,
     SeparateProduct: SeparateProduct_reducer,
     Orders: Orders_reducer,
+    Rerender: Rerender_reducer
 });
 var Store = redux.createStore(All_reducer);
 export default Store;

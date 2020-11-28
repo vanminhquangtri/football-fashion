@@ -2,21 +2,13 @@
 import React, {useState, useEffect} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faPlus, faMinus} from "@fortawesome/free-solid-svg-icons";
+import {connect} from "react-redux";
 const ShoppingCartDetailButtons = (props) => {
     const {product, quantity, dispatch, updateLCProducts} = props;
     const [state, setState] = useState({
         updated_quantity: quantity.quantity,
         update_LC: true
     });
-    const changeUpdateLC = () => {
-        setState((prev) => {
-                return {
-                    ...prev,
-                    update_LC: !prev.update_LC
-                }
-            }
-        )
-    };
     const {updated_quantity} = state;
     const changeUpdatedQuantityButtons = (ev, operator) => {
         ev.preventDefault();
@@ -66,7 +58,7 @@ const ShoppingCartDetailButtons = (props) => {
                 onClick={()=>{
                     // dispatch({type: "UPDATE_CART", id: product.product_id, size: quantity.size, quantity: updated_quantity});
                     updateLCProducts(product.product_id, quantity.size, updated_quantity);
-                    changeUpdateLC();
+                    dispatch({type: "RE_RENDER"});
                 }}
             >
             Cập nhật
@@ -75,4 +67,9 @@ const ShoppingCartDetailButtons = (props) => {
         </div>
     )
 };
-export default ShoppingCartDetailButtons
+const mapStateToProps = (state) => {
+    return {
+        Store: state
+    }
+}
+export default connect(mapStateToProps)(ShoppingCartDetailButtons);

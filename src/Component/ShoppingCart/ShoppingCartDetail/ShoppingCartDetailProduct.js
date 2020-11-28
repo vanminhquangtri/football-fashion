@@ -31,8 +31,8 @@ const ShoppingCartDetailProduct = (props) => {
                             return (
                                     <ShoppingCartDetailButtons 
                                         key={`${product.product_id}-size${size_quantity.size}`} 
-                                        quantity={size_quantity} product={product} 
-                                        style={{display: "none"}}
+                                        quantity={size_quantity} 
+                                        product={product} 
                                         LCProducts={LCProducts}
                                         updateLCProducts={updateLCProducts}
                                     />
