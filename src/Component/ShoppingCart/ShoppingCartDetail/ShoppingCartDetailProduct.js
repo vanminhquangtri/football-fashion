@@ -30,7 +30,7 @@ const ShoppingCartDetailProduct = (props) => {
                             {product.size_quantity.map((size_quantity) => {
                             return (
                                     <ShoppingCartDetailButtons 
-                                        key={`${product.product_id}-size${size_quantity.size}`} 
+                                        key={`${product.product_id}-size${size_quantity.size}-inside`} 
                                         quantity={size_quantity} 
                                         product={product} 
                                         LCProducts={LCProducts}
@@ -45,7 +45,11 @@ const ShoppingCartDetailProduct = (props) => {
                 {/* show size, quantity and buttons (plus, minus, update, delete) */}
                 {product.size_quantity.map((size_quantity) => {
                     return (
-                        <ShoppingCartDetailButtons key={`${product.product_id}-size${size_quantity.size}`} quantity={size_quantity} product={product}/>
+                        <ShoppingCartDetailButtons 
+                            key={`${product.product_id}-size${size_quantity.size}-outside`} 
+                            quantity={size_quantity} 
+                            product={product}
+                        />
                     )
                 })}
             </div>

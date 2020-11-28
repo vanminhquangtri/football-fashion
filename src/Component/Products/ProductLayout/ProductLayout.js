@@ -27,6 +27,16 @@ const ProductLayout = (props) => {
     const promotionRate = product.promotion === "" ? 0 : parseFloat(product.promotion) * 0.01;
     const originalPrice = product.price / (1 - promotionRate);
     const originalPriceInt = (parseInt(originalPrice) / 1000).toFixed(0) * 1000;
+    // delete a product in local storage when press Delete button  
+    const deleteLCProducts = (id, size) => {
+        const currentLCProducts = JSON.parse(window.localStorage.productID);
+        currentLCProducts.forEach((product) => {
+            if (product.product_id === id && product.size === size) {
+                currentLCProducts.splice(currentLCProducts.indexOf(product), 1)
+            }
+        });
+        localStorage.setItem('productID', JSON.stringify(currentLCProducts)); 
+    };
     useEffect(() => {
         // show announcement when add to cart
         const AddToCartBtns = document.querySelectorAll(".not-added");
@@ -79,7 +89,11 @@ const ProductLayout = (props) => {
                         added_to_cart === false ? (
                             <span 
                                 className="not-added" 
-                                onClick={()=>{dispatch({type: "ADD_TO_CART", id: product.id, quantity: 1, size: "M"}); changeAddedToCartStt(); AddProductToLocalStorage(product.id, "M", 1)}}
+                                onClick={()=>{
+                                    dispatch({type: "ADD_TO_CART", id: product.id, quantity: 1, size: "M"}); 
+                                    changeAddedToCartStt(); 
+                                    AddProductToLocalStorage(product.id, "M", 1);
+                                }}
                             >
                             Thêm vào giỏ
                             </span>
@@ -89,7 +103,15 @@ const ProductLayout = (props) => {
                                 <FontAwesomeIcon icon={faCheckCircle} className="icon"/>
                                 <i>Đã thêm</i>
                             </span>
-                            <span style={{marginLeft: "2px"}} className="added animate__animated animate__fadeInDown" onClick={()=>{dispatch({type: "REMOVE_FROM_CART", id: product.id, quantity: 1, size: "M"}); changeAddedToCartStt()}}>
+                            <span 
+                                style={{marginLeft: "2px"}} className="added animate__animated animate__fadeInDown" 
+                                onClick={()=>{
+                                    // dispatch({type: "REMOVE_FROM_CART", id: product.id, quantity: 1, size: "M"}); 
+                                    changeAddedToCartStt();
+                                    deleteLCProducts(product.id, "M");
+                                    dispatch({type: "RE_RENDER"})
+                                }}
+                            >
                                 <i>Xóa</i>
                                 <FontAwesomeIcon icon={faMinusCircle} className="icon"/>
                             </span>

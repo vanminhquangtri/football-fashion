@@ -13,6 +13,7 @@ const ShoppingCartDetail = (props) => {
     if (window.localStorage.productID !== undefined) {
         storageProductId = JSON.parse(window.localStorage.productID);
     };
+    console.log(storageProductId);
     // 1, get all ID from the LC
     var summarizedProductList = [];
     var LCIdList = [];
@@ -86,11 +87,14 @@ const ShoppingCartDetail = (props) => {
     // delete a product in local storage when press Delete button  
     const deleteLCProducts = (id, size) => {
         const currentLCProducts = JSON.parse(window.localStorage.productID);
-        currentLCProducts.forEach((product) => {
-            if (product.product_id === id && product.size === size) {
-                currentLCProducts.splice(currentLCProducts.indexOf(product), 1)
-            }
+        const removeProducts = currentLCProducts.filter((product) => {
+            return product.product_id === id && product.size === size  
         });
+        console.log(removeProducts);
+        removeProducts.forEach((product) => {
+            currentLCProducts.splice(currentLCProducts.indexOf(product), 1);
+        });
+        console.log(currentLCProducts);
         localStorage.setItem('productID', JSON.stringify(currentLCProducts)); 
     };
     const {Currency} = props.Store;
