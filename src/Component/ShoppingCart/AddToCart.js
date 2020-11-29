@@ -76,7 +76,18 @@ const AddToCart = (props) => {
                 added_to_cart: !prevState.added_to_cart
             }
         })
-    }
+    };
+    // store current product to local product for payment if click pay now
+    const setPaidTarget = () => {
+        const paidTarget = [
+                {
+                    product_id: product.id,
+                    size: state.size,
+                    quantity: state.added_quantity
+                }
+            ];
+        localStorage.setItem('paid_target', JSON.stringify(paidTarget));
+    };
     useEffect(() => {
         // change color of size box if clicked
         const sizeBoxs = document.querySelectorAll(".size-box");
@@ -101,7 +112,7 @@ const AddToCart = (props) => {
                 })
             }
         }
-    },[])
+    },[]);
     useEffect(() => {
         // dispatch the current product to store for payment
         dispatch({type: "ADD_TO_SEPARATE_PRODUCT", paidProduct: {product_id: product.id, quantity: [{size: state.size, quantity: state.added_quantity}]}})
@@ -152,7 +163,14 @@ const AddToCart = (props) => {
                                 Thêm vào giỏ hàng
                             </button>
                             <button className="check-out-each-product">
-                                <NavLink to="/check-out" onClick={()=>{dispatch({type: "PAY_SEPARATE"})}}>Mua ngay</NavLink>
+                                <NavLink to="/check-out" 
+                                    onClick={()=>{
+                                        // dispatch({type: "PAY_SEPARATE"});
+                                        setPaidTarget();
+                                    }}
+                                >
+                                    Mua ngay
+                                </NavLink>
                             </button>
                         </div>
                     </div>

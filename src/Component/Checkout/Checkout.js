@@ -6,14 +6,61 @@ import formatNumber from '../GeneralModules/FortmatMoney';
 import CheckoutForm from './CheckoutForm/CheckoutForm';
 import CheckoutProduct from './CheckoutProduct/CheckoutProduct';
 const Checkout = (props) => {
-    const {PaymentTarget, Currency} = props.Store;
+    // get the list of product ID from local storage
+    const storagePaidProducts = JSON.parse(window.localStorage.getItem('paid_target')) || [];
+    // 1, get all ID from the LC
+    var summarizedProductList = [];
+    var LCIdList = [];
+    storagePaidProducts.forEach((item) => {
+            if (LCIdList.indexOf(item.product_id) === -1) {
+                LCIdList.push(item.product_id);
+            }
+        }
+    );
+    // 2, for each ID create an object with product_id property: [{product_id: id, size_quantity: []}]
+    LCIdList.forEach((id) => {
+            var obj = {
+                product_id: id,
+                size_quantity: []
+            };
+            summarizedProductList.push(obj)
+        }
+    );
+    // 3, loop all item new array summarizedProductList, inside it loop each item in storageProductId 
+    summarizedProductList.forEach((item) => {
+            storagePaidProducts.forEach((product) => {
+                if (item.product_id === product.product_id) {
+                        const checkSizeExist = item.size_quantity.some((sq) => {
+                            return sq.size === product.size  
+                            }
+                        );
+                        if (checkSizeExist === false) {
+                            var newSizeQuantity = {
+                                size: product.size,
+                                quantity: product.quantity
+                            };
+                            item.size_quantity.push(newSizeQuantity);
+                        } 
+                        else {
+                            item.size_quantity.forEach((sq) => {
+                                    if (sq.size === product.size) {
+                                        sq.quantity += product.quantity;
+                                    }
+                                }
+                            )
+                        }
+                    }
+                }
+            )
+        }
+    );
+    const {Currency} = props.Store;
     const {dispatch} = props;
-    const PaidTarget = PaymentTarget.target;
     const [state, setState] = useState({
         show_product_summary: false,
         // order information
         order_id: "",
-        order_product: PaymentTarget.target,
+        order_product: summarizedProductList,
         last_name: "",
         first_name: "",
         email: "",
@@ -57,7 +104,7 @@ const Checkout = (props) => {
     // calculate total amount of shopping cart
     var totalAmount = 0;
     // loop each product in cart
-    PaidTarget.forEach((product) => {
+    summarizedProductList.forEach((product) => {
         // get price of product
         var productPrice;
         ProductsInfo.forEach((p) => {
@@ -66,7 +113,7 @@ const Checkout = (props) => {
             }
         });
         // loop all quantity object of product, multiply product price with quantity and plus to totalAmount
-        product.quantity.forEach((size_quantity) => {
+        product.size_quantity.forEach((size_quantity) => {
             totalAmount += productPrice * size_quantity.quantity
         })
     });
@@ -111,8 +158,9 @@ const Checkout = (props) => {
                 `;
                 productSummary.style.maxHeight = productSummary.scrollHeight + "px";
             }
-        })
-    },[])
+        });
+        document.title = "Thanh toán"
+    },[]);
     return (
         <section className="check-out">
             <div className="container-fluid">
@@ -142,7 +190,7 @@ const Checkout = (props) => {
                     <div className="col">
                         <div className="content">
                             {
-                                PaidTarget.map((product) => {
+                                summarizedProductList.map((product) => {
                                     return (
                                         <CheckoutProduct 
                                             product={product} 

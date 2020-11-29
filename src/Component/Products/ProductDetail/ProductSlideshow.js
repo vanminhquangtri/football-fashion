@@ -11,7 +11,7 @@ const ProductSlideshow = (props) => {
         const carouselIndicators = document.querySelector(".carousel-indicators li");
         carouselIndicators.className = carouselIndicators.className + " active";
         document.title = product.name;
-    },[product.name])
+    },[product.name]);
     return (
         <div className="container-fluid slide-show">
             <div className="row">

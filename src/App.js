@@ -1,15 +1,20 @@
 import React, {useEffect} from "react";
 import TopBar from "./Component/TopBar/TopBar";
 import {BrowserRouter as Router, NavLink} from "react-router-dom";
-import {connect} from "react-redux";
 import TopNav from "./Component/TopNav/TopNav";
 import Footer from "./Component/Footer/Footer";
 import RouterURL from "./Component/RouterURL/RouterURL";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheckCircle, faChevronCircleRight} from "@fortawesome/free-solid-svg-icons";
 
-function App(props) {
-  const {dispatch} = props;
+function App() {
+  var storageProductId = [];
+  if (window.localStorage.productID !== undefined) {
+      storageProductId = JSON.parse(window.localStorage.productID);
+  };
+  const setPaidTarget = () => {
+    localStorage.setItem('paid_target', JSON.stringify(storageProductId));
+  };
   useEffect(() => {
     // hide announcement add to cart when click on annoucement
     const AddToCartAnnounce = document.querySelector(".add-to-cart-annouce");
@@ -38,7 +43,12 @@ function App(props) {
               </div>
               <div className="navigate">
                 <NavLink to="/shopping-cart" className="view-cart">Xem giỏ hàng</NavLink>
-                <NavLink to="/check-out" className="pay-cart" onClick={()=>{dispatch({type: "PAY_WHOLE_CART"})}}>Thanh toán</NavLink>
+                <NavLink to="/check-out" className="pay-cart" 
+                  onClick={()=>{
+                    // dispatch({type: "PAY_WHOLE_CART"});
+                    setPaidTarget()
+                  }}
+                >Thanh toán</NavLink>
               </div>
               <div className="hide-add-to-cart-top-up">
                 <FontAwesomeIcon icon={faChevronCircleRight} className="icon"/>
@@ -61,9 +71,4 @@ function App(props) {
       </Router>
   );
 };
-const mapStateToProps = (state) => {
-  return {
-      Store: state
-  }
-}
-export default connect(mapStateToProps)(App)
+export default App

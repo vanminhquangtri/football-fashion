@@ -13,7 +13,6 @@ const ShoppingCartDetail = (props) => {
     if (window.localStorage.productID !== undefined) {
         storageProductId = JSON.parse(window.localStorage.productID);
     };
-    console.log(storageProductId);
     // 1, get all ID from the LC
     var summarizedProductList = [];
     var LCIdList = [];
@@ -113,6 +112,10 @@ const ShoppingCartDetail = (props) => {
         // loop all quantity object of product, multiply product price with quantity and plus to totalAmount
         totalAmount += productPrice * product.quantity
     });
+    // change the paid_target to productID if click pay
+    const setPaidTarget = () => {
+        localStorage.setItem('paid_target', JSON.stringify(storageProductId));
+    };
     useEffect(() => {
         // scroll to top
         window.scrollTo(0, 0);
@@ -163,7 +166,12 @@ const ShoppingCartDetail = (props) => {
                                     Tổng cộng: <strong>{formatNumber(totalAmount)}<sup>{Currency.currency}</sup></strong>
                                 </div>
                                 <div className="checkout-link">
-                                    <NavLink to="/check-out" onClick={()=>{dispatch({type: "PAY_WHOLE_CART"})}}>
+                                    <NavLink 
+                                        to="/check-out" 
+                                        onClick={()=>{
+                                                dispatch({type: "PAY_WHOLE_CART"});
+                                                setPaidTarget()
+                                            }}>
                                         Thanh toán
                                     </NavLink> <br/>
                                     <img alt="payment card" src={require("../../../Assets/images/section-shopping-cart-detail/payment-card.png").default}/>
