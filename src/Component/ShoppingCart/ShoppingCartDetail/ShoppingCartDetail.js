@@ -9,10 +9,7 @@ import formatNumber from '../../GeneralModules/FortmatMoney';
 
 const ShoppingCartDetail = (props) => {
     // get the list of product ID from local storage
-    var storageProductId = [];
-    if (window.localStorage.productID !== undefined) {
-        storageProductId = JSON.parse(window.localStorage.productID);
-    };
+    var storageProductId = JSON.parse(window.localStorage.getItem('productID')) || [];
     // 1, get all ID from the LC
     var summarizedProductList = [];
     var LCIdList = [];
@@ -32,11 +29,6 @@ const ShoppingCartDetail = (props) => {
         }
     );
     // 3, loop all item new array summarizedProductList, inside it loop each item in storageProductId 
-    /*
-        if match ID =>
-        if size already exist, plus quantity to quantity
-        else create new obj {size: size, quantity: quantity} and push to current item of summarizedProductList
-    */
     summarizedProductList.forEach((item) => {
             storageProductId.forEach((product) => {
                 if (item.product_id === product.product_id) {
@@ -89,11 +81,9 @@ const ShoppingCartDetail = (props) => {
         const removeProducts = currentLCProducts.filter((product) => {
             return product.product_id === id && product.size === size  
         });
-        console.log(removeProducts);
         removeProducts.forEach((product) => {
             currentLCProducts.splice(currentLCProducts.indexOf(product), 1);
         });
-        console.log(currentLCProducts);
         localStorage.setItem('productID', JSON.stringify(currentLCProducts)); 
     };
     const {Currency} = props.Store;
@@ -189,5 +179,5 @@ const mapStateToProps = (state) => {
     return {
         Store: state
     }
-}
+};
 export default connect(mapStateToProps)(ShoppingCartDetail)

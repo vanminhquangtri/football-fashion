@@ -1,4 +1,5 @@
 import React, {useEffect} from "react";
+import {connect} from "react-redux";
 import TopBar from "./Component/TopBar/TopBar";
 import {BrowserRouter as Router, NavLink} from "react-router-dom";
 import TopNav from "./Component/TopNav/TopNav";
@@ -8,10 +9,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheckCircle, faChevronCircleRight} from "@fortawesome/free-solid-svg-icons";
 
 function App() {
-  var storageProductId = [];
-  if (window.localStorage.productID !== undefined) {
-      storageProductId = JSON.parse(window.localStorage.productID);
-  };
+  var storageProductId = JSON.parse(window.localStorage.getItem('productID')) || [];
   const setPaidTarget = () => {
     localStorage.setItem('paid_target', JSON.stringify(storageProductId));
   };
@@ -45,7 +43,6 @@ function App() {
                 <NavLink to="/shopping-cart" className="view-cart">Xem giỏ hàng</NavLink>
                 <NavLink to="/check-out" className="pay-cart" 
                   onClick={()=>{
-                    // dispatch({type: "PAY_WHOLE_CART"});
                     setPaidTarget()
                   }}
                 >Thanh toán</NavLink>
@@ -71,4 +68,9 @@ function App() {
       </Router>
   );
 };
-export default App
+const mapStateToProps = (state) => {
+  return {
+      Store: state
+  }
+};
+export default connect(mapStateToProps)(App)
