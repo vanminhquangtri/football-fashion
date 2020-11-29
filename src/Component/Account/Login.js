@@ -1,11 +1,15 @@
 import React from 'react';
+import {useHistory} from "react-router-dom";
 const loginAPI = "https://api.findids.net/api/auth/login";
 const Login = (props) => {
     const {changeFormStatus} = props;
+    let history = useHistory();
+    const successLoginNavigate = () => {
+        history.push('/');
+    }
     // login handler
     const loginAccount = (ev) => {
         ev.preventDefault();
-        console.log("please wait");
         const loginEmail = document.getElementById("login_email").value;
         const loginPassword = document.getElementById("login_password").value; 
         const xhr = new XMLHttpRequest();
@@ -14,15 +18,14 @@ const Login = (props) => {
         xhr.send(`email=${loginEmail}&password=${loginPassword}`);
         xhr.onload = () => {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                // if login success
-                // 1, redirect to home page
-                // 2, show account name on top nav
-                console.log(JSON.parse(xhr.responseText).message);
+                const response = JSON.parse(xhr.responseText);
+                const accountName = document.querySelector(".account-name");
+                accountName.innerHTML = response.data.name
+                successLoginNavigate()
             };
-            if (xhr.readyState === 4 && xhr.status === 400) {
-                // if login failed
-                // 1, change state to failed
-                console.log(JSON.parse(xhr.responseText).message);
+            if (xhr.readyState === 4 && xhr.status !== 200) {
+                const failedLogin = document.querySelector(".failed-login-announcement");
+                failedLogin.innerHTML = "Sai email hoặc mật khẩu"
             };
         };
     }
@@ -32,21 +35,25 @@ const Login = (props) => {
             onSubmit={(ev)=>{loginAccount(ev)}}
         >
             <div className="form-field">
-                <label className="form-title">Đăng nhập</label>
+                <label className="form-title">ĐĂNG NHẬP</label>
             </div>
             <div className="form-field">
                 <label>Địa chỉ Email</label>
-                <input type="email" name="login_email" id="login_email"/>
+                <input type="email" name="login_email" id="login_email" required/>
             </div>
             <div className="form-field">
                 <label>Mật khẩu</label>
-                <input type="password" name="login_password" id="login_password"/>
+                <input type="password" name="login_password" id="login_password" required/>
             </div>
             <div className="form-field">
-                <input type="submit" value="Đăng nhập"/>
+                <input type="submit" value="Đăng nhập" className="btn btn-success"/>
             </div>
             <div className="form-field">
-                <button onClick={(ev)=>{changeFormStatus(ev, "register")}}>Chưa có tài khoản, đăng ký</button>
+                <button className="btn btn-primary" onClick={(ev)=>{changeFormStatus(ev, "register")}}>Chưa có tài khoản, đăng ký</button>
+            </div>
+            {/* show message if login failed */}
+            <div className="failed-login-announcement">
+                
             </div>
         </form>
     );

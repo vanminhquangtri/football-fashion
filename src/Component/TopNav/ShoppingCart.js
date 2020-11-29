@@ -20,6 +20,7 @@ const ShoppingCart = (props) => {
     return (
         <div className="col-auto shopping-cart">
             <div className="wrap">
+                <span className="account-name"></span>
                 <NavLink
                     to="/shopping-cart"
                     exact={true}
