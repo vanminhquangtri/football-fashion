@@ -1,0 +1,54 @@
+---------------------------API REGISTER
+url : https://api.findids.net/api/auth/register METHOD post
+
+- post data
+{
+    "email":"giapthanhquoc@gmail.com",
+    "password":"123123",
+    "name":"giap thanh quoc"
+}
+
+- result
+{
+    "message": "Tạo thành công", 
+    "status": 200,
+    "success": true,
+    "data": {
+        "name": "giap thanh quoc",
+        "email": "giapthanhquoc@gmail.com",
+        "updated_at": "2020-11-27T07:13:51.000000Z",
+        "created_at": "2020-11-27T07:13:51.000000Z",
+        "id": 61
+    }
+}
+
+----------------------API LOGIN
+https://api.findids.net/api/auth/login
+
+- post data
+{
+    "email":"giapthanhquoc@gmail.com",
+    "password":"123123"
+}
+
+- result
+{
+    "message": "Đăng nhập thành công",
+    "success": true,
+    "data": {
+        "id": 61,
+        "name": "giap thanh quoc",
+        "email": "giapthanhquoc@gmail.com",
+        "email_verified_at": null,
+        "created_at": "2020-11-27T07:13:51.000000Z",
+        "updated_at": "2020-11-27T07:13:51.000000Z",
+        "role": null
+    },
+    "status": 200,
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYXBpLmZpbmRpZHMubmV0XC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNjA2NDYxMjY4LCJleHAiOjE2MDY0NjQ4NjgsIm5iZiI6MTYwNjQ2MTI2OCwianRpIjoiN08yTXlpVHd4cU9SYzVKQiIsInN1YiI6NjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.8lwiSZt8mW2r_HnYXhTAAnXBCtKpHMlXlvy2dICSK3A"
+}
+
+
+#######
+success => true // thành công , false -> thất bại
+status => 200 // thành công , 422 -> lỗi thiếu dữ liệu , 500->lỗi server, 400 thất bại

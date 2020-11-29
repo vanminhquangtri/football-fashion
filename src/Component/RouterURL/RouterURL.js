@@ -9,6 +9,7 @@ import ManageOrder from "../ManageOrder/ManageOrder";
 import ProductDetail from "../Products/ProductDetail/ProductDetail";
 import Promotion from "../Promotion/Promotion";
 import ShoppingCartDetail from "../ShoppingCart/ShoppingCartDetail/ShoppingCartDetail";
+import Account from "../Account/Account";
 const RouterURL = (props) => {
     const { location } = props;
     useEffect(() => {
@@ -30,6 +31,7 @@ const RouterURL = (props) => {
             <Route path="/check-out" exact component={Checkout}></Route>
             <Route path="/manage-order" exact component={ManageOrder}></Route>
             <Route path="/contact" exact component={About}></Route>
+            <Route path="/account" exact component={Account}></Route>
             <Route component={Homepage}></Route>
         </Switch>
     );

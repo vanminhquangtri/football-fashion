@@ -81,6 +81,14 @@ const TopNav = () => {
                                         <span className="link-text">LIÊN HỆ</span>
                                     </NavLink>
                                 </li>
+                                <li style={{display: "none"}} className="show-from-576">
+                                    <NavLink
+                                    to="/account"
+                                    exact={true}
+                                    >
+                                        <span className="link-text">ĐĂNG NHẬP</span>
+                                    </NavLink>
+                                </li>
                             </ul>
                             {/* only show sub menu if state of submenu is true */}
                             {sub_menu && (
@@ -107,6 +115,14 @@ const TopNav = () => {
                                         exact={true}
                                         >
                                             Liên hệ chúng tôi
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink
+                                        to="/account"
+                                        exact={true}
+                                        >
+                                            Đăng nhập
                                         </NavLink>
                                     </li>
                                     <FontAwesomeIcon 
