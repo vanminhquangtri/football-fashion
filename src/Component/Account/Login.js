@@ -1,7 +1,6 @@
 import React from 'react';
 import {useHistory} from "react-router-dom";
 import {useForm} from "react-hook-form";
-
 const loginAPI = "https://api.findids.net/api/auth/login";
 const Login = (props) => {
     const {changeFormStatus} = props;
@@ -20,8 +19,10 @@ const Login = (props) => {
         xhr.onload = () => {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 const response = JSON.parse(xhr.responseText);
-                const accountName = document.querySelector(".account-name");
-                accountName.innerHTML = response.data.name
+                const showAccountName = document.querySelector(".account-name");
+                const accountName = response.data.name.split(" ");
+                showAccountName.innerHTML = accountName[accountName.length - 1];
+                window.localStorage.setItem("login_token", response.token);
                 successLoginNavigate();
             };
             if (xhr.readyState === 4 && xhr.status !== 200) {

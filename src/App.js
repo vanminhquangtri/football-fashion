@@ -7,7 +7,8 @@ import Footer from "./Component/Footer/Footer";
 import RouterURL from "./Component/RouterURL/RouterURL";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheckCircle, faChevronCircleRight} from "@fortawesome/free-solid-svg-icons";
-
+import GetMe from "./Component/GeneralModules/GetMe";
+GetMe();
 function App() {
   var storageProductId = JSON.parse(window.localStorage.getItem('productID')) || [];
   const setPaidTarget = () => {
@@ -18,12 +19,12 @@ function App() {
     const AddToCartAnnounce = document.querySelector(".add-to-cart-annouce");
     AddToCartAnnounce.addEventListener("click", () => {
       AddToCartAnnounce.style.right = "-100%"; 
-    })
+    });
     // hide announcement update when click on annoucement
     const UpdateCartAnnounce = document.querySelector(".update-cart-annouce");
     UpdateCartAnnounce.addEventListener("click", () => {
       UpdateCartAnnounce.style.right = "-100%"; 
-    })
+    });
   },[])
   return (
       <Router>

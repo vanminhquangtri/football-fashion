@@ -32,7 +32,7 @@ const Register = props => {
         };
     };
     // validate form
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm();
     const onSubmit = (ev) => {
         registerAccount();
     };
