@@ -1,41 +1,22 @@
 import React from 'react';
 import {useHistory} from "react-router-dom";
 import {useForm} from "react-hook-form";
-const loginAPI = "https://api.findids.net/api/auth/login";
+import AxiosAccount from '../GeneralModules/AxiosAccount';
 const Login = (props) => {
     const {changeFormStatus} = props;
     let history = useHistory();
     const successLoginNavigate = () => {
         history.push('/');
     }
-    // login handler
-    const loginAccount = () => {
-        const loginEmail = document.getElementById("login_email").value;
-        const loginPassword = document.getElementById("login_password").value; 
-        const xhr = new XMLHttpRequest();
-        xhr.open('post', loginAPI);
-        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhr.send(`email=${loginEmail}&password=${loginPassword}`);
-        xhr.onload = () => {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                const response = JSON.parse(xhr.responseText);
-                const showAccountName = document.querySelector(".account-name");
-                const accountName = response.data.name.split(" ");
-                showAccountName.innerHTML = accountName[accountName.length - 1];
-                window.localStorage.setItem("login_token", response.token);
-                successLoginNavigate();
-            };
-            if (xhr.readyState === 4 && xhr.status !== 200) {
-                const response = JSON.parse(xhr.responseText);
-                const failedLogin = document.querySelector(".failed-login-announcement");
-                failedLogin.innerHTML = response.message
-            };
-        };
-    };
     // validate form
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = () => {
-        loginAccount()
+        const data = {
+            email: document.getElementById("login_email").value,
+            password: document.getElementById("login_password").value
+        }
+        // loginAccount()
+        AxiosAccount("login", "post", "https://api.findids.net/api/auth/login", data, successLoginNavigate)
     };    
     return (
         <form 

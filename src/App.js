@@ -7,8 +7,9 @@ import Footer from "./Component/Footer/Footer";
 import RouterURL from "./Component/RouterURL/RouterURL";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheckCircle, faChevronCircleRight} from "@fortawesome/free-solid-svg-icons";
-import GetMe from "./Component/GeneralModules/GetMe";
-GetMe();
+import AxiosAccount from "./Component/GeneralModules/AxiosAccount";
+AxiosAccount("get_me", "get", "https://api.findids.net/api/me");
+
 function App() {
   var storageProductId = JSON.parse(window.localStorage.getItem('productID')) || [];
   const setPaidTarget = () => {
