@@ -9,7 +9,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheckCircle, faChevronCircleRight} from "@fortawesome/free-solid-svg-icons";
 import AxiosAccount from "./Component/GeneralModules/AxiosAccount";
 AxiosAccount("get_me", "get", "https://api.findids.net/api/me");
-
+// https://www.youtube.com/watch?v=Fb-bDigImpw&t=75shttps://www.youtube.com/watch?v=Fb-bDigImpw&t=75s
 function App() {
   var storageProductId = JSON.parse(window.localStorage.getItem('productID')) || [];
   const setPaidTarget = () => {
